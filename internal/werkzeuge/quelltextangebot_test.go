@@ -23,10 +23,10 @@ package werkzeuge_test
 //
 // # Was er nicht hält
 //
-//   - **Dass die Seite erreichbar ist.** Das ist sie erst, wenn ein Mensch
-//     die Sichtbarkeit umstellt; HAND6
-//     (#2384)
-//     belegt es ohne Zugang. Bis dahin antwortet sie mit 404.
+//   - **Dass die Seite erreichbar ist.** Das ist sie, seit das Repositorium
+//     am 2026-11-15 öffentlich wurde — belegt ohne Zugang am selben Tag
+//     (Vermerk 0190, Nachtrag); ein Lauf, der das Netz fragt, gehört nicht in
+//     die Pipeline.
 //   - **Dass das Paket vollständig ist.** Was darin liegt, prüft
 //     `scripts/releasequelltext.test.sh` an einem nachgestellten Baum.
 

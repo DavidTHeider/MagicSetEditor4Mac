@@ -37,8 +37,11 @@ getrennt vom Commitschlüssel `1503F87D4C128638`, beide nur mit der
 Noreply-Adresse von GitHub. **Erzeugt hat ihn der Agent**, auf ausdrückliche
 Bitte des Auftraggebers und ohne Passphrase wie den bisherigen — anders, als
 die Lage oben es vorsah. Die Widerrufszertifikate legte `gpg` unter
-`~/.gnupg/openpgp-revocs.d/` ab; außerhalb dieses Rechners verwahrt sie der
-Auftraggeber.
+`~/.gnupg/openpgp-revocs.d/` ab, und **dort bleiben sie, auf diesem Rechner**
+— entschieden vom Auftraggeber am 2026-11-15, abweichend von Punkt 1, der sie
+außerhalb sah. Der Preis gehört ausgesprochen: geht dieser Rechner verloren,
+gehen Schlüssel und Widerruf mit ihm, und ein abhandengekommener Schlüssel
+ließe sich nicht mehr widerrufen.
 
 **Den Übergang aus Punkt 3 gab es nicht.** 1.0.0 führt nur den neuen Anker und
 ist mit ihm signiert. Einen öffentlich installierten Bestand, den der alte

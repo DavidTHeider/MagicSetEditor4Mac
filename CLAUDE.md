@@ -472,10 +472,13 @@ Rumpf enthält: was geändert wurde, warum, wie geprüft, `Closes #<nr>`.
 
 ### Schutz von main
 
-Serverseitiger Branch-Schutz setzt bei privaten Repositories GitHub Pro voraus
-und ist hier nicht aktiv. Die Regel wird deshalb lokal im `pre-push`-Hook
-durchgesetzt: ein direkter Push auf `main` wird abgewiesen. Umgehung nur über
-`MSE_ERLAUBE_MAIN_PUSH=1` und nur für den ersten Push oder echte Notfälle.
+**Seit das Repositorium öffentlich ist** (2026-11-15) schützt ein Ruleset
+`main` auf dem Server: Änderungen nur über einen PR, kein Force-Push, kein
+Löschen; die Admin-Rolle darf es für Notfälle umgehen. **Eine grüne Pipeline
+erzwingt es nicht** — einen entfernten Lauf gibt es nicht (§4). Das hält
+weiter der `pre-push`-Hook: ein direkter Push auf `main` wird abgewiesen.
+Umgehung nur über `MSE_ERLAUBE_MAIN_PUSH=1` und nur für den ersten Push oder
+echte Notfälle.
 
 ---
 
