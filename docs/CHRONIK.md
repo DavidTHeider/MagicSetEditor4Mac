@@ -31,6 +31,12 @@ sie hält `luecken_test.go` gegen die Pläne in `PARITAET.md` — und die
   Commits, nur die Freigabe 1.0.0. Das bisherige ist privat archiviert, samt
   Issues, PRs und den Freigaben 0.1.0 bis 0.9.0. Verweise der Gestalt `#N`
   nennen Issues und PRs dort.
+- **Am Abbild geprüft**: die Handprüfungen 3, 4 und 7 — hell, dunkel und ein
+  Bestand aus 0.7.0 — ohne die echten Orte anzufassen
+  ([`belege/freigabebuendel-1.0.0.md`](belege/freigabebuendel-1.0.0.md)); 1
+  und 2 von 0.9.0 übernommen, weil die Referenz aus MSE2 hier nicht mehr lag.
+  Vorher ist der Baum dreifach auf sensible Daten geprüft worden
+  ([`belege/sensibledaten-1.0.0.md`](belege/sensibledaten-1.0.0.md)).
 - **Aus der Versionierung genommen**: die Entwürfe der Zieloberfläche, die
   Audits, Abnahmen und alten Pläne, die Chronik und die Historie bis 0.9.0 —
   Vermerk 0205 zählt auf, was ging und welche Wächter mit ihm gingen.

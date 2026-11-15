@@ -74,9 +74,12 @@ die nicht öffentlich gehören. Erhoben am 2026-11-15:
 
 - **Was vorher draußen war, bleibt draußen.** `https://github.com/DavidTHeider.gpg`
   lieferte den bisherigen Schlüssel samt privater Adresse ohne Anmeldung aus;
-  wer ihn abgerufen hat, hat ihn. Er soll aus dem Konto genommen werden,
-  sobald der neue Commitschlüssel dort liegt — eine Handlung im Konto, die der
-  Auftraggeber freigibt.
+  wer ihn abgerufen hat, hat ihn. **Seit dem 2026-11-15 liegt er nicht mehr im
+  Konto** — der neue Commitschlüssel liegt dort, und die Adresse liefert nur
+  noch Schlüssel mit Noreply-Kennung. Die Commits im Archiv bleiben dabei
+  verifiziert: GitHub hält eine einmal geprüfte Signatur fest, auch wenn der
+  Schlüssel später geht (`docs.github.com`, „About commit signature
+  verification", gelesen am 2026-11-15).
 - **Eine Nummer `#N` ist nicht eindeutig.** Das neue Repositorium zählt von
   vorn; ein `#12` aus der Zeit bis 1.0.0 meint das Archiv, eines danach dieses
   Repositorium — wer ein neues Issue nennt, nennt es mit Adresse.

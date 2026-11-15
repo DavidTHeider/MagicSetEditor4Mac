@@ -174,3 +174,17 @@ Vorschlag, sondern sagt, dass für das Feld nichts kam.
   `fm available` ohne Modell) — auf diesem Rechner nicht herstellbar; ein
   Code ungleich 0 heißt hier „nicht aktiviert".
 - Ob das Modell auf einem anderen Mac dieselben Ablehnungen trifft.
+
+## Nachtrag vom 2026-11-15: die Lizenz in Fassung 1.1
+
+**Nach dem Update auf macOS 27.2 meldete `fm license --status` „Not agreed"**,
+und der Lauf der Pipeline gegen das echte Gerätemodell wurde rot — so, wie
+`scripts/ci-geraetemodell.sh` es vorsieht: ein Modell, das da ist und nicht
+bereit, soll ein Mensch bemerken. **Der Auftraggeber hat die Lizenz am
+2026-11-15 mit `sudo fm license` angenommen**; seither meldet der Befehl
+*FM1 version 1.1*. Es ist die andere Fassung, für die oben eine neue
+Entscheidung verlangt ist, und diese Annahme ist sie. Ob sich die Bedingungen
+gegenüber 1.0 inhaltlich geändert haben, hat kein Agent nachgelesen — die
+vollständigen Bedingungen zeigt nur `sudo fm license`, und das ruft dieses
+Programm nicht.
+

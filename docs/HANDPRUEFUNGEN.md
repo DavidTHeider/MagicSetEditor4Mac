@@ -1,6 +1,6 @@
 # Handprüfungen — was nur ein Mensch am Fenster prüfen kann
 
-**Stand: 2026-11-15**, zur Freigabe 1.0.0 — sie trägt den Programmstand von 0.9.0, und was dort offen war, ist es hier auch. **Diese Datei ist die vollständige Liste** dessen, was ein Mensch oder ein zweites Gerät prüfen muss; die Zeilen in [`ROADMAP.md`](ROADMAP.md) und in den Abnahmen verweisen auf sie und führen keine eigene.
+**Stand: 2026-11-15**, nach der Freigabe 1.0.0 — sie trägt den Programmstand von 0.9.0, und was dort offen war, ist es hier auch. Am Abbild belegt sind die Handprüfungen 3, 4 und 7 des Freigabebelegs ([`belege/freigabebuendel-1.0.0.md`](belege/freigabebuendel-1.0.0.md)); 1 und 2 sind von 0.9.0 übernommen, weil die Referenz aus MSE2 auf diesem Rechner nicht mehr vorlag. **Diese Datei ist die vollständige Liste** dessen, was ein Mensch oder ein zweites Gerät prüfen muss; die Zeilen in [`ROADMAP.md`](ROADMAP.md) und in den Abnahmen verweisen auf sie und führen keine eigene.
 
 Seit dem 2026-09-24 fährt die **WebKit-Probe**
 (#1828) die
