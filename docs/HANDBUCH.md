@@ -429,11 +429,12 @@ irgendetwas geladen wird.
 Ladevorgang hinterlässt keine halbe Datei: geschrieben wird in eine
 Nachbardatei, und erst die geprüfte bekommt ihren Namen.
 
-**Die Freigaben liegen heute noch in einem privaten Repositorium**; es wird
-öffentlich, bevor eine Fassung an Anwendende geht. Bis dahin antwortet GitHub
-ohne Lesezugriff, es gebe keine — dann sagt die Anwendung das und arbeitet
-unverändert weiter. Die Zugangsmarke wird aus der Umgebung gelesen (`GH_TOKEN`,
-sonst `GITHUB_TOKEN`) und braucht die Berechtigung `Contents: read`.
+**Die Freigaben liegen öffentlich** unter
+`github.com/DavidTHeider/MagicSetEditor4Mac/releases`, seit dem 2026-11-15.
+Ohne Anmeldung beantwortet GitHub 60 Anfragen je Stunde; ist die Grenze
+erschöpft, sagt die Anwendung das samt Uhrzeit und arbeitet unverändert
+weiter. Eine Zugangsmarke aus der Umgebung (`GH_TOKEN`, sonst `GITHUB_TOKEN`,
+Berechtigung `Contents: read`) hebt die Grenze; nötig ist sie nicht.
 
 ![Dasselbe Band im dunklen Erscheinungsbild](bilder/oberflaeche-neuefassung-dunkel.png)
 

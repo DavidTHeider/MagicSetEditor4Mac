@@ -144,3 +144,24 @@ Freigabeschlüssel `44C59428DE1F766E`**, nicht mehr mit `BF81923EA5D38635`.
 Der Grund für das neue Repositorium ist der Schritt „Vor dem Öffnen“ oben: die
 alte Historie trug eine private Adresse, und über die PRs wäre sie erreichbar
 geblieben.
+
+## Nachtrag vom 2026-11-15: geöffnet
+
+**Das Repositorium ist seit dem 2026-11-15 öffentlich**, auf Auftrag des
+Auftraggebers nach der Freigabe 1.0.0 und nach der Prüfung des Baums auf
+sensible Daten (`docs/belege/sensibledaten-1.0.0.md`). Das Archiv bis 0.9.0
+bleibt privat. **Befund A-08 ist damit erledigt**, ohne Anmeldung gemessen am
+selben Tag:
+
+- `GET /repos/DavidTHeider/MagicSetEditor4Mac/releases/latest` antwortet mit
+  200 und `v1.0.0` samt zehn Beigaben;
+- `pruefsummen.txt`, `pruefsummen.txt.asc` und `herkunft.json` laden über die
+  Freigabeseite, und die Signatur hält gegen den Freigabeschlüssel;
+- `mse aktualisierung` aus dem Abbild 1.0.0, in einem Wegwerfzuhause, meldet
+  „laufend 1.0.0, freigegeben 1.0.0".
+
+**Dazu schützt ein Ruleset `main`** (PR-Pflicht, kein Force-Push, kein Löschen,
+Umgehung für die Admin-Rolle) — die Zeile, die die Roadmap dafür bis zum
+Öffnen führte. Eine grüne Pipeline kann es nicht verlangen: es gibt keinen
+entfernten Lauf ([0007](0007-kein-entfernter-lauf.md)).
+

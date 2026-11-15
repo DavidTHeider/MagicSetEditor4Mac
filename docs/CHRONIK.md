@@ -31,6 +31,10 @@ sie hält `luecken_test.go` gegen die Pläne in `PARITAET.md` — und die
   Commits, nur die Freigabe 1.0.0. Das bisherige ist privat archiviert, samt
   Issues, PRs und den Freigaben 0.1.0 bis 0.9.0. Verweise der Gestalt `#N`
   nennen Issues und PRs dort.
+- **Öffentlich seit dem 2026-11-15**: `releases/latest` antwortet ohne
+  Anmeldung mit `v1.0.0`, die Anwendung findet sich selbst als laufende
+  Fassung, und ein Ruleset schützt `main` (Nachtrag zu
+  [0190](entscheidungen/0190-das-repositorium-wird-oeffentlich.md)).
 - **Am Abbild geprüft**: die Handprüfungen 3, 4 und 7 — hell, dunkel und ein
   Bestand aus 0.7.0 — ohne die echten Orte anzufassen
   ([`belege/freigabebuendel-1.0.0.md`](belege/freigabebuendel-1.0.0.md)); 1

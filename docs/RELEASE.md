@@ -508,14 +508,15 @@ Adressierbar ist eine Fassung unter
 dieselbe Seite für Abbild und Quelltext; §3 der GPL lässt gleichwertigen
 Zugang an derselben Stelle als Weitergabe des Quelltexts gelten.
 
-**Heute ist das Repositorium privat**, und die Seite antwortet ohne Zugang
-mit 404 (Befund A-08). Öffentlich wird es mit einem gesonderten Auftrag,
-und **erst dann erreicht 1.0.0 Anwendende**: Freigabegate REL
-(#2385),
-und HAND6 (#2384)
-belegt den Bezug danach ohne Zugang. **Vor dem Öffnen** wird der Baum auf
-Inhalte geprüft, die nicht öffentlich gehören — Geheimnisse, fremde Vorlagen
-(§11), persönliche Angaben in Belegen.
+**Seit dem 2026-11-15 ist das Repositorium öffentlich** — auf Auftrag des
+Auftraggebers am selben Tag, nach der Freigabe 1.0.0. Befund A-08 ist damit
+erledigt: `releases/latest` antwortet **ohne Anmeldung** mit `v1.0.0` und
+seinen zehn Beigaben, die Signatur der heruntergeladenen Prüfsummen hält, und
+die Anwendung selbst meldet aus einem Wegwerfzuhause „laufend 1.0.0,
+freigegeben 1.0.0" (Vermerk 0190, Nachtrag vom 2026-11-15). **Vor dem Öffnen**
+ist der Baum auf Inhalte geprüft worden, die nicht öffentlich gehören —
+Geheimnisse, fremde Vorlagen (§11), persönliche Angaben in Belegen
+([`belege/sensibledaten-1.0.0.md`](belege/sensibledaten-1.0.0.md)).
 
 `internal/werkzeuge/quelltextangebot_test.go` hält diesen Abschnitt, den
 Vermerk und `scripts/release.sh` gegeneinander.
