@@ -1,0 +1,41 @@
+[
+  {
+    "id": 89,
+    "name": "Beast // Plant",
+    "version": null,
+    "game_id": 1,
+    "category_id": 2,
+    "expansion_id": 8,
+    "image_url": "https://bilder.example/89.jpg",
+    "editable_properties": [
+      {"name": "condition", "type": "string", "default_value": "Near Mint",
+       "possible_values": ["Near Mint", "Slightly Played", "Moderately Played",
+                           "Played", "Heavily Played", "Poor"]}
+    ],
+    "scryfall_id": "381854E2-7369-473E-A604-4DD7C010FC89",
+    "card_market_ids": [362677, 362678],
+    "tcg_player_id": null
+  },
+  {
+    "id": 90,
+    "name": "Waldläufer",
+    "version": "Retro",
+    "game_id": 1,
+    "category_id": 2,
+    "expansion_id": 8,
+    "image_url": "https://bilder.example/90.jpg",
+    "editable_properties": [],
+    "scryfall_id": null,
+    "card_market_ids": [],
+    "tcg_player_id": "77712"
+  },
+  {
+    "id": 0,
+    "name": "ohne Kennung",
+    "game_id": 1,
+    "expansion_id": 8,
+    "scryfall_id": null,
+    "card_market_ids": [],
+    "tcg_player_id": null
+  }
+]

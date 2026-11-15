@@ -1,0 +1,11 @@
+{
+  "object": "set",
+  "id": "00000000-0000-4000-8000-000000000010",
+  "code": "prf",
+  "name": "Prüfsatz",
+  "set_type": "expansion",
+  "released_at": "2026-08-24",
+  "card_count": 3,
+  "digital": false,
+  "scryfall_uri": "https://beispiel.invalid/sets/prf"
+}

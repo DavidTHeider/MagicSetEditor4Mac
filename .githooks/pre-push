@@ -1,0 +1,129 @@
+#!/usr/bin/env bash
+#
+# Prüft vor jedem Push, dass die Pipeline für **genau diesen Stand** grün war.
+# Einrichtung: make hooks
+# Einzelne Umgehung (nur mit gutem Grund): git push --no-verify
+#
+# ## Warum er prüft und nicht rechnet
+#
+# Hier stand bis zum 2026-09-02 `./scripts/ci.sh all` — zehn Minuten Pipeline
+# mitten im Push. Das hat **nicht funktioniert**, und der Grund ist gemessen
+# (#1389):
+# `git` öffnet die SSH-Verbindung zu `git-receive-pack`, **bevor** es den Hook
+# ruft. Mit `GIT_TRACE=1` abgelesen liegen 1,8 Sekunden dazwischen.
+#
+# Der Hook hielt diese Verbindung zehn Minuten offen, und GitHub schloss sie:
+#
+#     HOOK: warte 600 Sekunden ab 21:33:45
+#     Connection to github.com closed by remote host.
+#     HOOK: fertig 21:43:45, gebe frei
+#     RÜCKGABE=141
+#
+# 141 ist 128 + 13, also SIGPIPE: der Hook gab frei, git wollte das Paket
+# senden, und niemand hörte mehr zu — ohne Meldung, ohne `To github.com`. Bei
+# 300 Sekunden ging derselbe Weg noch durch; die Grenze liegt dazwischen.
+#
+# **Was daraus folgt, ist keine Abschwächung.** Die Zusage bleibt: nichts wird
+# gepusht, was nicht grün ist. Nur der **Ort** der Arbeit ändert sich — sie
+# gehört vor den Push, nicht hinein. `make ci` schreibt einen Stempel, dieser
+# Hook liest ihn.
+
+set -euo pipefail
+
+WURZEL="$(git rev-parse --show-toplevel)"
+cd "$WURZEL"
+
+# **Über `--git-dir`, nicht über `.git`** — in einem Worktree ist `.git` eine
+# Datei, und `scripts/stempel.sh` schreibt den Beleg dorthin, wohin
+# `git rev-parse --git-dir` zeigt. Bis Werkstück O1 von Phase 5.2 stand hier
+# der feste Pfad, und ein Push aus einem Worktree scheiterte an einem Beleg,
+# der da war (#1425). Im Hauptbaum ist es derselbe Ort wie vorher.
+STEMPEL="$(git rev-parse --git-dir)/mse-pipeline"
+
+# nullsha ist die Kennung, die git für »gibt es nicht« schickt.
+nullsha="0000000000000000000000000000000000000000"
+
+abweisen() { # abweisen <zeile…>
+  printf '\n\033[31mpre-push: Push abgewiesen\033[0m\n'
+  printf '%s\n' "$@"
+  printf '\nUmgehung nur mit gutem Grund: git push --no-verify\n\n'
+  exit 1
+}
+
+# **Die Refzeilen kommen auf der Standardeingabe** — je Ref eine Zeile aus
+# lokalem Namen, lokaler Kennung, entferntem Namen und entfernter Kennung.
+while read -r _lokale_ref lokale_sha entfernte_ref _entfernte_sha; do
+  # Direkte Pushes auf main abweisen (AGENTS.md §5).
+  #
+  # Serverseitiger Branch-Schutz setzt bei privaten Repositories GitHub Pro
+  # voraus. Solange der nicht verfügbar ist, hält dieser Hook die Regel ein:
+  # Änderungen an main laufen über einen Pull Request.
+  if [ "$entfernte_ref" = "refs/heads/main" ] && [ "${MSE_ERLAUBE_MAIN_PUSH:-}" != "1" ]; then
+    printf '\n\033[31mpre-push: direkter Push auf main abgewiesen\033[0m\n'
+    printf 'Änderungen an main laufen über einen Pull Request:\n'
+    printf '  git switch -c feat/<issue-nr>-<kurzbezeichnung>\n'
+    printf '  git push -u origin HEAD && gh pr create\n\n'
+    printf 'Ausnahme (nur für den ersten Push oder Notfälle):\n'
+    printf '  MSE_ERLAUBE_MAIN_PUSH=1 git push\n\n'
+    exit 1
+  fi
+
+  # **Ein gelöschter Zweig überträgt nichts**, also gibt es nichts zu prüfen.
+  if [ "$lokale_sha" = "$nullsha" ]; then
+    continue
+  fi
+
+  if [ ! -f "$STEMPEL" ]; then
+    abweisen \
+      'Für diesen Stand ist die Pipeline nicht gelaufen.' \
+      '' \
+      '  make ci && git push' \
+      '' \
+      'Sie läuft **vor** dem Push und nicht darin: git öffnet die Verbindung' \
+      'zum Remote, bevor es diesen Hook ruft, und zehn Minuten später ist sie' \
+      'geschlossen (#1389).'
+  fi
+
+  read -r gestempelte_sha baumstand < "$STEMPEL" || true
+
+  # **Ein Tag wird auf seinen Commit aufgelöst** — Befund 4 des Nachlaufs
+  # über die Phasen 4.0 bis 4.9.
+  #
+  # Bei einem **annotierten** Tag ist die Kennung auf der Refzeile die des
+  # Tag-Objekts. `git rev-parse v0.3.0` gibt `d64a565a…`, `…^{commit}`
+  # dagegen `c89375f6…` — zwei Kennungen für denselben Stand. Der Stempel
+  # trägt die des Commits, und der Vergleich wies damit genau den Weg ab, den
+  # `docs/RELEASE.md` vorschreibt: `git tag -s … && git push origin …`.
+  #
+  # **Die Zusage bleibt dieselbe**: geprüft wird der Commit, auf den der Tag
+  # zeigt — ein ungestempelter Stand kommt auch als Tag nicht durch.
+  gepruefte_sha="$(git rev-parse --quiet --verify "${lokale_sha}^{commit}" 2>/dev/null || printf '%s' "$lokale_sha")"
+
+  if [ "$gestempelte_sha" != "$gepruefte_sha" ]; then
+    abweisen \
+      "Der Stempel gilt für ${gestempelte_sha:0:12}, gepusht wird ${gepruefte_sha:0:12}." \
+      '' \
+      '  make ci && git push'
+  fi
+
+  if [ "$baumstand" != "sauber" ]; then
+    abweisen \
+      'Die Pipeline lief über einen geänderten Arbeitsbaum — was grün war,' \
+      'ist nicht dieser Commit.' \
+      '' \
+      '  git add -A && git commit && make ci && git push'
+  fi
+
+  # **Und der Baum muss jetzt noch sauber sein.** Zwischen Lauf und Push kann
+  # jemand etwas geändert haben; dann sagt der Stempel etwas über einen Stand,
+  # den es nicht mehr gibt.
+  if [ -n "$(git status --porcelain)" ]; then
+    abweisen \
+      'Seit dem grünen Lauf hat sich der Arbeitsbaum geändert.' \
+      '' \
+      '  make ci && git push'
+  fi
+done
+
+printf '\n\033[32mpre-push: Pipeline war grün für diesen Stand — Push freigegeben\033[0m\n\n'
+exit 0

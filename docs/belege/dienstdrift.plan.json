@@ -1,0 +1,29 @@
+{
+  "lauf": "dienstdrift",
+  "tag": "dienstdrift",
+  "beleg": "docs/belege/dienstdrift.json",
+  "roh": ".laufbeleg/dienstdrift.jsonl",
+  "frist": "720h",
+  "zeitlimit": "1800s",
+  "misst": [
+    "internal/scryfall/",
+    "internal/mtgjson/",
+    "internal/mtgjsonpreise/",
+    "internal/mtgapi/",
+    "internal/netz/",
+    "go.mod",
+    "go.sum",
+    "internal/storage/migrationen/*",
+    "internal/storage/grundlinie/*",
+    "internal/aktualisierung/freigabeschluessel.asc",
+    "internal/app/sprachvorlage.json",
+    "internal/domain/schalterwege.json"
+  ],
+  "eingaben": [],
+  "schalter": {},
+  "ohneWirkung": {},
+  "trend": {
+    "internal/scryfall.TestHundertDruckeInWenigerAlsFuenfSekunden": "misst eine Zeit gegen einen fremden Dienst — sie hängt am Netz und an der Last dort; der Fall muss laufen, rot darf er sein"
+  },
+  "optional": {}
+}

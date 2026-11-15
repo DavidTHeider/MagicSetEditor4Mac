@@ -1,0 +1,50 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "card_symbol",
+      "symbol": "{W}",
+      "loose_variant": "W",
+      "english": "one white mana",
+      "transposable": false,
+      "represents_mana": true,
+      "mana_value": 1,
+      "appears_in_mana_costs": true,
+      "funny": false,
+      "colors": ["W"],
+      "hybrid": false,
+      "phyrexian": false,
+      "gatherer_alternates": ["oW", "ooW"],
+      "svg_uri": "https://beispiel.invalid/symbole/W.svg"
+    },
+    {
+      "object": "card_symbol",
+      "symbol": "{T}",
+      "loose_variant": null,
+      "english": "tap this permanent",
+      "transposable": false,
+      "represents_mana": false,
+      "mana_value": null,
+      "appears_in_mana_costs": false,
+      "funny": false,
+      "colors": [],
+      "hybrid": false,
+      "phyrexian": false,
+      "gatherer_alternates": null,
+      "svg_uri": null
+    },
+    {
+      "object": "card_symbol",
+      "symbol": "{20}",
+      "english": "twenty generic mana",
+      "represents_mana": true,
+      "mana_value": 20,
+      "appears_in_mana_costs": false,
+      "funny": false,
+      "colors": [],
+      "hybrid": false,
+      "phyrexian": false
+    }
+  ]
+}

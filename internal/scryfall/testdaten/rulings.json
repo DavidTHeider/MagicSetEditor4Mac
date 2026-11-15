@@ -1,0 +1,20 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "ruling",
+      "oracle_id": "00000000-0000-4000-8000-000000000001",
+      "source": "wotc",
+      "published_at": "2004-10-04",
+      "comment": "Der Prüfstein zählt nur Karten, die zu Beginn des Zuges liegen."
+    },
+    {
+      "object": "ruling",
+      "oracle_id": "00000000-0000-4000-8000-000000000001",
+      "source": "scryfall",
+      "published_at": "2021-07-23",
+      "comment": "In Duel Commander gilt dieselbe Zählung."
+    }
+  ]
+}

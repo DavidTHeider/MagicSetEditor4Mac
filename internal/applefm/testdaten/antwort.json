@@ -1,0 +1,1 @@
+{"object":"chat.completion","model":"system","choices":[{"finish_reason":"stop","message":{"content":"{\"name\": \"Funkenschmied\", \"flavor\": \"Aus Glut wird Werkzeug, aus Werkzeug wird Legende.\"}","refusal":null,"role":"assistant"},"index":0}],"created":1791059602,"usage":{"completion_tokens":27,"total_tokens":101,"prompt_tokens":74},"id":"chatcmpl-probe-1"}

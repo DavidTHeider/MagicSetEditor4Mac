@@ -1,0 +1,137 @@
+# Hüllenprobe: uirevue
+
+**1 Befund(e)** — Commit `c6922a460`,
+2026-10-16 16:49 UTC, Mac17,3, macOS 27.0.1,
+das Bündel aus `scripts/bauen.sh abnahme`, gestartet über LaunchServices.
+Lauf `2026-10-16T16-48-10Z-49591`, Bauabdruck `4e6baf5cd713`.
+
+- normal: {"X":95,"Y":119,"B":1280,"H":800}
+- ✓ Gegenprobe: ein benannter Roller mit Tabstelle rollt mit der Pfeiltaste — {"name":"Gegenprobe","benannt":true,"fokussierbar":true,"bewegt":true}
+- ✓ Gegenprobe: ein Roller ohne Namen und Tabstelle fällt auf, auch mit einem Knopf darin — [{"name":"div","benannt":false,"fokussierbar":false,"bewegt":false}]
+- Die Palette nennt 25 Seiten: Start · Sets · Pakete · Vorlagen · Sammlung · Decks · Turniere · Spielen · Handeln · Hilfe · Einstellungen · Nutzer und Profile · Karten · Bilder · Suche · Ersetzen · Stil · Symbol · Setangaben · Schlüsselwörter · Statistik · Zufallspack · Ausgeben · Druckbogen · Konsole
+- ✓ ⌘Q beendet die Anwendung (normal)
+- eng: {"X":223,"Y":152,"B":1024,"H":700}
+- Die Palette nennt 25 Seiten: Start · Sets · Pakete · Vorlagen · Sammlung · Decks · Turniere · Spielen · Handeln · Hilfe · Einstellungen · Nutzer und Profile · Karten · Bilder · Suche · Ersetzen · Stil · Symbol · Setangaben · Schlüsselwörter · Statistik · Zufallspack · Ausgeben · Druckbogen · Konsole
+- ✓ ⌘Q beendet die Anwendung (eng)
+
+**Die Tabelle**
+
+- | Größe | Ziel | Bedienelemente (im Bild) | Hauptknöpfe (je Region höchstens) | Felder (im Bild) | Überschriften | Rolltiefe | waagerecht |
+- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |
+- | normal | Start | 7 (7) | 1 (1) | 0 (0) | 3 | 1 | nein |
+- | normal | Sets | 12 (12) | 3 (1) | 3 (3) | 4 | 1 | nein |
+- | normal | Pakete | 10 (7) | 1 (1) | 4 (4) | 3 | 1.3 | nein |
+- | normal | Vorlagen | 17 (8) | 0 (0) | 1 (1) | 2 | 1 | nein |
+- | normal | Sammlung | 8 (8) | 1 (1) | 0 (0) | 3 | 1 | nein |
+- | normal | Decks | 12 (12) | 2 (1) | 0 (0) | 4 | 1 | nein |
+- | normal | Turniere | 3 (3) | 1 (1) | 0 (0) | 1 | 1 | nein |
+- | normal | Spielen | 6 (6) | 1 (1) | 0 (0) | 2 | 1 | nein |
+- | normal | Handeln | 6 (6) | 1 (1) | 0 (0) | 2 | 1 | nein |
+- | normal | Hilfe | 13 (13) | 0 (0) | 1 (1) | 3 | 1.8 | nein |
+- | normal | Einstellungen | 19 (16) | 0 (0) | 6 (5) | 2 | 1.4 | nein |
+- | normal | Nutzer und Profile | 13 (11) | 2 (1) | 9 (9) | 4 | 1.2 | nein |
+- | normal | Karten | 23 (18) | 3 (1) | 8 (8) | 6 | 1.2 | nein |
+- | normal | Bilder | 9 (8) | 2 (1) | 12 (10) | 3 | 1.4 | nein |
+- | normal | Suche | 10 (10) | 2 (1) | 6 (6) | 3 | 1 | nein |
+- | normal | Ersetzen | 8 (8) | 2 (1) | 4 (4) | 1 | 1 | nein |
+- | normal | Stil (Schublade) | 5 (5) | 0 (0) | 1 (1) | 3 | 1.2 | nein |
+- | normal | Symbol (Schublade) | 16 (13) | 1 (1) | 0 (0) | 4 | 1.5 | nein |
+- | normal | Setangaben (Schublade) | 7 (7) | 0 (0) | 2 (2) | 2 | 1.2 | nein |
+- | normal | Schlüsselwörter (Schublade) | 7 (7) | 0 (0) | 0 (0) | 2 | 1.2 | nein |
+- | normal | Statistik (Schublade) | 4 (4) | 0 (0) | 1 (1) | 3 | 1.2 | nein |
+- | normal | Zufallspack (Schublade) | 7 (7) | 1 (1) | 2 (2) | 2 | 1.2 | nein |
+- | normal | Ausgeben | 9 (8) | 2 (1) | 12 (10) | 3 | 1.4 | nein |
+- | normal | Druckbogen | 8 (7) | 2 (1) | 11 (11) | 4 | 1.4 | nein |
+- | normal | Konsole (Schublade) | 9 (9) | 1 (1) | 1 (1) | 3 | 1.2 | nein |
+- | eng | Start | 7 (7) | 1 (1) | 0 (0) | 3 | 1 | nein |
+- | eng | Sets | 12 (12) | 3 (1) | 3 (3) | 4 | 1 | nein |
+- | eng | Pakete | 10 (7) | 1 (1) | 4 (4) | 3 | 1.3 | nein |
+- | eng | Vorlagen | 17 (7) | 0 (0) | 1 (1) | 2 | 1 | nein |
+- | eng | Sammlung | 8 (8) | 1 (1) | 0 (0) | 3 | 1 | nein |
+- | eng | Decks | 12 (10) | 2 (1) | 0 (0) | 4 | 1 | nein |
+- | eng | Turniere | 3 (3) | 1 (1) | 0 (0) | 1 | 1 | nein |
+- | eng | Spielen | 6 (6) | 1 (1) | 0 (0) | 2 | 1 | nein |
+- | eng | Handeln | 6 (6) | 1 (1) | 0 (0) | 2 | 1.1 | nein |
+- | eng | Hilfe | 13 (13) | 0 (0) | 1 (1) | 3 | 2.5 | nein |
+- | eng | Einstellungen | 19 (13) | 0 (0) | 6 (4) | 2 | 1.7 | nein |
+- | eng | Nutzer und Profile | 13 (10) | 2 (1) | 9 (0) | 4 | 1.8 | nein |
+- | eng | Karten | 23 (18) | 3 (1) | 8 (7) | 6 | 1.2 | nein |
+- | eng | Bilder | 9 (8) | 2 (1) | 12 (8) | 3 | 1.8 | nein |
+- | eng | Suche | 10 (10) | 2 (1) | 6 (6) | 3 | 1.1 | nein |
+- | eng | Ersetzen | 8 (8) | 2 (1) | 4 (4) | 1 | 1 | nein |
+- | eng | Stil (Schublade) | 5 (5) | 0 (0) | 1 (1) | 3 | 1.3 | nein |
+- | eng | Symbol (Schublade) | 16 (13) | 1 (1) | 0 (0) | 4 | 1.7 | nein |
+- | eng | Setangaben (Schublade) | 7 (7) | 0 (0) | 2 (2) | 2 | 1.2 | nein |
+- | eng | Schlüsselwörter (Schublade) | 7 (7) | 0 (0) | 0 (0) | 2 | 1.2 | nein |
+- | eng | Statistik (Schublade) | 4 (4) | 0 (0) | 1 (1) | 3 | 1.2 | nein |
+- | eng | Zufallspack (Schublade) | 7 (7) | 1 (1) | 2 (2) | 2 | 1.2 | nein |
+- | eng | Ausgeben | 9 (8) | 2 (1) | 12 (8) | 3 | 1.8 | nein |
+- | eng | Druckbogen | 8 (7) | 2 (1) | 11 (8) | 4 | 1.7 | nein |
+- | eng | Konsole (Schublade) | 9 (9) | 1 (1) | 1 (1) | 3 | 1.2 | nein |
+- ✓ jede Seite gemessen — 50 von 50
+- ✓ R1: höchstens ein Hauptknopf je Region
+
+**Gefüllt im Bild, mit Namen**
+
+- normal · Start: Weiter an Set „Werkstatt-Testkarten“
+- normal · Sets: + Neues Set · Kacheln · Weiter
+- normal · Pakete: Paket beziehen …
+- normal · Vorlagen: keiner
+- normal · Sammlung: + Aufnehmen …
+- normal · Decks: Partie anfangen · Deck anlegen
+- normal · Turniere: + Turnier anlegen …
+- normal · Spielen: Zu den Decks
+- normal · Handeln: + Identität anlegen
+- normal · Hilfe: keiner
+- normal · Einstellungen: keiner
+- normal · Nutzer und Profile: + Profil anlegen … · ⤓ Angaben sichern
+- normal · Karten: Ausgeben · + Karte anlegen · Normal
+- normal · Bilder: Ausgeben
+- normal · Suche: Ausgeben · Nachschlagen
+- normal · Ersetzen: Ausgeben · Zeigen, was sich ändert
+- normal · Stil: keiner
+- normal · Symbol: keiner
+- normal · Setangaben: keiner
+- normal · Schlüsselwörter: keiner
+- normal · Statistik: keiner
+- normal · Zufallspack: Ziehen
+- normal · Ausgeben: Ausgeben
+- normal · Druckbogen: Ausgeben
+- normal · Konsole: Auswerten
+- eng · Start: Weiter an Set „Werkstatt-Testkarten“
+- eng · Sets: + Neues Set · Kacheln · Weiter
+- eng · Pakete: Paket beziehen …
+- eng · Vorlagen: keiner
+- eng · Sammlung: + Aufnehmen …
+- eng · Decks: Partie anfangen · Deck anlegen
+- eng · Turniere: + Turnier anlegen …
+- eng · Spielen: Zu den Decks
+- eng · Handeln: + Identität anlegen
+- eng · Hilfe: keiner
+- eng · Einstellungen: keiner
+- eng · Nutzer und Profile: + Profil anlegen …
+- eng · Karten: Ausgeben · + Karte anlegen · Normal
+- eng · Bilder: Ausgeben
+- eng · Suche: Ausgeben · Nachschlagen
+- eng · Ersetzen: Ausgeben · Zeigen, was sich ändert
+- eng · Stil: keiner
+- eng · Symbol: keiner
+- eng · Setangaben: keiner
+- eng · Schlüsselwörter: keiner
+- eng · Statistik: keiner
+- eng · Zufallspack: Ziehen
+- eng · Ausgeben: Ausgeben
+- eng · Druckbogen: Ausgeben
+- eng · Konsole: Auswerten
+- ✗ R1 je Blick: höchstens ein gefüllter Hauptknopf im Bild, kein gewählter Umschalter gefüllt — normal/Sets: 3 gefüllt im Bild (+ Neues Set, Kacheln, Weiter); normal/Sets: gewählt und gefüllt (Kacheln); normal/Decks: 2 gefüllt im Bild (Partie anfangen, Deck anlegen); normal/Nutzer und Profile: 2 gefüllt im Bild (+ Profil anlegen …, ⤓ Angaben sichern); normal/Karten: 3 gefüllt im Bild (Ausgeben, + Karte anlegen, Normal); normal/Karten: gewählt und gefüllt (Normal); normal/Suche: 2 gefüllt im Bild (Ausgeben, Nachschlagen); normal/Ersetzen: 2 gefüllt im Bild (Ausgeben, Zeigen, was sich ändert); eng/Sets: 3 gefüllt im Bild (+ Neues Set, Kacheln, Weiter); eng/Sets: gewählt und gefüllt (Kacheln); eng/Decks: 2 gefüllt im Bild (Partie anfangen, Deck anlegen); eng/Karten: 3 gefüllt im Bild (Ausgeben, + Karte anlegen, Normal); eng/Karten: gewählt und gefüllt (Normal); eng/Suche: 2 gefüllt im Bild (Ausgeben, Nachschlagen); eng/Ersetzen: 2 gefüllt im Bild (Ausgeben, Zeigen, was sich ändert)
+- Satz: /Users/david/mse-arbeit/w28/docs/belege/ap3/uirevue-seiten-vorher.json
+- ✓ R2: höchstens 20 Bedienelemente im Bild
+- ✓ R3: höchstens 12 Felder gezeichnet
+- ✓ R4: Rolltiefe höchstens 2,5
+- ✓ R6: höchstens 200 gezeichnete Bedienelemente
+- ✓ R5: keine Seite rollt waagerecht
+- innen waagerecht: keiner
+- ✓ R5: was innen waagerecht rollt, ist benannt, nimmt den Fokus und rollt mit der Pfeiltaste
+- ✓ die echten Orte dieses Rechners blieben unberührt
+- ✓ die echten Orte ließen sich vollständig lesen
+- ✓ die Schutzrichtlinie wies nichts ab, was das Drehbuch braucht

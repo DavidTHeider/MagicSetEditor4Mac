@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Die Faser des Pergaments, dunkles Erscheinungsbild — Werkstück J von Phase 4.10
+  (#1325).
+
+  Eine Farbe allein macht kein Pergament: ein Blatt hat Korn, und ein altes hat
+  Flecken. Beides steht hier als EINE Kachel aus zwei Rauschfeldern — das feine
+  (baseFrequency 0.9) ist die Faser, das grobe (0.015) die Alterung;
+  feComposite mischt sie 80 zu 20.
+
+  SIE HELLT NUR AUF, und deutlich schwächer als ihr helles Gegenstück. Der
+  Grund ist gemessen und nicht geschmacklich: auf einem Grund mit Leuchtdichte
+  0,015 vervierfacht schon ein Zehntel Deckkraft die Helligkeit. Beim ersten
+  Anlauf mit derselben Stärke wie hell fiel `leise` von 6,99 auf 2,70 — unter
+  die Schranke von 4,5 —, und das Erscheinungsbild war kein dunkles mehr,
+  sondern ein mittleres Graubraun.
+
+  DIE KURVE IST OBEN ABGESCHNITTEN, und das ist der Kern der Datei. Die
+  feColorMatrix spreizt das Rauschen über den ganzen Bereich; der
+  feComponentTransfer bildet es dann auf die Deckkraft ab — und seine beiden
+  letzten Stützstellen sind gleich. Damit hat die Kachel ein BEKANNTES Maximum
+  von 7,8 % Deckkraft, während die Struktur darunter erhalten bleibt.
+
+  Ohne die Klemmung geht beides nicht zugleich. Am 2026-09-03 nachgemessen:
+  eine Kurve, die kräftig genug für den richtigen Eindruck war, riss acht von
+  sechzehn Kontrastpaaren; eine, die alle hielt, war fast unsichtbar. Erst die
+  Klemmung trennt die zwei Fragen — wie stark die Struktur ist, und wie weit
+  sie im Extremfall geht.
+
+  GEMESSEN, NICHT GESCHÄTZT: `node scripts/pergamentmass.mjs` legt die Kachel
+  über jede Grundfarbe und rechnet den Kontrast am ungünstigsten der 810.000
+  Bildpunkte. Die Zahlen stehen in docs/KONTRASTE.md. Wer eine Zahl hier
+  ändert, misst neu — sonst behauptet die Datei etwas, das nicht mehr gilt.
+
+  Als Datei und nicht als data:-URI in stil.css: hier ist Platz für diesen
+  Text. Ein data:-URI wäre eine Zeile ohne Umbruch, die niemand liest.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900">
+  <filter id="faser" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="11" result="fein"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="4" seed="3" result="grob"/>
+    <feComposite in="fein" in2="grob" operator="arithmetic" k1="0" k2="0.8" k3="0.2" k4="0" result="misch"/>
+    <feColorMatrix in="misch" type="matrix" values="0 0 0 0 0.85
+                                                    0 0 0 0 0.72
+                                                    0 0 0 0 0.5
+                                                    1.25 1.25 1.25 0 -1.5"/>
+    <feComponentTransfer>
+      <feFuncA type="table" tableValues="0 0.022 0.045 0.065 0.078 0.078"/>
+    </feComponentTransfer>
+  </filter>
+  <rect width="900" height="900" filter="url(#faser)"/>
+</svg>

@@ -1,0 +1,19 @@
+{
+  "bauabdruck": "43e643558f165741bedc789de4427e14e368a8b19da4d9bdf52a54889edbd3b1",
+  "erhoben": "2026-10-20T11:20:03.453Z",
+  "fenster": "1440 × 900",
+  "wege": [
+    {
+      "weg": "H1",
+      "eingang": "bereich",
+      "art": "maus",
+      "handlungen": 13,
+      "sichtwechsel": 3,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 6766,
+      "wirkung": true,
+      "bedingt": []
+    }
+  ]
+}

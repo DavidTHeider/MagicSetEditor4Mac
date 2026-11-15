@@ -1,0 +1,292 @@
+// The texts of the **trading** area — Werkstück T9 von Phase 5.6
+// (#1474).
+//
+// **Ein eigener Katalog und keine Zeilen mehr in `seitentechnik.ts`.** Der
+// Abgleich, die Post und die Verbuchung standen dort, weil es den Bereich
+// noch nicht gab — ihre eigenen Kommentare sagen es. Jetzt gibt es ihn, und
+// ein Text über das Handeln unter „Technik" wäre eine Fundstelle, die
+// niemand sucht.
+
+import { handelsliste } from './handelsliste'
+import { handelsassistent } from './handelsassistent'
+
+export const handeln = {
+  liste: handelsliste,
+  assistent: handelsassistent,
+  titel: 'トレード',
+  erklaerung:
+    '確認済みの相手とトレードします。計算はすべてこのコンピュータ上で行われ、外部に送信する内容はあなたが決めます。',
+  gebiete: 'トレードの領域',
+  gebietPartner: '相手',
+  gebietMarkt: '価値',
+  neuerTausch: '新しいトレード…',
+  neuerTauschTitel: '新しいトレード',
+  partnerTitel: '確認済みのピア',
+  partnerErklaerung:
+    'トレードできるのは、コードを照合したピアだけです。ピアを選ぶとトレードが開きます。招待と確認は下のボックスで行います。',
+  partnerLeer:
+    '確認済みのピアはまだいません。下のボックスで招待コードを交換し、数字を照合してください。',
+  partnerWaehlen: '開く',
+  partnerWaehlenName: '{name} を開く',
+  partnerOffen: '開いています',
+  partnerOffenName: '{name} を開いています',
+  partnerKeiner: '左でトレードを選ぶか、「新しいトレード…」で始めてください。',
+  marktTitel: 'コレクションの価値',
+  marktErklaerung:
+    'マーケットでの観測値は約束ではありません。他の場所でいくらで求められたかを示すだけで、いくらで取引できるかを示すものではありません。各数値の出典と経過時間は数値の横に表示されます。表示がない場合は、その数値自体がありません。',
+  vorgangTitel: '開始から引き渡しまでのトレード',
+  vorgangErklaerung:
+    'ここで契約が進みます：開始、オファー、同意、準備、引き渡し。**コレクションは動きません**。記帳は「記帳」で行い、そのときにこのプログラムがもう一度確認します。',
+  wahlTitel: 'どのトレードか',
+  wahlNeu: '新しいトレード',
+  wahlNeuZusatz: '識別子は、開始するときにプログラムが割り当てます。',
+  wahlEintrag: '{zustand} · リビジョン {revision} · {positionen}',
+  wahlLeer: 'この相手とのトレードはまだありません。',
+  wahlFachleute: '識別子でトレードを開く',
+  wahlFachleuteErklaerung:
+    'すべてのトレードには**識別子**があります。トレードを開始するときにプログラムが割り当て、そのトレードに関するすべてのメッセージに含まれます。まだ上に表示されていないトレード（最初のメッセージがまだ届いていない場合など）は、この識別子でここから開けます。',
+  wahlKennung: 'トレードの識別子',
+  wahlOeffnen: '開く',
+  wahlGewaehlt: '選択中のトレード：{kennung}',
+  vorgangOhneKennung: '上でトレードを選択するか、新しく開始してください。',
+  vorgangAnsehen: '状態を表示',
+  vorgangFachleute: 'バージョンとフィンガープリント付きで状態を表示',
+  vorgangEroeffnen: '開始',
+  vorgangVorschlagen: '新たに提案',
+  vorgangRevision: 'バージョン',
+  vorgangAbdruck: 'フィンガープリント',
+  vorgangParteien: '当事者',
+  vorgangZustimmungen: 'これまでに同意した人',
+  vorgangKeine: 'まだ誰もいません。',
+  vorgangDu: 'あなた',
+  vorgangEnde: 'ここから先には進めません。',
+  vorgangArt: '種類',
+  arten: {
+    teilen: '共有',
+    deckleihe: 'デッキの貸し出し',
+    tausch: '交換',
+    markt: 'マーケット',
+  },
+  artOhneBestand:
+    'このトレードではコレクションは動きません。記帳されるのは交換だけです。',
+  vorgangVereinbarung:
+    'お互いの意見が一致しました。これは**合意**です。カードが持ち主を変えるのは引き渡しのときで、双方が記帳して初めてカウントされます。',
+  vorgangSchritte: 'ステップ',
+  schrittAnbieten: 'オファー',
+  schrittGegenangebot: 'カウンターオファー',
+  schrittZustimmen: '同意',
+  schrittVorbereiten: '準備',
+  schrittUebergeben: '引き渡しを確認',
+  schrittAblehnen: '辞退',
+  schrittAbbrechen: 'キャンセル',
+  schrittAblaufen: '期限切れ',
+  schrittKlaeren: '確認が必要としてマーク',
+  positionTitel: 'やり取りされるカード',
+  positionVon: '提供元',
+  positionVonIch: 'あなたから',
+  positionVonGegenueber: 'ピアから',
+  positionPrinting: '版',
+  kennungVonHand: 'IDを手入力',
+  positionMenge: '枚数',
+  positionGuete: '状態',
+  positionSprache: '言語',
+  positionFinish: 'フィニッシュ',
+  positionHinzufuegen: '行を追加',
+  anschlussWartet:
+    '「{name}」がコレクションから追加されました。数量と提供元を確認すると、オファーに入ります。',
+  wunschTitel: 'デッキからのウィッシュリスト',
+  wunschWartet: 'デッキの {name}、まだ入力されていません：{liste}。',
+  wunschEintragen: '相手に求めるものとして追加',
+  anschlussOhnePartner:
+    '「{name}」が待機中です。「新しいトレード…」で相手を選択すると、その相手の行に入ります。',
+  preise: {
+    holen: '価格を取得',
+    abbrechen: '価格の取得を中止',
+    laeuft: '価格を取得中 … {gesamt} 件中 {fertig} 件',
+    fertig: '{zahl} 件の版の価格を取得しました。',
+    teils: '{gesamt} 件中 {zahl} 件の版に価格がありません: {meldung}',
+    abgebrochen:
+      '{gesamt} 件中 {fertig} 件で中止しました — 取得済みの価格は残ります。',
+  },
+  markttisch: {
+    neuTitel: '新しい取引の相手',
+    neuMit: '{name} と新しい取引',
+    meinFach: '自分の棚',
+    sammlung: '自分のコレクション',
+    wunschliste: 'ウィッシュリスト',
+    seinFach: '{name} の棚',
+    freigegeben:
+      '{name} が取引用に公開しているもの（開いたときに問い合わせ）。',
+    meinLeer: 'まだ何もありません。コピーはコレクションから入ります。',
+    wunschLeer:
+      'ウィッシュはありません。カードはコレクションでウィッシュになります。',
+    seinLeer: '公開されているものはありません。',
+    neuFragen: 'もう一度問い合わせる',
+    hinweis: 'ドラッグ、またはスペース・矢印・リターン。⌘ で複数選択。',
+    laedt: '問い合わせ中 …',
+    karte: '{zustand} · {sprache} · {menge}×',
+    ansicht: '表示',
+    alsTisch: 'テーブル表示',
+    alsListe: 'リスト表示',
+    fachSuchen: '棚の中を検索',
+    fachZaehlung: '{gesamt} 件中 {gezeigt} 件',
+    fachMehr: 'さらに表示',
+    fachKeinTreffer: 'この棚にその名前のカードはありません。',
+  },
+  zug: {
+    veraltet:
+      'その間に取引が変わりました。新しい状態を確認して、もう一度決めてください。',
+    vorbereitenUebergeben: '準備して引き渡す',
+    uebergebenVerbuchen: '引き渡して記帳',
+    anbietenZustimmen: 'オファーして同意',
+    buchungHinweis:
+      '「記帳」はそのあと照合を伝え、あなたの完了を確認します。{name}の確認は別に入力します。',
+    festhaltenOffen:
+      'どの個体を出すか決まっていません。「確保」で選んで、もう一度押してください。',
+    gescheitert: '{schritt}はできませんでした：{meldung}',
+    lesen: '記録されましたが、そのあと状態を読み込めませんでした：{meldung}',
+    ausgang:
+      'あなたの側では記録されましたが、送信トレイに入りませんでした：{meldung}',
+    unterwegs:
+      'あなたの側では記録されましたが、{name}にはまだ届いていません：{meldung}',
+    hinaus: '{name}に送信しました。',
+  },
+  sicht: {
+    titel: '相手が公開しているもの',
+    anfragen: '公開ビューを依頼',
+    laeuft: '接続経由で問い合わせ中 …',
+    zeilen: '公開行 {zahl} 件、うち求めている行 {wuensche} 件。',
+    keinVorschlag:
+      '一致するものはありません。こちらの欲しいものと向こうの提供が合いません。',
+    gibst: 'あなたが渡す',
+    bekommst: 'あなたが受け取る',
+    zeile: '{menge} × {name}',
+    uebernehmen: '提案を取り込む',
+    uebernommen: '取り込みました：{zahl} 行がオファーにあります。',
+  },
+  druck: {
+    eigen: '独自の版 · 画像なし',
+    ohneNamen: '名前のない版',
+    unbekannt: '不明な版',
+    bezug: '{code} #{nummer}',
+    laedt: '…',
+  },
+  positionEntfernen: '行を削除',
+  positionEntfernenName: '{nummer} 行目を削除',
+  positionLeer:
+    'まだ行がありません。項目のないオファーでは、何についてのものかがわかりません。',
+  positionVorbereitung:
+    'どのカードを渡すかは、「確保」で指定します。オファーで指定するのはコレクションの行ではなく、**版**です。',
+  zusagenTitel: '渡すカード',
+  zusagenErklaerung:
+    'オファーで指定するのはコレクションの行ではなく、**版**です。ここで、**どの**カードを渡すかを指定してください。指定しないと、記帳のときにどこから差し引くかがわかりません。',
+  zusagenWahl: '渡すカードを選択',
+  zusagenPosition: '{menge} × {name}',
+  zusagenZeile: '{lagerort} · {zustand} · {sprache} · {finish} · {stueck}',
+  zusagenOhneLagerort: '保管場所なし',
+  zusagenKeinExemplar: 'これに該当するカードはコレクションにありません。',
+  zusagenKeinePassende:
+    'この行の状態・言語・仕上げに合う行がコレクションにありません。コレクションに追加するか、合う値で取引に行を追加し直してください。',
+  zusagenFachleute: '識別子でコレクションの行を確保する',
+  zusagenFachleuteErklaerung:
+    '**コレクションの行**はコレクション内の1行で、その**バージョン**は変更のたびに増えます。どちらも上の選択にすでに含まれています。ここでは、上に表示されないカードなどのために、手入力で指定します。',
+  zusagenExemplar: 'どのコレクションの行か',
+  zusagenMenge: '数量',
+  zusagenFassung: '確認したバージョン',
+  zusagenFesthalten: '確保',
+  zusagenNachsehen: '確保済みを表示',
+  zusagenOhneVorgang:
+    '上でトレードを選択すると、そのために渡すものがここに表示されます。',
+  zusagenLeer: 'このトレードで確保されているものはありません。',
+  zusagenOffen: '確保済み',
+  zusagenUebergeben: '引き渡し済み',
+  ausgangTitel: 'ピアに送信される内容',
+  ausgangErklaerung:
+    '状態には署名が付けられ、**送信トレイ**に入ります。**今すぐ送信**を押すと、ピアへの回線が開かれ、待機中のものが送られます。ただし、ピアが確認するまでは送信トレイに残ります。',
+  ausgangSchicken: '送信トレイに入れる',
+  ausgangNachricht: 'メッセージの識別子',
+  ausgangWegraeumen: '届きました — 取り除く',
+  ausgangWegraeumenName: '届きました — 取り除く：{nachricht}',
+  ausgangFachleute: '識別子でメッセージを取り除く',
+  ausgangFachleuteErklaerung:
+    '送信トレイのメッセージにはそれぞれ**識別子**があります。切断後にまだ残っているものは、上に取り除くボタンとともに表示されます。ここでは、そこに表示されていないものを取り除きます。',
+  ausgangBestaetigen: '届いたものとして取り除く',
+  ausgangOhneVorgang: '上で、送信するトレードを選択してください。',
+  ausgangOhneNachricht: '先にメッセージの識別子を入力してください。',
+  ausgangWiederaufnahme: '切断後に確認',
+  ausgangZustellen: '今すぐ送信',
+  ausgangOhneGegenueber: '先に送信先を選択してください。',
+  ausgangGetragen: '{zahl} 件を送信しました。',
+  ausgangKlaerung:
+    '2つの異なる履歴があります。自動的には解決できません。お互いに話し合ってください。',
+  ausgangNachzuliefern: 'もう一度送信が必要',
+  ausgangLeer: '送信トレイにはありません。',
+  ausgangFolge: '順序',
+  tauschTitel: 'トレードできるもの',
+  tauschErklaerung:
+    'ピアから送られてきた内容（余剰カードと欲しいカード）を、ピアのプログラムが公開した状態のまま貼り付けてください。照合はこのコンピュータ上で行われ、外部には何も送信されません。',
+  tauschStand: 'ピアから送られてきた内容',
+  tauschAbgleichen: '照合',
+  tauschAusUmschlag: 'エンベロープから読み込む',
+  tauschUnlesbar: '公開されたスナップショットではありません。',
+  tauschLeer: '一致するものはありません。',
+  tauschGebe: 'あなたが渡すカード',
+  tauschBekomme: 'あなたが受け取るカード',
+  tauschVorschlag: '提案',
+  tauschOhneVorschlag:
+    '提案には、双方にカードが必要です。片方が何も渡さないトレードは、贈り物です。',
+  tauschBefunde: '比較できなかったもの',
+  postLeer: '送信中のものはありません。',
+  postOffen: '送信中',
+  postVersuche: '試行回数',
+  buchungTitel: 'トレードを記帳',
+  buchungErklaerung:
+    'カードが実際に持ち主を変えたら、ここにトレードを記録します。コレクションが更新され、ジャーナルにどこへ何が移ったかが記録されます。',
+  buchungVerbuchen: '記帳',
+  buchungAbgleichen: '照合を報告',
+  buchungEigeneStimme: '完了を確認する',
+  buchungBestaetigen: '相手側が確認済み',
+  buchungNochNicht:
+    '今は記帳するものがありません。引き渡しが確認されると記帳できます。',
+  buchungZustand: '状態',
+  buchungStandEntwurf: '下書き',
+  buchungStandAngeboten: 'オファー済み',
+  buchungStandVerhandlung: '交渉中',
+  buchungStandAngenommen: '同意済み',
+  buchungStandVorbereitet: '準備済み',
+  buchungStandUebergabeOffen: '引き渡しを確認済み',
+  buchungStandLokalVerbucht: 'あなた側で記帳済み',
+  buchungStandAbgleichOffen: '照合中',
+  buchungStandBeidseitigVerbucht: '双方で記帳済み',
+  buchungStandAbgelehnt: '辞退',
+  buchungStandAbgebrochen: 'キャンセル済み',
+  buchungStandAbgelaufen: '期限切れ',
+  buchungStandKlaerung: '確認が必要',
+  buchungBeleg: '記録',
+  buchungEinseitig: '署名したのはあなただけです。',
+  buchungBeidseitig: '双方が署名しました。',
+  buchungOhneGegenbeleg: '相手側の検証済みの記録は、まだありません。',
+  buchungGegenbeleg: '{wer} からの検証済みの記録（受信：{wann}）。',
+  buchungGegenbelegAbgewiesen:
+    '{wer} からの記録が {wann} に届きましたが、あなたの記録と一致しません — {mangel}',
+  buchungGegenbelegRat:
+    '{wer} とトレードを照合してください。一致する記録が届くと、このメッセージは置き換わります。',
+  gegenbelegMaengel: {
+    unterschrift: '署名が送信者のものではありません。',
+    vorgang: '別のトレードの記録です。',
+    revision: 'このトレードの別の状態の記録です。',
+    parteien: '別の当事者が記載されています。',
+    zeilen: '記帳されたカードが異なります。',
+  },
+  buchungJournal: '移動した内容',
+  buchungJournalLeer:
+    'このトレードについては、ジャーナルにまだ何もありません。',
+  kontoTitel: 'マーケットプレイスの自分のアカウント',
+  kontoErklaerung:
+    '**あなた**が出品しているものと、**あなた**が売買したものです。読み取りのみで、出品の作成、カートへの追加、購入、発送は一切行われません。この機能は**オフ**の状態から始まります。「設定」→「サービス」で、マーケットプレイス自体のオンに加えてオンにしてください。',
+  kontoNachsehen: '確認する',
+  kontoAngebote: '出品',
+  kontoBestellungen: '注文',
+  kontoBewegt: 'コレクションが動いた',
+  kontoBewegtNicht: 'コレクションは動かなかった',
+} as const

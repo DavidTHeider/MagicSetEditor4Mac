@@ -1,0 +1,1 @@
+{"object":"chat.completion","model":"system","choices":[{"finish_reason":"stop","message":{"content":"Diese Anfrage kann nicht bearbeitet werden.","refusal":null,"role":"assistant"},"index":0}],"created":1791059602,"usage":{"completion_tokens":15,"total_tokens":81,"prompt_tokens":66},"id":"chatcmpl-probe-2"}

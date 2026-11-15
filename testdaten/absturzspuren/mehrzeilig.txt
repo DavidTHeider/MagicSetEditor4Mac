@@ -1,0 +1,9 @@
+panic: frei
+	
+	hunter2
+	goroutine 7 [running]:
+	[signal SIGSEGV]
+
+goroutine 1 [running]:
+main.main()
+	spurgen/main.go:20 +0x3e8

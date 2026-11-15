@@ -1,0 +1,198 @@
+/* **Die Farbwelten** — UX-09.AK-01
+   (#1681):
+   *„Neben hellem/dunklem Pergament stehen klar unterscheidbare gut lesbare
+   Standards zur Verfügung."*
+
+   **Dieselben zehn Merkmale wie Pergament** (`stil.css`), je Farbwelt ein
+   helles und ein dunkles Bild, und keines davon trägt die Faser: sie ist die
+   Anmutung von Pergament und sonst von nichts.
+
+   **Jede Zahl ist gerechnet**: `themen.test.ts` liest diese Datei und prüft
+   dieselben Paare wie für Pergament — Text 4,5 : 1, Ränder 3 : 1 — und
+   dazu den ungünstigsten Bildpunkt unter dem Schleier des Fensterbilds.
+   Gemessen am gerenderten Element wird im WebKit (`ux09-gestaltung`); die
+   Zahlen stehen in `docs/KONTRASTE.md`.
+
+   **Hoher Kontrast sticht jede Farbwelt**: dann setzt `gestaltung.ts` gar
+   kein `data-farbwelt`, und es gilt die gemessene Tinte aus
+   `barrierefreiheit.css` — wer mehr Kontrast verlangt, bekommt ihn, gleich
+   welche Farbe er vorher gewählt hat.
+
+   **Der Tisch bleibt Holz**: seine sechs Töne stehen in `stil.css` und
+   halten ihre Kanten gegen jeden Untergrund (`docs/KONTRASTE.md`); eine
+   Farbwelt, die sie umfärbte, müsste das für jeden neu belegen. */
+@layer base {
+  :root {
+    /* **Der Schleier über dem Fensterbild**: so viel Grund liegt über
+       jedem Bildpunkt. 90 % halten Text **und die Farben der Meldungen**
+       über Schwarz wie über Weiß bei 4,5 : 1 — gerechnet in
+       `themen.test.ts`, für jede Farbwelt und für Pergament. Bei 88 % stand
+       die Warnung auf Pergament hell bei 4,45 (Nachlauf über Phase 6.3,
+       N4). */
+    --mse-schleier: 90%;
+  }
+
+  html[data-farbwelt='klar'] {
+    --mse-grund: #f4f4f5;
+    --mse-flaeche: #ffffff;
+    --mse-text: #18181b;
+    --mse-leise: #52525b;
+    --mse-kante: #71717a;
+    --mse-marke: #1d4ed8;
+    --mse-betont: #e4e4e7;
+    --mse-ring: #1d4ed8;
+    --mse-marketext: #ffffff;
+    --mse-warnung: #a51818;
+    --mse-faser: none;
+  }
+
+  html[data-farbwelt='klar'][data-erscheinungsbild='dunkel'] {
+    --mse-grund: #09090b;
+    --mse-flaeche: #18181b;
+    --mse-text: #fafafa;
+    --mse-leise: #a1a1aa;
+    --mse-kante: #8b8b93;
+    --mse-marke: #93c5fd;
+    --mse-betont: #27272a;
+    --mse-ring: #93c5fd;
+    --mse-marketext: #09090b;
+    --mse-warnung: #fca5a5;
+  }
+
+  html[data-farbwelt='schiefer'] {
+    --mse-grund: #e6ebf1;
+    --mse-flaeche: #f7f9fb;
+    --mse-text: #142030;
+    --mse-leise: #44536a;
+    --mse-kante: #617087;
+    --mse-marke: #1f3d63;
+    --mse-betont: #d8e0ea;
+    --mse-ring: #1f3d63;
+    --mse-marketext: #f7f9fb;
+    --mse-warnung: #9b1c1c;
+    --mse-faser: none;
+  }
+
+  html[data-farbwelt='schiefer'][data-erscheinungsbild='dunkel'] {
+    --mse-grund: #0e141b;
+    --mse-flaeche: #17202b;
+    --mse-text: #e5edf6;
+    --mse-leise: #9fb1c6;
+    --mse-kante: #7b8da3;
+    --mse-marke: #86b8ea;
+    --mse-betont: #212c39;
+    --mse-ring: #86b8ea;
+    --mse-marketext: #0e141b;
+    --mse-warnung: #f4a4a4;
+  }
+
+  html[data-farbwelt='moos'] {
+    --mse-grund: #e7eee2;
+    --mse-flaeche: #f7faf4;
+    --mse-text: #16231a;
+    --mse-leise: #46594a;
+    --mse-kante: #5d715e;
+    --mse-marke: #2b5a32;
+    --mse-betont: #dae5d3;
+    --mse-ring: #2b5a32;
+    --mse-marketext: #f7faf4;
+    --mse-warnung: #962714;
+    --mse-faser: none;
+  }
+
+  html[data-farbwelt='moos'][data-erscheinungsbild='dunkel'] {
+    --mse-grund: #0e150f;
+    --mse-flaeche: #172119;
+    --mse-text: #e5eee1;
+    --mse-leise: #a1b59e;
+    --mse-kante: #7c917a;
+    --mse-marke: #a2d392;
+    --mse-betont: #213024;
+    --mse-ring: #a2d392;
+    --mse-marketext: #0e150f;
+    --mse-warnung: #f2a78c;
+  }
+
+  /* **Folgt das Bild dem System und ist das System dunkel**, gilt dasselbe
+     dunkle Bild — ein zweites Mal geschrieben, weil ein Selektor nicht in
+     einen Medienblock und zugleich aus ihm heraus greifen kann.
+     `themen.test.ts` hält beide Blöcke gleich. */
+  @media (prefers-color-scheme: dark) {
+    html[data-farbwelt='klar']:not([data-erscheinungsbild]) {
+      --mse-grund: #09090b;
+      --mse-flaeche: #18181b;
+      --mse-text: #fafafa;
+      --mse-leise: #a1a1aa;
+      --mse-kante: #8b8b93;
+      --mse-marke: #93c5fd;
+      --mse-betont: #27272a;
+      --mse-ring: #93c5fd;
+      --mse-marketext: #09090b;
+      --mse-warnung: #fca5a5;
+    }
+
+    html[data-farbwelt='schiefer']:not([data-erscheinungsbild]) {
+      --mse-grund: #0e141b;
+      --mse-flaeche: #17202b;
+      --mse-text: #e5edf6;
+      --mse-leise: #9fb1c6;
+      --mse-kante: #7b8da3;
+      --mse-marke: #86b8ea;
+      --mse-betont: #212c39;
+      --mse-ring: #86b8ea;
+      --mse-marketext: #0e141b;
+      --mse-warnung: #f4a4a4;
+    }
+
+    html[data-farbwelt='moos']:not([data-erscheinungsbild]) {
+      --mse-grund: #0e150f;
+      --mse-flaeche: #172119;
+      --mse-text: #e5eee1;
+      --mse-leise: #a1b59e;
+      --mse-kante: #7c917a;
+      --mse-marke: #a2d392;
+      --mse-betont: #213024;
+      --mse-ring: #a2d392;
+      --mse-marketext: #0e150f;
+      --mse-warnung: #f2a78c;
+    }
+  }
+
+  /* **Das Fensterbild liegt auf dem Grund, unter einem Schleier** — UX-09.
+     AK-01.
+
+     **Auf jedem `.bg-grund` und am Bildschirm befestigt** (`fixed`): so
+     zeigt jede Fläche in Grundfarbe denselben Ausschnitt desselben Bildes,
+     statt es je Fläche neu einzupassen. Die Flächen (`bg-flaeche`) bleiben
+     deckend — dort steht das meiste, was man liest.
+
+     **Der Schleier ist die Zusage**: 90 % Grund über jedem Bildpunkt, damit
+     Text auf dem Grund lesbar bleibt, gleich was das Bild zeigt. Kennt der
+     WebKit `color-mix` nicht, ist die ganze Angabe ungültig, und es gilt
+     wieder die Farbe ohne Bild — der sichere Weg, nicht der lesbare Zufall. */
+  html[data-hintergrund] .bg-grund {
+    background-image:
+      linear-gradient(
+        color-mix(in srgb, var(--mse-grund) var(--mse-schleier), transparent),
+        color-mix(in srgb, var(--mse-grund) var(--mse-schleier), transparent)
+      ),
+      var(--mse-fensterbild);
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  html[data-hintergrund='fuellen'] .bg-grund {
+    background-size: auto, cover;
+    background-repeat: no-repeat;
+  }
+
+  html[data-hintergrund='einpassen'] .bg-grund {
+    background-size: auto, contain;
+    background-repeat: no-repeat;
+  }
+
+  html[data-hintergrund='kacheln'] .bg-grund {
+    background-size: auto, auto;
+    background-repeat: repeat;
+  }
+}

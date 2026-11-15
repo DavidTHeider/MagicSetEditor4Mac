@@ -1,0 +1,11 @@
+panic: erste hunter2
+	panic: zweite hunter2
+	fatal error: hunter2
+
+goroutine 1 [running]:
+main.main.func1()
+	spurgen/main.go:24 +0x2c
+panic({0x1021826b8?, 0x10216c048?})
+	runtime/panic.go:859 +0x120
+main.main()
+	spurgen/main.go:25 +0x3c0

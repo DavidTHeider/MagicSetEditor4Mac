@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "date": "2026-08-15",
+    "version": "5.2.2+20260815"
+  },
+  "data": {
+    "ZWE": {
+      "code": "ZWE",
+      "name": "Zweites Probeset",
+      "releaseDate": "2026-09-01",
+      "cards": [
+        {
+          "name": "Wandelnder Fels",
+          "manaCost": "{G}",
+          "types": ["Creature"],
+          "subtypes": ["Elemental"],
+          "power": "1",
+          "toughness": "1",
+          "rarity": "uncommon"
+        }
+      ]
+    },
+    "PRB": {
+      "code": "PRB",
+      "name": "Probeset",
+      "releaseDate": "2026-08-15",
+      "cards": [
+        {
+          "name": "Flammenball",
+          "manaCost": "{2}{R}",
+          "types": ["Instant"],
+          "rarity": "common"
+        }
+      ]
+    }
+  }
+}

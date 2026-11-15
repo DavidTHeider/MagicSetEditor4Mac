@@ -1,0 +1,63 @@
+# UX-08 (#1680) — NAT-01 und S15.NAT-01 bis -04 in WKWebView: eine
+# ausstehende Antwort ist kein leerer Bestand, ein Fehlschlag bietet den
+# nächsten Versuch, und was ankommt, steht ohne erneutes Öffnen da.
+#
+# **Die Verzögerung ist echt**: `window.__halte` hält den Ruf einer Bindung
+# über `fetch` zurück — denselben Weg, den die Wails-Laufzeit im Servermodus
+# nimmt — oder lässt ihn einmal scheitern. Gemessen vorher, am 2026-09-25 in
+# jsdom mit jeder Bindung unbeantwortet: „Noch kein Deck", „Noch kein
+# Turnier", „Du hast keine Partie", „Noch kein Paket zum Bearbeiten".
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+pruefe (window.__halte = (name, ms, fehler) => { const echt = window.__echtfetch || (window.__echtfetch = window.fetch.bind(window)); window.fetch = async (url, init) => { const inhalt = init && typeof init.body === 'string' ? init.body : ''; if (inhalt.includes('.' + name + '"')) { await new Promise((weiter) => setTimeout(weiter, ms)); if (fehler) { window.fetch = echt; return new Response(JSON.stringify({ kind: 'RuntimeError', message: fehler }), { status: 500, headers: { 'Content-Type': 'application/json' } }) } } return echt(url, init) }; return true }, window.__zur = (seite) => { const b = [...document.querySelectorAll('[role=dialog] button')].find((x) => x.getClientRects().length > 0 && x.innerText.trim() === seite); b.dataset.ziel = 'seite'; return true }, true)
+notiz Decks — die Liste wird vier Sekunden zurückgehalten
+pruefe window.__halte('Decks', 4000)
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe window.__zur('Decks')
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+wartetext Wird geladen …
+pruefe !document.body.innerText.includes('Noch kein Deck.')
+abzug decks-ausstehend
+notiz Die Antwort kommt — das Deck steht da, ohne dass jemand die Seite neu öffnet (S15.NAT-03)
+wartetext Probe-Deck
+pruefe !document.body.innerText.includes('Noch kein Deck.')
+pruefe !document.body.innerText.includes('Wird geladen …')
+abzug decks-angekommen
+pruefe (window.fetch = window.__echtfetch, true)
+notiz Turniere — die erste Antwort scheitert, der nächste Versuch trägt (S15.NAT-02)
+pruefe window.__halte('Turniere', 300, 'Probe: die Leitung ist weg')
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe window.__zur('Turniere')
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+wartetext Erneut laden
+pruefe !document.body.innerText.includes('Noch kein Turnier.')
+abzug turniere-fehlschlag
+klicketext Erneut laden
+notiz Ein leeres Ergebnis sagt, was als Nächstes dran ist
+wartetext Noch kein Turnier.
+pruefe !document.body.innerText.includes('Erneut laden')
+abzug turniere-leer
+notiz Vorlagen — die Paketliste wird vier Sekunden zurückgehalten
+pruefe window.__halte('Pakete', 4000)
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe window.__zur('Vorlagen')
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+wartetext Wird geladen …
+pruefe !document.body.innerText.includes('Noch kein Paket zum Bearbeiten')
+abzug vorlagen-ausstehend
+bis !document.body.innerText.includes('Wird geladen …')
+pruefe !document.body.innerText.includes('Noch kein Paket zum Bearbeiten')
+abzug vorlagen-angekommen
+pruefe (window.fetch = window.__echtfetch, true)
+notiz Und die Seite hat keinen Fehler geworfen
+gleich JSON.stringify(window.__probeFehler || []) => []

@@ -1,0 +1,20 @@
+﻿mse version: 2.0.0
+game: probe
+stylesheet: probe-stil
+set info:
+	title: Setweite Stiloptionen
+styling:
+	# ein Kommentar zwischen den Paketen
+	probe-probe-stil:
+		# und einer zwischen den Optionen
+		probe: setweit
+		andere option: zwei
+	probe-anders:
+		probe: falsch
+card:
+	name: Ohne eigene
+card:
+	name: Mit eigenen
+	has styling: true
+	styling data:
+		probe: karte

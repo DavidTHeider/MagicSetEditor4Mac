@@ -1,0 +1,76 @@
+# UX-10.AK-01 und AK-04 (#1682), S08.NAT-02 (#1680) — der Aktionskatalog in WKWebView.
+#
+# Was ein DOM-Test nicht zeigt: dass das Zeichen vor der Aufschrift steht und
+# die Bedeutung beim Fokus als Tooltip erscheint, dass ein Löschen an der
+# Klickstelle fragt und den Fokus danach dem Auslöser zurückgibt — und dass
+# die Meldung eines gescheiterten Sicherns über einer fremden Seite nicht
+# steht, zurück beim Set aber wieder.
+#
+# Gelöscht wird hier nichts: die Frage wird abgebrochen, und das Sichern
+# scheitert, weil die Probe die Antwort ersetzt — die Abnahmen teilen sich
+# einen Bestand.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+pruefe (window.__halte = (name, ms, fehler) => { const echt = window.__echtfetch || (window.__echtfetch = window.fetch.bind(window)); window.fetch = async (url, init) => { const inhalt = init && typeof init.body === 'string' ? init.body : ''; if (inhalt.includes('.' + name + '"')) { await new Promise((weiter) => setTimeout(weiter, ms)); if (fehler) { window.fetch = echt; return new Response(JSON.stringify({ kind: 'RuntimeError', message: fehler }), { status: 500, headers: { 'Content-Type': 'application/json' } }) } } return echt(url, init) }; return true }, window.__zur = (seite) => { const b = [...document.querySelectorAll('[role=dialog] button')].find((x) => x.getClientRects().length > 0 && x.innerText.trim() === seite); b.dataset.ziel = 'seite'; return true }, window.__band = () => document.querySelector('[role=status][aria-label="Meldungen des Fensters"]').innerText.trim(), true)
+notiz Sammlung — der Löschknopf trägt sein Zeichen, und das Zeichen ist stumm
+# **Bis AP-6 (#2363) maß das die Decks-Seite**: dort stehen Umbenennen und
+# Löschen seither im Menü »…«, und ein Menüeintrag trägt das Zeichen, aber
+# keinen Tooltip. Der Inspector der Sammlung trägt beide als Knöpfe.
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe window.__zur('Sammlung')
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+bis [...document.querySelectorAll('main [role=grid][aria-label="Exemplare"] [role=gridcell][title]')].some((z) => z.checkVisibility())
+pruefe ([...document.querySelectorAll('main [role=grid][aria-label="Exemplare"] [role=gridcell][title]')].find((z) => z.checkVisibility()).dataset.ziel = 'zeile', true)
+klicke [data-ziel="zeile"]
+bis [...document.querySelectorAll('aside[aria-label="Exemplar"] button[data-aktion="loeschen"]')].some((b) => b.checkVisibility())
+pruefe ([...document.querySelectorAll('aside[aria-label="Exemplar"] button[data-aktion="loeschen"]')].find((b) => b.checkVisibility()).dataset.ziel = 'loeschen', true)
+gleich document.querySelector('[data-ziel="loeschen"] > [aria-hidden="true"]').textContent => ✕
+gleich document.querySelector('[data-ziel="loeschen"] > span:not([aria-hidden])').textContent => Löschen
+gleich document.getElementById(document.querySelector('[data-ziel="loeschen"]').getAttribute('aria-describedby')).textContent => Löscht es endgültig, überall.
+zeige 'Anlegen: ' + [...document.querySelectorAll('button[data-aktion="anlegen"]')].filter((b) => b.checkVisibility()).map((b) => b.innerText.replace(/\s+/g, ' ').trim()).join(' | ')
+notiz Die Frage steht an der Klickstelle, der Fokus auf dem Abbrechen — Escape schließt sie und gibt den Fokus zurück
+# **Während die Frage steht, ruht der Knopf** (`Sammlungsinspector.tsx`) —
+# danach steht ein neuer da; geprüft wird deshalb seine Handlung und nicht
+# die Marke am alten.
+klicke [data-ziel="loeschen"]
+warte [role=group]
+gleich document.activeElement.innerText.trim() => Abbrechen
+abzug sammlung-rueckfrage
+taste escape
+pruefe !document.querySelector('[role=group] button') || ![...document.querySelectorAll('[role=group]')].some((g) => g.innerText.includes('Abbrechen'))
+bis document.activeElement.dataset.aktion === 'loeschen'
+notiz Mit der Tastatur: der Tooltip erscheint beim Fokus
+taste shift+tab
+taste tab
+bis document.activeElement.dataset.aktion === 'loeschen'
+bis document.getElementById(document.activeElement.getAttribute('aria-describedby')).checkVisibility()
+abzug sammlung-tooltip
+notiz Ein Set öffnen, das Sichern scheitern lassen — die Meldung nennt Vorgang und Set
+taste cmd+2
+wartetext Werkstatt-Testkarten
+klicketext Werkstatt-Testkarten
+wartetext Wie viel du siehst
+pruefe window.__halte('SetSpeichern', 0, 'Eintrag nicht gefunden.')
+taste cmd+s
+bis window.__band().includes('wurde nicht gesichert')
+zeige window.__band()
+pruefe window.__band().includes('Werkstatt-Testkarten')
+abzug band-set
+notiz Auf einer fremden Seite steht sie nicht (S08.NAT-02)
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe window.__zur('Hilfe')
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+bis window.__band() === ''
+abzug band-hilfe
+notiz Zurück beim Set steht sie wieder — der Vorgang ist gescheitert, und das gilt weiter
+taste cmd+[
+bis window.__band().includes('wurde nicht gesichert')
+abzug band-zurueck

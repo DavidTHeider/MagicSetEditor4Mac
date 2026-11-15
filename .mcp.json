@@ -1,0 +1,29 @@
+{
+  "$kommentar": [
+    "Context7 ist die Quelle für Bibliotheks- und Frameworkfragen (AGENTS.md §1):",
+    "Wails, React, Vite, Tailwind, modernc.org/sqlite. Die Regel dahinter ist die",
+    "aus §10 — eine Auskunft aus der Erinnerung ist kein Prüfergebnis. Wer eine",
+    "API-Signatur, ein Konfigurationsfeld oder ein Standardverhalten behauptet,",
+    "hat es vorher nachgeschlagen.",
+    "",
+    "Über stdio, nicht über den HTTP-Endpunkt: das ist die Fassung, die in dieser",
+    "Umgebung nachweislich läuft. Der Eintrag steht hier, damit ein frisch",
+    "geklontes Repository sie mitbringt — wer Context7 bereits als Plugin führt,",
+    "hat sie ohnehin."
+  ],
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ]
+    },
+    "graft": {
+      "command": "graft",
+      "args": [
+        "mcp"
+      ]
+    }
+  }
+}

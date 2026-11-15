@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "date": "2026-08-15",
+    "version": "5.2.2+20260815"
+  },
+  "data": {
+    "code": "PRB",
+    "name": "Probeset",
+    "releaseDate": "2026-08-15",
+    "type": "expansion",
+    "cards": [
+      {
+        "name": "Flammenball",
+        "manaCost": "{2}{R}",
+        "type": "Instant",
+        "supertypes": [],
+        "types": ["Instant"],
+        "subtypes": [],
+        "text": "Flammenball fügt einem Ziel 3 Schaden zu.",
+        "flavorText": "Es begann mit einem Funken.",
+        "rarity": "common",
+        "artist": "Selbst gezeichnet",
+        "number": "1",
+        "uuid": "00000000-0000-0000-0000-000000000001"
+      },
+      {
+        "name": "Eiserner Wächter",
+        "manaCost": "{3}{W}{W}",
+        "type": "Legendary Creature — Golem Soldier",
+        "supertypes": ["Legendary"],
+        "types": ["Creature"],
+        "subtypes": ["Golem", "Soldier"],
+        "text": "Wachsamkeit",
+        "power": "4",
+        "toughness": "6",
+        "rarity": "mythic",
+        "artist": "Selbst gezeichnet",
+        "number": "2",
+        "uuid": "00000000-0000-0000-0000-000000000002"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+diff --git a/src/util/io/get_member.cpp b/src/util/io/get_member.cpp
+index eba0c8ad..b6486d46 100644
+--- a/src/util/io/get_member.cpp
++++ b/src/util/io/get_member.cpp
+@@ -21,6 +21,14 @@ template <> void GetDefaultMember::handle(const String&       v) { value = to_sc
+ template <> void GetDefaultMember::handle(const int&          v) { value = to_script(v); }
+ template <> void GetDefaultMember::handle(const unsigned int& v) { value = to_script((int)v); }
+ template <> void GetDefaultMember::handle(const uint64_t&     v) { value = to_script((int)v); }
++#if defined(__APPLE__)
++// Auf Apple ist `size_t` == `unsigned long`, `uint64_t` dagegen `unsigned long long`
++// — die Auspraegung darueber deckt ihn deshalb nicht ab, und der Linker vermisst
++// sie (GetMember::handle<unsigned long> in text.cpp). Unter Linux ist uint64_t ==
++// unsigned long, dort waere dies eine Doppeldefinition. Gleiche Umsetzung wie bei
++// unsigned int und uint64_t: KEINE Verhaltensaenderung, nur die fehlende Auspraegung.
++template <> void GetDefaultMember::handle(const unsigned long& v) { value = to_script((int)v); }
++#endif
+ template <> void GetDefaultMember::handle(const double&       v) { value = to_script(v); }
+ template <> void GetDefaultMember::handle(const bool&         v) { value = to_script(v); }
+ template <> void GetDefaultMember::handle(const tribool&      v) { value = to_script((bool)v); }

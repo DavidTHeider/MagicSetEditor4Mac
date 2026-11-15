@@ -1,0 +1,964 @@
+{
+  "format": 1,
+  "lauf": "fremdpakete",
+  "commit": "3b89bed1afc86b4559a4eaa5d4f5d1c2fe94f657",
+  "inhalt": "sha256:d46e6b8e5b77f6b302005483e2fef7126c5264619d529376fad615ea658103b1",
+  "baumSauber": true,
+  "werkzeuge": {
+    "go": "go1.27.3",
+    "plattform": "darwin/arm64",
+    "system": "macOS 27.0.1"
+  },
+  "schalter": {
+    "MSE_KANON_VORHER": "",
+    "MSE_STICHPROBE": ""
+  },
+  "anfang": "2026-10-21T04:47:00.255835+02:00",
+  "ende": "2026-10-21T05:57:37.476506+02:00",
+  "befehl": [
+    "go",
+    "test",
+    "-json",
+    "-count=1",
+    "-tags",
+    "fremdpakete",
+    "-run",
+    "^(TestDasEinfuegemenueUeberFremdpakete|TestDasKunstfensterEinerEchtenKarte|TestDemokartenZeichnen|TestDerAbstandJeVorlage|TestDerAbstandZuMSE2|TestDerAbstandZuMSE2AmKanon|TestDerKartenstilDurchDieNaht|TestDerLastlaufUeberDenDemokartensatz|TestDerMse2BestandIstVollstaendig|TestDerNameFolgtDemVorgabewertDesKartensymbols|TestDerPlanbauerUeberFremdpakete|TestDerRahmenDurchDieNaht|TestDerRahmenEinerRotenKarteZeichnet|TestDerRahmenFolgtDerFarbe|TestDerRundlaufUeberFremdpakete|TestDerSchreibwegUeberFremdenSchreibweg|TestDerSkriptlastigeExport|TestDerSymbolrastererLiestJedeEchteZeichnung|TestDieAuszaehldimensionenVonMagic|TestDieBreiteTrifftWx|TestDieDimensionKeywordsNenntDieBenutztenWoerter|TestDieEchteDimensionKeywordsRechnet|TestDieEchtenAuszaehldimensionenLaufen|TestDieEchtenKartenskripteLaufen|TestDieEroeffnungshandRechnetSiebenKarten|TestDieFarbgruppeEinerWeissenKarte|TestDieFarbgruppeStimmtMitDemOrakelUeberein|TestDieFeldreihenVonMagic|TestDieFesteKohorteTraegtKeinBand|TestDieGlaettungTrifftQuartz|TestDieKanonischenSetsZeichnen|TestDieKanonklasseNenntDenGrund|TestDieKartenskripteDesEchtenSpielpakets|TestDieLandDropDimensionenStimmenMitDemOrakelUeberein|TestDieListenspaltenVonMagic|TestDieNamensschriftSetztWieCoreText|TestDiePackartenEinesGrossenSets|TestDieReferenzdateiIstMSEsDateiname|TestDieReferenzschriftenReichen|TestDieSchrankeJeSetIstStrengerAlsDieGeteilte|TestDieStichprobeErreichtDasEnde|TestDieStichprobeZiehtOhneWiederholung|TestDieVerweiseVonMagic|TestDieWeitestenKartenAblegen|TestDieZeilenlageGegenMSE2|TestDieZiehungTrifftJedeSchicht|TestDieZufallsstichprobe|TestDieselbeKarteAusDreiQuellen|TestEinAbgebrochenerLaufHoertAuf|TestEinAusfallgrundZaehltUndNenntBeispiele|TestEinEchtesSchluesselwortTrifftEchtenKartentext|TestEinKleinesSetWirdFastGanzGemessen|TestEinLeererNameWirdNichtGenannt|TestEinSetVerliertKeineKarte|TestEineEchteKarteAlsSVG|TestEineVorlageAmEchtenPaket|TestExportvorlagenAusFremdpaketen|TestExportvorlagenMitEchterKarte|TestFremdDieMatrixNenntNurEchteQuellen|TestFremdJedeDateiStehtInDerMatrix|TestFremdeDatenBestaetigenDieSchluesseltabelle|TestFremdeDatenUeberstehenDenRundlauf|TestFremdeStile|TestFremdeWortlisten|TestFremdesMTGJSONWirdGelesen|TestJedeGueteSetztDieselbenZeilen|TestJederAchsenwertIstBelegt|TestJederSkriptnameVonMSE2IstErreichbar|TestKeinVorhandenesPaketFaelltUnterDieRessourcenregel|TestMSE2ZeichnetKeinSymbolinneres|TestMagicCrystalZeichnetSeineMaske|TestMatrixNimmtDieTypoMetrik|TestMse2ZeichnetUnsereSymboldatei|TestNurAusDemBuendel|TestOhneKartenWirdNichtsGezogen|TestOrdnungenAusFremdpaketen|TestRundlaufUeberDasMitgelieferteSet|TestSchreibeReferenzkartenAlsPNG|TestSchreibeReferenzkartenAlsSVG|TestSetrundlaufMitMSE2|TestSymbolartenSindVollstaendig|TestWasAmRasternTeuerIst|TestWasDerReferenzfehlerAmSymbolKostet|TestWasEinBogenDieBildquelleKostet|TestWasJedeGueteKostet|TestWelcheSchriftenDesPacksKernen|TestWieOftEinSchluesselwortVorkommt|TestWieOftSichDieFeldordnungBeimBlaetternAendert|TestWieVielTinteUnsereGlyphenSetzen|TestWohinDieZeitBeimRasternGeht|TestZeigeDenPlan|TestZieheDenStichprobenplan)$",
+    "-timeout",
+    "3h0m0s",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/cmd/mse",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/flaechen",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/msepaket",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/msescript",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/mtgjson",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/render",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/service",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/werkzeuge"
+  ],
+  "rueckgabe": 1,
+  "status": "PASS",
+  "eingaben": [
+    {
+      "name": "MSE_FREMDPAKETE",
+      "pfad": "~/full-magic-pack/data",
+      "muster": "style",
+      "hash": "sha256:f2937769dc482c8f6891613b32c702b6fac270ffd1884da11f541828d5f0b4c2",
+      "dateien": 34682,
+      "passend": 377,
+      "bytes": 930961631
+    },
+    {
+      "name": "MSE_SCHRIFTWURZEL",
+      "pfad": "~/full-magic-pack",
+      "muster": "*.ttf",
+      "hash": "sha256:778087e592fc77a220be109c5f6fb82abe91bb28580c3f1682086458abb6c54c",
+      "dateien": 34825,
+      "passend": 157,
+      "bytes": 982392105
+    },
+    {
+      "name": "MSE_SETPAKET",
+      "pfad": "~/Library/Application Support/MagicSetEditor4Mac/kanonische-sets/Archenemy.mse-set",
+      "muster": "*.mse-set",
+      "hash": "sha256:812f3aa3da96a0caa7af37de21e5706e1dec74f214b2bc746760aee040c75abd",
+      "dateien": 1,
+      "passend": 1,
+      "bytes": 8824637
+    },
+    {
+      "name": "MSE_REFERENZBILDER",
+      "pfad": "~/Library/Application Support/MagicSetEditor4Mac/referenzbilder",
+      "muster": "*.karte",
+      "hash": "sha256:9c97298bc6d6d2fe575dabe06eaa891e642185fc968612d51e12baaded6f3983",
+      "dateien": 31,
+      "passend": 4,
+      "bytes": 1176773
+    },
+    {
+      "name": "MSE_KANON",
+      "pfad": "~/Library/Application Support/MagicSetEditor4Mac/kanonische-sets",
+      "muster": "*.mse-set",
+      "hash": "sha256:7dbf5ca0cfd7b4b6f7779c8e6bceebfe100604d3535c51fa53530ccc0b9aace5",
+      "dateien": 10,
+      "passend": 10,
+      "bytes": 1979278727
+    },
+    {
+      "name": "MSE_MSE2AUSGABE",
+      "pfad": "~/Library/Application Support/MagicSetEditor4Mac/mse2-ausgabe",
+      "muster": "*.png",
+      "hash": "sha256:d0a3b93fdfa77a2f0f6e5a1fc4c6a49b43ebe9b0c8f70a345f854f34e088c9c7",
+      "dateien": 25158,
+      "passend": 25148,
+      "bytes": 8046155388
+    },
+    {
+      "name": "MSE2_QUELLE",
+      "pfad": "~/mse2-quelle",
+      "muster": "*.cpp",
+      "hash": "sha256:3b2f228cc9e3579df98bf139ddf2be472a58476121d2a1c49e8741f23822fc20",
+      "dateien": 1112,
+      "passend": 172,
+      "bytes": 128092250
+    },
+    {
+      "name": "MSE2_BINAER",
+      "pfad": "~/mse2-quelle/build/magicseteditor",
+      "muster": "magicseteditor",
+      "hash": "sha256:6c414114a57c69552d310ccf84ba23fd21565331faed3af048d7d8a8f4fde990",
+      "dateien": 1,
+      "passend": 1,
+      "bytes": 4599664
+    },
+    {
+      "name": "MSE2_DATEN",
+      "pfad": "~/Library/Application Support/magicseteditor/data",
+      "muster": "style",
+      "hash": "sha256:0bb396d8e7c81a20397697e7433e7dbf8907049cc970ec4353cc75fc7b0af9dc",
+      "dateien": 30075,
+      "passend": 191,
+      "bytes": 739933202
+    },
+    {
+      "name": "MSE2_SCHRIFTEN",
+      "pfad": "~/Library/Fonts/mse2-referenz",
+      "muster": "*.ttf",
+      "hash": "sha256:123ddcbfe1395f5cf8d6d6961aba472ea88fe9e8a2e758c3b424e93d73a2297f",
+      "dateien": 14,
+      "passend": 13,
+      "bytes": 2197244
+    }
+  ],
+  "erwartet": 92,
+  "gemessen": 83,
+  "faelle": [
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/cmd/mse",
+      "test": "TestDerSkriptlastigeExport",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 41.86
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/cmd/mse",
+      "test": "TestDiePackartenEinesGrossenSets",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 29.13
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDasKunstfensterEinerEchtenKarte",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 5.14
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDemokartenZeichnen",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 22.93
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDerAbstandJeVorlage",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 244.82
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDerAbstandZuMSE2",
+      "art": "trend",
+      "ausfuehrung": "PASS",
+      "ergebnis": "FAIL",
+      "dauer": 4.25,
+      "grund": "der Abstand zu MSE2 hält die Toleranz nicht: Abstand 32.141, größte Abweichung 255, 103332 von 123129 Bildpunkten betroffen (0.8392)"
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDerAbstandZuMSE2AmKanon",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 1551.18
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDerKartenstilDurchDieNaht",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 1.18
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDerLastlaufUeberDenDemokartensatz",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 29.14
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDerRahmenDurchDieNaht",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 1.26
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDieFesteKohorteTraegtKeinBand",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDieKanonischenSetsZeichnen",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 126.82
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDieKanonklasseNenntDenGrund",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDieReferenzdateiIstMSEsDateiname",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDieReferenzschriftenReichen",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 67.1
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDieSchrankeJeSetIstStrengerAlsDieGeteilte",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDieStichprobeErreichtDasEnde",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDieStichprobeZiehtOhneWiederholung",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDieWeitestenKartenAblegen",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 98.97
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDieZeilenlageGegenMSE2",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 6.2
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDieZiehungTrifftJedeSchicht",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDieZufallsstichprobe",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 1653.14
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestDieselbeKarteAusDreiQuellen",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 9.3
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestEinAbgebrochenerLaufHoertAuf",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.95
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestEinAusfallgrundZaehltUndNenntBeispiele",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestEinKleinesSetWirdFastGanzGemessen",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestEinLeererNameWirdNichtGenannt",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestEinSetVerliertKeineKarte",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 24.29
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestEineEchteKarteAlsSVG",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 4.03
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestEineVorlageAmEchtenPaket",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.26
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestJedeGueteSetztDieselbenZeilen",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 1.52
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestJederAchsenwertIstBelegt",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestMSE2ZeichnetKeinSymbolinneres",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.03
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestNurAusDemBuendel",
+      "art": "optional",
+      "ausfuehrung": "SKIPPED",
+      "ergebnis": "SKIPPED",
+      "dauer": 0,
+      "grund": "MSE_BUENDEL ist nicht gesetzt"
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestOhneKartenWirdNichtsGezogen",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestRundlaufUeberDasMitgelieferteSet",
+      "art": "optional",
+      "ausfuehrung": "SKIPPED",
+      "ergebnis": "SKIPPED",
+      "dauer": 0,
+      "grund": "MSE_BUENDEL ist nicht gesetzt"
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestSchreibeReferenzkartenAlsPNG",
+      "art": "optional",
+      "ausfuehrung": "SKIPPED",
+      "ergebnis": "SKIPPED",
+      "dauer": 0,
+      "grund": "MSE_PNG_AUSGABE ist nicht gesetzt"
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestSchreibeReferenzkartenAlsSVG",
+      "art": "optional",
+      "ausfuehrung": "SKIPPED",
+      "ergebnis": "SKIPPED",
+      "dauer": 0,
+      "grund": "MSE_SVG_AUSGABE ist nicht gesetzt"
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestWasAmRasternTeuerIst",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 5.01
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestWasDerReferenzfehlerAmSymbolKostet",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 103.91
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestWasJedeGueteKostet",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 7.33
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestWieOftSichDieFeldordnungBeimBlaetternAendert",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 187.16
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestWieVielTinteUnsereGlyphenSetzen",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 66.02
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestWohinDieZeitBeimRasternGeht",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 4.91
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestZeigeDenPlan",
+      "art": "optional",
+      "ausfuehrung": "SKIPPED",
+      "ergebnis": "SKIPPED",
+      "dauer": 0,
+      "grund": "MSE_PLAN_KARTE ist nicht gesetzt"
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app",
+      "test": "TestZieheDenStichprobenplan",
+      "art": "optional",
+      "ausfuehrung": "SKIPPED",
+      "ergebnis": "SKIPPED",
+      "dauer": 0,
+      "grund": "eine Vorrichtung: zieht den Plan nur mit MSE_STICHPROBENPLAN"
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/flaechen",
+      "test": "TestSetrundlaufMitMSE2",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 117.99
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/msepaket",
+      "test": "TestDasEinfuegemenueUeberFremdpakete",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.04
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/msepaket",
+      "test": "TestDerRundlaufUeberFremdpakete",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 1.08
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/msepaket",
+      "test": "TestDerSchreibwegUeberFremdenSchreibweg",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 21.37
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/msepaket",
+      "test": "TestDieAuszaehldimensionenVonMagic",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.02
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/msepaket",
+      "test": "TestDieFeldreihenVonMagic",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.03
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/msepaket",
+      "test": "TestDieKartenskripteDesEchtenSpielpakets",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.03
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/msepaket",
+      "test": "TestDieListenspaltenVonMagic",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.02
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/msepaket",
+      "test": "TestDieVerweiseVonMagic",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.04
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/msepaket",
+      "test": "TestFremdeStile",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.13
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/msepaket",
+      "test": "TestFremdeWortlisten",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.02
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/msepaket",
+      "test": "TestKeinVorhandenesPaketFaelltUnterDieRessourcenregel",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.46
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/msepaket",
+      "test": "TestMse2ZeichnetUnsereSymboldatei",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 1.43
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/msepaket",
+      "test": "TestSymbolartenSindVollstaendig",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/msepaket",
+      "test": "TestWasEinBogenDieBildquelleKostet",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.03
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/msescript",
+      "test": "TestOrdnungenAusFremdpaketen",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 4.73
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/mtgjson",
+      "test": "TestFremdeDatenBestaetigenDieSchluesseltabelle",
+      "art": "optional",
+      "ausfuehrung": "SKIPPED",
+      "ergebnis": "SKIPPED",
+      "dauer": 0,
+      "grund": "MSE_MTGJSON ist nicht gesetzt — keine bezogene MTG-JSON-Quelle"
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/mtgjson",
+      "test": "TestFremdeDatenUeberstehenDenRundlauf",
+      "art": "optional",
+      "ausfuehrung": "SKIPPED",
+      "ergebnis": "SKIPPED",
+      "dauer": 0,
+      "grund": "MSE_MTGJSON ist nicht gesetzt — keine bezogene MTG-JSON-Quelle"
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/mtgjson",
+      "test": "TestFremdesMTGJSONWirdGelesen",
+      "art": "optional",
+      "ausfuehrung": "SKIPPED",
+      "ergebnis": "SKIPPED",
+      "dauer": 0,
+      "grund": "MSE_MTGJSON ist nicht gesetzt — keine bezogene MTG-JSON-Quelle"
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/render",
+      "test": "TestDieBreiteTrifftWx",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/render",
+      "test": "TestDieGlaettungTrifftQuartz",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 1.84
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/render",
+      "test": "TestDieNamensschriftSetztWieCoreText",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/render",
+      "test": "TestMatrixNimmtDieTypoMetrik",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/render",
+      "test": "TestWelcheSchriftenDesPacksKernen",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/service",
+      "test": "TestDerNameFolgtDemVorgabewertDesKartensymbols",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.04
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/service",
+      "test": "TestDerPlanbauerUeberFremdpakete",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 11.71
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/service",
+      "test": "TestDerRahmenEinerRotenKarteZeichnet",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.04
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/service",
+      "test": "TestDerRahmenFolgtDerFarbe",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.08
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/service",
+      "test": "TestDerSymbolrastererLiestJedeEchteZeichnung",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.06
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/service",
+      "test": "TestDieDimensionKeywordsNenntDieBenutztenWoerter",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.07
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/service",
+      "test": "TestDieEchteDimensionKeywordsRechnet",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.04
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/service",
+      "test": "TestDieEchtenAuszaehldimensionenLaufen",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.81
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/service",
+      "test": "TestDieEchtenKartenskripteLaufen",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.1
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/service",
+      "test": "TestDieEroeffnungshandRechnetSiebenKarten",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 18.82
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/service",
+      "test": "TestDieFarbgruppeEinerWeissenKarte",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.04
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/service",
+      "test": "TestDieFarbgruppeStimmtMitDemOrakelUeberein",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 25.27
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/service",
+      "test": "TestDieLandDropDimensionenStimmenMitDemOrakelUeberein",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 43.4
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/service",
+      "test": "TestEinEchtesSchluesselwortTrifftEchtenKartentext",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.02
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/service",
+      "test": "TestExportvorlagenAusFremdpaketen",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.67
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/service",
+      "test": "TestExportvorlagenMitEchterKarte",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 1.05
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/service",
+      "test": "TestMagicCrystalZeichnetSeineMaske",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.05
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/werkzeuge",
+      "test": "TestDerMse2BestandIstVollstaendig",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/werkzeuge",
+      "test": "TestFremdDieMatrixNenntNurEchteQuellen",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/werkzeuge",
+      "test": "TestFremdJedeDateiStehtInDerMatrix",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/werkzeuge",
+      "test": "TestJederSkriptnameVonMSE2IstErreichbar",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.02
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/werkzeuge",
+      "test": "TestWieOftEinSchluesselwortVorkommt",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.78
+    }
+  ],
+  "weitere": {
+    "gelaufen": 0,
+    "bestanden": 0,
+    "gescheitert": 0,
+    "uebersprungen": 0
+  },
+  "fehler": [],
+  "uebersprungen": [
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app.TestNurAusDemBuendel: MSE_BUENDEL ist nicht gesetzt",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app.TestRundlaufUeberDasMitgelieferteSet: MSE_BUENDEL ist nicht gesetzt",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app.TestSchreibeReferenzkartenAlsPNG: MSE_PNG_AUSGABE ist nicht gesetzt",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app.TestSchreibeReferenzkartenAlsSVG: MSE_SVG_AUSGABE ist nicht gesetzt",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app.TestZeigeDenPlan: MSE_PLAN_KARTE ist nicht gesetzt",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/app.TestZieheDenStichprobenplan: eine Vorrichtung: zieht den Plan nur mit MSE_STICHPROBENPLAN",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/mtgjson.TestFremdeDatenBestaetigenDieSchluesseltabelle: MSE_MTGJSON ist nicht gesetzt — keine bezogene MTG-JSON-Quelle",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/mtgjson.TestFremdeDatenUeberstehenDenRundlauf: MSE_MTGJSON ist nicht gesetzt — keine bezogene MTG-JSON-Quelle",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/mtgjson.TestFremdesMTGJSONWirdGelesen: MSE_MTGJSON ist nicht gesetzt — keine bezogene MTG-JSON-Quelle"
+  ],
+  "artefakte": [
+    {
+      "name": "Rohprotokoll",
+      "pfad": ".laufbeleg/fremdpakete.jsonl",
+      "hash": "sha256:9667a1cfd5de03e4d29550e5a2131af606dc5e16f46a972362d9ad8cf8e7d15b",
+      "dateien": 1,
+      "passend": 1,
+      "bytes": 1651547
+    }
+  ],
+  "kennzahlen": {
+    "kanon.befunde": "0",
+    "kanon.karten": "680",
+    "kanon.portierung": "0",
+    "kanon.sets": "10",
+    "kanon.umgebung": "0",
+    "kanon.vorlage": "0",
+    "mse2.grundgesamtheit": "25148",
+    "mse2.iqa": "2.1325",
+    "mse2.kanonmittel": "9.3194",
+    "mse2.maximum": "49.0404",
+    "mse2.median": "8.5774",
+    "mse2.minimum": "1.6914",
+    "mse2.p90": "11.3526",
+    "mse2.p95": "14.0063",
+    "mse2.p99": "33.9453",
+    "mse2.q1": "7.4602",
+    "mse2.q3": "9.5927",
+    "mse2.standardabweichung": "4.3454",
+    "mse2.stichprobe": "4266",
+    "mse2.streuung": "18.8829",
+    "speicher.pakete.bilder.bytes": "77204359",
+    "speicher.pakete.bilder.eintraege": "228",
+    "speicher.pakete.bilder.fehlgriffe": "4658",
+    "speicher.pakete.bilder.treffer": "57762",
+    "speicher.skript.baeume.bytes": "12563255",
+    "speicher.skript.baeume.eintraege": "2122",
+    "speicher.skript.baeume.fehlgriffe": "2122",
+    "speicher.skript.baeume.treffer": "5069125",
+    "zufall.band.oben": "9.3991",
+    "zufall.band.unten": "9.1863",
+    "zufall.grundgesamtheit": "25148",
+    "zufall.iqa": "2.1587",
+    "zufall.kanonmittel": "9.2927",
+    "zufall.karten": "4582",
+    "zufall.maximum": "72.9138",
+    "zufall.median": "8.6168",
+    "zufall.minimum": "1.6914",
+    "zufall.p90": "11.3538",
+    "zufall.p95": "13.9431",
+    "zufall.p99": "33.2720",
+    "zufall.portierung": "0",
+    "zufall.q1": "7.4511",
+    "zufall.q3": "9.6098",
+    "zufall.sicherheit.gemeinsam": "0.9925",
+    "zufall.sicherheit.je": "0.9990",
+    "zufall.standardabweichung": "4.2078",
+    "zufall.standardfehler": "0.0543",
+    "zufall.stichprobe": "4582",
+    "zufall.streuung": "17.7057",
+    "zufall.umgebung": "0",
+    "zufall.vorlage": "3"
+  }
+}

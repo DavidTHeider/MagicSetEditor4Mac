@@ -1,0 +1,69 @@
+{"ImportPath":"probe.test/kaputt [probe.test/kaputt.test]","Action":"build-output","Output":"# probe.test/kaputt [probe.test/kaputt.test]\n"}
+{"ImportPath":"probe.test/kaputt [probe.test/kaputt.test]","Action":"build-output","Output":"kaputt/kaputt_test.go:5:33: undefined: gibtsNicht\n"}
+{"ImportPath":"probe.test/kaputt [probe.test/kaputt.test]","Action":"build-fail"}
+{"Time":"2026-09-22T22:19:39.093933+02:00","Action":"start","Package":"probe.test/gut"}
+{"Time":"2026-09-22T22:19:39.10076+02:00","Action":"start","Package":"probe.test/rot"}
+{"Time":"2026-09-22T22:19:39.100849+02:00","Action":"start","Package":"probe.test/sprung"}
+{"Time":"2026-09-22T22:19:39.100924+02:00","Action":"start","Package":"probe.test/panik"}
+{"Time":"2026-09-22T22:19:39.100996+02:00","Action":"start","Package":"probe.test/kaputt"}
+{"Time":"2026-09-22T22:19:39.101041+02:00","Action":"output","Package":"probe.test/kaputt","Output":"FAIL\tprobe.test/kaputt [build failed]\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.101079+02:00","Action":"fail","Package":"probe.test/kaputt","Elapsed":0,"FailedBuild":"probe.test/kaputt [probe.test/kaputt.test]"}
+{"Time":"2026-09-22T22:19:39.299339+02:00","Action":"run","Package":"probe.test/rot","Test":"TestRot"}
+{"Time":"2026-09-22T22:19:39.299462+02:00","Action":"output","Package":"probe.test/rot","Test":"TestRot","Output":"=== RUN   TestRot\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.299492+02:00","Action":"output","Package":"probe.test/rot","Test":"TestRot","Output":"    rot_test.go:5: erwartet 0, bekam 679\n","OutputType":"error"}
+{"Time":"2026-09-22T22:19:39.299508+02:00","Action":"output","Package":"probe.test/rot","Test":"TestRot","Output":"--- FAIL: TestRot (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.299519+02:00","Action":"fail","Package":"probe.test/rot","Test":"TestRot","Elapsed":0}
+{"Time":"2026-09-22T22:19:39.299528+02:00","Action":"run","Package":"probe.test/rot","Test":"TestTrend"}
+{"Time":"2026-09-22T22:19:39.299532+02:00","Action":"output","Package":"probe.test/rot","Test":"TestTrend","Output":"=== RUN   TestTrend\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.299535+02:00","Action":"output","Package":"probe.test/rot","Test":"TestTrend","Output":"    rot_test.go:8: kennzahl trend.mittel=20.0560\n"}
+{"Time":"2026-09-22T22:19:39.299543+02:00","Action":"output","Package":"probe.test/rot","Test":"TestTrend","Output":"    rot_test.go:9: Abstand über der Toleranz\n","OutputType":"error"}
+{"Time":"2026-09-22T22:19:39.29955+02:00","Action":"output","Package":"probe.test/rot","Test":"TestTrend","Output":"--- FAIL: TestTrend (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.299555+02:00","Action":"fail","Package":"probe.test/rot","Test":"TestTrend","Elapsed":0}
+{"Time":"2026-09-22T22:19:39.299559+02:00","Action":"output","Package":"probe.test/rot","Output":"FAIL\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.29958+02:00","Action":"run","Package":"probe.test/panik","Test":"TestPanik"}
+{"Time":"2026-09-22T22:19:39.299594+02:00","Action":"output","Package":"probe.test/panik","Test":"TestPanik","Output":"=== RUN   TestPanik\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.299614+02:00","Action":"run","Package":"probe.test/sprung","Test":"TestSprung"}
+{"Time":"2026-09-22T22:19:39.299686+02:00","Action":"output","Package":"probe.test/sprung","Test":"TestSprung","Output":"=== RUN   TestSprung\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.299703+02:00","Action":"output","Package":"probe.test/sprung","Test":"TestSprung","Output":"    sprung_test.go:5: die kanonischen Sets liegen nicht vor\n"}
+{"Time":"2026-09-22T22:19:39.299719+02:00","Action":"output","Package":"probe.test/sprung","Test":"TestSprung","Output":"--- SKIP: TestSprung (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.299724+02:00","Action":"skip","Package":"probe.test/sprung","Test":"TestSprung","Elapsed":0}
+{"Time":"2026-09-22T22:19:39.299728+02:00","Action":"output","Package":"probe.test/sprung","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.299711+02:00","Action":"output","Package":"probe.test/panik","Test":"TestPanik","Output":"--- FAIL: TestPanik (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.300012+02:00","Action":"output","Package":"probe.test/rot","Output":"FAIL\tprobe.test/rot\t0.199s\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.300029+02:00","Action":"fail","Package":"probe.test/rot","Elapsed":0.199}
+{"Time":"2026-09-22T22:19:39.300149+02:00","Action":"output","Package":"probe.test/sprung","Output":"ok  \tprobe.test/sprung\t0.199s\n"}
+{"Time":"2026-09-22T22:19:39.300162+02:00","Action":"pass","Package":"probe.test/sprung","Elapsed":0.199}
+{"Time":"2026-09-22T22:19:39.302705+02:00","Action":"output","Package":"probe.test/panik","Test":"TestPanik","Output":"panic: assignment to entry in nil map [recovered, repanicked]\n"}
+{"Time":"2026-09-22T22:19:39.302716+02:00","Action":"output","Package":"probe.test/panik","Test":"TestPanik","Output":"\n"}
+{"Time":"2026-09-22T22:19:39.302721+02:00","Action":"output","Package":"probe.test/panik","Test":"TestPanik","Output":"goroutine 5 [running]:\n"}
+{"Time":"2026-09-22T22:19:39.302728+02:00","Action":"output","Package":"probe.test/panik","Test":"TestPanik","Output":"testing.tRunner.func1.2({0x1043de548, 0x104414f10})\n"}
+{"Time":"2026-09-22T22:19:39.302732+02:00","Action":"output","Package":"probe.test/panik","Test":"TestPanik","Output":"\t/opt/homebrew/Cellar/go/1.27.1/libexec/src/testing/testing.go:2123 +0x1a0\n"}
+{"Time":"2026-09-22T22:19:39.302741+02:00","Action":"output","Package":"probe.test/panik","Test":"TestPanik","Output":"testing.tRunner.func1()\n"}
+{"Time":"2026-09-22T22:19:39.302745+02:00","Action":"output","Package":"probe.test/panik","Test":"TestPanik","Output":"\t/opt/homebrew/Cellar/go/1.27.1/libexec/src/testing/testing.go:2126 +0x2c8\n"}
+{"Time":"2026-09-22T22:19:39.302749+02:00","Action":"output","Package":"probe.test/panik","Test":"TestPanik","Output":"panic({0x1043de548?, 0x104414f10?})\n"}
+{"Time":"2026-09-22T22:19:39.302757+02:00","Action":"output","Package":"probe.test/panik","Test":"TestPanik","Output":"\t/opt/homebrew/Cellar/go/1.27.1/libexec/src/runtime/panic.go:859 +0x120\n"}
+{"Time":"2026-09-22T22:19:39.302763+02:00","Action":"output","Package":"probe.test/panik","Test":"TestPanik","Output":"probe.test/panik.TestPanik(0x76d486988248?)\n"}
+{"Time":"2026-09-22T22:19:39.302767+02:00","Action":"output","Package":"probe.test/panik","Test":"TestPanik","Output":"\t/private/tmp/claude-501/-Users-david-MagicSetEditor4Mac/0a0fa2ca-001c-40fa-b948-8ebe33c4cf64/scratchpad/probe/panik/panik_test.go:7 +0x34\n"}
+{"Time":"2026-09-22T22:19:39.302773+02:00","Action":"output","Package":"probe.test/panik","Test":"TestPanik","Output":"testing.tRunner(0x76d486988248, 0x1043fb3f0)\n"}
+{"Time":"2026-09-22T22:19:39.302778+02:00","Action":"output","Package":"probe.test/panik","Test":"TestPanik","Output":"\t/opt/homebrew/Cellar/go/1.27.1/libexec/src/testing/testing.go:2193 +0xc4\n"}
+{"Time":"2026-09-22T22:19:39.302782+02:00","Action":"output","Package":"probe.test/panik","Test":"TestPanik","Output":"created by testing.(*T).Run in goroutine 1\n"}
+{"Time":"2026-09-22T22:19:39.302786+02:00","Action":"output","Package":"probe.test/panik","Test":"TestPanik","Output":"\t/opt/homebrew/Cellar/go/1.27.1/libexec/src/testing/testing.go:2258 +0x3b8\n"}
+{"Time":"2026-09-22T22:19:39.303131+02:00","Action":"fail","Package":"probe.test/panik","Test":"TestPanik","Elapsed":0}
+{"Time":"2026-09-22T22:19:39.303137+02:00","Action":"output","Package":"probe.test/panik","Output":"FAIL\tprobe.test/panik\t0.202s\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.303146+02:00","Action":"fail","Package":"probe.test/panik","Elapsed":0.202}
+{"Time":"2026-09-22T22:19:39.362899+02:00","Action":"run","Package":"probe.test/gut","Test":"TestGut"}
+{"Time":"2026-09-22T22:19:39.36293+02:00","Action":"output","Package":"probe.test/gut","Test":"TestGut","Output":"=== RUN   TestGut\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.362941+02:00","Action":"output","Package":"probe.test/gut","Test":"TestGut","Output":"    gut_test.go:5: kennzahl gut.zahl=7\n"}
+{"Time":"2026-09-22T22:19:39.362955+02:00","Action":"output","Package":"probe.test/gut","Test":"TestGut","Output":"--- PASS: TestGut (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.362963+02:00","Action":"pass","Package":"probe.test/gut","Test":"TestGut","Elapsed":0}
+{"Time":"2026-09-22T22:19:39.36297+02:00","Action":"run","Package":"probe.test/gut","Test":"TestMitUnterfall"}
+{"Time":"2026-09-22T22:19:39.362975+02:00","Action":"output","Package":"probe.test/gut","Test":"TestMitUnterfall","Output":"=== RUN   TestMitUnterfall\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.363+02:00","Action":"run","Package":"probe.test/gut","Test":"TestMitUnterfall/eins"}
+{"Time":"2026-09-22T22:19:39.36301+02:00","Action":"output","Package":"probe.test/gut","Test":"TestMitUnterfall/eins","Output":"=== RUN   TestMitUnterfall/eins\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.363028+02:00","Action":"output","Package":"probe.test/gut","Test":"TestMitUnterfall/eins","Output":"--- PASS: TestMitUnterfall/eins (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.363034+02:00","Action":"pass","Package":"probe.test/gut","Test":"TestMitUnterfall/eins","Elapsed":0}
+{"Time":"2026-09-22T22:19:39.36304+02:00","Action":"output","Package":"probe.test/gut","Test":"TestMitUnterfall","Output":"--- PASS: TestMitUnterfall (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.363044+02:00","Action":"pass","Package":"probe.test/gut","Test":"TestMitUnterfall","Elapsed":0}
+{"Time":"2026-09-22T22:19:39.363048+02:00","Action":"output","Package":"probe.test/gut","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:39.363424+02:00","Action":"output","Package":"probe.test/gut","Output":"ok  \tprobe.test/gut\t0.269s\n"}
+{"Time":"2026-09-22T22:19:39.363436+02:00","Action":"pass","Package":"probe.test/gut","Elapsed":0.27}

@@ -1,0 +1,9 @@
+{
+  "errors": [
+    {
+      "message": "Unknown argument \"name\" on field \"Query.cards\". Did you mean \"page\"?",
+      "locations": [{ "line": 1, "column": 9 }],
+      "extensions": { "code": "GRAPHQL_VALIDATION_FAILED" }
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+// **Die Texte des Dienstkatalogs** — die englische Seite zu
+// [`de/einstellungenkatalog.ts`](../de/einstellungenkatalog.ts).
+export const dienstkatalog = {
+  katalog: 'サービスがここでできること',
+  katalogHinweis:
+    'サービスごとに、ここで経路が組み込まれている問い合わせと、その経路が**現在**利用可能かどうかを表示します。この確認はリクエストを送信せず、スイッチ、キーチェーン、役割を読み取るだけです。実際のサービスに対する実行結果は、実行した日とバージョンについてのみ有効です。',
+  katalogFragen: {
+    suche: 'カード検索',
+    kartendaten: 'カードデータ',
+    bild: 'カード画像',
+    regeln: '裁定',
+    manakosten: 'マナ・コストの確認',
+    setangaben: 'セット情報',
+    preise: '価格',
+    sammeldaten: '一括データ',
+  },
+  katalogStatus: {
+    bereit: '利用可能',
+    aus: 'オフ',
+    zugangFehlt: '認証情報なし',
+    gestoert: '障害中',
+    gesperrt: 'ブロック中',
+    nichtGewaehlt: '未選択',
+  },
+  katalogAngabeFehlt: '{angabe}は保存されていません',
+  katalogNachweis: '実サービスに対して{datum}にバージョン{fassung}で実行済み —',
+  katalogNachweisAktuell: '現在のバージョンでの実行です。',
+  katalogNachweisFremd: '現在のバージョンでの実行ではありません。',
+  katalogDiagnose: '診断',
+  katalogLauf: 'この実行は再現できます：{lauf}',
+  katalogImLauf: '実行に含まれる',
+  katalogNichtImLauf: '実行に含まれない',
+  katalogVertrag: '契約と利用条件',
+  katalogFelder: {
+    basisadresse: 'アドレス',
+    endpunkte: 'エンドポイント',
+    zugang: 'アクセス',
+    tarif: '料金プラン',
+    grenze: '制限',
+    frist: 'キャッシュ期間',
+    wirkung: '影響',
+    bedingungen: '利用条件',
+    abgerufen: '確認日',
+    beleg: '出典',
+  },
+  katalogWirkung: {
+    externSenden: '外部サービスにデータを送信します',
+    externSchreiben: '外部サービスに書き込みます',
+  },
+}

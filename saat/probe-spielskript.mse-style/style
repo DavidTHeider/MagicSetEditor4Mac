@@ -1,0 +1,27 @@
+﻿mse version: 2.0.0
+game: probe
+short name: Spielskript
+full name: Stil der Saat, der das Spielskript benutzt
+version: 2026-08-15
+depends on:
+	package: probe.mse-game
+	version: 2026-08-15
+
+init script:
+	randhoehe := { 24 }
+
+card width: 375
+card height: 523
+card dpi: 150
+
+card style:
+	name:
+		left: { randbreite() }
+		top: { randhoehe() }
+		width: { feldbreite() }
+		height: 28
+		z index: 1
+		font:
+			name: Helvetica
+			size: 20
+			color: black

@@ -1,0 +1,67 @@
+# UX-07 (#1679) — der dritte Pflichtpilot: der Handelsassistent in WKWebView.
+#
+# AK-01 nennt drei Piloten: Kartenformular, Handelsassistent und
+# Einstellungszentrum. Die zwei anderen stehen in `ux07-kartenformular` und
+# `ux07-einstellungen`. Hier: Tastatur, Fokus, Laschen, das Gegenüber
+# aufschlagen, beide Erscheinungsbilder — mit echten AppKit-Ereignissen.
+#
+# Der Prüfbestand trägt dafür ein Gegenüber „Bo" (`scripts/webkitabnahme.sh`);
+# ohne eines zeigt „Handeln" nur seinen leeren Zustand.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+5
+wartetext Mit wem
+notiz Die zwei Laschen, mit der Tastatur
+pruefe [...document.querySelectorAll('[role=tab]')].map((l) => l.textContent.trim()).join('|').includes('Mit wem|Was es wert ist')
+pruefe (document.querySelector('[role=tab][aria-selected=true]').dataset.ziel = 'lasche', true)
+klicke [data-ziel="lasche"]
+taste right
+gleich document.activeElement.getAttribute('role') + ' ' + document.activeElement.textContent.trim() => tab Was es wert ist
+gleich document.querySelector('[role=tab][aria-selected=true]').textContent.trim() => Was es wert ist
+taste left
+gleich document.querySelector('[role=tab][aria-selected=true]').textContent.trim() => Mit wem
+notiz Das Gegenüber aufschlagen — der Knopf nennt es im Namen; seit UXR-15 (#1923) in der Schublade hinter „Neuer Tausch …"
+klicketext Neuer Tausch …
+wartetext Bo
+pruefe ([...document.querySelectorAll('button')].find((b) => (b.getAttribute('aria-label') || '').includes('Bo')).dataset.ziel = 'bo', true)
+zeige document.querySelector('[data-ziel="bo"]').getAttribute('aria-label') + ' / sichtbar: ' + document.querySelector('[data-ziel="bo"]').innerText
+klicke [data-ziel="bo"]
+bis document.querySelectorAll('main h3, main h2').length > 2
+zeige [...document.querySelectorAll('main h2, main h3')].map((h) => h.textContent.trim()).join(' | ')
+abzug handel-hell
+notiz Jeder Knopf und jedes Feld im Handelsraum ist mit Tab erreichbar, der Fokus sichtbar
+pruefe (window.__erreicht = new Set(), document.addEventListener('focusin', (e) => window.__erreicht.add(e.target)), true)
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+zeige window.__erreicht.size + ' verschiedene Ziele mit Tab erreicht'
+pruefe window.__erreicht.size >= 10
+pruefe [...window.__erreicht].every((e) => e.matches('button, input, select, textarea, a, [tabindex], [role=tab]'))
+pruefe getComputedStyle(document.activeElement).outlineStyle !== 'none'
+notiz Dasselbe im dunklen Erscheinungsbild
+erscheinung dunkel
+pause 500
+abzug handel-dunkel
+erscheinung hell
+gleich JSON.stringify(window.__probeFehler || []) => []

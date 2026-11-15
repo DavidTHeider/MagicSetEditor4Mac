@@ -1,0 +1,50 @@
+// **Die Texte des Dienstkatalogs** — die englische Seite zu
+// [`de/einstellungenkatalog.ts`](../de/einstellungenkatalog.ts).
+export const dienstkatalog = {
+  katalog: '各服务在此能做什么',
+  katalogHinweis:
+    '按服务列出这里已建好通路的问题——以及该通路**此刻**是否开通。这不会发送任何请求；它只读取开关、钥匙串和角色。针对真实服务的一次运行，只对运行当天及其所用的版本有效。',
+  katalogFragen: {
+    suche: '卡牌搜索',
+    kartendaten: '卡牌数据',
+    bild: '卡牌图像',
+    regeln: '规则裁定',
+    manakosten: '检查法术力费用',
+    setangaben: '系列信息',
+    preise: '价格',
+    sammeldaten: '批量数据',
+  },
+  katalogStatus: {
+    bereit: '就绪',
+    aus: '关闭',
+    zugangFehlt: '缺少凭据',
+    gestoert: '不可用',
+    gesperrt: '已阻止',
+    nichtGewaehlt: '未选择',
+  },
+  katalogAngabeFehlt: '未存储 {angabe}',
+  katalogNachweis: '已于 {datum} 用版本 {fassung} 针对真实服务运行——',
+  katalogNachweisAktuell: '即当前版本。',
+  katalogNachweisFremd: '并非当前版本。',
+  katalogDiagnose: '诊断',
+  katalogLauf: '该运行可以重复：{lauf}',
+  katalogImLauf: '包含在运行中',
+  katalogNichtImLauf: '不在运行中',
+  katalogVertrag: '合约与条款',
+  katalogFelder: {
+    basisadresse: '地址',
+    endpunkte: '端点',
+    zugang: '访问',
+    tarif: '资费',
+    grenze: '限额',
+    frist: '缓存期限',
+    wirkung: '影响',
+    bedingungen: '条款',
+    abgerufen: '查阅于',
+    beleg: '来源',
+  },
+  katalogWirkung: {
+    externSenden: '向第三方服务发送数据',
+    externSchreiben: '在第三方服务处写入',
+  },
+}

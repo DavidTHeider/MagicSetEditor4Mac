@@ -1,0 +1,171 @@
+{
+  "bauabdruck": "25408dc82266de41ead655d2cc479c875d5c2b08c040fd7459cb2016107d3c8a",
+  "erhoben": "2026-10-14T04:41:10.726Z",
+  "fenster": "1440 × 900",
+  "wege": [
+    {
+      "weg": "H1",
+      "eingang": "bereich",
+      "art": "maus",
+      "handlungen": 13,
+      "sichtwechsel": 3,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 6975,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "H6",
+      "eingang": "handel",
+      "art": "maus",
+      "handlungen": 4,
+      "sichtwechsel": 2,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 1814,
+      "wirkung": true,
+      "bedingt": [
+        {
+          "grund": "Anna: den Handel mit Bert wählen — er war nicht gewählt",
+          "gegriffen": true
+        }
+      ]
+    },
+    {
+      "weg": "H4",
+      "eingang": "bereich",
+      "art": "maus",
+      "handlungen": 3,
+      "sichtwechsel": 1,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 1385,
+      "wirkung": true,
+      "bedingt": [
+        {
+          "grund": "Bert: den Handel mit Anna wählen — er war nicht gewählt",
+          "gegriffen": true
+        }
+      ]
+    },
+    {
+      "weg": "H5",
+      "eingang": "handel",
+      "art": "maus",
+      "handlungen": 35,
+      "sichtwechsel": 0,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 43718,
+      "wirkung": true,
+      "bedingt": [
+        {
+          "grund": "Anna: den Handel mit Bert wählen — er war schon gewählt",
+          "gegriffen": false
+        },
+        {
+          "grund": "Anna: den Handel mit Bert wählen — er war schon gewählt",
+          "gegriffen": false
+        },
+        {
+          "grund": "Anna: Schritt 3 öffnen — er war nicht offen",
+          "gegriffen": true
+        },
+        {
+          "grund": "Anna: den Handel mit Bert wählen — er war schon gewählt",
+          "gegriffen": false
+        },
+        {
+          "grund": "Anna: den Handel mit Bert wählen — er war schon gewählt",
+          "gegriffen": false
+        },
+        {
+          "grund": "Anna: den Handel mit Bert wählen — er war schon gewählt",
+          "gegriffen": false
+        },
+        {
+          "grund": "Anna: den Handel mit Bert wählen — er war schon gewählt",
+          "gegriffen": false
+        },
+        {
+          "grund": "Anna: den Handel mit Bert wählen — er war schon gewählt",
+          "gegriffen": false
+        }
+      ]
+    },
+    {
+      "weg": "H5",
+      "eingang": "handel-gegenueber",
+      "art": "maus",
+      "handlungen": 33,
+      "sichtwechsel": 1,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 41761,
+      "wirkung": true,
+      "bedingt": [
+        {
+          "grund": "Bert: den Handel mit Anna wählen — er war schon gewählt",
+          "gegriffen": false
+        },
+        {
+          "grund": "Bert: Schritt 3 öffnen — er war nicht offen",
+          "gegriffen": true
+        },
+        {
+          "grund": "Bert: den Handel mit Anna wählen — er war schon gewählt",
+          "gegriffen": false
+        },
+        {
+          "grund": "Bert: den Handel mit Anna wählen — er war schon gewählt",
+          "gegriffen": false
+        },
+        {
+          "grund": "Bert: den Handel mit Anna wählen — er war schon gewählt",
+          "gegriffen": false
+        },
+        {
+          "grund": "Bert: den Handel mit Anna wählen — er war schon gewählt",
+          "gegriffen": false
+        }
+      ]
+    },
+    {
+      "weg": "H2",
+      "eingang": "sammlung",
+      "art": "maus",
+      "handlungen": 6,
+      "sichtwechsel": 4,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 2600,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "H3",
+      "eingang": "bereich",
+      "art": "maus",
+      "handlungen": 3,
+      "sichtwechsel": 0,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 1257,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "H1",
+      "eingang": "bereich",
+      "art": "tastatur",
+      "handlungen": 90,
+      "sichtwechsel": 2,
+      "tabstellen": 79,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 33848,
+      "wirkung": true,
+      "bedingt": []
+    }
+  ]
+}

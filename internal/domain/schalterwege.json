@@ -1,0 +1,4181 @@
+{
+	"cli": {
+		"mse aehnlich": [
+			[
+				"ki"
+			]
+		],
+		"mse anbieterstand": [
+			[
+				"markt"
+			]
+		],
+		"mse besitz": [
+			[
+				"sammeln"
+			]
+		],
+		"mse deck \u003cid\u003e": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck aus-set": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck bestand": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck fehlkarten": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck format": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck kopieren": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck legen": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck liste": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck loeschen": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck nehmen": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck neu": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck pruefen": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck umbenennen": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck verschieben": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck wuenschen": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck zuordnen": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck zuordnung-loesen": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck zuordnungen": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck-liste": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck-liste-uebernehmen": [
+			[
+				"spielen"
+			]
+		],
+		"mse deck-uebernehmen": [
+			[
+				"spielen"
+			]
+		],
+		"mse decks": [
+			[
+				"spielen"
+			]
+		],
+		"mse decks-uebernehmbar": [
+			[
+				"spielen"
+			]
+		],
+		"mse dubletten": [
+			[
+				"sammeln"
+			]
+		],
+		"mse einladung-annehmen": [
+			[
+				"netz"
+			]
+		],
+		"mse einladung-erstellen": [
+			[
+				"netz"
+			]
+		],
+		"mse einladung-pruefen": [
+			[
+				"netz"
+			]
+		],
+		"mse exemplar": [
+			[
+				"sammeln"
+			]
+		],
+		"mse exemplar decks": [
+			[
+				"spielen"
+			]
+		],
+		"mse exemplar-aendern": [
+			[
+				"sammeln"
+			]
+		],
+		"mse exemplar-loeschen": [
+			[
+				"sammeln"
+			]
+		],
+		"mse fernhorchen": [
+			[
+				"netz"
+			]
+		],
+		"mse format bauarten": [
+			[
+				"spielen"
+			]
+		],
+		"mse format loeschen": [
+			[
+				"spielen"
+			]
+		],
+		"mse format neu": [
+			[
+				"spielen"
+			]
+		],
+		"mse format setzen": [
+			[
+				"spielen"
+			]
+		],
+		"mse formate": [
+			[
+				"spielen"
+			]
+		],
+		"mse fremdverlauf": [
+			[
+				"markt"
+			]
+		],
+		"mse handel abgleichen": [
+			[
+				"handeln"
+			]
+		],
+		"mse handel anbieten": [
+			[
+				"handeln"
+			]
+		],
+		"mse handel anhalt": [
+			[
+				"handeln",
+				"markt"
+			]
+		],
+		"mse handel archivieren": [
+			[
+				"handeln"
+			]
+		],
+		"mse handel bestaetigen": [
+			[
+				"handeln"
+			]
+		],
+		"mse handel entwurf": [
+			[
+				"handeln"
+			]
+		],
+		"mse handel eroeffnen": [
+			[
+				"handeln"
+			]
+		],
+		"mse handel hervorholen": [
+			[
+				"handeln"
+			]
+		],
+		"mse handel klaeren": [
+			[
+				"handeln"
+			]
+		],
+		"mse handel kopieren": [
+			[
+				"handeln"
+			]
+		],
+		"mse handel liste": [
+			[
+				"handeln"
+			]
+		],
+		"mse handel protokoll": [
+			[
+				"handeln"
+			]
+		],
+		"mse handel stand": [
+			[
+				"handeln"
+			]
+		],
+		"mse handel verbuchen": [
+			[
+				"handeln"
+			]
+		],
+		"mse handel verwerfen": [
+			[
+				"handeln"
+			]
+		],
+		"mse handel vorgaenge": [
+			[
+				"handeln"
+			]
+		],
+		"mse handel vorschlagen": [
+			[
+				"handeln"
+			]
+		],
+		"mse handel-festhalten": [
+			[
+				"handeln"
+			]
+		],
+		"mse handelsbeleg": [
+			[
+				"handeln"
+			]
+		],
+		"mse handelsjournal": [
+			[
+				"handeln"
+			]
+		],
+		"mse handelspost": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"mse handelspost-bestaetigen": [
+			[
+				"handeln"
+			]
+		],
+		"mse handelspost-schicken": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"mse handelspost-wiederaufnahme": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"mse handelszusagen": [
+			[
+				"handeln"
+			]
+		],
+		"mse handelszustellung": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"mse horchen": [
+			[
+				"netz"
+			]
+		],
+		"mse indexaufbau": [
+			[
+				"ki"
+			]
+		],
+		"mse indexstand": [
+			[
+				"ki"
+			]
+		],
+		"mse indexsuche": [
+			[
+				"ki"
+			]
+		],
+		"mse installer-einlesen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse ki-batch": [
+			[
+				"ki"
+			]
+		],
+		"mse ki-einschaetzung": [
+			[
+				"ki"
+			]
+		],
+		"mse ki-erkennung": [
+			[
+				"ki"
+			]
+		],
+		"mse ki-gruppe": [
+			[
+				"ki"
+			]
+		],
+		"mse ki-modell-pruefen": [
+			[
+				"ki"
+			]
+		],
+		"mse ki-modell-vergessen": [
+			[
+				"ki"
+			]
+		],
+		"mse ki-modelle": [
+			[
+				"ki"
+			]
+		],
+		"mse ki-vorschlag": [
+			[
+				"ki"
+			]
+		],
+		"mse ki-vorschlag --ohne-geraetemodell": [
+			[
+				"ki"
+			]
+		],
+		"mse kontakt-adresse": [
+			[
+				"netz"
+			]
+		],
+		"mse kontakt-aufnehmen": [
+			[
+				"netz"
+			]
+		],
+		"mse kontakt-bestaetigen": [
+			[
+				"netz"
+			]
+		],
+		"mse kontakt-entsperren": [
+			[
+				"netz"
+			]
+		],
+		"mse kontakt-freigaben": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"mse kontakt-freigeben": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"mse kontakt-notiz": [
+			[
+				"netz"
+			]
+		],
+		"mse kontakt-sicht": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"mse kontakt-sperren": [
+			[
+				"netz"
+			]
+		],
+		"mse kontakt-widerrufen": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"mse kontakte": [
+			[
+				"netz"
+			]
+		],
+		"mse kontextpaket": [
+			[
+				"ki"
+			]
+		],
+		"mse kosten": [
+			[
+				"ki"
+			]
+		],
+		"mse kostenbudget": [
+			[
+				"ki"
+			]
+		],
+		"mse kostenposten": [
+			[
+				"ki"
+			]
+		],
+		"mse lagerorte": [
+			[
+				"sammeln"
+			]
+		],
+		"mse liste-deuten": [
+			[
+				"sammeln"
+			]
+		],
+		"mse liste-einlesen": [
+			[
+				"sammeln"
+			]
+		],
+		"mse liste-vorschau": [
+			[
+				"sammeln"
+			]
+		],
+		"mse markt": [
+			[
+				"markt"
+			]
+		],
+		"mse markt-konto": [
+			[
+				"markt"
+			]
+		],
+		"mse markt-links": [
+			[
+				"markt"
+			]
+		],
+		"mse markt-oeffnen": [
+			[
+				"markt"
+			]
+		],
+		"mse masse-aendern": [
+			[
+				"sammeln"
+			]
+		],
+		"mse masse-loeschen": [
+			[
+				"sammeln"
+			]
+		],
+		"mse mse2-orte": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse mse2-uebernehmen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse nachbarn": [
+			[
+				"netz"
+			]
+		],
+		"mse paket-anlegen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paket-beziehen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paket-entfernen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paket-ersetzen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paket-installieren": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paket-kopieren": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paket-plan": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paket-weitergeben": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paket-zurueck": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paketbedarf": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paketbezuege": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paketbezug-aktualisieren": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paketbezug-vorschau": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paketbezug-zurueck": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paketdatei": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paketdatei-anlegen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paketdatei-einfuegen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paketdatei-entfernen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paketdatei-pruefen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paketdatei-setzen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paketdatei-umbenennen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse paketdateien": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse pakete": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse partie-anlegen": [
+			[
+				"spielen"
+			]
+		],
+		"mse partie-ausfuhr": [
+			[
+				"spielen"
+			]
+		],
+		"mse partie-befehl": [
+			[
+				"spielen"
+			]
+		],
+		"mse partie-einfuhr": [
+			[
+				"spielen"
+			]
+		],
+		"mse partie-kopieren": [
+			[
+				"spielen"
+			]
+		],
+		"mse partie-loeschen": [
+			[
+				"spielen"
+			]
+		],
+		"mse partie-stand": [
+			[
+				"spielen"
+			]
+		],
+		"mse partie-verlauf": [
+			[
+				"spielen"
+			]
+		],
+		"mse partie-zeigen": [
+			[
+				"spielen"
+			]
+		],
+		"mse partien": [
+			[
+				"spielen"
+			]
+		],
+		"mse peer": [
+			[
+				"netz"
+			]
+		],
+		"mse peer-anlegen": [
+			[
+				"netz"
+			]
+		],
+		"mse peer-rotieren": [
+			[
+				"netz"
+			]
+		],
+		"mse portfolio": [
+			[
+				"sammeln",
+				"markt"
+			]
+		],
+		"mse preise": [
+			[
+				"markt"
+			]
+		],
+		"mse preise-alle": [
+			[
+				"sammeln",
+				"markt"
+			]
+		],
+		"mse preise-bulk": [
+			[
+				"markt"
+			]
+		],
+		"mse preise-holen": [
+			[
+				"markt"
+			]
+		],
+		"mse preisverlauf": [
+			[
+				"markt"
+			]
+		],
+		"mse recherche": [
+			[
+				"ki"
+			]
+		],
+		"mse regelfreigabe": [
+			[
+				"spielen"
+			]
+		],
+		"mse sammlung": [
+			[
+				"sammeln"
+			]
+		],
+		"mse sammlung \u003cdruck\u003e": [
+			[
+				"sammeln"
+			]
+		],
+		"mse sammlung-ausgeben": [
+			[
+				"sammeln"
+			]
+		],
+		"mse sammlung-einlesen": [
+			[
+				"sammeln"
+			]
+		],
+		"mse sammlung-vorschau": [
+			[
+				"sammeln"
+			]
+		],
+		"mse sicht-anfragen": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"mse symbolbibliothek": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse symbolbibliothek aufnehmen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse symbolbibliothek ausgeben": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse symbolbibliothek duplizieren": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse symbolbibliothek einlesen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse symbolbibliothek einsetzen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse symbolbibliothek loeschen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse symbolbibliothek nachziehen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse symbolbibliothek sichern": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse symbolbibliothek teile": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse symbolbibliothek umbenennen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse symbolbibliothek zuruecknehmen": [
+			[
+				"ressourcen"
+			]
+		],
+		"mse tausch-abgleich": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"mse turnier \u003cid\u003e": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"mse turnier abschliessen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"mse turnier anmelden": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"mse turnier ausgeben": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"mse turnier aussteigen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"mse turnier bericht": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"mse turnier einlesen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"mse turnier ergebnis": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"mse turnier folgen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"mse turnier kopieren": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"mse turnier loeschen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"mse turnier neu": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"mse turnier protokoll": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"mse turnier rangliste": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"mse turnier runde": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"mse turnier vorschlag": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"mse turnier wiedereroeffnen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"mse turniere": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"mse umschlag-schauen": [
+			[
+				"handeln"
+			]
+		],
+		"mse umschlag-schnueren": [
+			[
+				"handeln"
+			]
+		],
+		"mse umschlag-uebernehmen": [
+			[
+				"handeln"
+			]
+		],
+		"mse wuensche": [
+			[
+				"sammeln"
+			]
+		],
+		"mse zweck-entziehen": [
+			[
+				"netz"
+			]
+		],
+		"mse zweck-erlauben": [
+			[
+				"netz"
+			]
+		],
+		"mse-mcp --adresse": [
+			[
+				"werkzeugserver"
+			]
+		],
+		"mse-rest --adresse": [
+			[
+				"dienst"
+			]
+		]
+	},
+	"fenster": {
+		"Abhaengigkeiten": [
+			[
+				"ressourcen"
+			]
+		],
+		"AehnlicheKarten": [
+			[
+				"ki"
+			]
+		],
+		"Anbieterstand": [
+			[
+				"markt"
+			]
+		],
+		"Bauarten": [
+			[
+				"spielen"
+			]
+		],
+		"Bezugsquellen": [
+			[
+				"ressourcen"
+			]
+		],
+		"BibliothekssymbolAufnehmen": [
+			[
+				"ressourcen"
+			]
+		],
+		"BibliothekssymbolAusgeben": [
+			[
+				"ressourcen"
+			]
+		],
+		"BibliothekssymbolEinlesen": [
+			[
+				"ressourcen"
+			]
+		],
+		"BibliothekssymbolEinsetzen": [
+			[
+				"ressourcen"
+			]
+		],
+		"BibliothekssymbolFassungen": [
+			[
+				"ressourcen"
+			]
+		],
+		"BibliothekssymbolKopieren": [
+			[
+				"ressourcen"
+			]
+		],
+		"BibliothekssymbolLoeschen": [
+			[
+				"ressourcen"
+			]
+		],
+		"BibliothekssymbolNachziehen": [
+			[
+				"ressourcen"
+			]
+		],
+		"BibliothekssymbolSichern": [
+			[
+				"ressourcen"
+			]
+		],
+		"BibliothekssymbolTeile": [
+			[
+				"ressourcen"
+			]
+		],
+		"BibliothekssymbolUmbenennen": [
+			[
+				"ressourcen"
+			]
+		],
+		"BibliothekssymbolZuruecknehmen": [
+			[
+				"ressourcen"
+			]
+		],
+		"Deck": [
+			[
+				"spielen"
+			]
+		],
+		"DeckAbgleichen": [
+			[
+				"spielen"
+			]
+		],
+		"DeckAnlegen": [
+			[
+				"spielen"
+			]
+		],
+		"DeckAusSet": [
+			[
+				"spielen"
+			]
+		],
+		"DeckFehlkarten": [
+			[
+				"spielen"
+			]
+		],
+		"DeckFehlkartenWuenschen": [
+			[
+				"spielen"
+			]
+		],
+		"DeckFormatWaehlen": [
+			[
+				"spielen"
+			]
+		],
+		"DeckKopieren": [
+			[
+				"spielen"
+			]
+		],
+		"DeckLoeschen": [
+			[
+				"spielen"
+			]
+		],
+		"DeckPruefen": [
+			[
+				"spielen"
+			]
+		],
+		"DeckUebernehmen": [
+			[
+				"spielen"
+			]
+		],
+		"DeckUmbenennen": [
+			[
+				"spielen"
+			]
+		],
+		"DeckZuordnen": [
+			[
+				"spielen"
+			]
+		],
+		"DeckZuordnungLoesen": [
+			[
+				"spielen"
+			]
+		],
+		"DeckZuordnungen": [
+			[
+				"spielen"
+			]
+		],
+		"DeckeZurUebernahme": [
+			[
+				"spielen"
+			]
+		],
+		"DeckleiheAnbieten": [
+			[
+				"spielen",
+				"netz"
+			]
+		],
+		"DeckleiheAnnehmen": [
+			[
+				"spielen",
+				"netz"
+			]
+		],
+		"DeckleiheWiderrufen": [
+			[
+				"spielen",
+				"netz"
+			]
+		],
+		"DeckleiheZielWaehlen": [
+			[
+				"spielen",
+				"netz"
+			]
+		],
+		"DeckleiheZurueckgeben": [
+			[
+				"spielen",
+				"netz"
+			]
+		],
+		"Deckleihen": [
+			[
+				"spielen",
+				"netz"
+			]
+		],
+		"DecklisteAusgeben": [
+			[
+				"spielen"
+			]
+		],
+		"DecklisteUebernehmen": [
+			[
+				"spielen"
+			]
+		],
+		"DecklisteVorschau": [
+			[
+				"spielen"
+			]
+		],
+		"DeckplatzLegen": [
+			[
+				"spielen"
+			]
+		],
+		"DeckplatzNehmen": [
+			[
+				"spielen"
+			]
+		],
+		"DeckplatzVerschieben": [
+			[
+				"spielen"
+			]
+		],
+		"Decks": [
+			[
+				"spielen"
+			]
+		],
+		"ExemplarAendern": [
+			[
+				"sammeln"
+			]
+		],
+		"ExemplarAnlegen": [
+			[
+				"sammeln"
+			]
+		],
+		"ExemplarDecks": [
+			[
+				"spielen"
+			]
+		],
+		"ExemplarLoeschen": [
+			[
+				"sammeln"
+			]
+		],
+		"FernHorchBeenden": [
+			[
+				"netz"
+			]
+		],
+		"FernHorchStand": [
+			[
+				"netz"
+			]
+		],
+		"FernHorchStarten": [
+			[
+				"netz"
+			]
+		],
+		"FormatAusBauart": [
+			[
+				"spielen"
+			]
+		],
+		"FormatLoeschen": [
+			[
+				"spielen"
+			]
+		],
+		"FormatSetzen": [
+			[
+				"spielen"
+			]
+		],
+		"Formate": [
+			[
+				"spielen"
+			]
+		],
+		"Freigabesicht": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"Fremdkartenbild": [
+			[
+				"spielen"
+			]
+		],
+		"Fremdpreisverlauf": [
+			[
+				"markt"
+			]
+		],
+		"HandelArchivieren": [
+			[
+				"handeln"
+			]
+		],
+		"HandelEntwurfAendern": [
+			[
+				"handeln"
+			]
+		],
+		"HandelEntwurfLoeschen": [
+			[
+				"handeln"
+			]
+		],
+		"HandelEroeffnen": [
+			[
+				"handeln"
+			]
+		],
+		"HandelFesthalten": [
+			[
+				"handeln"
+			]
+		],
+		"HandelFreigabeErteilen": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"HandelKopieren": [
+			[
+				"handeln"
+			]
+		],
+		"HandelPostbestaetigung": [
+			[
+				"handeln"
+			]
+		],
+		"HandelPreisanhalt": [
+			[
+				"handeln",
+				"markt"
+			]
+		],
+		"HandelProtokoll": [
+			[
+				"handeln"
+			]
+		],
+		"HandelSchicken": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"HandelSchritt": [
+			[
+				"handeln"
+			]
+		],
+		"HandelSichtAnfragen": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"HandelStand": [
+			[
+				"handeln"
+			]
+		],
+		"HandelUebersicht": [
+			[
+				"handeln"
+			]
+		],
+		"HandelVorgaenge": [
+			[
+				"handeln"
+			]
+		],
+		"HandelVorschlagen": [
+			[
+				"handeln"
+			]
+		],
+		"HandelWiederaufnahme": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"HandelZustellen": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"Handelsabgleich": [
+			[
+				"handeln"
+			]
+		],
+		"Handelsbeleg": [
+			[
+				"handeln"
+			]
+		],
+		"Handelsbestaetigung": [
+			[
+				"handeln"
+			]
+		],
+		"Handelsjournal": [
+			[
+				"handeln"
+			]
+		],
+		"Handelspartner": [
+			[
+				"spielen"
+			]
+		],
+		"Handelspoststand": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"Handelsverbuchung": [
+			[
+				"handeln"
+			]
+		],
+		"Handelszusagen": [
+			[
+				"handeln"
+			]
+		],
+		"HorchBeenden": [
+			[
+				"netz"
+			]
+		],
+		"HorchStand": [
+			[
+				"netz"
+			]
+		],
+		"HorchStarten": [
+			[
+				"netz"
+			]
+		],
+		"IndexAbbrechen": [
+			[
+				"ki"
+			]
+		],
+		"IndexAufbauen": [
+			[
+				"ki"
+			]
+		],
+		"Indexstand": [
+			[
+				"ki"
+			]
+		],
+		"Indexsuche": [
+			[
+				"ki"
+			]
+		],
+		"InstallerEinlesen": [
+			[
+				"ressourcen"
+			]
+		],
+		"KIBatchVorschlagen": [
+			[
+				"ki"
+			]
+		],
+		"KIBildAbbrechen": [
+			[
+				"ki"
+			]
+		],
+		"KIBildEinsetzen": [
+			[
+				"ki"
+			]
+		],
+		"KIBildHerkunft": [
+			[
+				"ki"
+			]
+		],
+		"KIBildVerwerfen": [
+			[
+				"ki"
+			]
+		],
+		"KIBildVorschlagen": [
+			[
+				"ki"
+			]
+		],
+		"KIBildZuschnitt": [
+			[
+				"ki"
+			]
+		],
+		"KIEinschaetzen": [
+			[
+				"ki"
+			]
+		],
+		"KIFeldherkunft": [
+			[
+				"ki"
+			]
+		],
+		"KIFreigabeErteilen": [
+			[
+				"ki"
+			]
+		],
+		"KIGeraetemodellFuerSitzung": [
+			[
+				"ki"
+			]
+		],
+		"KIGruppeUebernehmen": [
+			[
+				"ki"
+			]
+		],
+		"KIKarteErkennen": [
+			[
+				"ki"
+			]
+		],
+		"KIModellPruefen": [
+			[
+				"ki"
+			]
+		],
+		"KIModellVergessen": [
+			[
+				"ki"
+			]
+		],
+		"KIModelle": [
+			[
+				"ki"
+			]
+		],
+		"KIVorschlagUebernehmen": [
+			[
+				"ki"
+			]
+		],
+		"KIVorschlagen": [
+			[
+				"ki"
+			]
+		],
+		"KontaktLoeschen": [
+			[
+				"netz"
+			]
+		],
+		"Kontakte": [
+			[
+				"netz"
+			]
+		],
+		"KontakteEinlesen": [
+			[
+				"netz"
+			]
+		],
+		"KontakteUebernehmen": [
+			[
+				"netz"
+			]
+		],
+		"KontakteinladungAnnehmen": [
+			[
+				"netz"
+			]
+		],
+		"KontakteinladungErstellen": [
+			[
+				"netz"
+			]
+		],
+		"KontakteinladungPruefen": [
+			[
+				"netz"
+			]
+		],
+		"KontextZusammenstellen": [
+			[
+				"ki"
+			]
+		],
+		"KostenbudgetSetzen": [
+			[
+				"ki"
+			]
+		],
+		"Kostenposten": [
+			[
+				"ki"
+			]
+		],
+		"Kostenstand": [
+			[
+				"ki"
+			]
+		],
+		"ListeDeuten": [
+			[
+				"sammeln"
+			]
+		],
+		"ListeEinlesen": [
+			[
+				"sammeln"
+			]
+		],
+		"ListeVorschauen": [
+			[
+				"sammeln"
+			]
+		],
+		"MCPBeenden": [
+			[
+				"werkzeugserver"
+			]
+		],
+		"MCPStand": [
+			[
+				"werkzeugserver"
+			]
+		],
+		"MCPStarten": [
+			[
+				"werkzeugserver"
+			]
+		],
+		"MSE2Vorschlaege": [
+			[
+				"ressourcen"
+			]
+		],
+		"Marktangebote": [
+			[
+				"markt"
+			]
+		],
+		"Marktkonto": [
+			[
+				"markt"
+			]
+		],
+		"MarktlinkOeffnen": [
+			[
+				"markt"
+			]
+		],
+		"Marktlinks": [
+			[
+				"markt"
+			]
+		],
+		"MasseAendern": [
+			[
+				"sammeln"
+			]
+		],
+		"MasseLoeschen": [
+			[
+				"sammeln"
+			]
+		],
+		"MassePreise": [
+			[
+				"sammeln",
+				"markt"
+			]
+		],
+		"Nachbarn": [
+			[
+				"netz"
+			]
+		],
+		"PaketAnlegen": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketArten": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketBeziehen": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketBezuege": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketBezugAktualisieren": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketBezugVorschau": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketBezugZurueck": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketEinbindenVon": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketEntfernen": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketErsetzen": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketHerkunft": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketKopieren": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketPlan": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketPlanWaehlen": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketWeitergeben": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketZurueck": [
+			[
+				"ressourcen"
+			]
+		],
+		"Paketbedarf": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketdateiAnlegen": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketdateiEinfuegen": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketdateiEntfernen": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketdateiLesen": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketdateiPruefen": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketdateiSchreiben": [
+			[
+				"ressourcen"
+			]
+		],
+		"PaketdateiUmbenennen": [
+			[
+				"ressourcen"
+			]
+		],
+		"Paketdateien": [
+			[
+				"ressourcen"
+			]
+		],
+		"Pakete": [
+			[
+				"ressourcen"
+			]
+		],
+		"Paketfarben": [
+			[
+				"ressourcen"
+			]
+		],
+		"Paketsymbole": [
+			[
+				"ressourcen"
+			]
+		],
+		"Partie": [
+			[
+				"spielen"
+			]
+		],
+		"PartieAnlegen": [
+			[
+				"spielen"
+			]
+		],
+		"PartieAusfuhrSpeichern": [
+			[
+				"spielen"
+			]
+		],
+		"PartieBeenden": [
+			[
+				"spielen"
+			]
+		],
+		"PartieBefehl": [
+			[
+				"spielen"
+			]
+		],
+		"PartieBeitreten": [
+			[
+				"spielen",
+				"netz"
+			]
+		],
+		"PartieBeitrittBeenden": [
+			[
+				"spielen",
+				"netz"
+			]
+		],
+		"PartieBeitrittStand": [
+			[
+				"spielen",
+				"netz"
+			]
+		],
+		"PartieEinfuhrOeffnen": [
+			[
+				"spielen"
+			]
+		],
+		"PartieFortsetzen": [
+			[
+				"spielen"
+			]
+		],
+		"PartieFreigabeBeenden": [
+			[
+				"spielen",
+				"netz"
+			]
+		],
+		"PartieFreigabeStand": [
+			[
+				"spielen",
+				"netz"
+			]
+		],
+		"PartieFreigeben": [
+			[
+				"spielen",
+				"netz"
+			]
+		],
+		"PartieKopieren": [
+			[
+				"spielen"
+			]
+		],
+		"PartieLoeschen": [
+			[
+				"spielen"
+			]
+		],
+		"PartieOffenlegen": [
+			[
+				"spielen"
+			]
+		],
+		"PartieOffenlegungZuruecknehmen": [
+			[
+				"spielen"
+			]
+		],
+		"PartieOffenlegungen": [
+			[
+				"spielen"
+			]
+		],
+		"PartiePausieren": [
+			[
+				"spielen"
+			]
+		],
+		"PartieSagen": [
+			[
+				"spielen"
+			]
+		],
+		"PartieVergessen": [
+			[
+				"spielen"
+			]
+		],
+		"PartieVerlauf": [
+			[
+				"spielen"
+			]
+		],
+		"PartieWuenschen": [
+			[
+				"spielen",
+				"netz"
+			]
+		],
+		"PartieZeigen": [
+			[
+				"spielen"
+			]
+		],
+		"Partiediagnose": [
+			[
+				"spielen"
+			]
+		],
+		"Partien": [
+			[
+				"spielen"
+			]
+		],
+		"Peeridentitaet": [
+			[
+				"netz"
+			]
+		],
+		"PeeridentitaetRotieren": [
+			[
+				"netz"
+			]
+		],
+		"PeeridentitaetSicherstellen": [
+			[
+				"netz"
+			]
+		],
+		"PeerkontaktAdresse": [
+			[
+				"netz"
+			]
+		],
+		"PeerkontaktAufnehmen": [
+			[
+				"netz"
+			]
+		],
+		"PeerkontaktBestaetigen": [
+			[
+				"netz"
+			]
+		],
+		"PeerkontaktEntsperren": [
+			[
+				"netz"
+			]
+		],
+		"PeerkontaktNotiz": [
+			[
+				"netz"
+			]
+		],
+		"PeerkontaktSperren": [
+			[
+				"netz"
+			]
+		],
+		"Peerkontakte": [
+			[
+				"netz"
+			]
+		],
+		"PeerzweckEntziehen": [
+			[
+				"netz"
+			]
+		],
+		"PeerzweckErlauben": [
+			[
+				"netz"
+			]
+		],
+		"Portfolio": [
+			[
+				"sammeln",
+				"markt"
+			]
+		],
+		"Preisbulk": [
+			[
+				"markt"
+			]
+		],
+		"Preise": [
+			[
+				"markt"
+			]
+		],
+		"PreiseHolen": [
+			[
+				"markt"
+			]
+		],
+		"Preisverlauf": [
+			[
+				"markt"
+			]
+		],
+		"Probekarten": [
+			[
+				"ressourcen"
+			]
+		],
+		"RESTBeenden": [
+			[
+				"dienst"
+			]
+		],
+		"RESTStand": [
+			[
+				"dienst"
+			]
+		],
+		"RESTStarten": [
+			[
+				"dienst"
+			]
+		],
+		"Recherchieren": [
+			[
+				"ki"
+			]
+		],
+		"Regelfreigabe": [
+			[
+				"spielen"
+			]
+		],
+		"Rueckentextur": [
+			[
+				"spielen"
+			]
+		],
+		"Sammlung": [
+			[
+				"sammeln"
+			]
+		],
+		"SammlungAusgeben": [
+			[
+				"sammeln"
+			]
+		],
+		"SammlungBesitz": [
+			[
+				"sammeln"
+			]
+		],
+		"SammlungCSVEinlesen": [
+			[
+				"sammeln"
+			]
+		],
+		"SammlungCSVVorschauen": [
+			[
+				"sammeln"
+			]
+		],
+		"SammlungDubletten": [
+			[
+				"sammeln"
+			]
+		],
+		"SammlungFreigeben": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"SammlungLagerorte": [
+			[
+				"sammeln"
+			]
+		],
+		"SammlungWuensche": [
+			[
+				"sammeln"
+			]
+		],
+		"Sammlungsfenster": [
+			[
+				"sammeln"
+			]
+		],
+		"SammlungsfreigabeWiderrufen": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"Sammlungsfreigaben": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"SichtbarWerden": [
+			[
+				"netz"
+			]
+		],
+		"SichtbarkeitBeenden": [
+			[
+				"netz"
+			]
+		],
+		"Spieltextur": [
+			[
+				"spielen"
+			]
+		],
+		"Symbolbibliothek": [
+			[
+				"ressourcen"
+			]
+		],
+		"Tauschabgleich": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"TischabzugPDFSpeichern": [
+			[
+				"spielen"
+			]
+		],
+		"TischabzugSpeichern": [
+			[
+				"spielen"
+			]
+		],
+		"Tischbild": [
+			[
+				"spielen"
+			]
+		],
+		"TischbildEntfernen": [
+			[
+				"spielen"
+			]
+		],
+		"TischbildWaehlen": [
+			[
+				"spielen"
+			]
+		],
+		"Turnier": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierAbschliessen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierAnlegen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierAnmelden": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierAusgabeSpeichern": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierAussteigen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierBerichtSpeichern": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierEinlesenOeffnen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierErgebnisSetzen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierKopieren": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierKorrekturfolgen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierLoeschen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierMatch": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierMatchAusDerPartie": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierMatchBinden": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierMatchMelden": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierMatchUebernehmen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierPaarungsvorschlag": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierProtokoll": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierRangliste": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierRundeLegen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"TurnierWiedereroeffnen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"Turniere": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"UmschlagDeck": [
+			[
+				"handeln"
+			]
+		],
+		"UmschlagKarte": [
+			[
+				"handeln"
+			]
+		],
+		"UmschlagSchnueren": [
+			[
+				"handeln"
+			]
+		],
+		"UmschlagSicht": [
+			[
+				"handeln"
+			]
+		],
+		"UmschlagUebernehmen": [
+			[
+				"handeln"
+			]
+		],
+		"UmschlagVorlage": [
+			[
+				"handeln"
+			]
+		],
+		"UmschlagWaehlen": [
+			[
+				"handeln"
+			]
+		],
+		"VorlagenUebernehmen": [
+			[
+				"ressourcen"
+			]
+		],
+		"Vorlagenvorschau": [
+			[
+				"ressourcen"
+			]
+		],
+		"dienstBeenden": [
+			[
+				"dienst"
+			]
+		],
+		"dienstStarten": [
+			[
+				"dienst"
+			]
+		]
+	},
+	"mcp": {
+		"lesen.aehnlichekarten": [
+			[
+				"ki"
+			]
+		],
+		"lesen.anbieterstand": [
+			[
+				"markt"
+			]
+		],
+		"lesen.deck": [
+			[
+				"spielen"
+			]
+		],
+		"lesen.deck.bestand": [
+			[
+				"spielen"
+			]
+		],
+		"lesen.deck.fehlkarten": [
+			[
+				"spielen"
+			]
+		],
+		"lesen.deck.liste": [
+			[
+				"spielen"
+			]
+		],
+		"lesen.deck.pruefung": [
+			[
+				"spielen"
+			]
+		],
+		"lesen.deck.zuordnungen": [
+			[
+				"spielen"
+			]
+		],
+		"lesen.deckliste": [
+			[
+				"spielen"
+			]
+		],
+		"lesen.decks": [
+			[
+				"spielen"
+			]
+		],
+		"lesen.decks.uebernehmbar": [
+			[
+				"spielen"
+			]
+		],
+		"lesen.exemplar.decks": [
+			[
+				"spielen"
+			]
+		],
+		"lesen.formatbauarten": [
+			[
+				"spielen"
+			]
+		],
+		"lesen.formate": [
+			[
+				"spielen"
+			]
+		],
+		"lesen.handel": [
+			[
+				"handeln"
+			]
+		],
+		"lesen.handelsanhalt": [
+			[
+				"handeln",
+				"markt"
+			]
+		],
+		"lesen.handelsbeleg": [
+			[
+				"handeln"
+			]
+		],
+		"lesen.handelsprotokoll": [
+			[
+				"handeln"
+			]
+		],
+		"lesen.handelsuebersicht": [
+			[
+				"handeln"
+			]
+		],
+		"lesen.handelsvorgaenge": [
+			[
+				"handeln"
+			]
+		],
+		"lesen.handelszusagen": [
+			[
+				"handeln"
+			]
+		],
+		"lesen.indexstand": [
+			[
+				"ki"
+			]
+		],
+		"lesen.indexsuche": [
+			[
+				"ki"
+			]
+		],
+		"lesen.ki.modelle": [
+			[
+				"ki"
+			]
+		],
+		"lesen.kostenstand": [
+			[
+				"ki"
+			]
+		],
+		"lesen.liste.deuten": [
+			[
+				"sammeln"
+			]
+		],
+		"lesen.liste.vorschau": [
+			[
+				"sammeln"
+			]
+		],
+		"lesen.marktangebote": [
+			[
+				"markt"
+			]
+		],
+		"lesen.marktkonto": [
+			[
+				"markt"
+			]
+		],
+		"lesen.marktlinks": [
+			[
+				"markt"
+			]
+		],
+		"lesen.mse2orte": [
+			[
+				"ressourcen"
+			]
+		],
+		"lesen.paket.bezuege": [
+			[
+				"ressourcen"
+			]
+		],
+		"lesen.paket.bezug.vorschau": [
+			[
+				"ressourcen"
+			]
+		],
+		"lesen.paket.plan": [
+			[
+				"ressourcen"
+			]
+		],
+		"lesen.paketdatei": [
+			[
+				"ressourcen"
+			]
+		],
+		"lesen.paketdateien": [
+			[
+				"ressourcen"
+			]
+		],
+		"lesen.pakete": [
+			[
+				"ressourcen"
+			]
+		],
+		"lesen.partie": [
+			[
+				"spielen"
+			]
+		],
+		"lesen.partie.ausfuhr": [
+			[
+				"spielen"
+			]
+		],
+		"lesen.partien": [
+			[
+				"spielen"
+			]
+		],
+		"lesen.partieverlauf": [
+			[
+				"spielen"
+			]
+		],
+		"lesen.peeridentitaet": [
+			[
+				"netz"
+			]
+		],
+		"lesen.peerkontakte": [
+			[
+				"netz"
+			]
+		],
+		"lesen.portfolio": [
+			[
+				"sammeln",
+				"markt"
+			]
+		],
+		"lesen.preise": [
+			[
+				"markt"
+			]
+		],
+		"lesen.preisverlauf": [
+			[
+				"markt"
+			]
+		],
+		"lesen.recherche": [
+			[
+				"ki"
+			]
+		],
+		"lesen.regelfreigabe": [
+			[
+				"spielen"
+			]
+		],
+		"lesen.sammlung": [
+			[
+				"sammeln"
+			]
+		],
+		"lesen.sammlung.ausgeben": [
+			[
+				"sammeln"
+			]
+		],
+		"lesen.sammlung.besitz": [
+			[
+				"sammeln"
+			]
+		],
+		"lesen.sammlung.dubletten": [
+			[
+				"sammeln"
+			]
+		],
+		"lesen.sammlung.lagerorte": [
+			[
+				"sammeln"
+			]
+		],
+		"lesen.sammlung.vorschau": [
+			[
+				"sammeln"
+			]
+		],
+		"lesen.sammlung.wuensche": [
+			[
+				"sammeln"
+			]
+		],
+		"lesen.sammlungfuer": [
+			[
+				"sammeln"
+			]
+		],
+		"lesen.set.paketbedarf": [
+			[
+				"ressourcen"
+			]
+		],
+		"lesen.skriptbefund": [
+			[
+				"ressourcen"
+			]
+		],
+		"lesen.symbolbibliothek": [
+			[
+				"ressourcen"
+			]
+		],
+		"lesen.symbolbibliothek.symbol": [
+			[
+				"ressourcen"
+			]
+		],
+		"lesen.symbolbibliothek.teile": [
+			[
+				"ressourcen"
+			]
+		],
+		"lesen.turnier": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"lesen.turnier.ausgabe": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"lesen.turnier.bericht": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"lesen.turnier.folgen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"lesen.turnier.protokoll": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"lesen.turnier.rangliste": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"lesen.turniere": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"lesen.umschlag": [
+			[
+				"handeln"
+			]
+		],
+		"schreiben.deck.anlegen": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.deck.ausset": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.deck.fehlkarten.wuenschen": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.deck.format": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.deck.kopieren": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.deck.loeschen": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.deck.uebernehmen": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.deck.umbenennen": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.deck.zuordnen": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.deck.zuordnung.loesen": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.deckliste": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.deckplatz.legen": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.deckplatz.nehmen": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.deckplatz.verschieben": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.exemplar": [
+			[
+				"sammeln"
+			]
+		],
+		"schreiben.exemplaraendern": [
+			[
+				"sammeln"
+			]
+		],
+		"schreiben.exemplarloeschen": [
+			[
+				"sammeln"
+			]
+		],
+		"schreiben.format.ausbauart": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.format.loeschen": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.format.setzen": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.fremdverlauf": [
+			[
+				"markt"
+			]
+		],
+		"schreiben.ki.batch": [
+			[
+				"ki"
+			]
+		],
+		"schreiben.ki.einschaetzung": [
+			[
+				"ki"
+			]
+		],
+		"schreiben.ki.erkennung": [
+			[
+				"ki"
+			]
+		],
+		"schreiben.ki.geraetemodell.sitzung": [
+			[
+				"ki"
+			]
+		],
+		"schreiben.ki.gruppe": [
+			[
+				"ki"
+			]
+		],
+		"schreiben.ki.modell.pruefen": [
+			[
+				"ki"
+			]
+		],
+		"schreiben.ki.modell.vergessen": [
+			[
+				"ki"
+			]
+		],
+		"schreiben.ki.vorschlag": [
+			[
+				"ki"
+			]
+		],
+		"schreiben.liste.einlesen": [
+			[
+				"sammeln"
+			]
+		],
+		"schreiben.paket.anlegen": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.paket.beziehen": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.paket.bezug.aktualisieren": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.paket.bezug.zurueck": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.paket.einlesen": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.paket.entfernen": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.paket.ersetzen": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.paket.installieren": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.paket.kopieren": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.paket.uebernehmen": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.paket.weitergeben": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.paket.zurueck": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.paketdatei": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.paketdatei.anlegen": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.paketdatei.entfernen": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.paketdatei.umbenennen": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.partie.anlegen": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.partie.befehl": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.partie.einfuhr": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.partie.kopieren": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.partie.loeschen": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.partie.stand": [
+			[
+				"spielen"
+			]
+		],
+		"schreiben.peerkontakt.sperren": [
+			[
+				"netz"
+			]
+		],
+		"schreiben.preise.bulk": [
+			[
+				"markt"
+			]
+		],
+		"schreiben.preiseholen": [
+			[
+				"markt"
+			]
+		],
+		"schreiben.sammlung.einlesen": [
+			[
+				"sammeln"
+			]
+		],
+		"schreiben.sammlung.masse": [
+			[
+				"sammeln"
+			]
+		],
+		"schreiben.sammlung.masseloeschen": [
+			[
+				"sammeln"
+			]
+		],
+		"schreiben.sammlung.preisschub": [
+			[
+				"sammeln",
+				"markt"
+			]
+		],
+		"schreiben.symbolbibliothek.aufnehmen": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.symbolbibliothek.duplizieren": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.symbolbibliothek.einlesen": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.symbolbibliothek.einsetzen": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.symbolbibliothek.loeschen": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.symbolbibliothek.nachziehen": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.symbolbibliothek.sichern": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.symbolbibliothek.umbenennen": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.symbolbibliothek.zuruecknehmen": [
+			[
+				"ressourcen"
+			]
+		],
+		"schreiben.turnier.abschliessen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"schreiben.turnier.anlegen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"schreiben.turnier.anmelden": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"schreiben.turnier.aussteigen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"schreiben.turnier.einlesen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"schreiben.turnier.ergebnis": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"schreiben.turnier.kopieren": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"schreiben.turnier.loeschen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"schreiben.turnier.runde": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"schreiben.turnier.vorschlag": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"schreiben.turnier.wiedereroeffnen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"schreiben.umschlag.schnueren": [
+			[
+				"handeln"
+			]
+		],
+		"schreiben.umschlag.uebernehmen": [
+			[
+				"handeln"
+			]
+		]
+	},
+	"rest": {
+		"DELETE /decks/{}": [
+			[
+				"spielen"
+			]
+		],
+		"DELETE /decks/{}/plaetze/{}": [
+			[
+				"spielen"
+			]
+		],
+		"DELETE /decks/{}/zuordnungen/{}": [
+			[
+				"spielen"
+			]
+		],
+		"DELETE /formate/{}": [
+			[
+				"spielen"
+			]
+		],
+		"DELETE /handel/{}/archiv": [
+			[
+				"handeln"
+			]
+		],
+		"DELETE /handel/{}/entwurf": [
+			[
+				"handeln"
+			]
+		],
+		"DELETE /index/aufbau": [
+			[
+				"ki"
+			]
+		],
+		"DELETE /pakete/{}/dateien/{}": [
+			[
+				"ressourcen"
+			]
+		],
+		"DELETE /pakete/{}/{}": [
+			[
+				"ressourcen"
+			]
+		],
+		"DELETE /partien/{}": [
+			[
+				"spielen"
+			]
+		],
+		"DELETE /peer/kontakte/{}/freigaben/{}/{}": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"DELETE /peer/kontakte/{}/sperre": [
+			[
+				"netz"
+			]
+		],
+		"DELETE /peer/kontakte/{}/zwecke/{}": [
+			[
+				"netz"
+			]
+		],
+		"DELETE /sammlung/{}": [
+			[
+				"sammeln"
+			]
+		],
+		"DELETE /symbole/{}": [
+			[
+				"ressourcen"
+			]
+		],
+		"DELETE /turniere/{}": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"DELETE /turniere/{}/abschluss": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"GET /anbieter/{}/stand": [
+			[
+				"markt"
+			]
+		],
+		"GET /decks": [
+			[
+				"spielen"
+			]
+		],
+		"GET /decks/{}": [
+			[
+				"spielen"
+			]
+		],
+		"GET /decks/{}/bestand": [
+			[
+				"spielen"
+			]
+		],
+		"GET /decks/{}/fehlkarten": [
+			[
+				"spielen"
+			]
+		],
+		"GET /decks/{}/liste": [
+			[
+				"spielen"
+			]
+		],
+		"GET /decks/{}/pruefung": [
+			[
+				"spielen"
+			]
+		],
+		"GET /decks/{}/zuordnungen": [
+			[
+				"spielen"
+			]
+		],
+		"GET /drucke/{}/angebote": [
+			[
+				"markt"
+			]
+		],
+		"GET /drucke/{}/links": [
+			[
+				"markt"
+			]
+		],
+		"GET /drucke/{}/preise": [
+			[
+				"markt"
+			]
+		],
+		"GET /drucke/{}/preisverlauf": [
+			[
+				"markt"
+			]
+		],
+		"GET /formatbauarten": [
+			[
+				"spielen"
+			]
+		],
+		"GET /formate": [
+			[
+				"spielen"
+			]
+		],
+		"GET /handel": [
+			[
+				"handeln"
+			]
+		],
+		"GET /handel/{}": [
+			[
+				"handeln"
+			]
+		],
+		"GET /handel/{}/anhalt": [
+			[
+				"handeln",
+				"markt"
+			]
+		],
+		"GET /handel/{}/beleg": [
+			[
+				"handeln"
+			]
+		],
+		"GET /handel/{}/journal": [
+			[
+				"handeln"
+			]
+		],
+		"GET /handel/{}/protokoll": [
+			[
+				"handeln"
+			]
+		],
+		"GET /handel/{}/zusagen": [
+			[
+				"handeln"
+			]
+		],
+		"GET /index": [
+			[
+				"ki"
+			]
+		],
+		"GET /index/suche": [
+			[
+				"ki"
+			]
+		],
+		"GET /ki/modelle": [
+			[
+				"ki"
+			]
+		],
+		"GET /kosten/{}": [
+			[
+				"ki"
+			]
+		],
+		"GET /kosten/{}/posten": [
+			[
+				"ki"
+			]
+		],
+		"GET /markt/{}/konto": [
+			[
+				"markt"
+			]
+		],
+		"GET /mse2/orte": [
+			[
+				"ressourcen"
+			]
+		],
+		"GET /paketbezuege": [
+			[
+				"ressourcen"
+			]
+		],
+		"GET /paketbezuege/{}/vorschau": [
+			[
+				"ressourcen"
+			]
+		],
+		"GET /pakete": [
+			[
+				"ressourcen"
+			]
+		],
+		"GET /pakete/plan": [
+			[
+				"ressourcen"
+			]
+		],
+		"GET /pakete/{}/dateien": [
+			[
+				"ressourcen"
+			]
+		],
+		"GET /pakete/{}/dateien/{}": [
+			[
+				"ressourcen"
+			]
+		],
+		"GET /partien": [
+			[
+				"spielen"
+			]
+		],
+		"GET /partien/{}": [
+			[
+				"spielen"
+			]
+		],
+		"GET /partien/{}/ausfuhr": [
+			[
+				"spielen"
+			]
+		],
+		"GET /partien/{}/verlauf": [
+			[
+				"spielen"
+			]
+		],
+		"GET /peer": [
+			[
+				"netz"
+			]
+		],
+		"GET /peer/kontakte": [
+			[
+				"netz"
+			]
+		],
+		"GET /peer/kontakte/{}/freigaben": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"GET /peer/kontakte/{}/handel": [
+			[
+				"handeln"
+			]
+		],
+		"GET /peer/kontakte/{}/post": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"GET /peer/kontakte/{}/sicht": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"GET /peer/nachbarn": [
+			[
+				"netz"
+			]
+		],
+		"GET /portfolio": [
+			[
+				"sammeln",
+				"markt"
+			]
+		],
+		"GET /profile/{}/decks": [
+			[
+				"spielen"
+			]
+		],
+		"GET /recherche": [
+			[
+				"ki"
+			]
+		],
+		"GET /recherche/aehnlich/{}": [
+			[
+				"ki"
+			]
+		],
+		"GET /regelfreigabe": [
+			[
+				"spielen"
+			]
+		],
+		"GET /sammlung": [
+			[
+				"sammeln"
+			]
+		],
+		"GET /sammlung/ausgeben": [
+			[
+				"sammeln"
+			]
+		],
+		"GET /sammlung/besitz/{}": [
+			[
+				"sammeln"
+			]
+		],
+		"GET /sammlung/drucke/{}": [
+			[
+				"sammeln"
+			]
+		],
+		"GET /sammlung/dubletten": [
+			[
+				"sammeln"
+			]
+		],
+		"GET /sammlung/exemplare/{}/decks": [
+			[
+				"spielen"
+			]
+		],
+		"GET /sammlung/lagerorte": [
+			[
+				"sammeln"
+			]
+		],
+		"GET /sammlung/wuensche": [
+			[
+				"sammeln"
+			]
+		],
+		"GET /sets/{}/paketbedarf": [
+			[
+				"ressourcen"
+			]
+		],
+		"GET /symbole": [
+			[
+				"ressourcen"
+			]
+		],
+		"GET /symbole/{}": [
+			[
+				"ressourcen"
+			]
+		],
+		"GET /symbole/{}/teile": [
+			[
+				"ressourcen"
+			]
+		],
+		"GET /turniere": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"GET /turniere/{}": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"GET /turniere/{}/ausgabe": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"GET /turniere/{}/bericht": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"GET /turniere/{}/protokoll": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"GET /turniere/{}/rangliste": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"GET /turniere/{}/vorschlag": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"GET /umschlag": [
+			[
+				"handeln"
+			]
+		],
+		"PATCH /pakete/{}/dateien/{}": [
+			[
+				"ressourcen"
+			]
+		],
+		"POST /decks": [
+			[
+				"spielen"
+			]
+		],
+		"POST /decks/aus-set": [
+			[
+				"spielen"
+			]
+		],
+		"POST /decks/uebernehmen": [
+			[
+				"spielen"
+			]
+		],
+		"POST /decks/{}/fehlkarten/wunschliste": [
+			[
+				"spielen"
+			]
+		],
+		"POST /decks/{}/kopie": [
+			[
+				"spielen"
+			]
+		],
+		"POST /decks/{}/liste": [
+			[
+				"spielen"
+			]
+		],
+		"POST /decks/{}/liste/vorschau": [
+			[
+				"spielen"
+			]
+		],
+		"POST /drucke/{}/fremdverlauf": [
+			[
+				"markt"
+			]
+		],
+		"POST /drucke/{}/preise": [
+			[
+				"markt"
+			]
+		],
+		"POST /formate": [
+			[
+				"spielen"
+			]
+		],
+		"POST /handel": [
+			[
+				"handeln"
+			]
+		],
+		"POST /handel/{}/kopie": [
+			[
+				"handeln"
+			]
+		],
+		"POST /handel/{}/schritt": [
+			[
+				"handeln"
+			]
+		],
+		"POST /handel/{}/versand": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"POST /handel/{}/vorschlag": [
+			[
+				"handeln"
+			]
+		],
+		"POST /handel/{}/wiederaufnahme": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"POST /handel/{}/zusagen": [
+			[
+				"handeln"
+			]
+		],
+		"POST /handelspost/{}/bestaetigung": [
+			[
+				"handeln"
+			]
+		],
+		"POST /index/aufbau": [
+			[
+				"ki"
+			]
+		],
+		"POST /karten/{}/ki-einschaetzung": [
+			[
+				"ki"
+			]
+		],
+		"POST /karten/{}/ki-vorschlag": [
+			[
+				"ki"
+			]
+		],
+		"POST /ki/batch": [
+			[
+				"ki"
+			]
+		],
+		"POST /ki/erkennung": [
+			[
+				"ki"
+			]
+		],
+		"POST /ki/geraetemodell/sitzung": [
+			[
+				"ki"
+			]
+		],
+		"POST /ki/gruppe": [
+			[
+				"ki"
+			]
+		],
+		"POST /ki/modelle/pruefen": [
+			[
+				"ki"
+			]
+		],
+		"POST /ki/modelle/vergessen": [
+			[
+				"ki"
+			]
+		],
+		"POST /kontextpaket": [
+			[
+				"ki"
+			]
+		],
+		"POST /paketbezuege/{}/aktualisierung": [
+			[
+				"ressourcen"
+			]
+		],
+		"POST /paketbezuege/{}/zurueck": [
+			[
+				"ressourcen"
+			]
+		],
+		"POST /paketdateien/pruefung": [
+			[
+				"ressourcen"
+			]
+		],
+		"POST /pakete": [
+			[
+				"ressourcen"
+			]
+		],
+		"POST /pakete/eingelesen": [
+			[
+				"ressourcen"
+			]
+		],
+		"POST /pakete/neu": [
+			[
+				"ressourcen"
+			]
+		],
+		"POST /pakete/uebernommen": [
+			[
+				"ressourcen"
+			]
+		],
+		"POST /pakete/weitergabe": [
+			[
+				"ressourcen"
+			]
+		],
+		"POST /pakete/{}/dateien": [
+			[
+				"ressourcen"
+			]
+		],
+		"POST /pakete/{}/{}/kopie": [
+			[
+				"ressourcen"
+			]
+		],
+		"POST /pakete/{}/{}/zurueck": [
+			[
+				"ressourcen"
+			]
+		],
+		"POST /partien": [
+			[
+				"spielen"
+			]
+		],
+		"POST /partien/einfuhr": [
+			[
+				"spielen"
+			]
+		],
+		"POST /partien/{}/befehle": [
+			[
+				"spielen"
+			]
+		],
+		"POST /partien/{}/kopie": [
+			[
+				"spielen"
+			]
+		],
+		"POST /partien/{}/stand": [
+			[
+				"spielen"
+			]
+		],
+		"POST /peer": [
+			[
+				"netz"
+			]
+		],
+		"POST /peer/einladungen": [
+			[
+				"netz"
+			]
+		],
+		"POST /peer/einladungen/annahme": [
+			[
+				"netz"
+			]
+		],
+		"POST /peer/einladungen/pruefung": [
+			[
+				"netz"
+			]
+		],
+		"POST /peer/kontakte": [
+			[
+				"netz"
+			]
+		],
+		"POST /peer/kontakte/{}/abgleich": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"POST /peer/kontakte/{}/bestaetigung": [
+			[
+				"netz"
+			]
+		],
+		"POST /peer/kontakte/{}/freigaben": [
+			[
+				"handeln",
+				"netz"
+			]
+		],
+		"POST /peer/rotation": [
+			[
+				"netz"
+			]
+		],
+		"POST /preise/bulk/{}/{}": [
+			[
+				"markt"
+			]
+		],
+		"POST /sammlung": [
+			[
+				"sammeln"
+			]
+		],
+		"POST /sammlung/einlesen": [
+			[
+				"sammeln"
+			]
+		],
+		"POST /sammlung/liste/deuten": [
+			[
+				"sammeln"
+			]
+		],
+		"POST /sammlung/liste/einlesen": [
+			[
+				"sammeln"
+			]
+		],
+		"POST /sammlung/liste/vorschau": [
+			[
+				"sammeln"
+			]
+		],
+		"POST /sammlung/masse": [
+			[
+				"sammeln"
+			]
+		],
+		"POST /sammlung/masse/loeschen": [
+			[
+				"sammeln"
+			]
+		],
+		"POST /sammlung/masse/preise": [
+			[
+				"sammeln",
+				"markt"
+			]
+		],
+		"POST /sammlung/vorschau": [
+			[
+				"sammeln"
+			]
+		],
+		"POST /symbole": [
+			[
+				"ressourcen"
+			]
+		],
+		"POST /symbole/einlesen": [
+			[
+				"ressourcen"
+			]
+		],
+		"POST /symbole/{}/kopie": [
+			[
+				"ressourcen"
+			]
+		],
+		"POST /symbole/{}/nachzug": [
+			[
+				"ressourcen"
+			]
+		],
+		"POST /symbole/{}/zuruecknahme": [
+			[
+				"ressourcen"
+			]
+		],
+		"POST /turniere": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"POST /turniere/einlesen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"POST /turniere/{}/abschluss": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"POST /turniere/{}/kopie": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"POST /turniere/{}/paarungen/{}/folgen": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"POST /turniere/{}/runden": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"POST /turniere/{}/teilnehmer": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"POST /umschlag": [
+			[
+				"handeln"
+			]
+		],
+		"POST /umschlag/uebernahme": [
+			[
+				"handeln"
+			]
+		],
+		"PUT /decks/{}": [
+			[
+				"spielen"
+			]
+		],
+		"PUT /decks/{}/format": [
+			[
+				"spielen"
+			]
+		],
+		"PUT /decks/{}/plaetze": [
+			[
+				"spielen"
+			]
+		],
+		"PUT /decks/{}/plaetze/{}/bereich": [
+			[
+				"spielen"
+			]
+		],
+		"PUT /decks/{}/zuordnungen": [
+			[
+				"spielen"
+			]
+		],
+		"PUT /formate/{}": [
+			[
+				"spielen"
+			]
+		],
+		"PUT /handel/{}/archiv": [
+			[
+				"handeln"
+			]
+		],
+		"PUT /handel/{}/entwurf": [
+			[
+				"handeln"
+			]
+		],
+		"PUT /kosten/{}/budget": [
+			[
+				"ki"
+			]
+		],
+		"PUT /pakete/eingebunden": [
+			[
+				"ressourcen"
+			]
+		],
+		"PUT /pakete/ersetzt": [
+			[
+				"ressourcen"
+			]
+		],
+		"PUT /pakete/{}/dateien/{}": [
+			[
+				"ressourcen"
+			]
+		],
+		"PUT /peer/kontakte/{}/adresse": [
+			[
+				"netz"
+			]
+		],
+		"PUT /peer/kontakte/{}/notiz": [
+			[
+				"netz"
+			]
+		],
+		"PUT /peer/kontakte/{}/sperre": [
+			[
+				"netz"
+			]
+		],
+		"PUT /peer/kontakte/{}/zwecke/{}": [
+			[
+				"netz"
+			]
+		],
+		"PUT /sammlung/{}": [
+			[
+				"sammeln"
+			]
+		],
+		"PUT /sets/{}/bibliothekssymbol": [
+			[
+				"ressourcen"
+			]
+		],
+		"PUT /symbole/{}/name": [
+			[
+				"ressourcen"
+			]
+		],
+		"PUT /symbole/{}/teile": [
+			[
+				"ressourcen"
+			]
+		],
+		"PUT /turniere/{}/paarungen/{}": [
+			[
+				"spielen",
+				"turniere"
+			]
+		],
+		"PUT /turniere/{}/teilnehmer/{}": [
+			[
+				"spielen",
+				"turniere"
+			]
+		]
+	}
+}

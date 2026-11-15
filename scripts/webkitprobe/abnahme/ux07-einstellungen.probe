@@ -1,0 +1,40 @@
+# UX-07 (#1679) und UX-04 (#1676) — das Einstellungszentrum in WKWebView.
+#
+# ⌘, öffnet es. Die neun Gruppen sind eine senkrechte Laschenliste mit
+# wanderndem tabindex: Tab erreicht die gewählte, die Pfeile wandern. Die Suche
+# springt mit Enter auf das Feld. Dazu beide Erscheinungsbilder.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+,
+warte [role=tablist][aria-orientation=vertical]
+notiz Tab erreicht nach dem Hilfesymbol der Suche die gewählte Gruppe, die Pfeile wandern
+klicketext Einstellung suchen
+taste tab
+pruefe document.activeElement.tagName === 'BUTTON' && document.activeElement.getAttribute('aria-label').startsWith('Mehr zu')
+taste tab
+pruefe document.activeElement.getAttribute('role') === 'tab' && document.activeElement.getAttribute('aria-selected') === 'true'
+zeige document.activeElement.innerText.replace(/\s+/g, ' ')
+taste down
+pruefe document.activeElement.getAttribute('role') === 'tab' && document.activeElement.getAttribute('aria-selected') === 'true'
+zeige document.activeElement.innerText.replace(/\s+/g, ' ')
+taste down
+taste down
+zeige document.activeElement.innerText.replace(/\s+/g, ' ')
+taste up
+zeige document.activeElement.innerText.replace(/\s+/g, ' ')
+abzug einstellungen-hell
+notiz Die Suche springt auf das Feld
+klicketext Einstellung suchen
+tippe proxy
+pause 400
+zeige document.querySelector('[role=tablist][aria-orientation=vertical]').innerText.replace(/\s+/g, ' ')
+taste enter
+pause 300
+zeige (document.activeElement.closest('[data-einstellung]') || {}).dataset ? document.activeElement.closest('[data-einstellung]').dataset.einstellung : 'kein Feld: ' + document.activeElement.tagName
+abzug einstellungen-proxy
+erscheinung dunkel
+abzug einstellungen-dunkel

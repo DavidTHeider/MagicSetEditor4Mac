@@ -1,0 +1,2722 @@
+{
+  "revision": "probe-1",
+  "datum": "2026-09-12",
+  "dokumente": [
+    {
+      "kennung": "probe-oracle:blitzschlag",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Blitzschlag",
+      "text": "{R}\nInstant\nBlitzschlag fügt einem beliebigen Ziel 3 Schadenspunkte zu.",
+      "merkmale": {
+        "farben": [
+          "R"
+        ],
+        "farbidentitaet": [
+          "R"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 1.0,
+        "set": "lea",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:blitzschlag",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Sparkbolt",
+      "text": "{R}\nInstant\nSparkbolt deals 3 damage to any target.",
+      "merkmale": {
+        "farben": [
+          "R"
+        ],
+        "farbidentitaet": [
+          "R"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 1.0,
+        "set": "lea",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:funkenstoss",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Funkenstoß",
+      "text": "{R}\nInstant\nFunkenstoß fügt einem beliebigen Ziel 2 Schadenspunkte zu.",
+      "merkmale": {
+        "farben": [
+          "R"
+        ],
+        "farbidentitaet": [
+          "R"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 1.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:funkenstoss",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Ember Jolt",
+      "text": "{R}\nInstant\nEmber Jolt deals 2 damage to any target.",
+      "merkmale": {
+        "farben": [
+          "R"
+        ],
+        "farbidentitaet": [
+          "R"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 1.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:feuerregen",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Feuerregen",
+      "text": "{3}{R}\nSorcery\nFeuerregen fügt jeder Kreatur und jedem Spieler 2 Schadenspunkte zu.",
+      "merkmale": {
+        "farben": [
+          "R"
+        ],
+        "farbidentitaet": [
+          "R"
+        ],
+        "typen": [
+          "sorcery"
+        ],
+        "manawert": 4.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:feuerregen",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Cinder Rain",
+      "text": "{3}{R}\nSorcery\nCinder Rain deals 2 damage to each creature and each player.",
+      "merkmale": {
+        "farben": [
+          "R"
+        ],
+        "farbidentitaet": [
+          "R"
+        ],
+        "typen": [
+          "sorcery"
+        ],
+        "manawert": 4.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:glutwelle",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Glutwelle",
+      "text": "{2}{R}\nInstant\nGlutwelle fügt jeder Kreatur ohne Flugfähigkeit 3 Schadenspunkte zu.",
+      "merkmale": {
+        "farben": [
+          "R"
+        ],
+        "farbidentitaet": [
+          "R"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:glutwelle",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Emberwave",
+      "text": "{2}{R}\nInstant\nEmberwave deals 3 damage to each creature without flying.",
+      "merkmale": {
+        "farben": [
+          "R"
+        ],
+        "farbidentitaet": [
+          "R"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:aschesturm",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Aschesturm",
+      "text": "{4}{R}{R}\nSorcery\nZerstöre alle Kreaturen. Sie können nicht regeneriert werden.",
+      "merkmale": {
+        "farben": [
+          "R"
+        ],
+        "farbidentitaet": [
+          "R"
+        ],
+        "typen": [
+          "sorcery"
+        ],
+        "manawert": 6.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:aschesturm",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Ashstorm",
+      "text": "{4}{R}{R}\nSorcery\nDestroy all creatures. They can't be regenerated.",
+      "merkmale": {
+        "farben": [
+          "R"
+        ],
+        "farbidentitaet": [
+          "R"
+        ],
+        "typen": [
+          "sorcery"
+        ],
+        "manawert": 6.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:gegenzauber",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Gegenzauber",
+      "text": "{U}{U}\nInstant\nNeutralisiere einen Zauberspruch deiner Wahl.",
+      "merkmale": {
+        "farben": [
+          "U"
+        ],
+        "farbidentitaet": [
+          "U"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 2.0,
+        "set": "lea",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:gegenzauber",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Unweave",
+      "text": "{U}{U}\nInstant\nCounter target spell.",
+      "merkmale": {
+        "farben": [
+          "U"
+        ],
+        "farbidentitaet": [
+          "U"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 2.0,
+        "set": "lea",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:wortbruch",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Wortbruch",
+      "text": "{1}{U}\nInstant\nNeutralisiere einen Zauberspruch deiner Wahl, es sei denn, sein Beherrscher bezahlt {3}.",
+      "merkmale": {
+        "farben": [
+          "U"
+        ],
+        "farbidentitaet": [
+          "U"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:wortbruch",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Broken Word",
+      "text": "{1}{U}\nInstant\nCounter target spell unless its controller pays {3}.",
+      "merkmale": {
+        "farben": [
+          "U"
+        ],
+        "farbidentitaet": [
+          "U"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:gedankenriss",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Gedankenriss",
+      "text": "{U}\nInstant\nNeutralisiere einen Spontanzauber oder Hexerei deiner Wahl.",
+      "merkmale": {
+        "farben": [
+          "U"
+        ],
+        "farbidentitaet": [
+          "U"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 1.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:gedankenriss",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Mindrift",
+      "text": "{U}\nInstant\nCounter target instant or sorcery spell.",
+      "merkmale": {
+        "farben": [
+          "U"
+        ],
+        "farbidentitaet": [
+          "U"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 1.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:tiefenblick",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Tiefenblick",
+      "text": "{2}{U}\nInstant\nZiehe zwei Karten.",
+      "merkmale": {
+        "farben": [
+          "U"
+        ],
+        "farbidentitaet": [
+          "U"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:tiefenblick",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Deepsight",
+      "text": "{2}{U}\nInstant\nDraw two cards.",
+      "merkmale": {
+        "farben": [
+          "U"
+        ],
+        "farbidentitaet": [
+          "U"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:wissensflut",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Wissensflut",
+      "text": "{3}{U}{U}\nSorcery\nZiehe vier Karten. Lege dann zwei Karten aus deiner Hand ab.",
+      "merkmale": {
+        "farben": [
+          "U"
+        ],
+        "farbidentitaet": [
+          "U"
+        ],
+        "typen": [
+          "sorcery"
+        ],
+        "manawert": 5.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:wissensflut",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Floodlore",
+      "text": "{3}{U}{U}\nSorcery\nDraw four cards, then discard two cards.",
+      "merkmale": {
+        "farben": [
+          "U"
+        ],
+        "farbidentitaet": [
+          "U"
+        ],
+        "typen": [
+          "sorcery"
+        ],
+        "manawert": 5.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:dunkelpakt",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Dunkelpakt",
+      "text": "{B}\nSorcery\nAls zusätzliche Kosten, um Dunkelpakt zu wirken, opfere eine Kreatur. Ziehe zwei Karten.",
+      "merkmale": {
+        "farben": [
+          "B"
+        ],
+        "farbidentitaet": [
+          "B"
+        ],
+        "typen": [
+          "sorcery"
+        ],
+        "manawert": 1.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:dunkelpakt",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Dark Bargain",
+      "text": "{B}\nSorcery\nAs an additional cost to cast this spell, sacrifice a creature. Draw two cards.",
+      "merkmale": {
+        "farben": [
+          "B"
+        ],
+        "farbidentitaet": [
+          "B"
+        ],
+        "typen": [
+          "sorcery"
+        ],
+        "manawert": 1.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:todesstoss",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Todesstoß",
+      "text": "{1}{B}\nInstant\nZerstöre eine Kreatur deiner Wahl. Sie kann nicht regeneriert werden.",
+      "merkmale": {
+        "farben": [
+          "B"
+        ],
+        "farbidentitaet": [
+          "B"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:todesstoss",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Deathblow",
+      "text": "{1}{B}\nInstant\nDestroy target creature. It can't be regenerated.",
+      "merkmale": {
+        "farben": [
+          "B"
+        ],
+        "farbidentitaet": [
+          "B"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:seelenraub",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Seelenraub",
+      "text": "{2}{B}\nSorcery\nEin Spieler deiner Wahl legt zwei Karten ab.",
+      "merkmale": {
+        "farben": [
+          "B"
+        ],
+        "farbidentitaet": [
+          "B"
+        ],
+        "typen": [
+          "sorcery"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:seelenraub",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Soulpilfer",
+      "text": "{2}{B}\nSorcery\nTarget player discards two cards.",
+      "merkmale": {
+        "farben": [
+          "B"
+        ],
+        "farbidentitaet": [
+          "B"
+        ],
+        "typen": [
+          "sorcery"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:gruftwacht",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Gruftwacht",
+      "text": "{2}{B}\nCreature — Zombie\nWenn Gruftwacht stirbt, erhält jeder Gegner 2 Schadenspunkte.",
+      "merkmale": {
+        "farben": [
+          "B"
+        ],
+        "farbidentitaet": [
+          "B"
+        ],
+        "typen": [
+          "creature",
+          "zombie"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:gruftwacht",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Crypt Sentry",
+      "text": "{2}{B}\nCreature — Zombie\nWhen Crypt Sentry dies, each opponent takes 2 damage.",
+      "merkmale": {
+        "farben": [
+          "B"
+        ],
+        "farbidentitaet": [
+          "B"
+        ],
+        "typen": [
+          "creature",
+          "zombie"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:knochenhorde",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Knochenhorde",
+      "text": "{4}{B}{B}\nCreature — Zombie\nVerstärkt: Knochenhorde erhält +1/+1 für jede Kreaturenkarte in deinem Friedhof.",
+      "merkmale": {
+        "farben": [
+          "B"
+        ],
+        "farbidentitaet": [
+          "B"
+        ],
+        "typen": [
+          "creature",
+          "zombie"
+        ],
+        "manawert": 6.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:knochenhorde",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Bonehorde",
+      "text": "{4}{B}{B}\nCreature — Zombie\nBonehorde gets +1/+1 for each creature card in your graveyard.",
+      "merkmale": {
+        "farben": [
+          "B"
+        ],
+        "farbidentitaet": [
+          "B"
+        ],
+        "typen": [
+          "creature",
+          "zombie"
+        ],
+        "manawert": 6.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:waldwuchs",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Waldwuchs",
+      "text": "{G}\nInstant\nEine Kreatur deiner Wahl erhält +3/+3 bis zum Ende des Zuges.",
+      "merkmale": {
+        "farben": [
+          "G"
+        ],
+        "farbidentitaet": [
+          "G"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 1.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:waldwuchs",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Woodgrowth",
+      "text": "{G}\nInstant\nTarget creature gets +3/+3 until end of turn.",
+      "merkmale": {
+        "farben": [
+          "G"
+        ],
+        "farbidentitaet": [
+          "G"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 1.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:rankenfessel",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Rankenfessel",
+      "text": "{1}{G}\nEnchantment — Aura\nVerzaubert eine Kreatur. Die verzauberte Kreatur enttappt nicht während des Enttappsegments ihres Beherrschers.",
+      "merkmale": {
+        "farben": [
+          "G"
+        ],
+        "farbidentitaet": [
+          "G"
+        ],
+        "typen": [
+          "enchantment",
+          "aura"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:rankenfessel",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Vinefetter",
+      "text": "{1}{G}\nEnchantment — Aura\nEnchant creature. Enchanted creature doesn't untap during its controller's untap step.",
+      "merkmale": {
+        "farben": [
+          "G"
+        ],
+        "farbidentitaet": [
+          "G"
+        ],
+        "typen": [
+          "enchantment",
+          "aura"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:baumhueter",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Baumhüter",
+      "text": "{2}{G}\nCreature — Treefolk\nVerteidiger. Baumhüter hat Reichweite.",
+      "merkmale": {
+        "farben": [
+          "G"
+        ],
+        "farbidentitaet": [
+          "G"
+        ],
+        "typen": [
+          "creature",
+          "treefolk"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:baumhueter",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Treewarden",
+      "text": "{2}{G}\nCreature — Treefolk\nDefender. Treewarden has reach.",
+      "merkmale": {
+        "farben": [
+          "G"
+        ],
+        "farbidentitaet": [
+          "G"
+        ],
+        "typen": [
+          "creature",
+          "treefolk"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:wildwuchsriese",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Wildwuchsriese",
+      "text": "{4}{G}{G}\nCreature — Giant\nTrampelschaden. Wenn Wildwuchsriese ins Spiel kommt, lege eine +1/+1-Marke auf eine Kreatur deiner Wahl.",
+      "merkmale": {
+        "farben": [
+          "G"
+        ],
+        "farbidentitaet": [
+          "G"
+        ],
+        "typen": [
+          "creature",
+          "giant"
+        ],
+        "manawert": 6.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:wildwuchsriese",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Wildgrowth Giant",
+      "text": "{4}{G}{G}\nCreature — Giant\nTrample. When Wildgrowth Giant enters, put a +1/+1 counter on target creature.",
+      "merkmale": {
+        "farben": [
+          "G"
+        ],
+        "farbidentitaet": [
+          "G"
+        ],
+        "typen": [
+          "creature",
+          "giant"
+        ],
+        "manawert": 6.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:naturrufer",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Naturrufer",
+      "text": "{1}{G}\nCreature — Elf Druid\n{T}: Erzeuge ein {G}.",
+      "merkmale": {
+        "farben": [
+          "G"
+        ],
+        "farbidentitaet": [
+          "G"
+        ],
+        "typen": [
+          "creature",
+          "elf",
+          "druid"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:naturrufer",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Naturecaller",
+      "text": "{1}{G}\nCreature — Elf Druid\n{T}: Add {G}.",
+      "merkmale": {
+        "farben": [
+          "G"
+        ],
+        "farbidentitaet": [
+          "G"
+        ],
+        "typen": [
+          "creature",
+          "elf",
+          "druid"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:lichtwall",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Lichtwall",
+      "text": "{W}\nInstant\nVerhindere die nächsten 4 Schadenspunkte, die einem beliebigen Ziel in diesem Zug zugefügt würden.",
+      "merkmale": {
+        "farben": [
+          "W"
+        ],
+        "farbidentitaet": [
+          "W"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 1.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:lichtwall",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Lightwall",
+      "text": "{W}\nInstant\nPrevent the next 4 damage that would be dealt to any target this turn.",
+      "merkmale": {
+        "farben": [
+          "W"
+        ],
+        "farbidentitaet": [
+          "W"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 1.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:heiligenschein",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Heiligenschein",
+      "text": "{1}{W}\nInstant\nEine Kreatur deiner Wahl erhält Schutz vor einer Farbe deiner Wahl bis zum Ende des Zuges.",
+      "merkmale": {
+        "farben": [
+          "W"
+        ],
+        "farbidentitaet": [
+          "W"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:heiligenschein",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Halo Ward",
+      "text": "{1}{W}\nInstant\nTarget creature gains protection from the color of your choice until end of turn.",
+      "merkmale": {
+        "farben": [
+          "W"
+        ],
+        "farbidentitaet": [
+          "W"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:ordenswache",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Ordenswache",
+      "text": "{1}{W}\nCreature — Human Soldier\nErstschlag. Wachsamkeit.",
+      "merkmale": {
+        "farben": [
+          "W"
+        ],
+        "farbidentitaet": [
+          "W"
+        ],
+        "typen": [
+          "creature",
+          "human",
+          "soldier"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:ordenswache",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Order Sentinel",
+      "text": "{1}{W}\nCreature — Human Soldier\nFirst strike. Vigilance.",
+      "merkmale": {
+        "farben": [
+          "W"
+        ],
+        "farbidentitaet": [
+          "W"
+        ],
+        "typen": [
+          "creature",
+          "human",
+          "soldier"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:engelsruf",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Engelsruf",
+      "text": "{3}{W}{W}\nCreature — Angel\nFliegend. Lebensverknüpfung.",
+      "merkmale": {
+        "farben": [
+          "W"
+        ],
+        "farbidentitaet": [
+          "W"
+        ],
+        "typen": [
+          "creature",
+          "angel"
+        ],
+        "manawert": 5.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:engelsruf",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Angelcall",
+      "text": "{3}{W}{W}\nCreature — Angel\nFlying. Lifelink.",
+      "merkmale": {
+        "farben": [
+          "W"
+        ],
+        "farbidentitaet": [
+          "W"
+        ],
+        "typen": [
+          "creature",
+          "angel"
+        ],
+        "manawert": 5.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:bannkreis",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Bannkreis",
+      "text": "{2}{W}\nEnchantment\nZauberer deiner Gegner kosten {1} mehr.",
+      "merkmale": {
+        "farben": [
+          "W"
+        ],
+        "farbidentitaet": [
+          "W"
+        ],
+        "typen": [
+          "enchantment"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:bannkreis",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Warding Circle",
+      "text": "{2}{W}\nEnchantment\nSpells your opponents cast cost {1} more to cast.",
+      "merkmale": {
+        "farben": [
+          "W"
+        ],
+        "farbidentitaet": [
+          "W"
+        ],
+        "typen": [
+          "enchantment"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:weltenbrecher",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Weltenbrecher",
+      "text": "{6}{R}{R}\nCreature — Dragon\nFliegend, Trampelschaden. Wenn Weltenbrecher angreift, fügt er jedem Verteidiger 3 Schadenspunkte zu.",
+      "merkmale": {
+        "farben": [
+          "R"
+        ],
+        "farbidentitaet": [
+          "R"
+        ],
+        "typen": [
+          "creature",
+          "dragon"
+        ],
+        "manawert": 8.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:weltenbrecher",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Worldbreaker Drake",
+      "text": "{6}{R}{R}\nCreature — Dragon\nFlying, trample. Whenever Worldbreaker Drake attacks, it deals 3 damage to each defending player.",
+      "merkmale": {
+        "farben": [
+          "R"
+        ],
+        "farbidentitaet": [
+          "R"
+        ],
+        "typen": [
+          "creature",
+          "dragon"
+        ],
+        "manawert": 8.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:sturmrufer",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Sturmrufer",
+      "text": "{2}{U}{R}\nCreature — Wizard\nWenn du einen Spontanzauber wirkst, fügt Sturmrufer einem beliebigen Ziel 1 Schadenspunkt zu.",
+      "merkmale": {
+        "farben": [
+          "U",
+          "R"
+        ],
+        "farbidentitaet": [
+          "U",
+          "R"
+        ],
+        "typen": [
+          "creature",
+          "wizard"
+        ],
+        "manawert": 4.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:sturmrufer",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Stormcaller",
+      "text": "{2}{U}{R}\nCreature — Wizard\nWhenever you cast an instant spell, Stormcaller deals 1 damage to any target.",
+      "merkmale": {
+        "farben": [
+          "U",
+          "R"
+        ],
+        "farbidentitaet": [
+          "U",
+          "R"
+        ],
+        "typen": [
+          "creature",
+          "wizard"
+        ],
+        "manawert": 4.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:graburteil",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Graburteil",
+      "text": "{2}{W}{B}\nSorcery\nZerstöre alle Kreaturen mit Manawert 3 oder weniger.",
+      "merkmale": {
+        "farben": [
+          "W",
+          "B"
+        ],
+        "farbidentitaet": [
+          "W",
+          "B"
+        ],
+        "typen": [
+          "sorcery"
+        ],
+        "manawert": 4.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:graburteil",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Grave Verdict",
+      "text": "{2}{W}{B}\nSorcery\nDestroy all creatures with mana value 3 or less.",
+      "merkmale": {
+        "farben": [
+          "W",
+          "B"
+        ],
+        "farbidentitaet": [
+          "W",
+          "B"
+        ],
+        "typen": [
+          "sorcery"
+        ],
+        "manawert": 4.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:wurzelgeflecht",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Wurzelgeflecht",
+      "text": "{1}{G}{W}\nEnchantment\nKreaturen, die du kontrollierst, erhalten +0/+1 und haben Reichweite.",
+      "merkmale": {
+        "farben": [
+          "G",
+          "W"
+        ],
+        "farbidentitaet": [
+          "G",
+          "W"
+        ],
+        "typen": [
+          "enchantment"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:wurzelgeflecht",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Rootweave",
+      "text": "{1}{G}{W}\nEnchantment\nCreatures you control get +0/+1 and have reach.",
+      "merkmale": {
+        "farben": [
+          "G",
+          "W"
+        ],
+        "farbidentitaet": [
+          "G",
+          "W"
+        ],
+        "typen": [
+          "enchantment"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:schattenhandel",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Schattenhandel",
+      "text": "{2}{U}{B}\nInstant\nZiehe drei Karten. Du verlierst 3 Lebenspunkte.",
+      "merkmale": {
+        "farben": [
+          "U",
+          "B"
+        ],
+        "farbidentitaet": [
+          "U",
+          "B"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 4.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:schattenhandel",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Shadow Bargain",
+      "text": "{2}{U}{B}\nInstant\nDraw three cards. You lose 3 life.",
+      "merkmale": {
+        "farben": [
+          "U",
+          "B"
+        ],
+        "farbidentitaet": [
+          "U",
+          "B"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 4.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:stillstein",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Stillstein",
+      "text": "{2}\nArtifact\n{T}: Erzeuge ein Mana einer beliebigen Farbe.",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "artifact"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:stillstein",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Stillstone",
+      "text": "{2}\nArtifact\n{T}: Add one mana of any color.",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "artifact"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:kriegshorn",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Kriegshorn",
+      "text": "{3}\nArtifact\nKreaturen, die du kontrollierst, erhalten +1/+0.",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "artifact"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:kriegshorn",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Warhorn",
+      "text": "{3}\nArtifact\nCreatures you control get +1/+0.",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "artifact"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:spiegelschild",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Spiegelschild",
+      "text": "{2}\nArtifact — Equipment\nDie ausgerüstete Kreatur hat Schutz vor Spontanzaubern. Ausrüsten {2}",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "artifact",
+          "equipment"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:spiegelschild",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Mirrorshield",
+      "text": "{2}\nArtifact — Equipment\nEquipped creature has protection from instants. Equip {2}",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "artifact",
+          "equipment"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:sandwueste",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Sandwüste",
+      "text": "Land\n{T}: Erzeuge ein {C}. {2}, {T}: Ziehe eine Karte.",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "land"
+        ],
+        "manawert": 0.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:sandwueste",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Sandwaste",
+      "text": "Land\n{T}: Add {C}. {2}, {T}: Draw a card.",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "land"
+        ],
+        "manawert": 0.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:flusstal",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Flusstal",
+      "text": "Land — Island\n({T}: Erzeuge ein {U}.)",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "land",
+          "island"
+        ],
+        "manawert": 0.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:flusstal",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Rivervale",
+      "text": "Land — Island\n({T}: Add {U}.)",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "land",
+          "island"
+        ],
+        "manawert": 0.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:glutkrater",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Glutkrater",
+      "text": "Land — Mountain\n({T}: Erzeuge ein {R}.)",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "land",
+          "mountain"
+        ],
+        "manawert": 0.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:glutkrater",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Embercrater",
+      "text": "Land — Mountain\n({T}: Add {R}.)",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "land",
+          "mountain"
+        ],
+        "manawert": 0.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:dornenhain",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Dornenhain",
+      "text": "Land — Forest\n({T}: Erzeuge ein {G}.)",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "land",
+          "forest"
+        ],
+        "manawert": 0.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:dornenhain",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Thornholt",
+      "text": "Land — Forest\n({T}: Add {G}.)",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "land",
+          "forest"
+        ],
+        "manawert": 0.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:schattenmoor",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Schattenmoor",
+      "text": "Land — Swamp\n({T}: Erzeuge ein {B}.)",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "land",
+          "swamp"
+        ],
+        "manawert": 0.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:schattenmoor",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Shadefen",
+      "text": "Land — Swamp\n({T}: Add {B}.)",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "land",
+          "swamp"
+        ],
+        "manawert": 0.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:sonnenebene",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Sonnenebene",
+      "text": "Land — Plains\n({T}: Erzeuge ein {W}.)",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "land",
+          "plains"
+        ],
+        "manawert": 0.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:sonnenebene",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Sunplain",
+      "text": "Land — Plains\n({T}: Add {W}.)",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "land",
+          "plains"
+        ],
+        "manawert": 0.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:zwielichtbote",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Zwielichtbote",
+      "text": "{3}{B}\nCreature — Spirit\nFliegend. Wenn Zwielichtbote ins Spiel kommt, verliert ein Gegner deiner Wahl 2 Lebenspunkte und du erhältst 2 Lebenspunkte dazu.",
+      "merkmale": {
+        "farben": [
+          "B"
+        ],
+        "farbidentitaet": [
+          "B"
+        ],
+        "typen": [
+          "creature",
+          "spirit"
+        ],
+        "manawert": 4.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:zwielichtbote",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Twilight Herald",
+      "text": "{3}{B}\nCreature — Spirit\nFlying. When Twilight Herald enters, target opponent loses 2 life and you gain 2 life.",
+      "merkmale": {
+        "farben": [
+          "B"
+        ],
+        "farbidentitaet": [
+          "B"
+        ],
+        "typen": [
+          "creature",
+          "spirit"
+        ],
+        "manawert": 4.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:eisenmauer",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Eisenmauer",
+      "text": "{1}\nArtifact Creature — Wall\nVerteidiger.",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "artifact",
+          "creature",
+          "wall"
+        ],
+        "manawert": 1.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:eisenmauer",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Iron Wall",
+      "text": "{1}\nArtifact Creature — Wall\nDefender.",
+      "merkmale": {
+        "farben": [],
+        "farbidentitaet": [],
+        "typen": [
+          "artifact",
+          "creature",
+          "wall"
+        ],
+        "manawert": 1.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:flammenkult",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Flammenkult",
+      "text": "{1}{R}\nEnchantment\nImmer wenn ein Spieler einen Spontanzauber wirkt, fügt Flammenkult diesem Spieler 1 Schadenspunkt zu.",
+      "merkmale": {
+        "farben": [
+          "R"
+        ],
+        "farbidentitaet": [
+          "R"
+        ],
+        "typen": [
+          "enchantment"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:flammenkult",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Flamecult",
+      "text": "{1}{R}\nEnchantment\nWhenever a player casts an instant spell, Flamecult deals 1 damage to that player.",
+      "merkmale": {
+        "farben": [
+          "R"
+        ],
+        "farbidentitaet": [
+          "R"
+        ],
+        "typen": [
+          "enchantment"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:hexenzirkel",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Hexenzirkel",
+      "text": "{2}{B}{B}\nEnchantment\nZu Beginn deines Versorgungssegments verlierst du 1 Lebenspunkt und ziehst eine Karte.",
+      "merkmale": {
+        "farben": [
+          "B"
+        ],
+        "farbidentitaet": [
+          "B"
+        ],
+        "typen": [
+          "enchantment"
+        ],
+        "manawert": 4.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:hexenzirkel",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Witch Circle",
+      "text": "{2}{B}{B}\nEnchantment\nAt the beginning of your upkeep, you lose 1 life and draw a card.",
+      "merkmale": {
+        "farben": [
+          "B"
+        ],
+        "farbidentitaet": [
+          "B"
+        ],
+        "typen": [
+          "enchantment"
+        ],
+        "manawert": 4.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:windreiter",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Windreiter",
+      "text": "{2}{U}\nCreature — Bird Soldier\nFliegend.",
+      "merkmale": {
+        "farben": [
+          "U"
+        ],
+        "farbidentitaet": [
+          "U"
+        ],
+        "typen": [
+          "creature",
+          "bird",
+          "soldier"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:windreiter",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Windrider",
+      "text": "{2}{U}\nCreature — Bird Soldier\nFlying.",
+      "merkmale": {
+        "farben": [
+          "U"
+        ],
+        "farbidentitaet": [
+          "U"
+        ],
+        "typen": [
+          "creature",
+          "bird",
+          "soldier"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:steinhauer",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Steinhauer",
+      "text": "{2}{R}\nCreature — Dwarf\nEile.",
+      "merkmale": {
+        "farben": [
+          "R"
+        ],
+        "farbidentitaet": [
+          "R"
+        ],
+        "typen": [
+          "creature",
+          "dwarf"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:steinhauer",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Stonehewer",
+      "text": "{2}{R}\nCreature — Dwarf\nHaste.",
+      "merkmale": {
+        "farben": [
+          "R"
+        ],
+        "farbidentitaet": [
+          "R"
+        ],
+        "typen": [
+          "creature",
+          "dwarf"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:tiefwurzler",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Tiefwurzler",
+      "text": "{3}{G}\nCreature — Elemental\nTrampelschaden. Tiefwurzler kann nicht geblockt werden von Kreaturen mit Stärke 2 oder weniger.",
+      "merkmale": {
+        "farben": [
+          "G"
+        ],
+        "farbidentitaet": [
+          "G"
+        ],
+        "typen": [
+          "creature",
+          "elemental"
+        ],
+        "manawert": 4.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:tiefwurzler",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Deeprooter",
+      "text": "{3}{G}\nCreature — Elemental\nTrample. Deeprooter can't be blocked by creatures with power 2 or less.",
+      "merkmale": {
+        "farben": [
+          "G"
+        ],
+        "farbidentitaet": [
+          "G"
+        ],
+        "typen": [
+          "creature",
+          "elemental"
+        ],
+        "manawert": 4.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:silberklinge",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Silberklinge",
+      "text": "{1}{W}\nCreature — Human Knight\nErstschlag. Schutz vor Schwarz.",
+      "merkmale": {
+        "farben": [
+          "W"
+        ],
+        "farbidentitaet": [
+          "W"
+        ],
+        "typen": [
+          "creature",
+          "human",
+          "knight"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:silberklinge",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Silverblade",
+      "text": "{1}{W}\nCreature — Human Knight\nFirst strike. Protection from black.",
+      "merkmale": {
+        "farben": [
+          "W"
+        ],
+        "farbidentitaet": [
+          "W"
+        ],
+        "typen": [
+          "creature",
+          "human",
+          "knight"
+        ],
+        "manawert": 2.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:nebelschleier",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Nebelschleier",
+      "text": "{U}\nInstant\nVerhindere allen Kampfschaden, der in diesem Zug zugefügt würde.",
+      "merkmale": {
+        "farben": [
+          "U"
+        ],
+        "farbidentitaet": [
+          "U"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 1.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:nebelschleier",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Mistveil",
+      "text": "{U}\nInstant\nPrevent all combat damage that would be dealt this turn.",
+      "merkmale": {
+        "farben": [
+          "U"
+        ],
+        "farbidentitaet": [
+          "U"
+        ],
+        "typen": [
+          "instant"
+        ],
+        "manawert": 1.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:landraub",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Landraub",
+      "text": "{2}{G}\nSorcery\nDurchsuche deine Bibliothek nach bis zu zwei Standardland-Karten, bringe sie getappt ins Spiel und mische danach.",
+      "merkmale": {
+        "farben": [
+          "G"
+        ],
+        "farbidentitaet": [
+          "G"
+        ],
+        "typen": [
+          "sorcery"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:landraub",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Landreave",
+      "text": "{2}{G}\nSorcery\nSearch your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
+      "merkmale": {
+        "farben": [
+          "G"
+        ],
+        "farbidentitaet": [
+          "G"
+        ],
+        "typen": [
+          "sorcery"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle:erinnerungsdieb",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Erinnerungsdieb",
+      "text": "{1}{U}{B}\nCreature — Rogue\nImmer wenn Erinnerungsdieb einem Spieler Kampfschaden zufügt, legt dieser Spieler eine Karte ab.",
+      "merkmale": {
+        "farben": [
+          "U",
+          "B"
+        ],
+        "farbidentitaet": [
+          "U",
+          "B"
+        ],
+        "typen": [
+          "creature",
+          "rogue"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-oracle-en:erinnerungsdieb",
+      "quelle": "oracle",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Memory Thief",
+      "text": "{1}{U}{B}\nCreature — Rogue\nWhenever Memory Thief deals combat damage to a player, that player discards a card.",
+      "merkmale": {
+        "farben": [
+          "U",
+          "B"
+        ],
+        "farbidentitaet": [
+          "U",
+          "B"
+        ],
+        "typen": [
+          "creature",
+          "rogue"
+        ],
+        "manawert": 3.0,
+        "set": "tst",
+        "formate": {
+          "modern": "legal"
+        },
+        "formatstand": "probe-1"
+      }
+    },
+    {
+      "kennung": "probe-regel:205.4a",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Regel 205.4a",
+      "text": "Die Seltenheit einer Karte wird durch die Farbe des Symbols für die Erweiterung angezeigt.",
+      "regelnummer": "205.4a",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel-en:205.4a",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Rule 205.4a",
+      "text": "A card's rarity is shown by the color of its expansion symbol.",
+      "regelnummer": "205.4a",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel:509.1a",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Regel 509.1a",
+      "text": "Der verteidigende Spieler wählt für jede angreifende Kreatur, ob sie geblockt wird.",
+      "regelnummer": "509.1a",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel-en:509.1a",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Rule 509.1a",
+      "text": "The defending player chooses, for each attacking creature, whether it becomes blocked.",
+      "regelnummer": "509.1a",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel:702.9b",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Regel 702.9b",
+      "text": "Trampelschaden ändert, wie überschüssiger Kampfschaden einer angreifenden Kreatur zugewiesen wird.",
+      "regelnummer": "702.9b",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel-en:702.9b",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Rule 702.9b",
+      "text": "Trample changes how excess combat damage from an attacking creature is assigned.",
+      "regelnummer": "702.9b",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel:702.19b",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Regel 702.19b",
+      "text": "Erstschlag bewirkt, dass eine Kreatur ihren Kampfschaden vor Kreaturen ohne Erstschlag zufügt.",
+      "regelnummer": "702.19b",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel-en:702.19b",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Rule 702.19b",
+      "text": "First strike causes a creature to deal its combat damage before creatures without first strike.",
+      "regelnummer": "702.19b",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel:903.4",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Regel 903.4",
+      "text": "Die Farbidentität einer Karte umfasst die Farben in ihren Manakosten und in den Manasymbolen ihres Regeltextes.",
+      "regelnummer": "903.4",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel-en:903.4",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Rule 903.4",
+      "text": "A card's color identity includes the colors in its mana cost and in the mana symbols of its rules text.",
+      "regelnummer": "903.4",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel:601.2",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Regel 601.2",
+      "text": "Um einen Zauberspruch zu wirken, nimmt sein Beherrscher ihn vom Ort, an dem er sich befindet, und legt ihn auf den Stapel.",
+      "regelnummer": "601.2",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel-en:601.2",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Rule 601.2",
+      "text": "To cast a spell, its controller moves it from where it is to the stack.",
+      "regelnummer": "601.2",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel:704.5g",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Regel 704.5g",
+      "text": "Wenn die Widerstandskraft einer Kreatur 0 oder weniger beträgt, wird sie auf den Friedhof ihres Besitzers gelegt.",
+      "regelnummer": "704.5g",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel-en:704.5g",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Rule 704.5g",
+      "text": "If a creature has toughness 0 or less, it is put into its owner's graveyard.",
+      "regelnummer": "704.5g",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel:302.6",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Regel 302.6",
+      "text": "Eine Kreatur mit Eile kann angreifen, auch wenn ihr Beherrscher sie nicht seit Beginn seines letzten Zuges kontrolliert.",
+      "regelnummer": "302.6",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel-en:302.6",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Rule 302.6",
+      "text": "A creature with haste can attack even if its controller hasn't controlled it since their most recent turn began.",
+      "regelnummer": "302.6",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel:509.1b",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Regel 509.1b",
+      "text": "Eine Kreatur mit Flugfähigkeit kann nur von Kreaturen mit Flugfähigkeit oder Reichweite geblockt werden.",
+      "regelnummer": "509.1b",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel-en:509.1b",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Rule 509.1b",
+      "text": "A creature with flying can be blocked only by creatures with flying or reach.",
+      "regelnummer": "509.1b",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel:117.3c",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "de",
+      "titel": "Regel 117.3c",
+      "text": "Ein Spieler kann eine Manafähigkeit aktivieren, wann immer er die Priorität hat.",
+      "regelnummer": "117.3c",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    },
+    {
+      "kennung": "probe-regel-en:117.3c",
+      "quelle": "regelwerk",
+      "spiel": "magic",
+      "sprache": "en",
+      "titel": "Rule 117.3c",
+      "text": "A player may activate a mana ability whenever they have priority.",
+      "regelnummer": "117.3c",
+      "quelldatum": "2026-07-26",
+      "merkmale": {}
+    }
+  ]
+}

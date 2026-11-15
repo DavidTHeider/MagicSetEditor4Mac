@@ -1,0 +1,67 @@
+{
+ "10": {
+  "urteil": "lücke",
+  "grund": "eine Legende anderen Namens ging mit in den Friedhof; seitdem TestEineLegendeAnderenNamensBleibtLiegen (fängt den Mutanten)",
+  "stelle": "internal/domain/legendenregel.go:147"
+ },
+ "12": {
+  "urteil": "lücke",
+  "grund": "ein Betrag von null wurde abgewiesen; seitdem TestNullIstEinBetrag (fängt den Mutanten)",
+  "stelle": "internal/domain/kostenjournal.go:41"
+ },
+ "24": {
+  "urteil": "lücke",
+  "grund": "vor dem ersten Zug verlangte das Wirken Priorität; seitdem TestVorDemErstenZugBrauchtEsKeinePrioritaet (fängt den Mutanten)",
+  "stelle": "internal/domain/wirken.go:43"
+ },
+ "31": {
+  "urteil": "lücke",
+  "stelle": "internal/domain/ersetzungseffekt.go:115",
+  "grund": "nicht äquivalent, wie zuerst eingetragen: ein eingelesener Stand mit den Stempeln 1 und 2 bekäme mit len−1 wieder die 1. Dahinter stand ein Fehler des Originals selbst — nach dem Aufräumschritt bekam ein neuer Effekt den Stempel eines lebenden, und einer verhinderte nichts. Behoben mit naechsterZeitstempel (Ersetzungen und Dauereffekte), seitdem TestEinNeuerEffektNachDemZugendeTraegtEinenEigenenStempel und TestEinNeuerDauereffektNachDemZugendeTraegtEinenEigenenStempel (Nachlauf über Phase B)"
+ },
+ "34": {
+  "urteil": "lücke",
+  "grund": "eine Seite eins hinter der letzten griff hinter das Ende der Liste; seitdem TestEineSeiteHinterDerLetztenFaelltAufDieVorderseite (fängt den Mutanten)",
+  "stelle": "internal/domain/objekteigenschaften.go:100"
+ },
+ "36": {
+  "urteil": "lücke",
+  "grund": "eine Einladung von genau sieben Tagen wurde abgewiesen; seitdem TestEineEinladungVonGenauSiebenTagenGilt (fängt den Mutanten)",
+  "stelle": "internal/domain/kontakteinladung.go:226"
+ },
+ "45": {
+  "urteil": "lücke",
+  "grund": "die Namen einer Einstellungsgruppe gingen verloren; seitdem TestEineEinstellungsgruppeTraegtIhreNamen (fängt den Mutanten)",
+  "stelle": "internal/service/ruecksetzung.go:190"
+ },
+ "59": {
+  "urteil": "lücke",
+  "grund": "ohne Ablage las die Symbolquelle eine Datei des Arbeitsverzeichnisses; seitdem TestOhneAblageWirdNichtsAusDerAblageGelesen (fängt den Mutanten)",
+  "stelle": "internal/service/symbolausablage.go:91"
+ },
+ "62": {
+  "urteil": "äquivalent",
+  "grund": "nur die Größenangabe einer Map (`make(map…, len(felder)-len(werte))`): eine negative behandelt die Laufzeit wie null — gemessen mit Go 1.27.2 —, und gelesen wird die Map unabhängig davon",
+  "stelle": "internal/service/setangaben.go:57"
+ },
+ "65": {
+  "urteil": "lücke",
+  "grund": "eine 9 am Namensende blieb im Stamm; seitdem TestDerNamensstammLaesstAuchDieNeunWeg (fängt den Mutanten)",
+  "stelle": "internal/service/bildablage.go:329"
+ },
+ "82": {
+  "urteil": "äquivalent",
+  "grund": "der zweite Rückgabewert (`hatte`) neben einem Fehler: jeder Aufrufer prüft zuerst den Fehler (`internal/mcp/setangaben.go:121`, `internal/app/setangaben.go:148`, `internal/service/symbolbibliothekwege.go:108`) und liest `hatte` dann nicht",
+  "stelle": "internal/storage/setwertaenderung.go:88"
+ },
+ "93": {
+  "urteil": "äquivalent",
+  "grund": "`angelegt` wird nur über seine Schlüssel gelesen (`for name := range angelegt`), sein Wert nie; die Gegenprobe am Schaden (`TestEineUmbenannteTabelleWirdUnterIhremNeuenNamenVerlangt`) blieb mit dem Mutanten grün",
+  "stelle": "internal/storage/mindestform.go:138"
+ },
+ "100": {
+  "urteil": "lücke",
+  "grund": "der Konflikt um eine eindeutige Druckkennung nannte ohne die Prüfung in kennungAnhaengen den Druck nicht mehr, dem sie gehört (der eindeutige Index meldet nur einen allgemeinen Konflikt); seitdem TestEinKonfliktUmEineDruckkennungNenntIhrenDruck (fängt den Mutanten)",
+  "stelle": "internal/storage/drucke.go:150"
+ }
+}

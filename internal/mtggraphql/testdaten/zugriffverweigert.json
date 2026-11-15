@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "message": "Access denied! You need to be authorized to perform this action!",
+      "locations": [{ "line": 1, "column": 3 }],
+      "path": ["cards"],
+      "extensions": { "code": "INTERNAL_SERVER_ERROR" }
+    }
+  ],
+  "data": null
+}

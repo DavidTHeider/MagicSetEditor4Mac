@@ -1,0 +1,20 @@
+{
+  "data": {
+    "cards": [
+      {
+        "uuid": "aaaa-bbbb-cccc-dddd",
+        "name": "Blitzschlag",
+        "manaCost": "{R}",
+        "type": "Instant",
+        "types": ["Instant"],
+        "rarity": "common",
+        "setCode": "PRB",
+        "number": "141",
+        "text": "Blitzschlag fügt einem Ziel 3 Schadenspunkte zu.",
+        "flavorText": "Kurz und heiß.",
+        "artist": "Selbst gezeichnet",
+        "convertedManaCost": 1
+      }
+    ]
+  }
+}

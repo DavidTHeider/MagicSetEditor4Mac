@@ -1,0 +1,33 @@
+﻿mse version: 2.0.0
+game: probe
+card width: 375
+card height: 523
+init script:
+	vorsatz := [
+		karte: "/probe/karten/"
+		stempel: "/probe/stempel/"
+	]
+	vorlage := { vorsatz[art] + eingabe }
+	ersetzung :=
+		ersetze@(
+			muster: "alt"
+			durch: "neu")
+	stufe :={
+		wert := card.rarity
+		if wert == "common" then "C"
+		else "S"
+	}
+card style:
+	# ein Kommentar im Kartenstil
+	name:
+		left: 10
+		top: 20
+		width: 300
+		height: 23
+		bottom: 43
+		z index: 1
+		unbekannter schluessel: egal
+		# ein Kommentar im Feld
+	rand:
+		# ein Kommentar zwischen den Angaben
+		z index: keine Zahl

@@ -1,0 +1,118 @@
+﻿mse version: 2.0.0
+game: probe
+short name: Probe-Stil
+version: 2026-08-15
+depends on:
+	package: probe.mse-game
+	version: 2026-08-15
+
+card width: 375
+card height: 523
+card dpi: 150
+init script:
+	include file: /probe-modul.mse-include/scripts
+	grundfarbe := "rot"
+	probe_hintergrund := { modul_hintergrund() }
+############ Der Kartenstil
+card style:
+	card color:
+		left: 0
+		top: 0
+		width:	375
+		height:	523
+		z index: 0
+		render style: image
+		image: { probe_hintergrund() }
+		default: ersatz.png
+	name:
+		left: { if card.farbe == "rot" then 32 else 50 }
+		top: 30
+		right: { 341 - 20 }
+		height: 23
+		alignment: bottom shrink-overflow
+		z index: 1
+		font:
+			name: Helvetica
+			size: 16
+			color: black
+		symbol font:
+			name: probe-symbole
+			size: 15
+			alignment: middle right
+	rand:
+		left: 0
+		top: 0
+		width: 375
+		height: 523
+		z index: 4
+		mask: rand_maske.png
+unverstandener block:
+	irgendwas: bleibt liegen
+############ Die Stiloptionen
+styling field:
+	type:			package choice
+	name:			mana symbols
+	description:	Welche Manasymbole benutzt werden.
+	match:			probe-mana-*.mse-symbol-font
+styling field:
+	type:			package choice
+	name:			overlay
+	description:	Ob eine Auflage über die Karte gelegt wird.
+	match:			probe-overlay-*.mse-include
+	required:		false
+	empty name:		keines
+styling field:
+	type:			package choice
+	name:			pt symbols
+	description:	Welche Symbole für Stärke und Widerstandskraft.
+	match:			probe-pt-*.mse-symbol-font
+	required:		false
+styling field:
+	type:			color
+	name:			randfarbe
+	description:	Die Farbe des Kartenrands.
+	choice:
+		name:			schwarz
+		color:			rgb(0,0,0)
+	choice:
+		name:			weiß
+		color:			rgb(255,255,255)
+styling field:
+	type:			color
+	name:			eigenfarbe
+	description:	Eine Farbe ganz nach Wahl.
+	initial:		rgb(12,34,56)
+styling field:
+	type:			color
+	name:			festfarbe
+	description:	Nur die genannten Farben.
+	allow custom:	false
+	choice:
+		name:			rot
+		color:			rgb(255,0,0)
+styling field:
+	type:			text
+	name:			aufschrift
+	description:	Ein freier Text auf der Karte.
+styling field:
+	type:			multiple choice
+	name:			rahmen
+	description:	Welche Rahmen benutzt werden.
+	choice:			nyx
+	choice:			schnee
+	choice:			fahrzeug
+	initial:		fahrzeug, nyx
+styling field:
+	type:			multiple choice
+	name:			leerbar
+	description:	Eine Mehrfachwahl mit eigenem Leernamen.
+	choice:			eins
+	choice:			zwei
+	empty choice:	nichts
+styling field:
+	type:			info
+	name:			Weitere Einstellungen
+	description:	Was darunter steht, gehört zusammen.
+styling field:
+	type:			info
+	name:			Ohne Erklärung

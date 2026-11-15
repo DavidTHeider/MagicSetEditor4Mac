@@ -1,0 +1,99 @@
+# UX-11 (#1683) — Sets, Decks und Sammlung als Liste, Kacheln oder Galerie: umschalten, suchen, und nach einem Neuladen steht dieselbe Ansicht da.
+#
+# **Gesetzt wie ein Mensch es setzt**: über den Umschalter der Liste, und
+# gemerkt über dieselbe Einstellung, die der Bestand schreibt
+# (`arbeitsplatz.ansicht.*`). **Neu geladen wird die ganze Seite** — erst
+# dann zeigt sich, ob die Ansicht gemerkt ist oder nur im Speicher stand.
+#
+# **Was es nicht zeigt**: einen Bestand mit hunderten Sets — das seitenweise
+# Laden prüft `listenansicht.test.tsx` mit 61 Einträgen. **Am Ende wird
+# zurückgesetzt**: die Drehbücher danach laufen auf demselben Bestand.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+pruefe (window.__form = () => { const l = [...document.querySelectorAll('ul[data-form]')].find((x) => x.checkVisibility()); return l ? l.dataset.form : 'keine' }, window.__knopf = (text) => { document.querySelectorAll('[data-ziel="ziel"]').forEach((x) => delete x.dataset.ziel); const b = [...document.querySelectorAll('main button, main [role=radiogroup] label')].find((k) => k.checkVisibility() && k.textContent.trim() === text); if (b) b.dataset.ziel = 'ziel'; return b !== undefined }, window.__waehle = (text, wert) => { const s = [...document.querySelectorAll('select')].find((w) => w.checkVisibility() && w.labels && w.labels[0] && w.labels[0].textContent.includes(text)); if (s && s.value !== wert) { s.value = wert; s.dispatchEvent(new Event('change', { bubbles: true })) } return s !== undefined }, true)
+
+notiz Sets — Kacheln sind die Vorgabe, die Liste wird gemerkt
+# **Seit AP-6 (#2363) ist die Ansicht ein Segment** — eine Optionsgruppe mit
+# einer Tabstelle; `__knopf` nimmt deshalb auch ihre Beschriftungen.
+taste cmd+2
+wartetext Jedes offene Set liegt im Bestand
+bis window.__form() === 'kacheln'
+abzug sets-kacheln
+pruefe (document.querySelector('ul[data-form] button').focus(), true)
+pruefe window.__knopf('Liste')
+klicke [data-ziel="ziel"]
+bis window.__form() === 'liste'
+notiz — der Eintrag, an dem man war, hat wieder den Fokus
+zeige (() => { const e = document.activeElement; return e.tagName + ' ' + (e.getAttribute('aria-label') || e.innerText || e.value || '').trim().slice(0, 60) + (e.closest('[data-eintrag]') ? ' · im Eintrag' : '') })()
+gleich document.activeElement.closest('[data-eintrag]') !== null => true
+abzug sets-liste
+notiz — gefiltert leer ist nicht leer
+pruefe (document.querySelector('input[type=search]').focus(), true)
+tippe xyz
+wartetext Nichts passt zu »xyz«.
+pruefe window.__knopf('Suche leeren')
+klicke [data-ziel="ziel"]
+bis window.__form() === 'liste'
+notiz — neu geladen: die Liste steht noch da
+pause 1500
+lade /
+warte nav
+taste escape
+pruefe (window.__form = () => { const l = [...document.querySelectorAll('ul[data-form]')].find((x) => x.checkVisibility()); return l ? l.dataset.form : 'keine' }, window.__knopf = (text) => { document.querySelectorAll('[data-ziel="ziel"]').forEach((x) => delete x.dataset.ziel); const b = [...document.querySelectorAll('main button, main [role=radiogroup] label')].find((k) => k.checkVisibility() && k.textContent.trim() === text); if (b) b.dataset.ziel = 'ziel'; return b !== undefined }, window.__waehle = (text, wert) => { const s = [...document.querySelectorAll('select')].find((w) => w.checkVisibility() && w.labels && w.labels[0] && w.labels[0].textContent.includes(text)); if (s && s.value !== wert) { s.value = wert; s.dispatchEvent(new Event('change', { bubbles: true })) } return s !== undefined }, true)
+taste cmd+2
+wartetext Jedes offene Set liegt im Bestand
+bis window.__form() === 'liste'
+
+notiz Decks — die Liste ist die Vorgabe, Kacheln werden gemerkt
+taste cmd+4
+wartetext Probe-Deck
+bis window.__form() === 'liste'
+pruefe window.__knopf('Kacheln')
+klicke [data-ziel="ziel"]
+bis window.__form() === 'kacheln'
+abzug decks-kacheln
+pause 1500
+lade /
+warte nav
+taste escape
+pruefe (window.__form = () => { const l = [...document.querySelectorAll('ul[data-form]')].find((x) => x.checkVisibility()); return l ? l.dataset.form : 'keine' }, window.__knopf = (text) => { document.querySelectorAll('[data-ziel="ziel"]').forEach((x) => delete x.dataset.ziel); const b = [...document.querySelectorAll('main button, main [role=radiogroup] label')].find((k) => k.checkVisibility() && k.textContent.trim() === text); if (b) b.dataset.ziel = 'ziel'; return b !== undefined }, window.__waehle = (text, wert) => { const s = [...document.querySelectorAll('select')].find((w) => w.checkVisibility() && w.labels && w.labels[0] && w.labels[0].textContent.includes(text)); if (s && s.value !== wert) { s.value = wert; s.dispatchEvent(new Event('change', { bubbles: true })) } return s !== undefined }, true)
+taste cmd+4
+wartetext Probe-Deck
+bis window.__form() === 'kacheln'
+
+notiz Sammlung — die Galerie wird gemerkt; seit UXR-10 (#1918) ein Segment über der Liste statt einer Auswahlliste im Navigator
+taste cmd+3
+wartetext Einlesen und ausgeben …
+bis window.__knopf('Galerie')
+klicke [data-ziel="ziel"]
+bis [...document.querySelectorAll('main [role=group][aria-label="Ansicht"] button')].some((b) => b.getAttribute('aria-pressed') === 'true' && b.textContent.trim() === 'Galerie')
+pause 1500
+lade /
+warte nav
+taste escape
+pruefe (window.__form = () => { const l = [...document.querySelectorAll('ul[data-form]')].find((x) => x.checkVisibility()); return l ? l.dataset.form : 'keine' }, window.__knopf = (text) => { document.querySelectorAll('[data-ziel="ziel"]').forEach((x) => delete x.dataset.ziel); const b = [...document.querySelectorAll('main button, main [role=radiogroup] label')].find((k) => k.checkVisibility() && k.textContent.trim() === text); if (b) b.dataset.ziel = 'ziel'; return b !== undefined }, window.__waehle = (text, wert) => { const s = [...document.querySelectorAll('select')].find((w) => w.checkVisibility() && w.labels && w.labels[0] && w.labels[0].textContent.includes(text)); if (s && s.value !== wert) { s.value = wert; s.dispatchEvent(new Event('change', { bubbles: true })) } return s !== undefined }, true)
+taste cmd+3
+wartetext Einlesen und ausgeben …
+bis [...document.querySelectorAll('main [role=group][aria-label="Ansicht"] button')].some((b) => b.checkVisibility() && b.getAttribute('aria-pressed') === 'true' && b.textContent.trim() === 'Galerie')
+abzug sammlung-galerie
+
+notiz Zurücksetzen — die Drehbücher danach laufen auf demselben Bestand
+pruefe window.__knopf('Tabelle')
+klicke [data-ziel="ziel"]
+bis [...document.querySelectorAll('main [role=group][aria-label="Ansicht"] button')].some((b) => b.getAttribute('aria-pressed') === 'true' && b.textContent.trim() === 'Tabelle')
+taste cmd+4
+wartetext Probe-Deck
+pruefe window.__knopf('Liste')
+klicke [data-ziel="ziel"]
+bis [...document.querySelectorAll('ul[data-form]')].some((x) => x.checkVisibility() && x.dataset.form === 'liste')
+taste cmd+2
+wartetext Jedes offene Set liegt im Bestand
+pruefe window.__knopf('Kacheln')
+klicke [data-ziel="ziel"]
+bis [...document.querySelectorAll('ul[data-form]')].some((x) => x.checkVisibility() && x.dataset.form === 'kacheln')
+pause 1500
+gleich JSON.stringify(window.__probeFehler || []) => []

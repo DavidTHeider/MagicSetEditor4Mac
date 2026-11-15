@@ -1,0 +1,9 @@
+# Ein Rumpf, wie ihn `magic.mse-game/script` führt.
+crop_safe :=
+{
+	if breite < 1 then nil else zuschneiden(bild)
+}
+
+# Und reine Anweisungen, wie in `magic.mse-game/unit_tests`.
+assert(crop_safe("") == nil)
+assert(crop_safe("x") != nil)

@@ -1,0 +1,22 @@
+{
+  "status": 200,
+  "data": [
+    {
+      "id": "prb-141",
+      "name": "Blitzschlag",
+      "mana_cost": "{R}",
+      "mana_value": 1,
+      "type": "Instant",
+      "types": ["Instant"],
+      "rarity": "common",
+      "rules": ["Blitzschlag fügt einem Ziel 3 Schadenspunkte zu."],
+      "artist": "Selbst gezeichnet",
+      "language": "German",
+      "language_code": "de",
+      "expansion": { "code": "PRB", "name": "Probeset" }
+    }
+  ],
+  "page": 1,
+  "pageSize": 100,
+  "totalCount": 1
+}

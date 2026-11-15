@@ -1,0 +1,53 @@
+# UXR-F1 (#2007) — die Auswahl mit Suche, wie ein Vorleser sie sieht.
+#
+# Über den Motor wk1: WebCores Zugänglichkeitsbaum im eigenen Prozess. Die
+# Zeitzone unter „Einstellungen" ist die Auswahl mit 420 Zeilen; ihre Rolle,
+# ihr Name, ihr Zustand und die Zeilen der Liste stehen im Baum. **Echte
+# Ereignisse**: Klick, Tippen und Tasten gehen als AppKit-Ereignisse an das
+# Fenster (`Drehbuch.swift`).
+#
+# **Was er nicht zeigt**: VoiceOvers eigene Ansage und seine Navigation durch
+# die Liste. Und `aria-activedescendant` — wie `aria-describedby` liegt die
+# Zuordnung in WKWebView im Web-Prozess, den WebKit 1 nicht hat (dieselbe
+# Grenze wie in `ux06-vorleser`); gemessen wird es am nativen Fenster, im
+# Drehbuch `uxrf1` der Hüllenprobe.
+motor wk1
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+,
+warte [role=tablist][aria-orientation=vertical]
+pruefe ([...document.querySelectorAll('[role=tab]')].find((t) => t.innerText.startsWith('Allgemein')).dataset.ziel = 'gruppe', true)
+klicke [data-ziel="gruppe"]
+warte input[data-einstellung="zeitzone"]
+notiz Zu: das Feld mit seiner Rolle, seinem Namen und seinem Wert — keine Liste im Baum
+pruefe (document.querySelector('input[data-einstellung="zeitzone"]').focus(), document.activeElement.dataset.einstellung === 'zeitzone')
+fokus
+baum input[data-einstellung="zeitzone"]
+gleich document.querySelectorAll('[role=listbox]').length => 0
+notiz Ein Klick öffnet die Liste: das Feld meldet „aufgeklappt", die Liste ist eine benannte listbox
+klicke input[data-einstellung="zeitzone"]
+warte [role=listbox]
+fokus
+gleich document.querySelector('input[data-einstellung="zeitzone"]').getAttribute('aria-expanded') => true
+gleich document.querySelector('[role=listbox]').getAttribute('aria-label') => Zeitzone
+gleich document.querySelector('input[data-einstellung="zeitzone"]').getAttribute('aria-controls') === document.querySelector('[role=listbox]').id => true
+zeige document.querySelectorAll('[role=listbox] [role=option]').length + ' Zeilen, die erste: ' + document.querySelector('[role=listbox] [role=option]').innerText
+abzug offen
+notiz Tippen grenzt ein — die Liste im Baum ist die eine Zeile, und die Live-Region sagt die Zahl
+tippe new york
+bis document.querySelectorAll('[role=listbox] [role=option]').length === 1
+baum [role=listbox]
+zeige document.querySelector('[data-suchauswahl]').innerText
+abzug gefiltert
+notiz Enter wählt und schließt — das Feld nennt die Zone, die Liste ist aus dem Baum
+taste enter
+bis document.querySelectorAll('[role=listbox]').length === 0
+gleich document.querySelector('input[data-einstellung="zeitzone"]').value => America/New_York
+gleich document.querySelector('input[data-einstellung="zeitzone"]').getAttribute('aria-expanded') => false
+fokus
+baum input[data-einstellung="zeitzone"]
+abzug gewaehlt
+gleich JSON.stringify(window.__probeFehler || []) => []

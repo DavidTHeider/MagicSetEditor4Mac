@@ -1,0 +1,18 @@
+{
+  "object": "card",
+  "id": "00000000-0000-4000-8000-00000000000a",
+  "name": "Prüfstein mit fremdem Wort",
+  "lang": "de",
+  "layout": "normal",
+  "type_line": "Verzauberung",
+  "rarity": "rare",
+  "set": "prb",
+  "set_name": "Prüfblock",
+  "collector_number": "10",
+  "artist": "Selbst Gemalt",
+  "legalities": {
+    "standard": "legal",
+    "kuechentisch": "vielleicht"
+  },
+  "scryfall_uri": "https://beispiel.invalid/karte/10"
+}

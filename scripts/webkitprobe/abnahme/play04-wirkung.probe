@@ -1,0 +1,76 @@
+# PLAY-04 (#1712) — die Wirkungen am echten Tisch in WKWebView.
+#
+# AK-02 verlangt unterscheidbare Effekte für Kartenbewegung, Eintritt und
+# Austritt, Tappen, Leben, Gift, Zugwechsel und Spielende. **Welche** Wirkung
+# welche Farbe und welches Zeichen trägt, prüfen die Läufe über
+# `tisch/tischwirkungen.ts`; die Leinwand selbst läuft unter jsdom nicht
+# (`.covignore`). Hier steht, was nur WebKit zeigt: dass der Ring auf der
+# Leinwand ankommt, dass die Zonenliste daneben dasselbe Zeichen trägt, und
+# dass die Ereignisliste **in Worten** sagt, was geschah.
+#
+# Die Wirkungen dauern 260 bis 420 ms — der Abzug folgt dem Klick deshalb
+# ohne Pause.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+4
+wartetext Partie anfangen
+klicketext Partie anfangen
+wartetext Weiterspielen
+klicketext Weiterspielen
+klicketext Weiterspielen als Ada
+warte canvas
+pause 1500
+notiz Der Beginn ist vorbei — `play-beginn` hat ihn in derselben Partie zu Ende gebracht; vorher nähme der Tisch nur ihn an (CR 103.8, #1851)
+# Alle Drehbücher laufen gegen denselben Bestand, und `play-beginn` läuft vor
+# diesem. Allein gefahren, bräche diese Probe hier ab und nicht erst an einer
+# Handlung, die der Tisch nicht anbietet.
+# **Positiv, nicht verneint** — WK01 (#2102): eine verneinte h3-Abfrage war
+# grün, als die Tafel längst unter h2 stand und der Beginn offen. Der Beginn
+# ist vorbei, wenn der Tisch Ada das Passen anbietet.
+notiz Vorbedingung: der Beginn ist vorbei — »Passen« steht für Ada offen
+bis [...document.querySelectorAll('button')].some((b) => b.checkVisibility() && b.innerText.trim() === 'Passen' && !b.disabled)
+notiz Die oberste Karte aus Adas Bibliothek aufs Schlachtfeld — ein Eintritt
+pruefe (() => { const b = [...document.querySelectorAll('[role=application] li button')].filter((x) => (x.getAttribute('aria-label') || x.textContent).includes('Bibliothek')); const unten = b.reduce((a, c) => (c.getBoundingClientRect().top > a.getBoundingClientRect().top ? c : a)); unten.dataset.ziel = 'bibliothek'; return true })()
+klicke [data-ziel="bibliothek"]
+wartetext Mit dieser Karte
+klicketext Schieben nach…
+bis document.querySelector('[role=group][aria-label="Schieben nach"]') !== null
+pruefe (() => { const s = document.querySelector('[role=group][aria-label="Schieben nach"] select'); const setze = Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype, 'value').set; setze.call(s, 'tisch'); s.dispatchEvent(new Event('change', { bubbles: true })); return true })()
+klicketext Stellen
+abzug wirkung-eintritt
+# Im Abzug: die Karte noch im Flug, am Ziel auf dem Schlachtfeld der Ring in
+# der Farbe des Eintritts (0x35a26a, `tischwirkungen.ts`).
+bis [...document.querySelectorAll('[role=application] li button')].some((b) => (b.getAttribute('aria-label') || b.textContent).includes('· Schlachtfeld'))
+notiz Dann getappt — eine Drehung
+# **Die ungetappte** — `play03-quer` lässt seine Karte getappt liegen.
+pruefe ([...document.querySelectorAll('[role=application] li button')].find((b) => { const t = b.getAttribute('aria-label') || b.textContent; return t.includes('· Schlachtfeld') && !t.includes('getappt') }).dataset.ziel = 'schlachtfeld', true)
+# **Seit #2372 tappt der Klick selbst** — die Primärhandlung einer Karte
+# auf dem Schlachtfeld ist Tappen oder Enttappen, was gerade geht.
+klicke [data-ziel="schlachtfeld"]
+abzug wirkung-drehung
+bis [...document.querySelectorAll('[role=application] li button')].some((b) => /Schlachtfeld.*getappt/.test(b.getAttribute('aria-label') || b.textContent))
+notiz In der Liste trägt die Zone dieselbe Wirkung — als Rahmen und als Zeichen
+# Die Listendarstellung ist der Weg ohne Leinwand, und sie zeigt dieselben
+# Wirkungen: Rahmen in der Farbe, Zeichen daneben. Enttappen ist wieder eine
+# Drehung.
+klicketext Als Liste
+bis [...document.querySelectorAll('button')].some((b) => /getappt/.test(b.getAttribute('aria-label') || b.textContent))
+pruefe (window.__wirkungen = [], new MutationObserver(() => { for (const e of document.querySelectorAll('[data-wirkung]')) { const w = e.getAttribute('data-wirkung'); if (!window.__wirkungen.includes(w)) window.__wirkungen.push(w + ' ' + (e.textContent || '').trim()) } }).observe(document.body, { subtree: true, childList: true, attributes: true }), true)
+pruefe ([...document.querySelectorAll('button')].find((b) => /getappt/.test(b.getAttribute('aria-label') || b.textContent)).dataset.ziel = 'liste', true)
+klicke [data-ziel="liste"]
+bis window.__wirkungen.length > 0
+zeige JSON.stringify(window.__wirkungen)
+pruefe window.__wirkungen.some((w) => w.startsWith('drehung'))
+abzug wirkung-liste
+klicketext Als Tisch
+notiz Die Ereignisliste sagt es in Worten, und das Zeichen bleibt stumm
+# Das Zeichen ist aria-hidden: zwanzig Dreiecke an zwanzig bewegten Karten
+# wären keine Auskunft. Was geschah, steht als Satz in „Zuletzt geschehen".
+zeige (() => { const h = [...document.querySelectorAll('h2')].find((x) => x.textContent === 'Zuletzt geschehen'); return [...h.parentElement.querySelectorAll('li')].slice(0, 3).map((l) => l.innerText.replace(/\s+/g, ' ').trim()).join(' | ') })()
+pruefe (() => { const h = [...document.querySelectorAll('h2')].find((x) => x.textContent === 'Zuletzt geschehen'); return [...h.parentElement.querySelectorAll('li')].some((l) => l.innerText.includes('Enttappen')) })()
+notiz Und die Seite hat keinen Fehler geworfen
+gleich JSON.stringify(window.__probeFehler || []) => []

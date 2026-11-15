@@ -1,0 +1,69 @@
+# UX-08.AK-01 (#1680) — das Popover als kurze Eingabe an Ort und Stelle, in WKWebView.
+#
+# Ein Deck umbenennen: das Popover steht an seinem Knopf, der Fokus im
+# Namen; Escape schließt und gibt den Fokus dem Auslöser zurück — **auch nach
+# einem Klick, der in WebKit keinen Fokus gibt**. Ein Klick daneben schließt
+# es und lässt den Fokus, wo geklickt wurde. **Umbenannt wird nichts** — die
+# Abnahmen teilen sich einen Bestand.
+#
+# **Und nichts schneidet es ab.** Der erste Lauf am 2026-09-25 zeigte das
+# Namensfeld an der Kante des Navigators beendet: das Popover stand im
+# Behälter seines Auslösers. Geprüft wird am rechten Rand, ob dort das
+# Popover liegt — `elementFromPoint` trifft, was man sieht.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+pruefe (window.__zur = (seite) => { const b = [...document.querySelectorAll('[role=dialog] button')].find((x) => x.getClientRects().length > 0 && x.innerText.trim() === seite); b.dataset.ziel = 'seite'; return true }, window.__popover = () => [...document.querySelectorAll('[role=group][aria-labelledby]')].find((g) => document.getElementById(g.getAttribute('aria-labelledby')).textContent === 'Probe-Deck umbenennen'), window.__umbenennen = () => { const b = [...document.querySelectorAll('button')].find((x) => x.checkVisibility() && x.getAttribute('aria-label') === 'Handlungen — Probe-Deck'); b.dataset.ziel = 'umbenennen'; return true }, window.__eintrag = (wort) => { const e = [...document.querySelectorAll('[role=menuitem]')].find((x) => x.checkVisibility() && x.innerText.includes(wort)); if (!e) return false; e.dataset.ziel = 'eintrag'; return true }, true)
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe window.__zur('Decks')
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+wartetext Probe-Deck
+# **Die Handlungen eines Decks stehen am offenen** (UXR-11, #1919) — erst
+# aufschlagen. **Und seit AP-6 (#2363) im Menü »…«**: Umbenennen ist ein
+# Eintrag darin, und das Popover hängt an »…«.
+klicke button[aria-label="Öffnen: Probe-Deck"]
+warte button[aria-label="Handlungen — Probe-Deck"]
+notiz Umbenennen — über »…«; das Popover steht an ihm, der Fokus im Namen
+pruefe window.__umbenennen()
+klicke [data-ziel="umbenennen"]
+bis window.__eintrag('Umbenennen')
+klicke [data-ziel="eintrag"]
+bis window.__popover() !== undefined
+gleich document.activeElement.value => Probe-Deck
+gleich document.activeElement.labels[0].textContent.trim() => Neuer Name
+# **Am Knopf, darunter oder darüber** — »…« steht seit AP-6 am Fuß der
+# Deckzeile, und wo darunter kein Platz ist, klappt das Popover nach oben.
+pruefe (() => { const p = window.__popover().getBoundingClientRect(); const k = document.querySelector('[data-ziel="umbenennen"]').getBoundingClientRect(); return p.top >= k.bottom - 1 || p.bottom <= k.top + 1 })()
+pruefe (() => { const g = window.__popover(); const r = g.getBoundingClientRect(); return r.right <= window.innerWidth && g.contains(document.elementFromPoint(r.right - 4, r.top + r.height / 2)) && g.contains(document.elementFromPoint(r.left + r.width / 2, r.bottom - 4)) })()
+zeige (() => { const r = window.__popover().getBoundingClientRect(); return Math.round(r.left) + ',' + Math.round(r.top) + ' ' + Math.round(r.width) + '×' + Math.round(r.height) })()
+notiz Der Titel trägt die Textfarbe des Inhaltsbereichs — im Portal erbt er sie nicht von selbst
+gleich getComputedStyle(document.getElementById(window.__popover().getAttribute('aria-labelledby'))).color === getComputedStyle(document.getElementById('inhalt')).color => true
+abzug popover
+notiz Escape schließt, der Fokus kehrt zum Auslöser zurück
+taste escape
+bis window.__popover() === undefined
+# **Gewartet wird auf die Wirkung** (§3): der Fokus kehrt erst zurück, wenn
+# das Popover ausgeblendet ist — rund 200 ms nach Escape, gemessen am
+# 2026-10-20. Geprüft gleich danach, stand er im vollen Lauf noch auf `body`.
+bis document.activeElement.getAttribute('aria-label') === 'Handlungen — Probe-Deck'
+pruefe (window.__nachEscape = (() => { const e = document.activeElement; return e.tagName + (e.id ? '#' + e.id : '') + ' ' + (e.getAttribute('aria-label') || e.innerText || '').trim().slice(0, 50) })(), true)
+zeige window.__nachEscape
+# **Am Namen und nicht an der Marke** — der Knopf kann neu gezeichnet sein.
+gleich document.activeElement.getAttribute('aria-label') => Handlungen — Probe-Deck
+notiz Ein Klick daneben schließt es auch — und der Fokus bleibt, wo geklickt wurde
+pruefe window.__umbenennen()
+klicke [data-ziel="umbenennen"]
+bis window.__eintrag('Umbenennen')
+klicke [data-ziel="eintrag"]
+bis window.__popover() !== undefined
+pruefe ([...document.querySelectorAll('main#inhalt h1, main#inhalt h2')].find((h) => h.checkVisibility()).dataset.ziel = 'daneben', true)
+klicke [data-ziel="daneben"]
+bis window.__popover() === undefined
+pruefe document.activeElement.getAttribute('aria-label') !== 'Handlungen — Probe-Deck'
+wartetext Probe-Deck
+gleich JSON.stringify(window.__probeFehler || []) => []

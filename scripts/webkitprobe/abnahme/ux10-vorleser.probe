@@ -1,0 +1,34 @@
+# UX-10.AK-01 (#1682) — was ein Vorleser an einem Knopf des Aktionskatalogs hört.
+#
+# Über den Motor wk1: WebCores Zugänglichkeitsbaum im eigenen Prozess. Das
+# Zeichen vor der Aufschrift ist `aria-hidden` — angesagt werden soll
+# „Löschen", nicht „Multiplikationszeichen, Löschen".
+#
+# **Was er nicht zeigt**: den Tooltip. Er hängt über `aria-describedby` am
+# Knopf, und diese Zuordnung liegt in WKWebView im Web-Prozess, den WebKit 1
+# nicht hat — dieselbe Grenze wie in `ux06-vorleser`.
+motor wk1
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+# **Bis AP-6 (#2363) stand das an der Decks-Seite** — dort stehen Löschen
+# und Umbenennen seither im Menü »…«. Der Inspector der Sammlung trägt beide
+# als Knöpfe des Aktionskatalogs.
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((x) => x.getClientRects().length > 0 && x.innerText.trim() === 'Sammlung').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+bis [...document.querySelectorAll('main [role=grid][aria-label="Exemplare"] [role=gridcell][title]')].some((z) => z.checkVisibility())
+pruefe ([...document.querySelectorAll('main [role=grid][aria-label="Exemplare"] [role=gridcell][title]')].find((z) => z.checkVisibility()).dataset.ziel = 'zeile', true)
+klicke [data-ziel="zeile"]
+bis [...document.querySelectorAll('aside[aria-label="Exemplar"] button[data-aktion="loeschen"]')].some((b) => b.checkVisibility())
+notiz Der Löschknopf eines Exemplars — sein Zeichen steht im Baum nicht
+pruefe (document.querySelector('aside[aria-label="Exemplar"] button[data-aktion="loeschen"]').focus(), document.activeElement.dataset.aktion === 'loeschen')
+fokus
+baum aside[aria-label="Exemplar"] button[data-aktion="loeschen"]
+notiz Und der Knopf zum Bearbeiten daneben — ✎ steht davor, gesagt wird es nicht
+pruefe (document.querySelector('aside[aria-label="Exemplar"] button[data-aktion="bearbeiten"]').focus(), document.activeElement.dataset.aktion === 'bearbeiten')
+fokus

@@ -1,0 +1,2 @@
+go test fuzz v1
+string("  mse4mac-kontakt:1:e30.")

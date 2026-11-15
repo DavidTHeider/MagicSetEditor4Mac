@@ -1,0 +1,292 @@
+// The texts of the **trading** area — Werkstück T9 von Phase 5.6
+// (#1474).
+//
+// **Ein eigener Katalog und keine Zeilen mehr in `seitentechnik.ts`.** Der
+// Abgleich, die Post und die Verbuchung standen dort, weil es den Bereich
+// noch nicht gab — ihre eigenen Kommentare sagen es. Jetzt gibt es ihn, und
+// ein Text über das Handeln unter „Technik" wäre eine Fundstelle, die
+// niemand sucht.
+
+import { handelsliste } from './handelsliste'
+import { handelsassistent } from './handelsassistent'
+
+export const handeln = {
+  liste: handelsliste,
+  assistent: handelsassistent,
+  titel: 'Comercio',
+  erklaerung:
+    'Intercambia y comercia con un interlocutor que hayas confirmado. Todo se calcula en este ordenador; lo que sale de él lo decides tú.',
+  gebiete: 'Áreas del comercio',
+  gebietPartner: 'Con quién',
+  gebietMarkt: 'Cuánto vale',
+  neuerTausch: 'Nuevo intercambio …',
+  neuerTauschTitel: 'Nuevo intercambio',
+  partnerTitel: 'Interlocutores confirmados',
+  partnerErklaerung:
+    'Solo se comercia con un interlocutor con quien hayas comparado un código. Elige uno y se abre vuestro intercambio; para invitar y confirmar, usa el recuadro de abajo.',
+  partnerLeer:
+    'Aún no hay ningún interlocutor confirmado. Intercambiad vuestros códigos de invitación en el recuadro de abajo y comparad las cifras.',
+  partnerWaehlen: 'Abrir',
+  partnerWaehlenName: 'Abrir a {name}',
+  partnerOffen: 'Abierto',
+  partnerOffenName: '{name} abierto',
+  partnerKeiner:
+    'Elige un intercambio a la izquierda, o empieza uno con «Nuevo intercambio …».',
+  marktTitel: 'Cuánto vale tu colección',
+  marktErklaerung:
+    'Una observación del mercado no es una promesa: dice lo que se pidió en otro sitio, no lo que vas a recibir. De dónde sale cada cifra y qué antigüedad tiene figura junto a ella; y donde no hay ninguna, no se muestra ninguna.',
+  vorgangTitel: 'Una operación desde su apertura hasta la entrega',
+  vorgangErklaerung:
+    'Aquí se desarrolla el contrato: abrir, ofrecer, aceptar, preparar, entregar. **No se mueven existencias**: el registro se hace en «Registro», y para ello este programa vuelve a preguntar.',
+  wahlTitel: 'Qué operación',
+  wahlNeu: 'Una operación nueva',
+  wahlNeuZusatz: 'El programa asigna su identificador al abrirla.',
+  wahlEintrag: '{zustand} · revisión {revision} · {positionen}',
+  wahlLeer: 'Con este interlocutor aún no hay ninguna operación.',
+  wahlFachleute: 'Abrir una operación por su identificador',
+  wahlFachleuteErklaerung:
+    'Cada operación tiene un **identificador**. El programa lo asigna al abrirla y todo mensaje sobre ella lo lleva. Si una operación aún no aparece arriba (por ejemplo, porque su primer mensaje todavía está en camino), ábrela aquí con él.',
+  wahlKennung: 'Identificador de la operación',
+  wahlOeffnen: 'Abrir',
+  wahlGewaehlt: 'Se ha elegido la operación {kennung}.',
+  vorgangOhneKennung: 'Elige arriba una operación o abre una nueva.',
+  vorgangAnsehen: 'Ver estado',
+  vorgangFachleute: 'Ver el estado con revisión y huella',
+  vorgangEroeffnen: 'Abrir',
+  vorgangVorschlagen: 'Proponer de nuevo',
+  vorgangRevision: 'Revisión',
+  vorgangAbdruck: 'Huella',
+  vorgangParteien: 'Partes',
+  vorgangZustimmungen: 'Han aceptado hasta ahora',
+  vorgangKeine: 'Nadie todavía.',
+  vorgangDu: 'tú',
+  vorgangEnde: 'Aquí no se puede avanzar más.',
+  vorgangArt: 'Tipo',
+  arten: {
+    teilen: 'Compartir',
+    deckleihe: 'Préstamo de mazos',
+    tausch: 'Intercambio',
+    markt: 'Mercado',
+  },
+  artOhneBestand:
+    'Esta operación no mueve existencias: solo se registra un intercambio.',
+  vorgangVereinbarung:
+    'Estáis de acuerdo. Esto es un **acuerdo**: las cartas solo cambian de manos en la entrega, y solo se contabiliza cuando ambos lo han registrado.',
+  vorgangSchritte: 'Pasos',
+  schrittAnbieten: 'Ofrecer',
+  schrittGegenangebot: 'Contraoferta',
+  schrittZustimmen: 'Aceptar',
+  schrittVorbereiten: 'Preparar',
+  schrittUebergeben: 'Confirmar la entrega',
+  schrittAblehnen: 'Rechazar',
+  schrittAbbrechen: 'Cancelar',
+  schrittAblaufen: 'Caducada',
+  schrittKlaeren: 'Marcar para aclarar',
+  positionTitel: 'Lo que cambia de manos',
+  positionVon: 'De quién',
+  positionVonIch: 'De ti',
+  positionVonGegenueber: 'De tu interlocutor',
+  positionPrinting: 'Impresión',
+  kennungVonHand: 'Introducir el identificador a mano',
+  positionMenge: 'Cantidad',
+  positionGuete: 'Estado',
+  positionSprache: 'Idioma',
+  positionFinish: 'Acabado',
+  positionHinzufuegen: 'Añadir una línea',
+  anschlussWartet:
+    '«{name}» ha llegado desde tu colección: comprueba la cantidad y el lado, y ya estará en la oferta.',
+  wunschTitel: 'Lista de deseos de un mazo',
+  wunschWartet: '{name} de un mazo, aún sin anotar: {liste}.',
+  wunschEintragen: 'Anotar como deseo del interlocutor',
+  anschlussOhnePartner:
+    '«{name}» está esperando: elige un interlocutor en «Nuevo intercambio …» y pasará a su línea.',
+  preise: {
+    holen: 'Obtener precios',
+    abbrechen: 'Cancelar la obtención de precios',
+    laeuft: 'Obteniendo precios … {fertig} de {gesamt}',
+    fertig: 'Precios obtenidos para {zahl} impresiones.',
+    teils: '{zahl} de {gesamt} impresiones sin precio: {meldung}',
+    abgebrochen:
+      'Cancelado tras {fertig} de {gesamt}: lo obtenido se conserva.',
+  },
+  markttisch: {
+    neuTitel: 'Nuevo intercambio con',
+    neuMit: 'Nuevo intercambio con {name}',
+    meinFach: 'Mi casillero',
+    sammlung: 'Mi colección',
+    wunschliste: 'Lista de deseos',
+    seinFach: 'Casillero de {name}',
+    freigegeben:
+      'Lo que {name} comparte para intercambiar, preguntado al abrir.',
+    meinLeer:
+      'Aquí todavía no hay nada. Los ejemplares llegan por la colección.',
+    wunschLeer: 'Sin deseos. Una carta se vuelve deseo en la colección.',
+    seinLeer: 'Nada compartido.',
+    neuFragen: 'Volver a preguntar',
+    hinweis: 'Arrastra, o Espacio, flechas, Intro. Selección múltiple con ⌘.',
+    laedt: 'Preguntando …',
+    karte: '{zustand} · {sprache} · {menge}×',
+    ansicht: 'Vista',
+    alsTisch: 'Como mesa',
+    alsListe: 'Como lista',
+    fachSuchen: 'Buscar en el casillero',
+    fachZaehlung: '{gezeigt} de {gesamt}',
+    fachMehr: 'Mostrar más',
+    fachKeinTreffer: 'Ninguna carta de este casillero se llama así.',
+  },
+  zug: {
+    veraltet:
+      'El intercambio ha cambiado entretanto. Mira el nuevo estado y vuelve a decidir.',
+    vorbereitenUebergeben: 'Preparar y entregar',
+    uebergebenVerbuchen: 'Entregar y registrar',
+    anbietenZustimmen: 'Ofrecer y aceptar',
+    buchungHinweis:
+      '«Registrar» comunica después la conciliación y confirma tu cierre. La confirmación de {name} la anotas aparte.',
+    festhaltenOffen:
+      'No está claro qué ejemplar sale. Elígelo en «Reservas» y pulsa otra vez.',
+    gescheitert: '{schritt} no funcionó: {meldung}',
+    lesen: 'Está anotado, pero luego no se pudo leer el estado: {meldung}',
+    ausgang:
+      'Está anotado en tu lado, pero no llegó a la bandeja de salida: {meldung}',
+    unterwegs: 'Está anotado en tu lado; {name} aún no lo tiene: {meldung}',
+    hinaus: 'Enviado a {name}.',
+  },
+  sicht: {
+    titel: 'Lo que comparte tu contraparte',
+    anfragen: 'Pedir la vista compartida',
+    laeuft: 'Preguntando por la conexión …',
+    zeilen: '{zahl} líneas compartidas, {wuensche} de ellas buscadas.',
+    keinVorschlag:
+      'Nada encaja: ningún deseo de aquí coincide con una oferta de allí.',
+    gibst: 'Das',
+    bekommst: 'Recibes',
+    zeile: '{menge} × {name}',
+    uebernehmen: 'Adoptar la propuesta',
+    uebernommen: 'Adoptado: {zahl} líneas están en la oferta.',
+  },
+  druck: {
+    eigen: 'impresión propia · sin imagen',
+    ohneNamen: 'Impresión sin nombre',
+    unbekannt: 'Impresión desconocida',
+    bezug: '{code} #{nummer}',
+    laedt: '…',
+  },
+  positionEntfernen: 'Quitar línea',
+  positionEntfernenName: 'Quitar la línea {nummer}',
+  positionLeer:
+    'Aún no hay ninguna línea. Una oferta sin posición no dice de qué se trata.',
+  positionVorbereitung:
+    'Cuál de tus ejemplares se va lo indicas en «Reservas»: una oferta nombra una **impresión**, no una fila de tus existencias.',
+  zusagenTitel: 'Qué ejemplares se van',
+  zusagenErklaerung:
+    'Una oferta nombra una **impresión**, no una fila de tus existencias. Indica aquí **cuál** de tus ejemplares se va; si no, al registrar nadie sabrá de dónde descontar.',
+  zusagenWahl: 'Cuál de tus ejemplares se va',
+  zusagenPosition: '{menge} × {name}',
+  zusagenZeile: '{lagerort} · {zustand} · {sprache} · {finish} · {stueck}',
+  zusagenOhneLagerort: 'sin lugar de almacenamiento',
+  zusagenKeinExemplar: 'No tienes nada de esto en tu colección.',
+  zusagenKeinePassende:
+    'Ninguna línea de tu colección coincide con el estado, el idioma y el acabado de esta línea. Añádela a tu colección o vuelve a añadir la línea al intercambio con datos que coincidan.',
+  zusagenFachleute: 'Reservar una fila de la colección por su identificador',
+  zusagenFachleuteErklaerung:
+    'Una **fila de la colección** es una fila de tu colección, y su **versión** cuenta cada cambio. Ambas ya aparecen en la selección de arriba; aquí las introduces a mano, por ejemplo para un ejemplar que no figura allí.',
+  zusagenExemplar: 'Qué fila de la colección',
+  zusagenMenge: 'Cuántos',
+  zusagenFassung: 'Versión que viste',
+  zusagenFesthalten: 'Reservar',
+  zusagenNachsehen: 'Mostrar reservas',
+  zusagenOhneVorgang:
+    'Elige arriba una operación; aquí aparecerá lo que entregas por ella.',
+  zusagenLeer: 'Para esta operación no hay nada reservado.',
+  zusagenOffen: 'reservado',
+  zusagenUebergeben: 'entregado',
+  ausgangTitel: 'Lo que sale hacia tu interlocutor',
+  ausgangErklaerung:
+    'El estado se firma y se deja en la **bandeja de salida**. **Enviar ahora** abre una línea con tu interlocutor y saca lo que está esperando; aun así permanece allí hasta que tu interlocutor lo confirme.',
+  ausgangSchicken: 'Dejar en la bandeja de salida',
+  ausgangNachricht: 'Identificador del mensaje',
+  ausgangWegraeumen: 'Ha llegado: quitarlo',
+  ausgangWegraeumenName: 'Ha llegado, quitar: {nachricht}',
+  ausgangFachleute: 'Quitar un mensaje por su identificador',
+  ausgangFachleuteErklaerung:
+    'Cada mensaje de la bandeja de salida tiene un **identificador**. Lo que sigue pendiente tras una interrupción aparece arriba con un botón para quitarlo; aquí quitas uno que no figura allí.',
+  ausgangBestaetigen: 'Quitar como llegado',
+  ausgangOhneVorgang: 'Elige arriba una operación que deba salir.',
+  ausgangOhneNachricht: 'Introduce primero el identificador del mensaje.',
+  ausgangWiederaufnahme: 'Revisar tras una desconexión',
+  ausgangZustellen: 'Enviar ahora',
+  ausgangOhneGegenueber: 'Elige primero a quién enviar.',
+  ausgangGetragen: 'Han salido {zahl}.',
+  ausgangKlaerung:
+    'Hay dos historiales sobre la mesa. Eso no se puede calcular: habladlo entre vosotros.',
+  ausgangNachzuliefern: 'Tiene que volver a salir',
+  ausgangLeer: 'No hay nada en la bandeja de salida.',
+  ausgangFolge: 'Secuencia',
+  tauschTitel: 'Lo que podríais intercambiar',
+  tauschErklaerung:
+    'Pega aquí lo que te envió tu interlocutor: sus repetidas y sus deseos, tal como los liberó su programa. La comparación se hace en este ordenador; no sale nada de él.',
+  tauschStand: 'Lo que envió tu interlocutor',
+  tauschAbgleichen: 'Comparar',
+  tauschAusUmschlag: 'Leer de un sobre',
+  tauschUnlesbar: 'Eso no es un estado liberado.',
+  tauschLeer: 'Nada coincide.',
+  tauschGebe: 'Tú das',
+  tauschBekomme: 'Tú recibes',
+  tauschVorschlag: 'Una propuesta',
+  tauschOhneVorschlag:
+    'Una propuesta necesita algo en ambos lados: un intercambio en el que una parte no da nada es un regalo.',
+  tauschBefunde: 'Lo que no se pudo comparar',
+  postLeer: 'Nada en camino.',
+  postOffen: 'En camino',
+  postVersuche: 'Intentos',
+  buchungTitel: 'Registrar una operación',
+  buchungErklaerung:
+    'Cuando las cartas hayan cambiado de dueño de verdad, anota aquí la operación. Tus existencias cambian y el diario deja constancia de qué fue adónde.',
+  buchungVerbuchen: 'Registrar',
+  buchungAbgleichen: 'Informar de la conciliación',
+  buchungEigeneStimme: 'Confirmar el cierre',
+  buchungBestaetigen: 'Confirmado por la otra parte',
+  buchungNochNicht:
+    'Ahora no hay nada que registrar: se registra cuando se confirma la entrega.',
+  buchungZustand: 'Estado',
+  buchungStandEntwurf: 'Borrador',
+  buchungStandAngeboten: 'Ofrecida',
+  buchungStandVerhandlung: 'En negociación',
+  buchungStandAngenommen: 'Aceptada',
+  buchungStandVorbereitet: 'Preparada',
+  buchungStandUebergabeOffen: 'Entrega confirmada',
+  buchungStandLokalVerbucht: 'Registrada por tu parte',
+  buchungStandAbgleichOffen: 'Conciliando',
+  buchungStandBeidseitigVerbucht: 'Registrada por ambas partes',
+  buchungStandAbgelehnt: 'Rechazada',
+  buchungStandAbgebrochen: 'Cancelada',
+  buchungStandAbgelaufen: 'Caducada',
+  buchungStandKlaerung: 'Por aclarar',
+  buchungBeleg: 'Comprobante',
+  buchungEinseitig: 'Solo has firmado tú.',
+  buchungBeidseitig: 'Han firmado ambos.',
+  buchungOhneGegenbeleg:
+    'Aún no hay ningún comprobante verificado de la otra parte.',
+  buchungGegenbeleg: 'Comprobante verificado de {wer}, recibido {wann}.',
+  buchungGegenbelegAbgewiesen:
+    'Llegó un comprobante de {wer} {wann}, pero no coincide con el tuyo — {mangel}',
+  buchungGegenbelegRat:
+    'Concilia el intercambio con {wer}; un comprobante que coincida sustituye este aviso.',
+  gegenbelegMaengel: {
+    unterschrift: 'la firma no es del remitente.',
+    vorgang: 'pertenece a otro intercambio.',
+    revision: 'pertenece a otro estado de este intercambio.',
+    parteien: 'nombra a otras partes.',
+    zeilen: 'las cartas registradas no coinciden.',
+  },
+  buchungJournal: 'Lo que se ha movido',
+  buchungJournalLeer: 'Todavía no hay nada en el diario sobre esta operación.',
+  kontoTitel: 'Tu propia cuenta en un marketplace',
+  kontoErklaerung:
+    'Lo que **tú** ofreces allí y lo que **tú** has vendido o comprado. Solo se lee: no se crea ninguna oferta, no se pone nada en un carrito, no se compra nada y no se envía nada. Esta vía empieza **desactivada**: en Ajustes → Servicios, y además del propio marketplace.',
+  kontoNachsehen: 'Revisar',
+  kontoAngebote: 'Ofertas',
+  kontoBestellungen: 'Pedidos',
+  kontoBewegt: 'ha movido existencias',
+  kontoBewegtNicht: 'no ha movido existencias',
+} as const

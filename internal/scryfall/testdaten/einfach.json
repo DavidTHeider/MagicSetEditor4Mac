@@ -1,0 +1,32 @@
+{
+  "object": "card",
+  "id": "00000000-0000-4000-8000-000000000001",
+  "oracle_id": "00000000-0000-4000-8000-0000000000a1",
+  "name": "Prüfstein",
+  "lang": "de",
+  "layout": "normal",
+  "mana_cost": "{2}{W}",
+  "cmc": 3.0,
+  "type_line": "Kreatur — Prüfling",
+  "oracle_text": "Fliegend.\nWenn Prüfstein ins Spiel kommt, ziehe eine Karte.",
+  "flavor_text": "Ein Stein, an dem sich alles prüft.",
+  "power": "2",
+  "toughness": "3",
+  "colors": [
+    "W"
+  ],
+  "color_identity": [
+    "W"
+  ],
+  "rarity": "rare",
+  "set": "prb",
+  "set_name": "Prüfblock",
+  "collector_number": "1",
+  "artist": "Selbst Gemalt",
+  "image_uris": {
+    "small": "https://beispiel.invalid/klein.jpg",
+    "normal": "https://beispiel.invalid/normal.jpg",
+    "art_crop": "https://beispiel.invalid/ausschnitt.jpg"
+  },
+  "scryfall_uri": "https://beispiel.invalid/karte/1"
+}

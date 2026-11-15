@@ -1,0 +1,14 @@
+{
+  "data": {
+    "code": "KOL",
+    "name": "Set mit einem Schlüssel, der heißt wie ein Kartenfeld",
+    "cards": [
+      {
+        "name": "Doppelgänger",
+        "text": "Der zugeordnete Regeltext.",
+        "rule text": "Der Schlüssel, der genauso heißt wie das Kartenfeld.",
+        "rarity": "rare"
+      }
+    ]
+  }
+}

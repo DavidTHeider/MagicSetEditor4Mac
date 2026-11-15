@@ -1,0 +1,4697 @@
+{
+ "Sammlung": {
+  "geprueft": 6,
+  "abweichungen": [],
+  "zusaetzlich": [
+   "exemplare[0].wunschrang",
+   "exemplare[0].wunschart",
+   "exemplare[1].wunschrang",
+   "exemplare[1].wunschart",
+   "exemplare[2].wunschrang",
+   "exemplare[0].wunschrang",
+   "exemplare[0].wunschart",
+   "exemplare[1].wunschrang",
+   "exemplare[1].wunschart",
+   "exemplare[2].wunschrang",
+   "exemplare[0].wunschrang",
+   "exemplare[0].wunschart",
+   "exemplare[1].wunschrang",
+   "exemplare[1].wunschart",
+   "exemplare[2].wunschrang",
+   "exemplare[0].wunschrang",
+   "exemplare[0].wunschart",
+   "exemplare[1].wunschrang",
+   "exemplare[1].wunschart",
+   "exemplare[2].wunschrang"
+  ],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SammlungLagerorte": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SammlungWuensche": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Portfolio": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Kontakte": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Peerkontakte": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Nachbarn": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Partien": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Deckleihen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Auftraege": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Rueckkehren": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Zugaenge": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Weiterarbeiten": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Aufmerksamkeit": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Metriken": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Sets": {
+  "geprueft": 3,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Setangaben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Technikangaben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Karten": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Kartenzeilen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Kartenfelder": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Kartenfeldwerte": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Karte": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Vorschau": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Kartenbilder": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Vorbehalte": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Schluesselwoerter": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Skriptnamen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Skript": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Wortlisten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Symbolpalette": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KarteAnlegen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "FeldSetzen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "FelderVorschau": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "FelderSetzenMitErwartung": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KarteKopieren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KartenTauschen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Verlauf": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Zuruecknehmen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Wiederherstellen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SetwertSetzen": {
+  "geprueft": 5,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SchluesselwortAnlegen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SchluesselwortSetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SchluesselwortLoeschen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KarteLoeschen": {
+  "geprueft": 4,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SetBenutzt": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Datenstand": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Startbefund": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Decks": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Formate": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Bauarten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckAnlegen": {
+  "geprueft": 5,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckplatzLegen": {
+  "geprueft": 6,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckplatzVerschieben": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "FormatSetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckFormatWaehlen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckPruefen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckFehlkarten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckAbgleichen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DecklisteAusgeben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckKopieren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Deck": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckUmbenennen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ExemplarAnlegen": {
+  "geprueft": 5,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ExemplarDecks": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckZuordnen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckZuordnungen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckZuordnungLoesen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Preise": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckFehlkartenWuenschen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckplatzNehmen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckLoeschen": {
+  "geprueft": 4,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Suchfelder": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Suchen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Statistik": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Verteilung": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Kartenlistenaufbau": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ListensortierungSetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ErsetzungVorschau": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ErsetzungAusfuehren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "AblageKopieren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "AblageEinfuegen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "AblageAusschneiden": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Autoersetzungen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "AutoersetzungSetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "AutoersetzungSchalten": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "AutoersetzungLoeschen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Markenkatalog": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ObjektmarkeSetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "MarkeVergeben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "MarkenJeObjekt": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "MarkenFiltern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "MarkeUmbenennen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ObjektmarkeEntfernen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Sprachpakete": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SprachpaketAnlegen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Sprachpaket": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SprachpaketAendern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SprachpaketLoeschen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Turniere": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierAnlegen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierAnmelden": {
+  "geprueft": 6,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierPaarungsvorschlag": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierRundeLegen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Turnier": {
+  "geprueft": 3,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierKorrekturfolgen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierErgebnisSetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierRangliste": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierProtokoll": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierMatch": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierKopieren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierAbschliessen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierWiedereroeffnen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierLoeschen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PaketAnlegen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PaketKopieren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PaketErsetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PaketZurueck": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PaketdateiAnlegen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PaketdateiSchreiben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PaketdateiUmbenennen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PaketdateiEntfernen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PaketEntfernen": {
+  "geprueft": 3,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Stile": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "StilWechseln": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Stiloptionen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "StiloptionSetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "StiloptionZuruecksetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SymbolSetzen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BibliothekssymbolAufnehmen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BibliothekssymbolKopieren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BibliothekssymbolUmbenennen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BibliothekssymbolEinsetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BibliothekssymbolSichern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BibliothekssymbolNachziehen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BibliothekssymbolZuruecknehmen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BibliothekssymbolLoeschen": {
+  "geprueft": 3,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "WortWaehlen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "MarkeSetzen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "MarkeEntfernen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "MarkeUeberallEntfernen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BildEinsetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BildSchreiben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Kartenskripte": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KartenskriptAusfuehren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KarteVerweisSetzen": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "KarteVerweisLoesen": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "KIBildEinsetzen": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "KIBildVerwerfen": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "EinstellungSetzen": {
+  "geprueft": 3,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "EinstellungenSichern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "EinstellungenEinlesen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "EinstellungenUebernehmen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "FensterbildWaehlen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TischbildWaehlen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "FensterbildEntfernen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TischbildEntfernen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "AnbietergeheimnisSetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "AnbietergeheimnisLoeschen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ExemplarAendern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "MasseAendern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ListeEinlesen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "FormatAusBauart": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "FormatLoeschen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DecklisteUebernehmen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckUebernehmen": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "Fremdpreisverlauf": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "ExemplarLoeschen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "MasseLoeschen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieAnlegen": {
+  "geprueft": 4,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierMatchBinden": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierMatchMelden": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierMatchUebernehmen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieBefehl": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierMatchAusDerPartie": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierAussteigen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieLoeschen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SetAusDatei": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SetSpeichern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PeeridentitaetSicherstellen": {
+  "geprueft": 3,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "UmschlagSchnueren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "UmschlagUebernehmen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Beispielsets": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BeispielsetOeffnen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SetLoeschen": {
+  "geprueft": 3,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Diagnosepaket": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DiagnosepaketSichern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DiagnosepaketLoeschen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Leistungsprofil": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Befehlskatalog": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BefehlAusfuehren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "AuftragAbbrechen": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "Pflegevorschau": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Pflegen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "RueckkehrQuittieren": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "Anheften": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Loesen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KIFreigabeErteilen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KIModellPruefen": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "KIVorschlagUebernehmen": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "KIGruppeUebernehmen": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "WerArbeitet": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "GezeigtesProfil": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "NutzerAnlegen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Nutzer": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "NutzerAendern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "NutzerbildWaehlen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "NutzerbildEntfernen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "NutzereinstellungSetzen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PersonendatenSichern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ProfilAnlegen": {
+  "geprueft": 3,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ProfilAendern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ProfilbadgeWaehlen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ProfilbadgeEntfernen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "FreigabeSetzen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "FreigabeLoeschen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Profilvorgaben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ProfilvorgabeSetzen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TokenAnlegen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TokenAendern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TokenRotieren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TokenLoeschen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TokenAlleWiderrufen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ZugangSetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ZugangLoeschen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KontoLoesen": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "ProfilLoeschen": {
+  "geprueft": 3,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "NutzerLoeschen": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PeerkontaktAufnehmen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PeerkontaktBestaetigen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PeerzweckErlauben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PeerkontaktAdresse": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PeerkontaktNotiz": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SammlungFreigeben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SammlungsfreigabeWiderrufen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PeerzweckEntziehen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PeerkontaktSperren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PeerkontaktEntsperren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KontakteinladungAnnehmen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KontakteUebernehmen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KontaktLoeschen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HandelEroeffnen": {
+  "geprueft": 3,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HandelSchritt": {
+  "geprueft": 8,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HandelSchicken": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HandelPostbestaetigung": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HandelFreigabeErteilen": {
+  "geprueft": 3,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Handelsverbuchung": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Handelsabgleich": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Handelsbestaetigung": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HandelArchivieren": {
+  "geprueft": 4,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HandelEntwurfAendern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HandelKopieren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HandelEntwurfLoeschen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HandelVorschlagen": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "HandelFesthalten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HandelZustellen": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "DeckleiheAnbieten": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckleiheWiderrufen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckleiheAnnehmen": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "DeckleiheZurueckgeben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartiePausieren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieFortsetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieOffenlegen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieOffenlegungZuruecknehmen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieKopieren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieFreigeben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieSagen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieZeigen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieFreigabeBeenden": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieBeitreten": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "PartieWuenschen": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "PartieBeenden": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieVergessen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "RESTStarten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "RESTBeenden": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "MCPStarten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "MCPBeenden": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PlatzFreigeben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Grundform": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "GriffZiehen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PunktEinfuegen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PunktLoeschen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TeilVerschieben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TeileGruppieren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "GruppeAufloesen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SymmetrieAnlegen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SymmetrieSetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Symmetriekopien": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SymmetrieAufloesen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Symbol": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BibliothekssymbolTeile": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BibliothekssymbolFassungen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Pakete": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Paketdateien": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PaketdateiLesen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Paketsymbole": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Symbolverwendungen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PaketPlan": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Stilfolgen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Auszaehlen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PackZiehen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Bildnamen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BogenProbelauf": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Exportvorlagen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "VorlageProbelauf": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Parameterhilfen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Rueckentextur": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Spieltextur": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BildAusDatei": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DateiAnsehen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SammlungAusgeben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DecklisteVorschau": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckeZurUebernahme": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Regelfreigabe": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Ruecksetzungsvorschau": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Partie": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieVerlauf": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieOffenlegungen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HandelStand": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Handelsbeleg": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HandelVorgaenge": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KontakteinladungErstellen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KontakteinladungPruefen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TeilenVorbereiten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TeilenVerwerfen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Abhaengigkeiten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "AehnlicheKarten": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "Anbieter": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Anbietergeheimnisse": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Anbieterkonten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Anbieterstand": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "Arbeitskontext": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Auszaehldimensionen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "AutoErsetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Befehlszeile": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Betriebsauskunft": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Betriebsband": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Bezugsquellen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BibliothekssymbolAusgeben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BibliothekssymbolEinlesen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BildSetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Bildordner": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BogenLegen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DarstellungsstandMelden": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckAusSet": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckBenutzt": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DeckleiheZielWaehlen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Diagnose": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "DiagnoseSichern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Dienstkatalog": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Einstellungen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ExportoptionSetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Faktoren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Fensterbild": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "FensterfehlerMelden": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "FernHorchStand": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Freigaben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Freigabesicht": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "Fremdkartenbild": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "Gesundheit": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Grenzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HandelPreisanhalt": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HandelProtokoll": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HandelSichtAnfragen": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "HandelUebersicht": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HandelWiederaufnahme": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "Handelsjournal": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Handelspartner": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "Handelspoststand": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Handelszusagen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HorchStand": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Indexstand": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Indexsuche": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "InstallerEinlesen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KIBildHerkunft": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KIBildZuschnitt": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "KIFeldherkunft": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KIGeraetemodellFuerSitzung": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KIModelle": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KarteVerweis": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KartenFiltern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Kartenzusatzfelder": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KontakteEinlesen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KontextZusammenstellen": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "KontoAnonym": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KostenbudgetSetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Kostenposten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Kostenstand": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ListeDeuten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ListeVorschauen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ListenspaltenSetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "MCPStand": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "MSE2Vorschlaege": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "MTGJSONOeffnen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "MTGJSONSchreiben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "MTGJSONSpiele": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "MTGJSONVerzeichnisOeffnen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Marktlinks": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "MassePreise": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Netzschnittstellen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Netzstand": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Nutzerbilder": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Nutzereinstellungen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ObjekthandlungenMelden": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Packarten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PaketArten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PaketBezuege": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PaketBezugAktualisieren": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "PaketBezugVorschau": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "PaketBezugZurueck": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "PaketEinbindenVon": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PaketPlanWaehlen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PaketWeitergeben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Paketbedarf": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PaketdateiEinfuegen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PaketdateiPruefen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Paketfarben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieAusfuhrSpeichern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieBeitrittStand": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieEinfuhrOeffnen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieFreigabeStand": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Partiediagnose": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Peeridentitaet": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Platz": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Preisverlauf": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Probekarten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Probevorschau": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "RESTStand": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Recherchieren": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "RuecksetzungFreigabeErteilen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Ruecksetzungsarten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Ruecksprungarten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SammlungBesitz": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SammlungCSVEinlesen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SammlungCSVVorschauen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SammlungDubletten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [
+   "dubletten[0].exemplar.wunschrang",
+   "dubletten[0].exemplar.wunschart",
+   "dubletten[1].exemplar.wunschrang",
+   "dubletten[1].exemplar.wunschart",
+   "dubletten[2].exemplar.wunschrang"
+  ],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Sammlungsfenster": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [
+   "exemplare[0].wunschrang",
+   "exemplare[0].wunschart",
+   "exemplare[1].wunschrang",
+   "exemplare[1].wunschart",
+   "exemplare[2].wunschrang"
+  ],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Sammlungsfreigaben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Schalter": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Schnittstellen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SchnittstellenAlleEinrichten": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "ScryfallSammeldaten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SetAnlegen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SetSpeichernUnter": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SetVorschauWaehlen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Setprobleme": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SetproblemePruefen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SicherungWaehlen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SicherungsplanEinrichten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Sicherungsstand": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Sitzungsstand": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Skriptfarben": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SpracheSetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SprachpaketAusgabeSpeichern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SprachpaketEinlesenOeffnen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "StartWiederholen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Stilprobevorschau": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Stilwahlbilder": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SymbolNachzeichnen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Symbolbibliothek": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Tauschabgleich": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TeilenAnbieten": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "TischabzugPDFSpeichern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TischabzugSpeichern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Tischbild": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Token": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Tokenablaufwahlen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierAusgabeSpeichern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierBerichtSpeichern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "TurnierEinlesenOeffnen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "UmschlagDeck": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "UmschlagKarte": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "UmschlagSicht": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "UmschlagVorlage": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "UmschlagWaehlen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Vertraeglichkeit": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "VorlageAusfuehren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "VorlagenUebernehmen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Vorlagenvorschau": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "WechselVorbereiten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Wiederanlauf": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ZusatzwertSetzen": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "Zuschnittgrenze": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Zuschnittziehen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Zwischenspeicher": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "AutoersetzungenZuruecksetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BefehlAbbrechen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "FernHorchBeenden": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "HorchBeenden": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "IndexAbbrechen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KIBildAbbrechen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KIModellVergessen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PartieBeitrittBeenden": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "PeeridentitaetRotieren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SchnittstellenAlleWiderrufen": {
+  "geprueft": 0,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 1,
+   "abweichungen": []
+  }
+ },
+ "SicherungsplanBeenden": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SichtbarkeitBeenden": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SkriptAbbrechen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ZwischenspeicherLeeren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KontoEintragen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "FaktorEinrichten": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "FaktorBestaetigen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KennwortWechseln": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Sperren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Entsperren": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "ProfilWechseln": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "NutzerWechseln": {
+  "geprueft": 4,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Abmelden": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "KennwortWiederherstellen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "LokalAnmelden": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "FaktorEntfernen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Verschluesselungsstand": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "VerschluesselungUmschalten": {
+  "geprueft": 2,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "BestandSichern": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SicherungBeschauen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Ruecksprunglage": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "SicherungZurueckspielen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ },
+ "Zuruecksetzen": {
+  "geprueft": 1,
+  "abweichungen": [],
+  "zusaetzlich": [],
+  "imFehler": {
+   "geprueft": 0,
+   "abweichungen": []
+  }
+ }
+}

@@ -1,0 +1,70 @@
+# PLAY-06 (#1714) — ein verlorener WebGL-Kontext am echten Tisch in WKWebView.
+#
+# AK-04: „Fehlender oder verlorener WebGL-Kontext darf weder dauerhafte
+# CPU-Schleifen noch Unbedienbarkeit erzeugen; eine bedienbare Rückfallansicht
+# und Diagnose sind nachgewiesen." Der Verlust wird hier ausgelöst, wie ihn
+# ein Treiberwechsel oder ein Ruhezustand auslöst: über
+# `WEBGL_lose_context`. Gemessen wird danach, ob noch Bilder angefordert
+# werden — eine Schleife forderte sechzig je Sekunde —, ob die Liste bedienbar
+# bleibt und ob der Tisch zurückkommt, wenn man ihn neu aufschlägt.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+4
+wartetext Partie anfangen
+klicketext Partie anfangen
+wartetext Weiterspielen
+klicketext Weiterspielen
+klicketext Weiterspielen als Ada
+warte canvas
+pause 1500
+notiz Der Beginn ist vorbei — `play-beginn` hat ihn in derselben Partie zu Ende gebracht; vorher nähme der Tisch nur ihn an (CR 103.8, #1851)
+# Alle Drehbücher laufen gegen denselben Bestand, und `play-beginn` läuft vor
+# diesem. Allein gefahren, bräche diese Probe hier ab und nicht erst an einer
+# Handlung, die der Tisch nicht anbietet.
+# **Positiv, nicht verneint** — WK01 (#2102): eine verneinte h3-Abfrage war
+# grün, als die Tafel längst unter h2 stand und der Beginn offen. Der Beginn
+# ist vorbei, wenn der Tisch Ada das Passen anbietet.
+notiz Vorbedingung: der Beginn ist vorbei — »Passen« steht für Ada offen
+bis [...document.querySelectorAll('button')].some((b) => b.checkVisibility() && b.innerText.trim() === 'Passen' && !b.disabled)
+notiz Der Kontext geht verloren
+pruefe (window.__bilder = 0, (() => { const vorher = window.requestAnimationFrame.bind(window); window.requestAnimationFrame = (f) => { window.__bilder++; return vorher(f) } })(), true)
+pruefe (() => { const g = document.querySelector('[role=application] canvas').getContext('webgl2'); g.getExtension('WEBGL_lose_context').loseContext(); return true })()
+wartetext Die Grafikverbindung ist abgerissen.
+abzug kontext-verloren
+notiz Keine Schleife danach — in zwei Sekunden fast keine Bildanforderung
+pruefe (window.__bilder = 0, true)
+pause 2000
+zeige window.__bilder + ' Bildanforderungen in 2 s (eine Schleife: etwa 120)'
+pruefe window.__bilder <= 6
+notiz Die Liste darunter bleibt bedienbar
+pruefe (() => { const b = [...document.querySelectorAll('button')].filter((x) => /Bibliothek/.test(x.getAttribute('aria-label') || x.textContent)); b[b.length - 1].dataset.ziel = 'liste'; return b.length > 0 })()
+klicke [data-ziel="liste"]
+wartetext Mit dieser Karte
+notiz Die Diagnose nennt den Verlust
+zeige [...document.querySelectorAll('[role=alert], [role=status]')].map((e) => e.innerText.replace(/\s+/g, ' ').trim()).filter((t) => t.includes('Grafik')).join(' | ')
+notiz Wiederherstellung — so, wie die Meldung es sagt: das Fenster neu öffnen
+# Ein Seitenwechsel genügt nicht und soll es nicht: die Seite bleibt stehen
+# (UX-03), und mit ihr die Leinwand samt verlorenem Kontext. Die Meldung sagt
+# deshalb „sobald das Fenster neu geöffnet wird" — im Servermodus ist das ein
+# neues Laden; die Partie steht im Bestand und kommt mit.
+lade /
+warte nav
+# **Seit #2428 bleibt die geschlossene Einführung nach dem Neuladen zu** —
+# sie steht nicht ein zweites Mal vor der Partie.
+pause 1000
+pruefe ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility() && d.innerText.includes('Erste Schritte'))
+taste cmd+4
+wartetext Partie anfangen
+klicketext Partie anfangen
+wartetext Weiterspielen
+klicketext Weiterspielen
+klicketext Weiterspielen als Ada
+bis document.querySelector('[role=application] canvas') !== null && !document.querySelector('[role=application] canvas').getContext('webgl2').isContextLost()
+pause 1000
+pruefe ![...document.querySelectorAll('*')].some((e) => e.children.length === 0 && (e.textContent || '').includes('Die Grafikverbindung ist abgerissen.'))
+abzug kontext-zurueck
+gleich JSON.stringify(window.__probeFehler || []) => []

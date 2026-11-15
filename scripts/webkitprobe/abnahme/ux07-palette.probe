@@ -1,0 +1,42 @@
+# UX-07 (#1679) — die Befehlspalette als Mantine-Dialog in WKWebView.
+#
+# ⌘K öffnet, der Fokus steht im Feld, zwölfmal Tab und einmal Shift-Tab
+# bleiben im Dialog, Escape schließt und gibt den Fokus zurück. **Ohne
+# TabFocusesLinks fiel der Fokus beim ersten Tab aus dem Dialog** (#1828).
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+3
+wartetext Sammlung
+klicketext Suchen
+gleich document.activeElement.getAttribute('placeholder') => Name, Set, Kennung oder Notiz
+notiz Die Palette öffnet über ⌘K und nimmt den Fokus
+taste cmd+k
+warte [role=dialog]
+pruefe [...document.querySelectorAll('[role=dialog]')].find((e) => e.getClientRects().length > 0).contains(document.activeElement)
+zeige document.activeElement.getAttribute('aria-label')
+tippe samm
+abzug palette
+notiz Tab bleibt im Dialog — zwölfmal
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+taste tab
+pruefe [...document.querySelectorAll('[role=dialog]')].find((e) => e.getClientRects().length > 0).contains(document.activeElement)
+taste shift+tab
+pruefe [...document.querySelectorAll('[role=dialog]')].find((e) => e.getClientRects().length > 0).contains(document.activeElement)
+notiz Escape schließt, und der Fokus kehrt zurück
+taste escape
+pruefe ![...document.querySelectorAll('[role=dialog]')].some((e) => e.getClientRects().length > 0)
+gleich document.activeElement.getAttribute('placeholder') => Name, Set, Kennung oder Notiz

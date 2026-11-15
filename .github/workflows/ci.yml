@@ -1,0 +1,80 @@
+name: Integration
+
+# Die Stufen entsprechen exakt dem lokalen Lauf: jeder Schritt ruft
+# scripts/ci.sh mit derselben Stufe auf, die auch `make ci` verwendet.
+# Wer eine Prüfung ergänzt, ergänzt sie in scripts/ci.sh — nicht hier.
+#
+# Läuft auf Ubuntu, nicht auf macOS. Gründe:
+#   - Der SQLite-Treiber ist reines Go; domain, storage, service, msepaket,
+#     msescript und render sind plattformunabhängig.
+#   - macOS-Läufer werden mit dem zehnfachen Minutensatz abgerechnet.
+# Der plattformabhängige Teil — der Wails-Bau für darwin/arm64 — entsteht
+# ohnehin lokal über scripts/release.sh (docs/RELEASE.md).
+#
+# ## Warum von Hand ausgelöst
+#
+# **Führend ist die lokale Pipeline.** `make ci` läuft vor jedem Push über den
+# pre-push-Hook und ist das Tor, das wirklich hält. Dieser Workflow ist die
+# Gegenprobe auf einer fremden Plattform — wertvoll, aber nicht bei jedem
+# Commit nötig. Der Grund ist wirtschaftlich und gehört ausgesprochen: das Konto
+# bleibt bei GitHub Free, und Actions-Minuten sind dort gedeckelt.
+#
+# **Wann er von Hand gehört** (AGENTS.md §4): vor einem Release, nach einer
+# Änderung an der Pipeline selbst, und wenn etwas plattformabhängig sein könnte.
+#
+#     gh workflow run ci.yml --ref main
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GO_VERSION: "1.27.2"
+  NODE_VERSION: "24.15.0"
+
+permissions:
+  contents: read
+
+jobs:
+  stufen:
+    name: ${{ matrix.stufe }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        stufe: [format, types, lint, test, security]
+
+    steps:
+      # Actions hängen an einem Commit, nicht an einem Tag (AGENTS.md §1):
+      # `@v7` bezieht den Code, den GitHub *heute* unter v7 führt. Der Kommentar
+      # nennt die Fassung, denn ein Hash allein sagt niemandem, welche es ist.
+      # Nachgeschlagen am 2026-08-08.
+      #
+      # **Der Kommentar steht hinter dem Hash**, nicht darüber: nur so hält
+      # Renovate Hash und Fassung gemeinsam nach (`helpers:pinGitHubActionDigests`,
+      # #1779); einen nackten Hash rührt es nicht an.
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: ${{ env.GO_VERSION }}
+          cache: false
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Werkzeuge bauen
+        run: |
+          if [ -f tools/go.mod ]; then make tools; fi
+
+      - name: Frontend-Abhängigkeiten
+        run: |
+          if [ -f frontend/package-lock.json ]; then npm --prefix frontend ci; fi
+
+      - name: Stufe ${{ matrix.stufe }}
+        run: ./scripts/ci.sh ${{ matrix.stufe }}

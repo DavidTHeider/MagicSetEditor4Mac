@@ -1,0 +1,47 @@
+# UX-02.AK-03 (#1674) — die Belegung von ⌘0 bis ⌘9, in WKWebView.
+#
+# An der Kürzeltafel wird ⌘3 auf die Karten gelegt; danach führt ⌘3 dorthin,
+# und die Leiste zeigt bei *Sammeln* keine Ziffer mehr. Zum Schluss steht die
+# Vorgabe wieder da — die Abnahmen teilen sich einen Bestand.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+notiz Vorher: ⌘3 führt zur Sammlung, die Leiste zeigt ⌘3 bei Sammeln
+taste cmd+3
+wartetext Sammlung
+gleich [...document.querySelectorAll('nav[aria-label="Hauptnavigation"] button')].find((b) => b.innerText.includes('Sammeln')).innerText.includes('⌘3') => true
+notiz An der Kürzeltafel ⌘3 auf die Karten legen
+taste cmd+,
+# **Die Tafel steht in ihrer Falte** — seit UXR-19 (#1927); bis zum 2026-10-06
+# wartete diese Probe auf eine Wahl, die zugeklappt nie sichtbar wird (WK03,
+# #2104). Geöffnet wird positiv: der Knopf sagt danach »aufgeklappt«.
+bis [...document.querySelectorAll('[role=tabpanel] button[aria-expanded]')].some((b) => b.checkVisibility() && b.innerText.trim() === 'Tastenkürzel')
+pruefe ([...document.querySelectorAll('[role=tabpanel] button[aria-expanded]')].find((b) => b.checkVisibility() && b.innerText.trim() === 'Tastenkürzel').dataset.ziel = 'kuerzelfalte', true)
+klicke [data-ziel="kuerzelfalte"]
+bis document.querySelector('[data-ziel="kuerzelfalte"]').getAttribute('aria-expanded') === 'true'
+warte select[aria-label="Seite für ⌘3"]
+pruefe (() => { const s = document.querySelector('select[aria-label="Seite für ⌘3"]'); s.scrollIntoView({ block: 'center' }); const setze = Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype, 'value').set; setze.call(s, 'karten'); s.dispatchEvent(new Event('change', { bubbles: true })); return true })()
+bis document.querySelector('select[aria-label="Seite für ⌘3"]').value === 'karten'
+bis [...document.querySelectorAll('table tr')].some((z) => z.innerText.startsWith('⌘3') && z.innerText.includes('Karten'))
+abzug tafel
+notiz Jetzt führt ⌘3 zu den Karten, und die Leiste hat bei Sammeln keine Ziffer
+taste cmd+3
+bis [...document.querySelectorAll('nav[aria-label="Wo du bist"] li')].some((l) => l.textContent.includes('Karten'))
+zeige [...document.querySelectorAll('nav[aria-label="Wo du bist"] li')].map((l) => l.textContent.replace('›', '').trim()).join(' › ')
+gleich [...document.querySelectorAll('nav[aria-label="Hauptnavigation"] button')].find((b) => b.innerText.includes('Sammeln')).innerText.includes('⌘') => false
+abzug karten
+notiz Zurück zur Vorgabe
+taste cmd+,
+# Die Seite der Einstellungen bleibt stehen (UX-03) und mit ihr die Falte.
+bis document.querySelector('[data-ziel="kuerzelfalte"]').getAttribute('aria-expanded') === 'true'
+wartetext Zurück zur Vorgabe
+klicketext Zurück zur Vorgabe
+bis document.querySelector('select[aria-label="Seite für ⌘3"]').value === 'sammlung'
+taste cmd+3
+wartetext Sammlung
+gleich [...document.querySelectorAll('nav[aria-label="Hauptnavigation"] button')].find((b) => b.innerText.includes('Sammeln')).innerText.includes('⌘3') => true
+notiz Und die Seite hat keinen Fehler geworfen
+gleich JSON.stringify(window.__probeFehler || []) => []

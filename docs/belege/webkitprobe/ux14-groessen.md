@@ -1,0 +1,554 @@
+# WebKit-Probe — ux14-groessen.probe
+
+| | |
+| --- | --- |
+| Stand | `d33405833` |
+| Motor | wk2 — WKWebView, eingerichtet wie in Wails 3 |
+| Basis | http://127.0.0.1:56918/ |
+| Fenster | 1440 × 900 Punkte, hell |
+| macOS | Version 27.0.1 (Build 26A434) |
+| WebKit | 22625.1.29.11.28 |
+| Beginn | 2026-10-20T20:52:21Z |
+
+- ✓ Z29 `motor wk2`
+- ✓ Z30 `lade /`
+- ✓ Z31 `frist 20000`
+- ✓ Z32 `warte nav`
+- ✓ Z33 `wartetext Erste Schritte`
+- ✓ Z34 `taste escape`
+- ✓ Z35 `groesse 1024 700`
+  ```
+  1024 × 700 Punkte
+  ```
+- ✓ Z36 `pause 500`
+- ✓ Z37 `pruefe (window.__enge = () => { const breite = document.documentElement.clientWidth; const befunde = []; if (document.scrollingElement.scrollWidth > innerWidth + 1) befunde.push('die Seite rollt waagerecht'); const rollt = (e) => { for (let x = e.parentElement; x; x = x.parentElement) { const o = getComputedStyle(x).overflowX; if (o === 'auto' || o === 'scroll') return true } return false }; for (const b of document.querySelectorAll('main button, main a[href]')) { if (!b.checkVisibility() || rollt(b)) continue; const r = b.getBoundingClientRect(); if (r.width > 0 && (r.left < -1 || r.right > breite + 1)) befunde.push('abgeschnitten: ' + (b.getAttribute('aria-label') || b.innerText).trim().slice(0, 40)) } for (const b of document.querySelectorAll('main button[disabled]')) { if (b.checkVisibility() && /einblenden|Show the/.test(b.innerText)) befunde.push('gesperrt: ' + b.innerText.trim()) } return befunde }, window.__waehle = (text, wert) => { const s = [...document.querySelectorAll('select')].find((w) => w.checkVisibility() && w.labels && w.labels[0] && w.labels[0].textContent.includes(text)); if (s && s.value !== wert) { s.value = wert; s.dispatchEvent(new Event('change', { bubbles: true })) } return true }, true)`
+- ✓ Z38 `zeige 'Bildpunkte je Punkt: ' + window.devicePixelRatio`
+  ```
+  "Bildpunkte je Punkt: 2"
+  ```
+- ✓ Z40 `notiz Das Set öffnen — die Seiten eines Sets brauchen eines`
+- ✓ Z41 `taste cmd+2`
+- ✓ Z42 `wartetext Werkstatt-Testkarten`
+- ✓ Z43 `klicketext Werkstatt-Testkarten`
+- ✓ Z44 `wartetext Wie viel du siehst`
+- ✓ Z45 `pause 1200`
+- ✓ Z47 `notiz Start — normale Schrift`
+- ✓ Z48 `taste cmd+k`
+- ✓ Z49 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z50 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Start').dataset.ziel = 'seite', true)`
+- ✓ Z51 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z52 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z53 `pause 1000`
+- ✓ Z54 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z56 `notiz Sets — normale Schrift`
+- ✓ Z57 `taste cmd+k`
+- ✓ Z58 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z59 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Sets').dataset.ziel = 'seite', true)`
+- ✓ Z60 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z61 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z62 `pause 1000`
+- ✓ Z63 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z65 `notiz Pakete — normale Schrift`
+- ✓ Z66 `taste cmd+k`
+- ✓ Z67 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z68 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Pakete').dataset.ziel = 'seite', true)`
+- ✓ Z69 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z70 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z71 `pause 1000`
+- ✓ Z72 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z74 `notiz Vorlagen — normale Schrift`
+- ✓ Z75 `taste cmd+k`
+- ✓ Z76 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z77 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Vorlagen').dataset.ziel = 'seite', true)`
+- ✓ Z78 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z79 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z80 `pause 1000`
+- ✓ Z81 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z83 `notiz Sammlung — normale Schrift`
+- ✓ Z84 `taste cmd+k`
+- ✓ Z85 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z86 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Sammlung').dataset.ziel = 'seite', true)`
+- ✓ Z87 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z88 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z89 `pause 1000`
+- ✓ Z90 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z92 `notiz Decks — normale Schrift`
+- ✓ Z93 `taste cmd+k`
+- ✓ Z94 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z95 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Decks').dataset.ziel = 'seite', true)`
+- ✓ Z96 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z97 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z98 `pause 1000`
+- ✓ Z99 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z101 `notiz Turniere — normale Schrift`
+- ✓ Z102 `taste cmd+k`
+- ✓ Z103 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z104 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Turniere').dataset.ziel = 'seite', true)`
+- ✓ Z105 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z106 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z107 `pause 1000`
+- ✓ Z108 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z110 `notiz Spielen — normale Schrift`
+- ✓ Z111 `taste cmd+k`
+- ✓ Z112 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z113 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Spielen').dataset.ziel = 'seite', true)`
+- ✓ Z114 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z115 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z116 `pause 1000`
+- ✓ Z117 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z119 `notiz Handeln — normale Schrift`
+- ✓ Z120 `taste cmd+k`
+- ✓ Z121 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z122 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Handeln').dataset.ziel = 'seite', true)`
+- ✓ Z123 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z124 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z125 `pause 1000`
+- ✓ Z126 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z128 `notiz Hilfe — normale Schrift`
+- ✓ Z129 `taste cmd+k`
+- ✓ Z130 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z131 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Hilfe').dataset.ziel = 'seite', true)`
+- ✓ Z132 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z133 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z134 `pause 1000`
+- ✓ Z135 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z137 `notiz Einstellungen — normale Schrift`
+- ✓ Z138 `taste cmd+k`
+- ✓ Z139 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z140 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Einstellungen').dataset.ziel = 'seite', true)`
+- ✓ Z141 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z142 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z143 `pause 1000`
+- ✓ Z144 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z146 `notiz Nutzer und Profile — normale Schrift`
+- ✓ Z147 `taste cmd+k`
+- ✓ Z148 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z149 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Nutzer und Profile').dataset.ziel = 'seite', true)`
+- ✓ Z150 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z151 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z152 `pause 1000`
+- ✓ Z153 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z155 `notiz Karten — normale Schrift`
+- ✓ Z156 `taste cmd+k`
+- ✓ Z157 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z158 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Karten').dataset.ziel = 'seite', true)`
+- ✓ Z159 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z160 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z161 `pause 1000`
+- ✓ Z162 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z164 `notiz Bilder — normale Schrift`
+- ✓ Z165 `taste cmd+k`
+- ✓ Z166 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z167 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Bilder').dataset.ziel = 'seite', true)`
+- ✓ Z168 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z169 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z170 `pause 1000`
+- ✓ Z171 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z173 `notiz Suche — normale Schrift`
+- ✓ Z174 `taste cmd+k`
+- ✓ Z175 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z176 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Suche').dataset.ziel = 'seite', true)`
+- ✓ Z177 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z178 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z179 `pause 1000`
+- ✓ Z180 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z182 `notiz Ersetzen — normale Schrift`
+- ✓ Z183 `taste cmd+k`
+- ✓ Z184 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z185 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Ersetzen').dataset.ziel = 'seite', true)`
+- ✓ Z186 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z187 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z188 `pause 1000`
+- ✓ Z189 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z191 `notiz Stil — normale Schrift`
+- ✓ Z192 `taste cmd+k`
+- ✓ Z193 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z194 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Stil').dataset.ziel = 'seite', true)`
+- ✓ Z195 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z196 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z197 `pause 1000`
+- ✓ Z198 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z199 `taste escape`
+- ✓ Z200 `pause 300`
+- ✓ Z201 `taste escape`
+- ✓ Z202 `bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())`
+- ✓ Z204 `notiz Setangaben — normale Schrift`
+- ✓ Z205 `taste cmd+k`
+- ✓ Z206 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z207 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Setangaben').dataset.ziel = 'seite', true)`
+- ✓ Z208 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z209 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z210 `pause 1000`
+- ✓ Z211 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z212 `taste escape`
+- ✓ Z213 `pause 300`
+- ✓ Z214 `taste escape`
+- ✓ Z215 `bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())`
+- ✓ Z217 `notiz Symbol — normale Schrift`
+- ✓ Z218 `taste cmd+k`
+- ✓ Z219 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z220 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Symbol').dataset.ziel = 'seite', true)`
+- ✓ Z221 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z222 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z223 `pause 1000`
+- ✓ Z224 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z225 `taste escape`
+- ✓ Z226 `pause 300`
+- ✓ Z227 `taste escape`
+- ✓ Z228 `bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())`
+- ✓ Z230 `notiz Schlüsselwörter — normale Schrift`
+- ✓ Z231 `taste cmd+k`
+- ✓ Z232 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z233 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Schlüsselwörter').dataset.ziel = 'seite', true)`
+- ✓ Z234 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z235 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z236 `pause 1000`
+- ✓ Z237 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z238 `taste escape`
+- ✓ Z239 `pause 300`
+- ✓ Z240 `taste escape`
+- ✓ Z241 `bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())`
+- ✓ Z243 `notiz Statistik — normale Schrift`
+- ✓ Z244 `taste cmd+k`
+- ✓ Z245 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z246 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Statistik').dataset.ziel = 'seite', true)`
+- ✓ Z247 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z248 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z249 `pause 1000`
+- ✓ Z250 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z251 `taste escape`
+- ✓ Z252 `pause 300`
+- ✓ Z253 `taste escape`
+- ✓ Z254 `bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())`
+- ✓ Z256 `notiz Zufallspack — normale Schrift`
+- ✓ Z257 `taste cmd+k`
+- ✓ Z258 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z259 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Zufallspack').dataset.ziel = 'seite', true)`
+- ✓ Z260 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z261 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z262 `pause 1000`
+- ✓ Z263 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z264 `taste escape`
+- ✓ Z265 `pause 300`
+- ✓ Z266 `taste escape`
+- ✓ Z267 `bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())`
+- ✓ Z269 `notiz Konsole — normale Schrift`
+- ✓ Z270 `taste cmd+k`
+- ✓ Z271 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z272 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Konsole').dataset.ziel = 'seite', true)`
+- ✓ Z273 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z274 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z275 `pause 1000`
+- ✓ Z276 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z277 `taste escape`
+- ✓ Z278 `pause 300`
+- ✓ Z279 `taste escape`
+- ✓ Z280 `bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())`
+- ✓ Z282 `notiz Ausgeben — normale Schrift`
+- ✓ Z283 `taste cmd+k`
+- ✓ Z284 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z285 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Ausgeben').dataset.ziel = 'seite', true)`
+- ✓ Z286 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z287 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z288 `pause 1000`
+- ✓ Z289 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z291 `notiz Druckbogen — normale Schrift`
+- ✓ Z292 `taste cmd+k`
+- ✓ Z293 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z294 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Druckbogen').dataset.ziel = 'seite', true)`
+- ✓ Z295 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z296 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z297 `pause 1000`
+- ✓ Z298 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z300 `notiz Maximieren und zurück — gewählte Karte, halber Name und offene Spalte bleiben (S06.NAT-03)`
+- ✓ Z301 `taste cmd+k`
+- ✓ Z302 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z303 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Karten').dataset.ziel = 'seite', true)`
+- ✓ Z304 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z305 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z306 `wartetext Wie viel du siehst`
+- ✓ Z307 `pause 800`
+- ✓ Z308 `klicketext Navigator einblenden`
+- ✓ Z309 `bis !!document.querySelector('aside[data-ueber="zentrum"]')`
+- ✓ Z310 `pruefe ([...document.querySelectorAll('main button')].find((b) => (b.getAttribute('aria-label') || '').startsWith('Nächste Karte')).dataset.ziel = 'naechste', true)`
+- ✓ Z311 `klicke [data-ziel="naechste"]`
+- ✓ Z312 `pause 800`
+- ✓ Z313 `pruefe (window.__karte = [...document.querySelectorAll('nav[aria-label="Wo du bist"] li')].pop().textContent.trim(), true)`
+- ✓ Z314 `klicke input[aria-label="name"]`
+- ✓ Z315 `tippe Halb`
+- ✓ Z316 `pruefe (window.__entwurf = document.activeElement.value, true)`
+- ✓ Z317 `zeige 'vorher: ' + window.__karte + ' / ' + window.__entwurf`
+  ```
+  "vorher: ›Aschenwaechter / AschenwaechterHalb"
+  ```
+- ✓ Z318 `groesse 1440 900`
+  ```
+  1440 × 900 Punkte
+  ```
+- ✓ Z319 `pause 800`
+- ✓ Z320 `gleich [...document.querySelectorAll('nav[aria-label="Wo du bist"] li')].pop().textContent.trim() === window.__karte => true`
+- ✓ Z321 `gleich document.activeElement.value === window.__entwurf => true`
+- ✓ Z322 `groesse 1024 700`
+  ```
+  1024 × 700 Punkte
+  ```
+- ✓ Z323 `pause 800`
+- ✓ Z324 `gleich [...document.querySelectorAll('nav[aria-label="Wo du bist"] li')].pop().textContent.trim() === window.__karte => true`
+- ✓ Z325 `gleich document.activeElement.value === window.__entwurf => true`
+- ✓ Z326 `gleich !!document.querySelector('aside[data-ueber="zentrum"]') => true`
+- ✓ Z327 `abzug zurueck-1024`
+  ```
+  Bild: zurueck-1024.png
+  ```
+- ✓ Z328 `notiz Den halben Namen wegnehmen, ohne zu schreiben — die Drehbücher danach laufen auf demselben Bestand`
+- ✓ Z329 `pruefe (Object.getOwnPropertyDescriptor(Object.getPrototypeOf(document.activeElement), 'value').set.call(document.activeElement, window.__entwurf.slice(0, -4)), document.activeElement.dispatchEvent(new Event('input', { bubbles: true })), true)`
+- ✓ Z330 `taste escape`
+- ✓ Z332 `notiz Sehr große Schrift — Einstellungen, Erscheinungsbild`
+- ✓ Z333 `taste cmd+,`
+- ✓ Z334 `wartetext Erscheinungsbild`
+- ✓ Z335 `pruefe ([...document.querySelectorAll('main button')].find((b) => b.textContent.startsWith('Erscheinungsbild')).dataset.ziel = 'eb', true)`
+- ✓ Z336 `klicke [data-ziel="eb"]`
+- ✓ Z337 `bis [...document.querySelectorAll('select')].some((w) => w.checkVisibility() && w.labels && w.labels[0] && w.labels[0].textContent.includes('Schriftgröße'))`
+- ✓ Z338 `bis (window.__waehle('Schriftgröße', 'sehrgross'), getComputedStyle(document.documentElement).fontSize === '20px')`
+- ✓ Z340 `notiz Start — sehr große Schrift`
+- ✓ Z341 `taste cmd+k`
+- ✓ Z342 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z343 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Start').dataset.ziel = 'seite', true)`
+- ✓ Z344 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z345 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z346 `pause 1000`
+- ✓ Z347 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z349 `notiz Sets — sehr große Schrift`
+- ✓ Z350 `taste cmd+k`
+- ✓ Z351 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z352 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Sets').dataset.ziel = 'seite', true)`
+- ✓ Z353 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z354 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z355 `pause 1000`
+- ✓ Z356 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z358 `notiz Pakete — sehr große Schrift`
+- ✓ Z359 `taste cmd+k`
+- ✓ Z360 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z361 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Pakete').dataset.ziel = 'seite', true)`
+- ✓ Z362 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z363 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z364 `pause 1000`
+- ✓ Z365 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z367 `notiz Vorlagen — sehr große Schrift`
+- ✓ Z368 `taste cmd+k`
+- ✓ Z369 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z370 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Vorlagen').dataset.ziel = 'seite', true)`
+- ✓ Z371 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z372 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z373 `pause 1000`
+- ✓ Z374 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z376 `notiz Sammlung — sehr große Schrift`
+- ✓ Z377 `taste cmd+k`
+- ✓ Z378 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z379 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Sammlung').dataset.ziel = 'seite', true)`
+- ✓ Z380 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z381 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z382 `pause 1000`
+- ✓ Z383 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z385 `notiz Decks — sehr große Schrift`
+- ✓ Z386 `taste cmd+k`
+- ✓ Z387 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z388 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Decks').dataset.ziel = 'seite', true)`
+- ✓ Z389 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z390 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z391 `pause 1000`
+- ✓ Z392 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z394 `notiz Turniere — sehr große Schrift`
+- ✓ Z395 `taste cmd+k`
+- ✓ Z396 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z397 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Turniere').dataset.ziel = 'seite', true)`
+- ✓ Z398 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z399 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z400 `pause 1000`
+- ✓ Z401 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z403 `notiz Spielen — sehr große Schrift`
+- ✓ Z404 `taste cmd+k`
+- ✓ Z405 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z406 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Spielen').dataset.ziel = 'seite', true)`
+- ✓ Z407 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z408 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z409 `pause 1000`
+- ✓ Z410 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z412 `notiz Handeln — sehr große Schrift`
+- ✓ Z413 `taste cmd+k`
+- ✓ Z414 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z415 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Handeln').dataset.ziel = 'seite', true)`
+- ✓ Z416 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z417 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z418 `pause 1000`
+- ✓ Z419 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z421 `notiz Hilfe — sehr große Schrift`
+- ✓ Z422 `taste cmd+k`
+- ✓ Z423 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z424 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Hilfe').dataset.ziel = 'seite', true)`
+- ✓ Z425 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z426 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z427 `pause 1000`
+- ✓ Z428 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z430 `notiz Einstellungen — sehr große Schrift`
+- ✓ Z431 `taste cmd+k`
+- ✓ Z432 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z433 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Einstellungen').dataset.ziel = 'seite', true)`
+- ✓ Z434 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z435 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z436 `pause 1000`
+- ✓ Z437 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z439 `notiz Nutzer und Profile — sehr große Schrift`
+- ✓ Z440 `taste cmd+k`
+- ✓ Z441 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z442 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Nutzer und Profile').dataset.ziel = 'seite', true)`
+- ✓ Z443 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z444 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z445 `pause 1000`
+- ✓ Z446 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z448 `notiz Karten — sehr große Schrift`
+- ✓ Z449 `taste cmd+k`
+- ✓ Z450 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z451 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Karten').dataset.ziel = 'seite', true)`
+- ✓ Z452 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z453 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z454 `pause 1000`
+- ✓ Z455 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z457 `notiz Bilder — sehr große Schrift`
+- ✓ Z458 `taste cmd+k`
+- ✓ Z459 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z460 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Bilder').dataset.ziel = 'seite', true)`
+- ✓ Z461 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z462 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z463 `pause 1000`
+- ✓ Z464 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z466 `notiz Suche — sehr große Schrift`
+- ✓ Z467 `taste cmd+k`
+- ✓ Z468 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z469 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Suche').dataset.ziel = 'seite', true)`
+- ✓ Z470 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z471 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z472 `pause 1000`
+- ✓ Z473 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z475 `notiz Ersetzen — sehr große Schrift`
+- ✓ Z476 `taste cmd+k`
+- ✓ Z477 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z478 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Ersetzen').dataset.ziel = 'seite', true)`
+- ✓ Z479 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z480 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z481 `pause 1000`
+- ✓ Z482 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z484 `notiz Stil — sehr große Schrift`
+- ✓ Z485 `taste cmd+k`
+- ✓ Z486 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z487 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Stil').dataset.ziel = 'seite', true)`
+- ✓ Z488 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z489 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z490 `pause 1000`
+- ✓ Z491 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z492 `taste escape`
+- ✓ Z493 `pause 300`
+- ✓ Z494 `taste escape`
+- ✓ Z495 `bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())`
+- ✓ Z497 `notiz Setangaben — sehr große Schrift`
+- ✓ Z498 `taste cmd+k`
+- ✓ Z499 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z500 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Setangaben').dataset.ziel = 'seite', true)`
+- ✓ Z501 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z502 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z503 `pause 1000`
+- ✓ Z504 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z505 `taste escape`
+- ✓ Z506 `pause 300`
+- ✓ Z507 `taste escape`
+- ✓ Z508 `bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())`
+- ✓ Z510 `notiz Symbol — sehr große Schrift`
+- ✓ Z511 `taste cmd+k`
+- ✓ Z512 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z513 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Symbol').dataset.ziel = 'seite', true)`
+- ✓ Z514 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z515 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z516 `pause 1000`
+- ✓ Z517 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z518 `taste escape`
+- ✓ Z519 `pause 300`
+- ✓ Z520 `taste escape`
+- ✓ Z521 `bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())`
+- ✓ Z523 `notiz Schlüsselwörter — sehr große Schrift`
+- ✓ Z524 `taste cmd+k`
+- ✓ Z525 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z526 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Schlüsselwörter').dataset.ziel = 'seite', true)`
+- ✓ Z527 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z528 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z529 `pause 1000`
+- ✓ Z530 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z531 `taste escape`
+- ✓ Z532 `pause 300`
+- ✓ Z533 `taste escape`
+- ✓ Z534 `bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())`
+- ✓ Z536 `notiz Statistik — sehr große Schrift`
+- ✓ Z537 `taste cmd+k`
+- ✓ Z538 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z539 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Statistik').dataset.ziel = 'seite', true)`
+- ✓ Z540 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z541 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z542 `pause 1000`
+- ✓ Z543 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z544 `taste escape`
+- ✓ Z545 `pause 300`
+- ✓ Z546 `taste escape`
+- ✓ Z547 `bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())`
+- ✓ Z549 `notiz Zufallspack — sehr große Schrift`
+- ✓ Z550 `taste cmd+k`
+- ✓ Z551 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z552 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Zufallspack').dataset.ziel = 'seite', true)`
+- ✓ Z553 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z554 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z555 `pause 1000`
+- ✓ Z556 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z557 `taste escape`
+- ✓ Z558 `pause 300`
+- ✓ Z559 `taste escape`
+- ✓ Z560 `bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())`
+- ✓ Z562 `notiz Konsole — sehr große Schrift`
+- ✓ Z563 `taste cmd+k`
+- ✓ Z564 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z565 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Konsole').dataset.ziel = 'seite', true)`
+- ✓ Z566 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z567 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z568 `pause 1000`
+- ✓ Z569 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z570 `taste escape`
+- ✓ Z571 `pause 300`
+- ✓ Z572 `taste escape`
+- ✓ Z573 `bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())`
+- ✓ Z575 `notiz Ausgeben — sehr große Schrift`
+- ✓ Z576 `taste cmd+k`
+- ✓ Z577 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z578 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Ausgeben').dataset.ziel = 'seite', true)`
+- ✓ Z579 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z580 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z581 `pause 1000`
+- ✓ Z582 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z584 `notiz Druckbogen — sehr große Schrift`
+- ✓ Z585 `taste cmd+k`
+- ✓ Z586 `warte [role=dialog] input[aria-label="Wohin?"]`
+- ✓ Z587 `pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Druckbogen').dataset.ziel = 'seite', true)`
+- ✓ Z588 `klicke [role=dialog] [data-ziel="seite"]`
+- ✓ Z589 `bis !document.querySelector('input[aria-label="Wohin?"]')`
+- ✓ Z590 `pause 1000`
+- ✓ Z591 `gleich JSON.stringify(window.__enge()) => []`
+- ✓ Z593 `notiz Zurücksetzen`
+- ✓ Z594 `taste cmd+,`
+- ✓ Z595 `wartetext Erscheinungsbild`
+- ✓ Z596 `pruefe ([...document.querySelectorAll('main button')].find((b) => b.textContent.startsWith('Erscheinungsbild')).dataset.ziel = 'eb', true)`
+- ✓ Z597 `klicke [data-ziel="eb"]`
+- ✓ Z598 `bis [...document.querySelectorAll('select')].some((w) => w.checkVisibility() && w.labels && w.labels[0] && w.labels[0].textContent.includes('Schriftgröße'))`
+- ✓ Z599 `bis (window.__waehle('Schriftgröße', 'erben'), getComputedStyle(document.documentElement).fontSize === '16px')`
+- ✓ Z600 `groesse 1440 900`
+  ```
+  1440 × 900 Punkte
+  ```
+- ✓ Z601 `gleich JSON.stringify(window.__probeFehler || []) => []`
+
+**Ergebnis: bestanden** — 519 Schritte.

@@ -1,0 +1,118 @@
+# UX-03 (#1675) — Seitengang, aufgehobene Seiten, Auswahl über Flächen und
+# das Gegenüber am Ort, in WKWebView.
+#
+# AK-02: ein halb getippter Deckname steht nach Sammlung und ⌘[ noch da; ⌘]
+# führt wieder vor. AK-01: zwei gewählte Exemplare gehen als Stapel ins
+# offene Deck; was dem Deck dann fehlt, geht als Wunsch zum Handel. AK-03:
+# Handeln bietet die Aufnahme eines Gegenübers am Ort an.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+
+notiz AK-02 — auf den Decks einen Namen anfangen
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Decks').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+klicketext Deck anlegen
+warte section[aria-label="Deck anlegen"] input
+klicke section[aria-label="Deck anlegen"] input
+tippe Mono-Rot
+gleich document.querySelector('section[aria-label="Deck anlegen"] input').value => Mono-Rot
+abzug decks-angefangen
+
+notiz In die Sammlung und mit ⌘[ zurück — der Name steht noch da
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Sammlung').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+bis [...document.querySelectorAll('main h1')].some((h) => h.offsetParent !== null && h.textContent.trim() === 'Sammlung')
+taste cmd+[
+bis [...document.querySelectorAll('main h1')].some((h) => h.offsetParent !== null && h.textContent.trim() === 'Decks')
+gleich [...document.querySelectorAll('section[aria-label="Deck anlegen"] input')].find((e) => e.offsetParent !== null).value => Mono-Rot
+abzug decks-zurueck
+notiz Und mit ⌘] wieder vor
+taste cmd+]
+bis [...document.querySelectorAll('main h1')].some((h) => h.offsetParent !== null && h.textContent.trim() === 'Sammlung')
+zeige [...document.querySelectorAll('nav[aria-label="Wo du bist"] li')].filter((l) => l.offsetParent !== null).map((l) => l.textContent.replace('›', '').trim()).join(' › ')
+
+notiz AK-01 — die zwei Exemplare mit Scryfall-Kennung wählen, das Band trägt sie zum Deck
+bis [...document.querySelectorAll('main input[type=checkbox]')].filter((e) => e.offsetParent !== null && /^[0-9a-f]{8}-/.test(e.getAttribute('aria-label'))).length === 2
+pruefe ([...document.querySelectorAll('main input[type=checkbox]')].filter((e) => e.offsetParent !== null && /^[0-9a-f]{8}-/.test(e.getAttribute('aria-label'))).forEach((e) => e.click()), true)
+bis [...document.querySelectorAll('main button')].some((b) => b.offsetParent !== null && b.innerText.trim() === '3 Exemplare → Deck')
+abzug band
+klicketext 3 Exemplare → Deck
+bis [...document.querySelectorAll('main h1')].some((h) => h.offsetParent !== null && h.textContent.trim() === 'Decks')
+
+notiz Das Deck aufschlagen — der Stapel wartet darauf und zeigt, was ankam
+klicke button[aria-label="Öffnen: Probe-Deck"]
+warte [role=group][aria-label="Aus der Sammlung"]
+zeige document.querySelector('[role=group][aria-label="Aus der Sammlung"]').innerText.replace(/\s+/g, ' ')
+zeige document.querySelector('main').innerText.match(/\d+ im Hauptdeck/)[0]
+abzug stapel
+klicketext Alle ins Deck legen
+bis !document.querySelector('[role=group][aria-label="Aus der Sammlung"]')
+bis /43 im Hauptdeck/.test(document.querySelector('main').innerText)
+zeige document.querySelector('main').innerText.match(/\d+ im Hauptdeck/)[0]
+abzug stapel-gelegt
+
+notiz Einem der zwei Drucke eine Karte mehr geben — dann fehlt eine, und die Zuordnung bietet sie zum Tausch an
+# **Die Knöpfe stehen an der Zeile mit der Tabstelle** (UXR-11, #1919) — erst
+# in seine Zeile, dann „Eine mehr".
+pruefe ([...document.querySelectorAll('main ul[aria-label="Plätze"] > li')].find((l) => l.innerText.includes('4c1a8f6e')).focus(), true)
+# **Seit AP-6 (#2363) trägt der aktive Platz »…« statt −, + und Bereich** —
+# »Eine mehr« ist ein Eintrag darin.
+bis [...document.querySelectorAll('main ul[aria-label="Plätze"] > li')].find((l) => l.innerText.includes('4c1a8f6e'))?.querySelector('button[aria-label^="Plätze: "]')?.checkVisibility() === true
+pruefe ([...document.querySelectorAll('main ul[aria-label="Plätze"] > li')].find((l) => l.innerText.includes('4c1a8f6e')).querySelector('button[aria-label^="Plätze: "]').dataset.ziel = 'platzmenue', true)
+klicke [data-ziel="platzmenue"]
+bis [...document.querySelectorAll('[role=menuitem]')].some((e) => e.checkVisibility() && e.innerText.includes('Eine mehr'))
+pruefe ([...document.querySelectorAll('[role=menuitem]')].find((e) => e.checkVisibility() && e.innerText.includes('Eine mehr')).dataset.ziel = 'eintrag', true)
+klicke [data-ziel="eintrag"]
+bis /44 im Hauptdeck/.test(document.querySelector('main').innerText)
+klicke [role=tab][data-lasche="zuordnung"]
+bis [...document.querySelectorAll('button')].some((b) => b.offsetParent !== null && b.innerText.trim() === 'Die 1 eintauschen')
+abzug eintauschen
+klicketext Die 1 eintauschen
+bis [...document.querySelectorAll('main h1')].some((h) => h.offsetParent !== null && h.textContent.trim() === 'Handeln')
+bis [...document.querySelectorAll('main p')].some((p) => p.offsetParent !== null && p.textContent.startsWith('„1 Karte“ wartet'))
+zeige [...document.querySelectorAll('main p')].find((p) => p.offsetParent !== null && p.textContent.startsWith('„1 Karte“ wartet')).textContent
+abzug wunsch-ohne-gegenueber
+
+notiz AK-03 — das Gegenüber am Ort aufnehmen, ohne die Einstellungen; seit UXR-15 (#1923) in der Schublade hinter „Neuer Tausch …"
+klicketext Neuer Tausch …
+klicketext Gegenüber aufnehmen oder bestätigen
+notiz seit NET-01 (#1705) steht vorn der Einladungstausch, die Kennung von Hand dahinter
+wartetext Meinen Code zeigen
+gleich [...document.querySelectorAll('[role=dialog] button')].some((b) => b.offsetParent !== null && b.innerText.trim() === 'Code eingeben') => true
+klicketext Von Hand mit einer Kennung eintragen
+wartetext Kennung des Gegenübers
+gleich [...document.querySelectorAll('[role=dialog] label')].some((l) => l.offsetParent !== null && l.innerText.trim().startsWith('Kennung des Gegenübers') && l.querySelector('input') !== null) => true
+gleich [...document.querySelectorAll('[role=dialog] button')].some((b) => b.offsetParent !== null && b.innerText.trim() === 'Kontakt aufnehmen') => true
+abzug gegenueber-kasten
+taste escape
+# **Geschlossen heißt: nicht mehr im Blick und nicht mehr im Fokus** — WK02
+# (#2103). Die Schublade bleibt im Baum (Activity, UX-03: was eingegeben ist,
+# bleibt), und bis zum 2026-10-06 verlangte diese Zeile, dass sie fehlt.
+notiz Escape schließt die Schublade sichtbar und gibt den Fokus aus ihr heraus
+bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())
+pruefe document.activeElement !== document.body && !document.activeElement.closest('[role=dialog]')
+zeige 'Fokus danach: ' + document.activeElement.tagName + ' ' + (document.activeElement.getAttribute('aria-label') || document.activeElement.innerText || '').trim().slice(0, 60)
+notiz AK-04 — ein Druck ohne Scryfall-Kennung scheitert, und der Grund steht am Stapel
+taste cmd+3
+bis [...document.querySelectorAll('main h1')].some((h) => h.offsetParent !== null && h.textContent.trim() === 'Sammlung')
+pruefe ([...document.querySelectorAll('main input[type=checkbox]')].filter((e) => e.offsetParent !== null && e.checked).forEach((e) => e.click()), true)
+pruefe ([...document.querySelectorAll('main input[type=checkbox]')].find((e) => e.offsetParent !== null && e.getAttribute('aria-label') === 'scryfall:bbb-2').click(), true)
+bis [...document.querySelectorAll('main button')].some((b) => b.offsetParent !== null && b.innerText.trim() === '1 Exemplar → Deck')
+klicketext 1 Exemplar → Deck
+warte [role=group][aria-label="Aus der Sammlung"]
+klicketext Alle ins Deck legen
+warte [role=group][aria-label="Aus der Sammlung"] [role=alert]
+zeige document.querySelector('[role=group][aria-label="Aus der Sammlung"]').innerText.replace(/\s+/g, ' ')
+abzug stapel-grund
+notiz Und die Seite hat keinen Fehler geworfen
+gleich JSON.stringify(window.__probeFehler || []) => []

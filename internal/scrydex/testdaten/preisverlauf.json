@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "date": "2026-09-10",
+      "prices": [
+        {
+          "variant": "normal",
+          "condition": "NM",
+          "type": "raw",
+          "low": 4.17,
+          "market": 5.02,
+          "currency": "USD",
+          "is_perfect": false,
+          "is_signed": false,
+          "is_error": false
+        },
+        {
+          "variant": "foil",
+          "condition": "LP",
+          "type": "graded",
+          "low": 19.00,
+          "market": 21.50,
+          "currency": "USD",
+          "is_perfect": true,
+          "is_signed": true,
+          "is_error": true
+        }
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "prices": [
+        {
+          "variant": "normal",
+          "condition": "NM",
+          "type": "raw",
+          "low": 4.00,
+          "market": 4.80,
+          "currency": "USD"
+        },
+        {
+          "variant": "normal",
+          "condition": "NM",
+          "type": "raw",
+          "low": 3.90,
+          "market": 4.70,
+          "currency": ""
+        }
+      ]
+    }
+  ]
+}

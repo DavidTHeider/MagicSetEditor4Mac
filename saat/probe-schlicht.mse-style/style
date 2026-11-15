@@ -1,0 +1,145 @@
+﻿mse version: 2.0.0
+game: probe
+short name: Schlicht
+full name: Schlichter Stil der Saat
+version: 2026-08-15
+depends on:
+	package: probe.mse-game
+	version: 2026-08-15
+
+card width: 375
+card height: 523
+card dpi: 150
+
+card style:
+	name:
+		left: 24
+		top: 24
+		width: 327
+		height: 28
+		z index: 1
+		font:
+			name: Helvetica
+			size: 20
+			# **Aus der Stiloption gerechnet, nicht fest** — dieselbe
+			# Redewendung, die echte Pakete benutzen (`{styling.artist_font_color}`
+			# in `magic-archenemy`). Bei Vorgabe ist es Schwarz, also genau das,
+			# was vorher fest dastand.
+			color: { styling.titelfarbe }
+	text:
+		left: 24
+		top: { if card.farbe == "rot" then 300 else 320 }
+		width: 327
+		height: 160
+		z index: 2
+		font:
+			name: Helvetica
+			size: 13
+			color: black
+
+############ Die Stiloptionen
+styling field:
+	type: choice
+	name: hintergrund
+	description: Der Grund hinter der Karte — hell oder dunkel.
+	initial: hell
+	choice: hell
+	choice: dunkel
+styling field:
+	type: boolean
+	name: rahmen zeigen
+	description: Zeichnet einen Rand um das Textfeld.
+	initial: no
+styling field:
+	type: color
+	name: titelfarbe
+	description: Die Farbe der Überschrift.
+	default: "black"
+	choice:
+		name: schwarz
+		color: rgb(0,0,0)
+	choice:
+		name: weiß
+		color: rgb(255,255,255)
+
+############ Die Sichtseite der Stiloptionen — `styling style:`
+#
+# **Sie verhält sich zu `styling field:` wie `card style:` zu `card field:`**:
+# dort steht, *was* eine Option ist, hier, *wie* sie aussieht
+# (`src/data/stylesheet.hpp`, Zeilen 47–50, Fassung f9d9356 vom 2021-07-06).
+#
+# Über `full-magic-pack/data` tragen 303 von 376 Stilpaketen hier
+# `choice images:` — je Wahl ein Bild, und in 400 Fällen ein Skript.
+styling style:
+	hintergrund:
+		choice images:
+			hell:   hell.png
+			dunkel: dunkel.png
+	rahmen zeigen:
+		# **Ein Skript, wie es im Pack der Normalfall ist.** Alle 400
+		# gerechneten Wahlbilder dort lesen `set` — keines liest `card`.
+		#
+		# **Und `no` bekommt absichtlich keines.** MSEs Auswahlliste endet auf
+		# `or else nil` (`src/data/field/choice.cpp`, Zeile 171, Fassung
+		# f9d9356 vom 2021-07-06): eine Wahl ohne Eintrag zeigt kein Bild,
+		# und das ist kein Mangel, sondern die Bauform.
+		choice images:
+			yes: { if set.title == "" then "dunkel.png" else "hell.png" }
+
+############ Was die Stiloptionen sichtbar macht
+#
+# **Eigene Felder des Stils, nicht des Spiels** — `extra card field:`. So macht
+# MSE es auch: `card stamp border` in `magic-m15.mse-style` ist genau das, und
+# der schwarze Kartenrand jeder echten Karte ist ein Farbfeld.
+#
+# `save value: false` und `editable: false`, weil sie gerechnet werden und
+# niemandem zum Ausfüllen vorgelegt gehören.
+extra card field:
+	type: color
+	name: grund
+	script: { if styling.hintergrund == "dunkel" then rgb(38,44,52) else rgb(255,255,255) }
+	editable: false
+	save value: false
+extra card field:
+	type: color
+	name: rahmen
+	script: { rgb(0,0,0) }
+	editable: false
+	save value: false
+# **Und eines, das jemand ausfüllt** (#2298) — wie `promo label` in einem
+# echten Stil. Sein Wert steht an der Karte unter `extra_data:`, im Block
+# dieser Vorlage; ohne Wert wird nichts gezeichnet.
+extra card field:
+	type: text
+	name: vermerk
+	description: Ein Vermerk unten auf der Karte.
+
+extra card style:
+	grund:
+		left: 0
+		top: 0
+		width: 375
+		height: 523
+		z index: 0
+	rahmen:
+		left: 0
+		top: 0
+		width: 375
+		height: 523
+		z index: 3
+		visible: { styling.rahmen_zeigen == "yes" }
+		left width: 8
+		right width: 8
+		top width: 8
+		bottom width: 8
+	vermerk:
+		left: 24
+		top: 490
+		width: 327
+		height: 18
+		z index: 4
+		alignment: middle right
+		font:
+			name: Helvetica
+			size: 10
+			color: { if styling.hintergrund == "dunkel" then rgb(200,200,200) else rgb(90,90,90) }

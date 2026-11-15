@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Die Angaben des Bündels — seit ENG-02 (#1727) ohne Wails' Vorlagensprache:
+  `scripts/bauen.sh` setzt nur die Fassung ein (@FASSUNG@, aus wails.json).
+
+  Die Kennung ist io.github.davidtheider.magicseteditor4mac seit 0.9.0 (Vermerk 0191,
+  R02): an ihr hängen die Einstellungen von macOS und die Freigaben unter
+  „Datenschutz & Sicherheit" (docs/RELEASE.md). Was unter der alten Kennung
+  lag, zieht beim ersten Start um (internal/app/kennungsumzug.go); die
+  Freigaben fragt macOS neu.
+
+  Die Sprachen (#255): ohne CFBundleLocalizations kennt das Bündel keine, und
+  was macOS selbst an „Bearbeiten" hängt — Schreibtools, Automatisch
+  ausfüllen, Diktat, Emoji & Symbole — stand englisch in einer deutschen
+  Leiste (Hüllenprobe, 2026-09-26). Mit beiden Sprachen folgt es der Sprache
+  des Systems, Deutsch zuerst.
+
+  NSLocalNetworkUsageDescription (#1996): ohne ihn trug die Rückfrage
+  „Lokales Netzwerk" nur den Satz des Systems (gemessen am 2026-10-01 in der
+  Abnahme-VM). Englisch steht in en.lproj/InfoPlist.strings.
+-->
+<plist version="1.0">
+    <dict>
+        <key>CFBundlePackageType</key>
+        <string>APPL</string>
+        <key>CFBundleName</key>
+        <string>MagicSetEditor4Mac</string>
+        <key>CFBundleExecutable</key>
+        <string>MagicSetEditor4Mac</string>
+        <key>CFBundleIdentifier</key>
+        <string>io.github.davidtheider.magicseteditor4mac</string>
+        <key>CFBundleDevelopmentRegion</key>
+        <string>de</string>
+        <key>CFBundleLocalizations</key>
+        <array>
+            <string>de</string>
+            <string>en</string>
+        </array>
+        <key>CFBundleVersion</key>
+        <string>@FASSUNG@</string>
+        <key>CFBundleGetInfoString</key>
+        <string>Sammelkarten entwerfen. Datenkompatibel zu Magic Set Editor 2.</string>
+        <key>CFBundleShortVersionString</key>
+        <string>@FASSUNG@</string>
+        <key>CFBundleIconFile</key>
+        <string>iconfile</string>
+        <key>LSMinimumSystemVersion</key>
+        <string>15.2</string>
+        <key>NSHighResolutionCapable</key>
+        <string>true</string>
+        <key>NSHumanReadableCopyright</key>
+        <string>© 2026 David T. Heider — GPL-2.0-or-later, ausgenommen Inhalte Dritter</string>
+        <key>NSLocalNetworkUsageDescription</key>
+        <string>MagicSetEditor4Mac sucht und erreicht andere Rechner im selben Netz nur, wenn du es anstößt — etwa zum Handeln und Spielen mit Menschen, die du kennst, oder für ein KI-Modell auf einem Rechner im eigenen Netz.</string>
+        <key>CFBundleDocumentTypes</key>
+        <array>
+          <dict>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+              <string>mse-set</string>
+            </array>
+            <key>CFBundleTypeName</key>
+            <string>MSE-Set</string>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleTypeIconFile</key>
+            <string>dokument</string>
+          </dict>
+        </array>
+        <key>UTExportedTypeDeclarations</key>
+        <array>
+          <dict>
+            <key>UTTypeIdentifier</key>
+            <string>io.github.davidtheider.magicseteditor4mac.umschlag</string>
+            <key>UTTypeDescription</key>
+            <string>MagicSetEditor4Mac-Umschlag (kein MSE2-Paket)</string>
+            <key>UTTypeConformsTo</key>
+            <array>
+              <string>public.data</string>
+            </array>
+            <key>UTTypeTagSpecification</key>
+            <dict>
+              <key>public.filename-extension</key>
+              <array>
+                <string>msepackage</string>
+              </array>
+            </dict>
+          </dict>
+        </array>
+    </dict>
+</plist>

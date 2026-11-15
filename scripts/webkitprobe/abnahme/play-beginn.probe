@@ -1,0 +1,75 @@
+# #1839 — der Beginn einer Partie in WKWebView: Starthand, Mulligan,
+# Unterlegen und Behalten über die Tafel über dem Tisch (CR 103.5).
+#
+# Gemessen vorher, am 2026-09-24 mit dem Set „Green": jede Bibliothek lag
+# nach dem Anfangen in der Reihenfolge der Deckliste, niemand hatte eine
+# Hand, und einen Mulligan gab es nicht.
+#
+# **Erst Bo, dann Ada**: alle Drehbücher laufen gegen denselben Bestand, und
+# die Tischläufe danach handeln in dieser Partie. **Seit dem 2026-09-25 bringt
+# diese Probe den Beginn zu Ende** (Befund 2 des Zweitblicks über Phase 6.9):
+# bis jeder behalten hat, nimmt der Tisch nur ihn an (CR 103.8) — seit #1851
+# vom Anlegen an, auch wenn noch niemand angefangen hat. Ohne diese Probe
+# nähme er in keiner späteren eine Handlung an; die fünf, die dort handeln,
+# prüfen deshalb vor ihrer ersten, dass er vorbei ist.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+4
+wartetext Partie anfangen
+klicketext Partie anfangen
+wartetext Weiterspielen
+klicketext Weiterspielen
+klicketext Weiterspielen als Bo
+warte canvas
+wartetext Der Beginn der Partie
+notiz Die Tafel steht am eigenen Tisch unter h2 — der Tisch ist eine eigene Seite unter h1 (#1992); beim Gast wäre es h3
+pruefe (window.__beginn = () => [...document.querySelectorAll('section')].find((s) => s.querySelector('h2')?.textContent === 'Der Beginn der Partie'), !!window.__beginn())
+notiz Vor der Starthand steht genau sie da, und wer sonst noch nicht so weit ist
+gleich [...window.__beginn().querySelectorAll('button')].map((b) => b.innerText.trim()).join(', ') => Starthand ziehen
+pruefe document.body.innerText.includes('Ada hat noch keine Starthand gezogen.')
+klicketext Starthand ziehen
+wartetext Deine Starthand hat 7 Karten.
+notiz Ein Mulligan zieht neu und verlangt eine Karte unter die Bibliothek
+klicketext Mulligan
+wartetext Lege eine Karte unter deine Bibliothek.
+pruefe [...document.querySelectorAll('button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Unter die Bibliothek legen').disabled
+gleich document.querySelectorAll('ul[aria-label="Deine Hand"] input[type=checkbox]').length => 7
+klicke ul[aria-label="Deine Hand"] input[type=checkbox]
+wartetext 1 von 1 gewählt
+pruefe ![...document.querySelectorAll('button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Unter die Bibliothek legen').disabled
+abzug beginn-unterlegen
+klicketext Unter die Bibliothek legen
+wartetext Deine Starthand hat 6 Karten.
+notiz Behalten beendet den eigenen Beginn; die Tafel nennt nur noch Ada
+klicketext Hand behalten
+bis !document.body.innerText.includes('Deine Starthand hat')
+# **Seit #2375 geht danach der Vorhang zu**: Ada entscheidet, und beide
+# sitzen an diesem Gerät. »Weiter als Bo« lässt Bos Sicht stehen — die
+# Tafel danach ist die, die diese Probe seit #1839 prüft.
+notiz Der Vorhang geht zu, Ada ist dran — Bo bleibt (#2375)
+wartetext Gerät an Ada weitergeben
+klicketext Weiter als Bo
+bis !document.body.innerText.includes('Gerät an Ada weitergeben')
+pruefe (() => { const t = window.__beginn(); return !!t && t.querySelectorAll('button').length === 0 && t.innerText.includes('Ada hat noch keine Starthand gezogen.') })()
+notiz Und die Spielerleiste nennt den Mulligan
+pruefe document.body.innerText.includes('Mulligans: 1')
+abzug beginn-behalten
+notiz Ada hat noch nicht gezogen — sie hat die Priorität des ersten Zugs und darf trotzdem nicht passen (CR 103.8)
+pruefe (window.__sicht = (wert) => { const f = [...document.querySelectorAll('label')].find((l) => l.textContent.startsWith('Sicht für')).querySelector('select'); Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype, 'value').set.call(f, wert); f.dispatchEvent(new Event('change', { bubbles: true })); return true }, window.__passen = () => [...document.querySelectorAll('button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Passen'), true)
+pruefe window.__sicht('ada')
+wartetext Der Zug wartet, bis jeder seine Starthand behalten hat.
+pruefe window.__passen().disabled
+abzug beginn-zug-wartet
+notiz Ada zieht und behält — danach ist der Beginn vorbei, und Passen geht wieder
+klicketext Starthand ziehen
+wartetext Deine Starthand hat 7 Karten.
+klicketext Hand behalten
+bis !document.body.innerText.includes('Der Zug wartet, bis jeder')
+pruefe !window.__passen().disabled
+abzug beginn-vorbei
+notiz Und die Seite hat keinen Fehler geworfen
+gleich JSON.stringify(window.__probeFehler || []) => []

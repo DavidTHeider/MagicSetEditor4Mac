@@ -1,0 +1,30 @@
+{
+  "models": [
+    {
+      "id": "grok-probe",
+      "fingerprint": "fp_0123456789",
+      "created": 1743724800,
+      "object": "model",
+      "owned_by": "xai",
+      "version": "1.0.0",
+      "input_modalities": ["text", "image"],
+      "output_modalities": ["text"],
+      "prompt_text_token_price": 20000,
+      "cached_prompt_text_token_price": 0,
+      "prompt_image_token_price": 0,
+      "completion_text_token_price": 100000,
+      "aliases": ["grok-probe-latest", "grok-probe-1"]
+    },
+    {
+      "id": "grok-stumm",
+      "fingerprint": "fp_9876543210",
+      "created": 1743724800,
+      "object": "model",
+      "owned_by": "xai",
+      "version": "0.1.0",
+      "input_modalities": ["text"],
+      "output_modalities": ["video"],
+      "aliases": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "chat-probe",
+  "object": "chat.completion",
+  "created": 1743724800,
+  "model": "grok-probe",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"name\": \"Blitzschlag\"}",
+        "refusal": null
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 11,
+    "completion_tokens": 18,
+    "total_tokens": 29,
+    "cost_in_usd_ticks": 1220000
+  }
+}

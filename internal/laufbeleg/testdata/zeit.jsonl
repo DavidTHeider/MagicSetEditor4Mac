@@ -1,0 +1,38 @@
+{"Time":"2026-09-22T22:19:39.533006+02:00","Action":"start","Package":"probe.test/zeit"}
+{"Time":"2026-09-22T22:19:39.684711+02:00","Action":"run","Package":"probe.test/zeit","Test":"TestZuLang"}
+{"Time":"2026-09-22T22:19:39.684777+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"=== RUN   TestZuLang\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:40.68965+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"panic: test timed out after 1s\n"}
+{"Time":"2026-09-22T22:19:40.689693+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"\trunning tests:\n"}
+{"Time":"2026-09-22T22:19:40.6897+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"\t\tTestZuLang (1s)\n"}
+{"Time":"2026-09-22T22:19:40.689705+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"\n"}
+{"Time":"2026-09-22T22:19:40.68971+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"goroutine 19 [running]:\n"}
+{"Time":"2026-09-22T22:19:40.689714+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"testing.(*M).startAlarm.func1()\n"}
+{"Time":"2026-09-22T22:19:40.689717+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"\t/opt/homebrew/Cellar/go/1.27.1/libexec/src/testing/testing.go:2959 +0x2c4\n"}
+{"Time":"2026-09-22T22:19:40.689732+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"created by time.goFunc\n"}
+{"Time":"2026-09-22T22:19:40.689737+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"\t/opt/homebrew/Cellar/go/1.27.1/libexec/src/time/sleep.go:182 +0x38\n"}
+{"Time":"2026-09-22T22:19:40.689743+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"\n"}
+{"Time":"2026-09-22T22:19:40.689746+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"goroutine 1 [chan receive]:\n"}
+{"Time":"2026-09-22T22:19:40.689749+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"testing.(*T).Run(0x68a27421e008, {0x1042a9e21?, 0x68a27419aa88?}, 0x1044133e8)\n"}
+{"Time":"2026-09-22T22:19:40.689752+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"\t/opt/homebrew/Cellar/go/1.27.1/libexec/src/testing/testing.go:2266 +0x3cc\n"}
+{"Time":"2026-09-22T22:19:40.689755+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"testing.runTests.func1(0x68a27421e008)\n"}
+{"Time":"2026-09-22T22:19:40.689763+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"\t/opt/homebrew/Cellar/go/1.27.1/libexec/src/testing/testing.go:2742 +0x38\n"}
+{"Time":"2026-09-22T22:19:40.689767+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"testing.tRunner(0x68a27421e008, 0x68a27419abb8)\n"}
+{"Time":"2026-09-22T22:19:40.689772+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"\t/opt/homebrew/Cellar/go/1.27.1/libexec/src/testing/testing.go:2193 +0xc4\n"}
+{"Time":"2026-09-22T22:19:40.689776+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"testing.runTests({0x1042a9e2b, 0xa}, {0x1042ab410, 0xf}, 0x68a2740f2090, {0x10442d538, 0x1, 0x1}, {0x68a27419ac58?, 0x68a274178180?, ...})\n"}
+{"Time":"2026-09-22T22:19:40.689784+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"\t/opt/homebrew/Cellar/go/1.27.1/libexec/src/testing/testing.go:2740 +0x400\n"}
+{"Time":"2026-09-22T22:19:40.689787+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"testing.(*M).Run(0x68a27416a140)\n"}
+{"Time":"2026-09-22T22:19:40.68979+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"\t/opt/homebrew/Cellar/go/1.27.1/libexec/src/testing/testing.go:2600 +0x578\n"}
+{"Time":"2026-09-22T22:19:40.689797+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"main.main()\n"}
+{"Time":"2026-09-22T22:19:40.689812+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"\t_testmain.go:46 +0x80\n"}
+{"Time":"2026-09-22T22:19:40.689815+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"\n"}
+{"Time":"2026-09-22T22:19:40.689817+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"goroutine 5 [sleep]:\n"}
+{"Time":"2026-09-22T22:19:40.689819+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"time.Sleep(0xb2d05e00)\n"}
+{"Time":"2026-09-22T22:19:40.689822+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"\t/opt/homebrew/Cellar/go/1.27.1/libexec/src/runtime/time.go:368 +0x150\n"}
+{"Time":"2026-09-22T22:19:40.689825+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"probe.test/zeit.TestZuLang(0x68a27421e248?)\n"}
+{"Time":"2026-09-22T22:19:40.689828+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"\t/private/tmp/claude-501/-Users-david-MagicSetEditor4Mac/0a0fa2ca-001c-40fa-b948-8ebe33c4cf64/scratchpad/probe/zeit/zeit_test.go:8 +0x24\n"}
+{"Time":"2026-09-22T22:19:40.68983+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"testing.tRunner(0x68a27421e248, 0x1044133e8)\n"}
+{"Time":"2026-09-22T22:19:40.689833+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"\t/opt/homebrew/Cellar/go/1.27.1/libexec/src/testing/testing.go:2193 +0xc4\n"}
+{"Time":"2026-09-22T22:19:40.689836+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"created by testing.(*T).Run in goroutine 1\n"}
+{"Time":"2026-09-22T22:19:40.689839+02:00","Action":"output","Package":"probe.test/zeit","Test":"TestZuLang","Output":"\t/opt/homebrew/Cellar/go/1.27.1/libexec/src/testing/testing.go:2258 +0x3b8\n"}
+{"Time":"2026-09-22T22:19:40.69019+02:00","Action":"output","Package":"probe.test/zeit","Output":"FAIL\tprobe.test/zeit\t1.157s\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:40.690206+02:00","Action":"fail","Package":"probe.test/zeit","Elapsed":1.157}

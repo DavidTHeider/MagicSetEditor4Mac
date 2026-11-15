@@ -1,0 +1,39 @@
+mse version: 2.0.0
+short name: Kartenliste
+full name: Kartenliste als Text
+version: 2026-08-21
+game: probe
+file type: *.txt|*.txt|*.*|*.*
+create directory: false
+
+# **Was diese Vorlage zeigt.**
+#
+# Sie ist die einfachste, die etwas Nützliches tut: eine Zeile je Karte, mit
+# dem Namen und — wenn jemand es will — dem Text. Wer wissen will, was eine
+# Exportvorlage ist, liest diese zwanzig Zeilen.
+#
+# Selbst geschrieben wie die übrige Saat; sie zeigt nichts, was in keinem
+# Paket dieses Repositoriums steht.
+
+option field:
+	type: text
+	name: überschrift
+	description: Was über der Liste steht
+	default: "Meine Karten"
+
+option field:
+	type: choice
+	name: mit text
+	description: Auch den Kartentext ausgeben?
+	choice: nein
+	choice: ja
+	initial: nein
+
+script:
+	zeile := {
+		if options.mit_text == "ja" and card.text != ""
+			then card.name + " — " + card.text
+			else card.name
+	}
+
+	options.überschrift + "\n\n" + to_text(for each card in cards do "· " + zeile() + "\n")

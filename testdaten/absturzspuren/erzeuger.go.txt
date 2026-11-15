@@ -1,0 +1,50 @@
+// Erzeugt echte Absturzausgaben von Go — je Fall ein Aufruf mit seinem Namen.
+package main
+
+import (
+	"context"
+	"errors"
+	"os"
+	"runtime/pprof"
+)
+
+type benannt string
+
+type laut struct{}
+
+func (laut) String() string { panic("hunter2 beim Schreiben\ngoroutine 9 [running]:\nmain.falsch()") }
+
+func main() {
+	switch os.Args[1] {
+	case "mehrzeilig":
+		panic("frei\n\nhunter2\ngoroutine 7 [running]:\n[signal SIGSEGV]")
+	case "laufzeitgestalt":
+		panic(errors.New("runtime error: hunter2"))
+	case "verschachtelt":
+		defer func() { panic("zweite hunter2\nfatal error: hunter2") }()
+		panic("erste hunter2")
+	case "wiederaufgenommen":
+		defer func() { panic(recover()) }()
+		panic("hunter2")
+	case "beimschreiben":
+		panic(laut{})
+	case "benannt":
+		panic(benannt("hunter2\nzwei"))
+	case "marken":
+		pprof.Do(context.Background(), pprof.Labels("token", "hunter2", "art", "geheim wert"), func(context.Context) {
+			panic("frei")
+		})
+	case "index":
+		var s []int
+		i := len(os.Args) + 4
+		_ = s[i]
+	case "nilmap":
+		var m map[string]int
+		m["a"] = 1
+	case "nilzeiger":
+		var p *struct{ x int }
+		p.x = 1
+	case "zahl":
+		panic(4711)
+	}
+}

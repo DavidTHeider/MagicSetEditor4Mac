@@ -1,0 +1,30 @@
+﻿mse version: 2.0.0
+short name: Probe
+full name: Probespiel
+version: 2026-08-08
+card field:
+	type: text
+	name: name
+	description: Der Kartenname
+card field:
+	type: choice
+	name: farbe
+	choice: rot
+	choice: blau
+	default: rot
+card field:
+	type: image
+	name: bild
+card field:
+	type: boolean
+	name: legendaer
+card field:
+	type: gibtsnicht
+	name: seltsam
+card field:
+	name: ohne art
+card field:
+	type: text
+set field:
+	type: text
+	name: title

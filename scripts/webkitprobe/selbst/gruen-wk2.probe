@@ -1,0 +1,29 @@
+# Selbstprobe der WebKit-Probe — Motor wk2: Ereignisse, Datalist, WebGL, Bild.
+motor wk2
+lade seite.html
+warte #oeffnen
+notiz WebGL
+pruefe window.probeWebGL.startsWith('WebGL 2.0')
+notiz Ein echter Klick fokussiert in WebKit keinen Knopf — die Palette nimmt den Fokus selbst
+klicke #oeffnen
+pruefe !document.getElementById('palette').hidden
+gleich document.activeElement.id => suche
+taste escape
+gleich document.activeElement.id => oeffnen
+taste cmd+k
+gleich document.activeElement.id => suche
+taste escape
+notiz WebKits eigene Vorschlagsliste
+klicke #sprache
+tippe p
+fenster vorschlaege
+taste down
+taste enter
+gleich document.getElementById('sprache').value => ph
+notiz Das Fenster lässt sich mitten im Lauf umstellen
+groesse 1024 700
+gleich innerWidth + ' × ' + innerHeight => 1024 × 700
+abzug seite-hell
+erscheinung dunkel
+gleich getComputedStyle(document.body).backgroundColor => rgb(34, 34, 34)
+abzug seite-dunkel

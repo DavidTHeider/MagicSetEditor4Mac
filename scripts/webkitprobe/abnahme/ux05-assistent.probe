@@ -1,0 +1,116 @@
+# UX-05 (#1677) — der Assistent für ein neues Set in WKWebView.
+#
+# S07.NAT-02: die Suche findet einen Stil nach sichtbarem Namen und nach
+# technischer Kennung. S07.NAT-03: der Assistent ist überspringbar und behält
+# die Eingaben beim Zurückgehen. **Angelegt wird hier nichts** — das tut
+# `ux05-erstesset`, und die Abnahmen teilen sich einen Bestand.
+#
+# **Gegen die eigene Vorrichtung** (`testdaten/assistent/`, WK04 #2105) und
+# nicht mehr gegen das persönliche Pack: zwei Spiele — die Saat (`probe`) und
+# `wahlspiel` —, also drei Schritte. **Vorgewählt ist, was bei MSE2 zuerst
+# steht** — der kleinste `position hint:`: `wahlspiel` (1) und dort
+# „Mondlicht" (`wahlspiel-laterne`, 1).
+#
+# **Gesucht wird ein Stil, dessen Name und Kennung nichts teilen**:
+# `wahlspiel-kiesel` heißt „Flusslauf" — „fluss" steht nur im Namen,
+# „kiesel" nur in der Kennung. Die Wahl ist eine Suchauswahl; ihre Zeilen
+# nennen beides.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+2
+# **Seit dem Umbau der Setseite steht das Anlegen hinter »Neues Set«** —
+# die Seite zeigt zuerst die Sets im Bestand.
+wartetext Neues Set
+klicketext Neues Set
+wartetext Ein neues Set
+# **»Neues Set« springt seit #2367 gleich zum Namen**, wie ⌘N — der Weg
+# zurück zur Art geht über »Zurück«.
+bis document.querySelector('ol[aria-label="Schritte zum neuen Set"] li[aria-current="step"]')?.lastChild.textContent === 'Name'
+klicketext Zurück
+bis document.querySelector('ol[aria-label="Schritte zum neuen Set"] li[aria-current="step"]')?.lastChild.textContent === 'Aussehen'
+klicketext Zurück
+notiz Vorbedingung: das Spiel der Vorrichtung steht zur Wahl (testdaten/assistent)
+bis !!document.querySelector('fieldset input[type=radio][value="wahlspiel"]')
+bis document.querySelectorAll('ol[aria-label="Schritte zum neuen Set"] li').length === 3
+pruefe (window.__aktuell = () => document.querySelector('ol[aria-label="Schritte zum neuen Set"] li[aria-current="step"]').lastChild.textContent, window.__sichtbar = () => [...document.querySelectorAll('fieldset input[type=radio]')].map((r) => r.value), window.__gewaehlt = () => [...document.querySelectorAll('fieldset input[type=radio]')].filter((r) => r.checked).map((r) => r.value).join(), window.__knopf = (text) => { document.querySelectorAll('[data-ziel]').forEach((x) => { delete x.dataset.ziel }); const kopf = [...document.querySelectorAll('h2')].find((h) => h.textContent === 'Ein neues Set'); const knopf = [...kopf.closest('section').querySelectorAll('button')].find((b) => b.innerText.trim() === text); knopf.dataset.ziel = 'knopf'; return true }, true)
+notiz Schritt 1 von 3 — jedes nutzbare Spiel beim Namen, mit der Zahl seiner Stile, das Wahlspiel vorgewählt
+gleich window.__aktuell() => Art
+zeige [...document.querySelectorAll('fieldset label')].map((l) => l.innerText.replace(/\s+/g, ' ').trim()).join(' | ')
+gleich window.__gewaehlt() => wahlspiel
+abzug schritt-art
+notiz Ein anderes Spiel, vor und zurück — die Wahl bleibt (S07.NAT-03)
+klicke fieldset input[type=radio][value="probe"]
+gleich window.__gewaehlt() => probe
+pruefe window.__knopf('Weiter')
+klicke [data-ziel="knopf"]
+notiz Schritt 2 — der Fokus steht auf dem Kopf des Schritts, die Stile sind die des Spiels
+bis window.__aktuell() === 'Aussehen'
+gleich document.activeElement.tagName + ' ' + document.activeElement.textContent => H3 Aussehen
+# **Die Stilwahl ist eine Suchauswahl** (`bausteine/Stilauswahl.tsx`): ein
+# Feld mit Liste, jede Zeile »Name Kennung«, gesucht wird über beides
+# (`passtZu` in `bausteine/suchwahl.ts`). Bis zum 2026-10-06 zählte diese
+# Probe Radioknöpfe, die es seit der Umstellung nicht mehr gibt (WK04, #2105).
+pruefe (window.__stilfeld = () => [...document.querySelectorAll('input[role=combobox]')].find((e) => e.checkVisibility() && e.labels?.[0]?.textContent === 'Stil des neuen Sets'), window.__zeilen = () => [...document.querySelectorAll('[role=option]')].filter((o) => o.checkVisibility()).map((o) => o.innerText.replace(/\s+/g, ' ').trim()), window.__stilfeldZiel = () => { document.querySelectorAll('[data-ziel]').forEach((x) => { delete x.dataset.ziel }); window.__stilfeld().dataset.ziel = 'stilfeld'; return true }, !!window.__stilfeld())
+pruefe window.__stilfeldZiel()
+klicke [data-ziel="stilfeld"]
+bis window.__zeilen().length > 0
+zeige window.__zeilen().join(' | ')
+pruefe window.__zeilen().every((z) => z.split(' ').pop().startsWith('probe-'))
+taste escape
+pruefe window.__knopf('Zurück')
+klicke [data-ziel="knopf"]
+bis window.__aktuell() === 'Art'
+gleich window.__gewaehlt() => probe
+notiz Zum Wahlspiel — der Stil kommt mit dem Spiel und ist wieder vorgewählt
+klicke fieldset input[type=radio][value="wahlspiel"]
+pruefe window.__knopf('Weiter')
+klicke [data-ziel="knopf"]
+bis window.__aktuell() === 'Aussehen'
+gleich window.__stilfeld().value => Mondlicht
+pruefe window.__stilfeldZiel()
+klicke [data-ziel="stilfeld"]
+bis window.__zeilen().length === 3
+zeige window.__zeilen().join(' | ')
+notiz Suche über den sichtbaren Namen (S07.NAT-02)
+tippe fluss
+bis window.__zeilen().length === 1
+gleich window.__zeilen()[0] => Flusslauf wahlspiel-kiesel
+abzug suche-name
+notiz Und über die technische Kennung — der Name trägt sie nicht
+taste cmd+a
+tippe kiesel
+bis window.__zeilen().length === 1
+gleich window.__zeilen()[0] => Flusslauf wahlspiel-kiesel
+taste enter
+bis window.__stilfeld().value === 'Flusslauf'
+abzug suche-kennung
+notiz Schritt 3 — der Fokus steht im Namen, und die Wahl steht beim Namen
+pruefe window.__knopf('Weiter')
+klicke [data-ziel="knopf"]
+bis window.__aktuell() === 'Name'
+bis document.activeElement.labels && document.activeElement.labels.length > 0 && document.activeElement.labels[0].textContent.includes('Name des Sets')
+tippe Assistentprobe
+zeige [...document.querySelectorAll('section p')].map((p) => p.textContent).find((t) => t.includes(' · ')) || 'ohne Zusammenfassung'
+pruefe [...document.querySelectorAll('section p')].some((p) => p.textContent === 'Wahlspiel · Flusslauf')
+notiz Zurück behält den Stil (S07.NAT-03)
+pruefe window.__knopf('Zurück')
+klicke [data-ziel="knopf"]
+bis window.__aktuell() === 'Aussehen'
+gleich window.__stilfeld().value => Flusslauf
+abzug zurueck-aussehen
+notiz Noch einmal zurück — das Spiel steht, wie es gewählt war
+pruefe window.__knopf('Zurück')
+klicke [data-ziel="knopf"]
+bis window.__aktuell() === 'Art'
+gleich window.__gewaehlt() => wahlspiel
+notiz Überspringen führt zum Namen, und der Name ist noch da
+pruefe window.__knopf('Überspringen')
+klicke [data-ziel="knopf"]
+bis window.__aktuell() === 'Name'
+gleich document.activeElement.value => Assistentprobe
+abzug uebersprungen
+gleich JSON.stringify(window.__probeFehler || []) => []

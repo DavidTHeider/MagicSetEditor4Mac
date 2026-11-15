@@ -1,0 +1,131 @@
+# UX-10.AK-03 (#1682) — größere Schrift, hoher Kontrast und weniger Bewegung, gesetzt über die Einstellungen und gemessen in WKWebView.
+#
+# **Über die Einstellungen und nicht über ein Attribut**: gesetzt wird, wie
+# ein Mensch es setzt, und gemessen, was danach am Element ankommt. Je
+# Einstellung der Weg und die Wirkung:
+#
+# - **Hoher Kontrast** — jedes sichtbare Textelement gegen seinen wirksamen
+#   Grund, im hellen und im dunklen Bild: keines unter 7 : 1 (WCAG 1.4.6).
+# - **Weniger Bewegung** — **das Attribut am Wurzelelement**, nicht die
+#   Übergangsdauer, die hier früher stand (G2 aus dem Zweitblick über Phase
+#   6.3). Die Oberfläche hat keine Übergänge; ob die Regel einen Übergang
+#   tatsächlich kürzt, misst die Hüllenprobe `phase611` am nativen Fenster,
+#   mit Gegenprobe ohne die Einstellung.
+# - **Sehr große Schrift** — die Wurzelschrift und kein abgeschnittener Knopf
+#   auf den Seiten, die ein Weg zuerst trifft (S06.NAT-04 gehört dazu).
+#
+# **Am Ende wird zurückgesetzt**: die Drehbücher danach laufen auf demselben
+# Bestand. **Was es nicht zeigt**: die Systemeinstellungen selbst — die Probe
+# kann `prefers-contrast` und `prefers-reduced-motion` nicht setzen; sie
+# greifen über dieselben Regeln.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+pruefe (window.__kontraste = () => { const rgb = (s) => { const m = s.match(/rgba?\(([^)]+)\)/); if (!m) return null; const t = m[1].split(/[ ,\/]+/).filter(Boolean).map(Number); return [t[0], t[1], t[2], t.length > 3 ? t[3] : 1] }; const lin = (c) => { c /= 255; return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4) }; const L = (c) => 0.2126 * lin(c[0]) + 0.7152 * lin(c[1]) + 0.0722 * lin(c[2]); const grund = (e) => { for (let x = e; x; x = x.parentElement) { const b = rgb(getComputedStyle(x).backgroundColor); if (b && b[3] > 0.5) return b } return [255, 255, 255, 1] }; const raus = []; for (const e of document.querySelectorAll('body *')) { if (!e.checkVisibility()) continue; if (![...e.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim().length > 1)) continue; const f = rgb(getComputedStyle(e).color); if (!f) continue; const g = grund(e); const v = f[3] < 1 ? [0, 1, 2].map((i) => f[i] * f[3] + g[i] * (1 - f[3])) : f; const a = L(v), b = L(g); raus.push([Math.round((Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05) * 100) / 100, e.textContent.trim().slice(0, 30)]) } return raus.sort((x, y) => x[0] - y[0]) }, window.__unter7 = () => window.__kontraste().filter((z) => z[0] < 7).map((z) => z[1]).slice(0, 5), window.__waehle = (text, wert) => { const s = [...document.querySelectorAll('select')].find((w) => w.checkVisibility() && w.labels && w.labels[0] && w.labels[0].textContent.includes(text)); if (s) { if (s.value !== wert) { s.value = wert; s.dispatchEvent(new Event('change', { bubbles: true })) } return true } const g = [...document.querySelectorAll('[role=radiogroup]')].find((r) => r.checkVisibility() && document.getElementById(r.getAttribute('aria-labelledby')).textContent.includes(text)); const f = g && [...g.querySelectorAll('input[type=radio]')].find((i) => i.value === wert); if (f && !f.checked) f.click(); return !!f }, window.__abgeschnitten = () => [...document.querySelectorAll('main button, header button')].filter((b) => b.checkVisibility() && (b.scrollWidth > b.clientWidth + 1 || b.getBoundingClientRect().right > document.documentElement.clientWidth + 1)).map((b) => (b.innerText || b.getAttribute('aria-label') || '').trim().slice(0, 30)), true)
+notiz Vorher: im hellen Bild liegen Texte unter 7 : 1
+zeige JSON.stringify(window.__kontraste().slice(0, 3))
+pruefe window.__unter7().length > 0
+notiz Kontrast „Immer hoch" — Nutzer und Profile, Lasche Persönliches
+taste cmd+'
+wartetext Persönliches
+klicketext Persönliches
+bis [...document.querySelectorAll('select, [role=radiogroup]')].some((w) => w.checkVisibility() && (w.labels?.[0] ?? document.getElementById(w.getAttribute('aria-labelledby')))?.textContent.includes('Kontrast'))
+bis (window.__waehle('Kontrast', 'hoch'), document.documentElement.dataset.kontrast === 'hoch')
+notiz Jeder Text hält 7 : 1 — hell, auf vier Seiten
+# **Gemessen wird nach dem Übergang** (QA01, #2382): seit #2359 tragen
+# Knöpfe einen Farbübergang, und mitten darin las die Messung am 2026-10-20
+# 6,62 : 1 — die Farbe von vorher auf dem Grund von nachher.
+bis document.getAnimations().filter((a) => a.transitionProperty !== undefined && a.playState === 'running').length === 0
+zeige 'kleinstes: ' + JSON.stringify(window.__kontraste()[0])
+gleich JSON.stringify(window.__unter7()) => []
+taste cmd+1
+wartetext Was Aufmerksamkeit braucht
+pause 500
+bis document.getAnimations().filter((a) => a.transitionProperty !== undefined && a.playState === 'running').length === 0
+zeige 'kleinstes: ' + JSON.stringify(window.__kontraste()[0])
+gleich JSON.stringify(window.__unter7()) => []
+taste cmd+4
+wartetext Probe-Deck
+pause 500
+bis document.getAnimations().filter((a) => a.transitionProperty !== undefined && a.playState === 'running').length === 0
+zeige 'kleinstes: ' + JSON.stringify(window.__kontraste()[0])
+gleich JSON.stringify(window.__unter7()) => []
+taste cmd+3
+wartetext Einlesen und ausgeben …
+pause 500
+bis document.getAnimations().filter((a) => a.transitionProperty !== undefined && a.playState === 'running').length === 0
+zeige 'kleinstes: ' + JSON.stringify(window.__kontraste()[0])
+gleich JSON.stringify(window.__unter7()) => []
+abzug kontrast-hoch-hell
+notiz — und dunkel
+erscheinung dunkel
+pause 500
+bis document.getAnimations().filter((a) => a.transitionProperty !== undefined && a.playState === 'running').length === 0
+zeige 'kleinstes: ' + JSON.stringify(window.__kontraste()[0])
+gleich JSON.stringify(window.__unter7()) => []
+taste cmd+4
+wartetext Probe-Deck
+pause 500
+bis document.getAnimations().filter((a) => a.transitionProperty !== undefined && a.playState === 'running').length === 0
+zeige 'kleinstes: ' + JSON.stringify(window.__kontraste()[0])
+gleich JSON.stringify(window.__unter7()) => []
+abzug kontrast-hoch-dunkel
+erscheinung hell
+pause 300
+notiz Weniger Bewegung „Immer wenig" — das Wurzelelement trägt es; die Oberfläche hat keine Übergänge, und der Tisch folgt ihm (tisch/bewegung.test.ts)
+zeige 'vorher: ' + (document.documentElement.dataset.bewegung || 'keine Angabe')
+pruefe document.documentElement.dataset.bewegung === undefined
+taste cmd+'
+wartetext Persönliches
+klicketext Persönliches
+bis [...document.querySelectorAll('select, [role=radiogroup]')].some((w) => w.checkVisibility() && (w.labels?.[0] ?? document.getElementById(w.getAttribute('aria-labelledby')))?.textContent.includes('Bewegung'))
+bis (window.__waehle('Bewegung', 'reduziert'), document.documentElement.dataset.bewegung === 'reduziert')
+taste cmd+4
+wartetext Probe-Deck
+pause 300
+zeige 'nachher: ' + document.documentElement.dataset.bewegung
+notiz Schriftgröße „Sehr groß" — Einstellungen, Erscheinungsbild
+taste cmd+,
+wartetext Erscheinungsbild
+pruefe ([...document.querySelectorAll('main button')].find((b) => b.textContent.startsWith('Erscheinungsbild')).dataset.ziel = 'eb', true)
+klicke [data-ziel="eb"]
+bis [...document.querySelectorAll('select')].some((w) => w.checkVisibility() && w.labels && w.labels[0] && w.labels[0].textContent.includes('Schriftgröße'))
+bis (window.__waehle('Schriftgröße', 'sehrgross'), getComputedStyle(document.documentElement).fontSize === '20px')
+notiz Kein Knopf abgeschnitten — auf fünf Seiten
+gleich JSON.stringify(window.__abgeschnitten()) => []
+taste cmd+2
+wartetext Jedes offene Set liegt im Bestand
+pause 500
+gleich JSON.stringify(window.__abgeschnitten()) => []
+taste cmd+3
+wartetext Einlesen und ausgeben …
+pause 500
+gleich JSON.stringify(window.__abgeschnitten()) => []
+taste cmd+4
+wartetext Probe-Deck
+pause 500
+gleich JSON.stringify(window.__abgeschnitten()) => []
+abzug schrift-sehrgross
+taste cmd+5
+pause 800
+gleich JSON.stringify(window.__abgeschnitten()) => []
+notiz Zurücksetzen — die Drehbücher danach laufen auf demselben Bestand
+taste cmd+,
+wartetext Erscheinungsbild
+pruefe ([...document.querySelectorAll('main button')].find((b) => b.textContent.startsWith('Erscheinungsbild')).dataset.ziel = 'eb', true)
+klicke [data-ziel="eb"]
+bis [...document.querySelectorAll('select')].some((w) => w.checkVisibility() && w.labels && w.labels[0] && w.labels[0].textContent.includes('Schriftgröße'))
+bis (window.__waehle('Schriftgröße', 'erben'), getComputedStyle(document.documentElement).fontSize === '16px')
+taste cmd+'
+wartetext Persönliches
+klicketext Persönliches
+bis [...document.querySelectorAll('select, [role=radiogroup]')].some((w) => w.checkVisibility() && (w.labels?.[0] ?? document.getElementById(w.getAttribute('aria-labelledby')))?.textContent.includes('Kontrast'))
+pause 1000
+pruefe window.__waehle('Kontrast', 'system')
+pause 500
+pruefe window.__waehle('Bewegung', 'system')
+bis document.documentElement.dataset.kontrast === undefined && document.documentElement.dataset.bewegung === undefined
+gleich JSON.stringify(window.__probeFehler || []) => []

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><title>Probe</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 14px system-ui; background: #fff; color: #111; }
+  @media (prefers-color-scheme: dark) { body { background: #222; color: #eee; } }
+  dialog, [role=dialog] { border: 2px solid; padding: 8px; }
+</style></head>
+<body>
+  <button id="oeffnen" aria-label="Palette öffnen">⌘K</button>
+  <label for="sprache">Sprache</label>
+  <input id="sprache" list="sprachen" autocomplete="off" aria-invalid="false">
+  <datalist id="sprachen">
+    <option value="de" label="Deutsch"><option value="en" label="Englisch"><option value="ph" label="Phyrexianisch">
+  </datalist>
+  <canvas id="leinwand" width="120" height="60"></canvas>
+  <div role="status" aria-live="polite" id="meldung"></div>
+  <div id="palette" role="dialog" aria-label="Befehle" hidden>
+    <input id="suche" aria-label="Suchen"><button id="zu">Schließen</button>
+  </div>
+  <script>
+    const palette = document.getElementById('palette')
+    const offen = () => !palette.hidden
+    document.getElementById('oeffnen').addEventListener('click', () => { palette.hidden = false; document.getElementById('suche').focus() })
+    document.getElementById('zu').addEventListener('click', () => { palette.hidden = true; document.getElementById('oeffnen').focus() })
+    addEventListener('keydown', (e) => {
+      if (e.metaKey && e.key === 'k') { e.preventDefault(); palette.hidden = false; document.getElementById('suche').focus() }
+      if (e.key === 'Escape' && offen()) { palette.hidden = true; document.getElementById('oeffnen').focus() }
+    })
+    const g = document.getElementById('leinwand').getContext('webgl2')
+    if (g) { g.clearColor(0.2, 0.5, 0.3, 1); g.clear(g.COLOR_BUFFER_BIT) }
+    window.probeWebGL = g ? g.getParameter(g.VERSION) : 'kein WebGL'
+    document.getElementById('sprache').addEventListener('change', (e) => { document.getElementById('meldung').textContent = 'Sprache: ' + e.target.value })
+  </script>
+</body></html>

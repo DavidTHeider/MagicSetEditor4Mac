@@ -1,0 +1,5 @@
+panic: assignment to entry in nil map
+
+goroutine 1 [running]:
+main.main()
+	spurgen/main.go:43 +0x170

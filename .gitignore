@@ -1,0 +1,125 @@
+# Projektlokale Go-Umgebung (scripts/activate.sh)
+# `.go` ohne Schrägstrich: in einem Worktree ist es ein Verweis auf den Cache des Hauptcheckouts (2026-09-09)
+.go
+.go/
+
+# Bauartefakte
+build/bin/
+build/freigabe/
+# Die Ursprungsarchive der Abhängigkeiten (#2393) — geladen von
+# scripts/bearbeitungsformen.mjs und beim Freigabebau, nie eingecheckt
+build/quellarchive/
+*.test
+# Auf den Inhalt, nicht auf das Verzeichnis: Git steigt in ein ausgeschlossenes
+# Verzeichnis gar nicht erst hinab, und eine Negation darin bliebe wirkungslos.
+# Der Platzhalter muss verfolgt werden, weil `go:embed all:frontend/dist` in
+# main.go beim Übersetzen scheitert, wenn das Verzeichnis nach einem Klon fehlt.
+frontend/dist/*
+!frontend/dist/.gitkeep
+frontend/node_modules/
+frontend/coverage/
+frontend/wailsjs/
+
+# Abdeckung
+.abdeckung.out
+*.out
+coverage/
+
+# Stücklisten (entstehen beim Release)
+stueckliste-*.json
+
+# Bezogene Vorlagenpakete — nie eingecheckt (docs/entscheidungen/0005)
+pakete/
+*.mse-set
+*.mse-game
+*.mse-style
+*.mse-symbol-font
+*.mse-include
+*.mse-locale
+*.mse-export-template
+
+# Ausnahme: die eigene Saat und die selbst geschriebenen Testpakete gehören dazu
+!saat/**
+!testdaten/**
+
+# Goldbilder-Abweichungen aus fehlgeschlagenen Renderprüfungen
+testdaten/abweichungen/
+
+# macOS
+.DS_Store
+.AppleDouble
+._*
+
+# Editoren
+.vscode/
+.idea/
+*.swp
+
+# Werkzeuge
+.claude/settings.local.json
+node_modules/
+
+# Wails-Artefakte
+frontend/package.json.md5
+
+# Abweichungen aus dem Goldbildvergleich entstehen bei einem roten Lauf und
+# gehören niemandem außer dem, der gerade sucht.
+testdaten/abweichungen/
+
+.audit-codex.md
+.zweitblick-*.md
+
+# Gebaute Binärprogramme aus `go build` ohne `-o`.
+#
+# **Der Name ist der des Pakets**, und `cmd/mse` heißt `mse` — ein `go build
+# ./cmd/mse` im Wurzelverzeichnis legt 16 MB in den Baum, und am 2026-08-23 ist
+# genau das mit #990 mitgegangen. Der Bauweg für die Anwendung ist
+# `scripts/release.sh`; hier liegt nichts Gebautes.
+/mse
+/mse-mcp
+
+# **Und `mse-rest` fehlte hier**, seit es den Dienst gibt: `go build
+# ./cmd/mse-rest` legte am 2026-09-04 24 MB in den Baum, und nur der Blick in
+# `git status` vor dem Commit hat es gesehen. Eine Aufzählung, die zwei von
+# drei Programmen führt, ist ein Wächter, der die halbe Zusage hält (§10).
+/mse-rest
+
+# **`graft` — der Graph über dieses Repositorium**, eingerichtet am 2026-09-07.
+#
+# **Der Zwischenspeicher und die Editorhaken bleiben draußen**, weil sie
+# Werkzeug dieses Rechners sind und nicht dieses Projekts: `graft/` ist aus dem
+# Quelltext regenerierbar (`graft build`), und die Haken unter `.claude/` und
+# `.cursor/` gelten dem Arbeitsplatz.
+#
+# **Der Abschnitt in `AGENTS.md` gehört dagegen ins Projekt** und wird
+# eingecheckt — dort steht, wie der Graph zu benutzen ist. Er ist über
+# `make leitlinien` auch in `CLAUDE.md` nachgezogen: die beiden Dateien sind
+# zeichengleich, und die Stufe `format` prüft das (§9).
+/graft/
+/.ignore
+/.cursor/
+/.claude/helpers/
+/.claude/settings.json
+/.claude/skills/
+
+# Das Protokoll der Vorprüfung lag hier, bis zwei gleichzeitige Läufe
+# einander die Datei wegräumten und beide **grün** meldeten (2026-09-13). Es
+# liegt jetzt unter `mktemp`; der Eintrag bleibt, damit ein altes Protokoll
+# aus einem Lauf von vorher nicht doch noch eincheckt.
+/.vorpruefung.log
+/.ci-protokoll*.log
+/.ci-sperre/
+/.vorpruefung.out
+
+# **Das Rohprotokoll eines Messlaufs** — QA-01 (#1733). Der Beleg daneben
+# nennt seinen Hash; das Protokoll selbst ist groß und bleibt auf dem Rechner.
+.laufbeleg/
+
+# Bilder der WebKit-Abnahmen (scripts/webkitabnahme.sh) — der Beleg steht in docs/belege/webkitprobe
+.webkitabnahme/
+
+# Läufe der Hüllenprobe — Bilder, Belege und Manifest je Lauf (T06, #2099); die jüngsten zehn bleiben
+/.huellenprobe/
+
+# Dauerbelege der Teststufe (T08, #2101) — die jüngsten zwanzig
+/.ci-dauer/

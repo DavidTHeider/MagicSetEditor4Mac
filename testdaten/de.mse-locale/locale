@@ -1,0 +1,11 @@
+﻿mse version: 2.0.0
+short name: Deutsch
+game:
+	# ein Kommentar zwischen den Spielen
+	probe:
+		# und einer in den Feldern
+		name: Name
+		farbe: Farbe
+package:
+	# und einer bei den Paketen
+	probe.mse-game: Probespiel

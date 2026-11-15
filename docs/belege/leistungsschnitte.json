@@ -1,0 +1,2628 @@
+{
+  "stand": {
+    "commit": "a13a64b702b1a5b7da49d5794b244b7333f1049c",
+    "sauber": true,
+    "go": "go version go1.27.1 darwin/arm64",
+    "zeit": "2026-10-07T11:09:34.727Z",
+    "rechner": "Apple M5",
+    "kerne": 10,
+    "speicherGB": 32,
+    "system": "27.0.1 (26A434)",
+    "wiederholungen": 5,
+    "dauer": "2s",
+    "grenzen": {
+      "last": 5,
+      "fremd": 250
+    },
+    "pauseS": 120,
+    "rufe": 100
+  },
+  "eingaenge": {
+    "pack": {
+      "dateien": 34683,
+      "abdruck": "dec39bd84969fd1c02762d1ff4e7487490102f2f1af2dd20bb76da343e087f5f"
+    },
+    "archenemy": "812f3aa3da96a0caa7af37de21e5706e1dec74f214b2bc746760aee040c75abd"
+  },
+  "programme": {
+    "msescript": "82a2a0705c017d2591d7a35765f96ac40de2b36425586cd917d2209dff36925a",
+    "render": "c9ea00fa52b7d73f20e61c4765990b5873597321214d492fd14605c95749de42",
+    "app": "6f871486f716ad92ff0b1656cd9a96773588446d1a08f3e8dd05bf430be187e5",
+    "mse": "325baa235df63bb6800045e9ead985674deb6ea2ebdfa52a658a10da52d352f9",
+    "mse-mcp": "533c5b68c518ce52bb4f8ab52d608d98601c2b2cf05df1df05550e545008d989"
+  },
+  "schnitte": [
+    {
+      "name": "ast-frisch",
+      "was": "Zerteilen, frischer Neuaufbau des Baums",
+      "bench": "^BenchmarkZerteileKaltUndWarm$/^kalt$",
+      "vorher": {
+        "last": [
+          4.66,
+          4.41,
+          4.97
+        ],
+        "fremd": {
+          "summe": 156.5,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 89.2,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 23.3,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 11.8,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            },
+            {
+              "pid": 92458,
+              "ppid": 1,
+              "cpu": 9.6,
+              "name": "/System/Library/ExtensionKit/Extensions/Storage.appex/Contents/MacOS/Storage"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 8,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            }
+          ]
+        },
+        "gewartetS": 40
+      },
+      "ok": true,
+      "fehler": null,
+      "werte": [
+        {
+          "name": "BenchmarkZerteileKaltUndWarm/kalt",
+          "ns": {
+            "n": 5,
+            "min": 56284,
+            "median": 57630,
+            "p95": 58100,
+            "p99": 58100,
+            "max": 58100,
+            "mittel": 57346.8
+          },
+          "bytes": {
+            "n": 5,
+            "min": 136843,
+            "median": 136845,
+            "p95": 136855,
+            "p99": 136855,
+            "max": 136855,
+            "mittel": 136846.8
+          },
+          "zuteilungen": {
+            "n": 5,
+            "min": 1200,
+            "median": 1200,
+            "p95": 1200,
+            "p99": 1200,
+            "max": 1200,
+            "mittel": 1200
+          },
+          "durchlaeufe": [
+            41642,
+            42480,
+            40809,
+            42216,
+            42411
+          ]
+        }
+      ],
+      "prozess": {
+        "wandMs": 12328,
+        "cpuS": 28.52,
+        "rssByte": 257146880,
+        "spitzeByte": 253149976
+      },
+      "status": "gemessen",
+      "nachher": {
+        "last": [
+          5.44,
+          4.6,
+          5.03
+        ],
+        "fremd": {
+          "summe": 196,
+          "groesste": [
+            {
+              "pid": 98170,
+              "ppid": 1,
+              "cpu": 84.4,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/ApplicationsStorageExtension.appex/Contents/MacOS/ApplicationsStorageExtension"
+            },
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 78.5,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 14.8,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 4.1,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 3,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "ast-speicher",
+      "was": "Zerteilen, nur Treffer im Baumspeicher",
+      "bench": "^BenchmarkZerteileKaltUndWarm$/^warm$",
+      "vorher": {
+        "last": [
+          4.93,
+          4.54,
+          5
+        ],
+        "fremd": {
+          "summe": 187.8,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 81.7,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 98170,
+              "ppid": 1,
+              "cpu": 51,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/ApplicationsStorageExtension.appex/Contents/MacOS/ApplicationsStorageExtension"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 20.3,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 12.3,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 8.3,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            }
+          ]
+        },
+        "gewartetS": 20
+      },
+      "ok": true,
+      "fehler": null,
+      "werte": [
+        {
+          "name": "BenchmarkZerteileKaltUndWarm/warm",
+          "ns": {
+            "n": 5,
+            "min": 7.45,
+            "median": 7.498,
+            "p95": 7.65,
+            "p99": 7.65,
+            "max": 7.65,
+            "mittel": 7.513000000000001
+          },
+          "bytes": {
+            "n": 5,
+            "min": 0,
+            "median": 0,
+            "p95": 0,
+            "p99": 0,
+            "max": 0,
+            "mittel": 0
+          },
+          "zuteilungen": {
+            "n": 5,
+            "min": 0,
+            "median": 0,
+            "p95": 0,
+            "p99": 0,
+            "max": 0,
+            "mittel": 0
+          },
+          "durchlaeufe": [
+            315015181,
+            319387112,
+            313607067,
+            320479971,
+            321564823
+          ]
+        }
+      ],
+      "prozess": {
+        "wandMs": 11971,
+        "cpuS": 11.94,
+        "rssByte": 9289728,
+        "spitzeByte": 5653056
+      },
+      "status": "gemessen",
+      "nachher": {
+        "last": [
+          4.73,
+          4.51,
+          4.98
+        ],
+        "fremd": {
+          "summe": 243.7,
+          "groesste": [
+            {
+              "pid": 98170,
+              "ppid": 1,
+              "cpu": 98.2,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/ApplicationsStorageExtension.appex/Contents/MacOS/ApplicationsStorageExtension"
+            },
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 88.8,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 92458,
+              "ppid": 1,
+              "cpu": 35,
+              "name": "/System/Library/ExtensionKit/Extensions/Storage.appex/Contents/MacOS/Storage"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 11.5,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 1.9,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "ebene",
+      "was": "Rasterung einer Ebene, kalt und warm",
+      "bench": "^BenchmarkEbeneKaltUndWarm$",
+      "vorher": {
+        "last": [
+          4.73,
+          4.51,
+          4.98
+        ],
+        "fremd": {
+          "summe": 243.7,
+          "groesste": [
+            {
+              "pid": 98170,
+              "ppid": 1,
+              "cpu": 98.2,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/ApplicationsStorageExtension.appex/Contents/MacOS/ApplicationsStorageExtension"
+            },
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 88.8,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 92458,
+              "ppid": 1,
+              "cpu": 35,
+              "name": "/System/Library/ExtensionKit/Extensions/Storage.appex/Contents/MacOS/Storage"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 11.5,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 1.9,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            }
+          ]
+        },
+        "gewartetS": 0
+      },
+      "ok": true,
+      "fehler": null,
+      "werte": [
+        {
+          "name": "BenchmarkEbeneKaltUndWarm/kalt",
+          "ns": {
+            "n": 5,
+            "min": 5746801,
+            "median": 5774293,
+            "p95": 5864999,
+            "p99": 5864999,
+            "max": 5864999,
+            "mittel": 5800819.4
+          },
+          "bytes": {
+            "n": 5,
+            "min": 787600,
+            "median": 787601,
+            "p95": 787627,
+            "p99": 787627,
+            "max": 787627,
+            "mittel": 787606
+          },
+          "zuteilungen": {
+            "n": 5,
+            "min": 9,
+            "median": 9,
+            "p95": 9,
+            "p99": 9,
+            "max": 9,
+            "mittel": 9
+          },
+          "durchlaeufe": [
+            418,
+            415,
+            416,
+            417,
+            405
+          ]
+        },
+        {
+          "name": "BenchmarkEbeneKaltUndWarm/warm",
+          "ns": {
+            "n": 5,
+            "min": 17.59,
+            "median": 17.86,
+            "p95": 17.92,
+            "p99": 17.92,
+            "max": 17.92,
+            "mittel": 17.804
+          },
+          "bytes": {
+            "n": 5,
+            "min": 0,
+            "median": 0,
+            "p95": 0,
+            "p99": 0,
+            "max": 0,
+            "mittel": 0
+          },
+          "zuteilungen": {
+            "n": 5,
+            "min": 0,
+            "median": 0,
+            "p95": 0,
+            "p99": 0,
+            "max": 0,
+            "mittel": 0
+          },
+          "durchlaeufe": [
+            134549001,
+            133614762,
+            136260591,
+            133868677,
+            135270754
+          ]
+        }
+      ],
+      "prozess": {
+        "wandMs": 24293,
+        "cpuS": 24.06,
+        "rssByte": 18104320,
+        "spitzeByte": 14811712
+      },
+      "status": "gemessen",
+      "nachher": {
+        "last": [
+          4.53,
+          4.48,
+          4.96
+        ],
+        "fremd": {
+          "summe": 151.2,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 90.6,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 98170,
+              "ppid": 1,
+              "cpu": 42.9,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/ApplicationsStorageExtension.appex/Contents/MacOS/ApplicationsStorageExtension"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 9.4,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 1.6,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 1.4,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "einfahren",
+      "was": "Kartenlesen: ein Set einfahren",
+      "bench": "^BenchmarkWegEinfahren$",
+      "vorher": {
+        "last": [
+          4.53,
+          4.48,
+          4.96
+        ],
+        "fremd": {
+          "summe": 134.7,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 90.9,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 98170,
+              "ppid": 1,
+              "cpu": 26.8,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/ApplicationsStorageExtension.appex/Contents/MacOS/ApplicationsStorageExtension"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 9.4,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 1.6,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 1.6,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            }
+          ]
+        },
+        "gewartetS": 0
+      },
+      "ok": true,
+      "fehler": null,
+      "werte": [
+        {
+          "name": "BenchmarkWegEinfahren/klein",
+          "ns": {
+            "n": 5,
+            "min": 45813200,
+            "median": 46815741,
+            "p95": 49338250,
+            "p99": 49338250,
+            "max": 49338250,
+            "mittel": 47086523.4
+          },
+          "bytes": {
+            "n": 5,
+            "min": 2530732,
+            "median": 2531494,
+            "p95": 2541224,
+            "p99": 2541224,
+            "max": 2541224,
+            "mittel": 2535048
+          },
+          "zuteilungen": {
+            "n": 5,
+            "min": 28059,
+            "median": 28066,
+            "p95": 28126,
+            "p99": 28126,
+            "max": 28126,
+            "mittel": 28081.4
+          },
+          "durchlaeufe": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ]
+        },
+        {
+          "name": "BenchmarkWegEinfahren/gross",
+          "ns": {
+            "n": 5,
+            "min": 1868222291,
+            "median": 1892709517,
+            "p95": 1909134783,
+            "p99": 1909134783,
+            "max": 1909134783,
+            "mittel": 1890757881.6
+          },
+          "bytes": {
+            "n": 5,
+            "min": 100054843,
+            "median": 100056961,
+            "p95": 100062489,
+            "p99": 100062489,
+            "max": 100062489,
+            "mittel": 100058155.2
+          },
+          "zuteilungen": {
+            "n": 5,
+            "min": 1101569,
+            "median": 1101605,
+            "p95": 1101652,
+            "p99": 1101652,
+            "max": 1101652,
+            "mittel": 1101607.6
+          },
+          "durchlaeufe": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ]
+        }
+      ],
+      "prozess": {
+        "wandMs": 58754,
+        "cpuS": 61.56,
+        "rssByte": 158269440,
+        "spitzeByte": 113918984
+      },
+      "status": "gemessen",
+      "nachher": {
+        "last": [
+          3.45,
+          4.14,
+          4.79
+        ],
+        "fremd": {
+          "summe": 100.7,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 81.7,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 9.5,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 1.7,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 1.1,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            },
+            {
+              "pid": 99535,
+              "ppid": 99073,
+              "cpu": 1.1,
+              "name": "/Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/154.0.8037.98/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "naht-skript",
+      "was": "öffentliche Naht: ein Ausdruck je Ruf",
+      "bench": "^BenchmarkWegKopflos$/^Skript_je_Ruf$",
+      "vorher": {
+        "last": [
+          3.45,
+          4.14,
+          4.79
+        ],
+        "fremd": {
+          "summe": 100.7,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 81.7,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 9.5,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 1.7,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 1.1,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            },
+            {
+              "pid": 99535,
+              "ppid": 99073,
+              "cpu": 1.1,
+              "name": "/Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/154.0.8037.98/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)"
+            }
+          ]
+        },
+        "gewartetS": 0
+      },
+      "ok": true,
+      "fehler": null,
+      "werte": [
+        {
+          "name": "BenchmarkWegKopflos/Skript_je_Ruf",
+          "ns": {
+            "n": 5,
+            "min": 9251717,
+            "median": 9347842,
+            "p95": 9496067,
+            "p99": 9496067,
+            "max": 9496067,
+            "mittel": 9354630.2
+          },
+          "bytes": {
+            "n": 5,
+            "min": 22908036,
+            "median": 22915281,
+            "p95": 22945051,
+            "p99": 22945051,
+            "max": 22945051,
+            "mittel": 22925577.6
+          },
+          "zuteilungen": {
+            "n": 5,
+            "min": 72142,
+            "median": 72145,
+            "p95": 72149,
+            "p99": 72149,
+            "max": 72149,
+            "mittel": 72145.8
+          },
+          "durchlaeufe": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ]
+        }
+      ],
+      "prozess": {
+        "wandMs": 1092,
+        "cpuS": 1.34,
+        "rssByte": 502185984,
+        "spitzeByte": 463570144
+      },
+      "status": "gemessen",
+      "nachher": {
+        "last": [
+          3.45,
+          4.14,
+          4.79
+        ],
+        "fremd": {
+          "summe": 193.5,
+          "groesste": [
+            {
+              "pid": 98170,
+              "ppid": 1,
+              "cpu": 86.6,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/ApplicationsStorageExtension.appex/Contents/MacOS/ApplicationsStorageExtension"
+            },
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 81.9,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 12.5,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 3.3,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 2.5,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "naht-karte",
+      "was": "öffentliche Naht: eine Karte je Ruf",
+      "bench": "^BenchmarkWegKopflos$/^Karte_je_Ruf$",
+      "vorher": {
+        "last": [
+          3.45,
+          4.14,
+          4.79
+        ],
+        "fremd": {
+          "summe": 193.5,
+          "groesste": [
+            {
+              "pid": 98170,
+              "ppid": 1,
+              "cpu": 86.6,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/ApplicationsStorageExtension.appex/Contents/MacOS/ApplicationsStorageExtension"
+            },
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 81.9,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 12.5,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 3.3,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 2.5,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            }
+          ]
+        },
+        "gewartetS": 0
+      },
+      "ok": true,
+      "fehler": null,
+      "werte": [
+        {
+          "name": "BenchmarkWegKopflos/Karte_je_Ruf",
+          "ns": {
+            "n": 5,
+            "min": 53359592,
+            "median": 57012558,
+            "p95": 60835542,
+            "p99": 60835542,
+            "max": 60835542,
+            "mittel": 57566951.8
+          },
+          "bytes": {
+            "n": 5,
+            "min": 31379321,
+            "median": 31389536,
+            "p95": 32697460,
+            "p99": 32697460,
+            "max": 32697460,
+            "mittel": 31898246.6
+          },
+          "zuteilungen": {
+            "n": 5,
+            "min": 79092,
+            "median": 79104,
+            "p95": 88701,
+            "p99": 88701,
+            "max": 88701,
+            "mittel": 82936.2
+          },
+          "durchlaeufe": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ]
+        }
+      ],
+      "prozess": {
+        "wandMs": 2516,
+        "cpuS": 2.89,
+        "rssByte": 502906880,
+        "spitzeByte": 464323760
+      },
+      "status": "gemessen",
+      "nachher": {
+        "last": [
+          3.65,
+          4.17,
+          4.8
+        ],
+        "fremd": {
+          "summe": 122.8,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 88.5,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 92458,
+              "ppid": 1,
+              "cpu": 13.2,
+              "name": "/System/Library/ExtensionKit/Extensions/Storage.appex/Contents/MacOS/Storage"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 11.1,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 2.3,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            },
+            {
+              "pid": 99535,
+              "ppid": 99073,
+              "cpu": 1.7,
+              "name": "/Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/154.0.8037.98/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "werk-frisch",
+      "was": "ganze Rechnung: frisches Werk, Umgebung samt Abbildung",
+      "bench": "^BenchmarkWegKopflos$/^Karte,_frisches_Werk$",
+      "vorher": {
+        "last": [
+          3.65,
+          4.17,
+          4.8
+        ],
+        "fremd": {
+          "summe": 122.8,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 88.5,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 92458,
+              "ppid": 1,
+              "cpu": 13.2,
+              "name": "/System/Library/ExtensionKit/Extensions/Storage.appex/Contents/MacOS/Storage"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 11.1,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 2.3,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            },
+            {
+              "pid": 99535,
+              "ppid": 99073,
+              "cpu": 1.7,
+              "name": "/Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/154.0.8037.98/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)"
+            }
+          ]
+        },
+        "gewartetS": 0
+      },
+      "ok": true,
+      "fehler": null,
+      "werte": [
+        {
+          "name": "BenchmarkWegKopflos/Karte,_frisches_Werk",
+          "ns": {
+            "n": 5,
+            "min": 647325425,
+            "median": 670865600,
+            "p95": 689797883,
+            "p99": 689797883,
+            "max": 689797883,
+            "mittel": 669560294.8
+          },
+          "bytes": {
+            "n": 5,
+            "min": 1084505200,
+            "median": 1084535390,
+            "p95": 1095693097,
+            "p99": 1095693097,
+            "max": 1095693097,
+            "mittel": 1086758612
+          },
+          "zuteilungen": {
+            "n": 5,
+            "min": 2187177,
+            "median": 2187186,
+            "p95": 2258412,
+            "p99": 2258412,
+            "max": 2258412,
+            "mittel": 2201429.8
+          },
+          "durchlaeufe": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ]
+        }
+      ],
+      "prozess": {
+        "wandMs": 16889,
+        "cpuS": 21.99,
+        "rssByte": 524337152,
+        "spitzeByte": 484050168
+      },
+      "status": "gemessen",
+      "nachher": {
+        "last": [
+          3.52,
+          4.11,
+          4.77
+        ],
+        "fremd": {
+          "summe": 195.2,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 92.4,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 98170,
+              "ppid": 1,
+              "cpu": 82.1,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/ApplicationsStorageExtension.appex/Contents/MacOS/ApplicationsStorageExtension"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 11.5,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 2.3,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 1.6,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "werk-gehalten",
+      "was": "ganze Rechnung: das Werk gehalten, der Weg des Fensters",
+      "bench": "^BenchmarkWegKopflos$/^Karte,_Werk_gehalten$",
+      "vorher": {
+        "last": [
+          3.52,
+          4.11,
+          4.77
+        ],
+        "fremd": {
+          "summe": 201.6,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 91.2,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 98170,
+              "ppid": 1,
+              "cpu": 87.4,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/ApplicationsStorageExtension.appex/Contents/MacOS/ApplicationsStorageExtension"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 11.5,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 99535,
+              "ppid": 99073,
+              "cpu": 3.2,
+              "name": "/Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/154.0.8037.98/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 2.2,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            }
+          ]
+        },
+        "gewartetS": 0
+      },
+      "ok": true,
+      "fehler": null,
+      "werte": [
+        {
+          "name": "BenchmarkWegKopflos/Karte,_Werk_gehalten",
+          "ns": {
+            "n": 5,
+            "min": 54469508,
+            "median": 56176775,
+            "p95": 58011292,
+            "p99": 58011292,
+            "max": 58011292,
+            "mittel": 56382156.8
+          },
+          "bytes": {
+            "n": 5,
+            "min": 31355049,
+            "median": 31370150,
+            "p95": 31377422,
+            "p99": 31377422,
+            "max": 31377422,
+            "mittel": 31367331.4
+          },
+          "zuteilungen": {
+            "n": 5,
+            "min": 78967,
+            "median": 78970,
+            "p95": 78974,
+            "p99": 78974,
+            "max": 78974,
+            "mittel": 78970.2
+          },
+          "durchlaeufe": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ]
+        }
+      ],
+      "prozess": {
+        "wandMs": 5068,
+        "cpuS": 6.31,
+        "rssByte": 520683520,
+        "spitzeByte": 486868216
+      },
+      "status": "gemessen",
+      "nachher": {
+        "last": [
+          3.48,
+          4.09,
+          4.76
+        ],
+        "fremd": {
+          "summe": 212.5,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 87.7,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 98170,
+              "ppid": 1,
+              "cpu": 87.5,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/ApplicationsStorageExtension.appex/Contents/MacOS/ApplicationsStorageExtension"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 12.6,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 99534,
+              "ppid": 99073,
+              "cpu": 8.2,
+              "name": "/Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/154.0.8037.98/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 4.3,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "ausfuhr",
+      "was": "Ausfuhr über eine Vorlage, 70 Karten",
+      "bench": "^BenchmarkWegAusfuhr$",
+      "vorher": {
+        "last": [
+          3.48,
+          4.09,
+          4.76
+        ],
+        "fremd": {
+          "summe": 212.1,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 87.7,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 98170,
+              "ppid": 1,
+              "cpu": 87.5,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/ApplicationsStorageExtension.appex/Contents/MacOS/ApplicationsStorageExtension"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 12.4,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 99534,
+              "ppid": 99073,
+              "cpu": 8.2,
+              "name": "/Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/154.0.8037.98/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 4.3,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            }
+          ]
+        },
+        "gewartetS": 0
+      },
+      "ok": true,
+      "fehler": null,
+      "werte": [
+        {
+          "name": "BenchmarkWegAusfuhr",
+          "ns": {
+            "n": 5,
+            "min": 703719075,
+            "median": 713386208,
+            "p95": 716535725,
+            "p99": 716535725,
+            "max": 716535725,
+            "mittel": 711083245
+          },
+          "bytes": {
+            "n": 5,
+            "min": 1657595556,
+            "median": 1657866920,
+            "p95": 1657936035,
+            "p99": 1657936035,
+            "max": 1657936035,
+            "mittel": 1657821960.6
+          },
+          "zuteilungen": {
+            "n": 5,
+            "min": 6727903,
+            "median": 6727978,
+            "p95": 6727993,
+            "p99": 6727993,
+            "max": 6727993,
+            "mittel": 6727963.8
+          },
+          "durchlaeufe": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ]
+        }
+      ],
+      "prozess": {
+        "wandMs": 22111,
+        "cpuS": 44.25,
+        "rssByte": 125648896,
+        "spitzeByte": 89768872
+      },
+      "status": "gemessen",
+      "nachher": {
+        "last": [
+          3.89,
+          4.13,
+          4.75
+        ],
+        "fremd": {
+          "summe": 111.5,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 82.2,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 12,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 5.2,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 3.5,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            },
+            {
+              "pid": 33425,
+              "ppid": 1,
+              "cpu": 1.8,
+              "name": "/usr/libexec/PerfPowerServices"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "rastern",
+      "was": "Rasterung einer Karte im Fensterweg",
+      "bench": "^BenchmarkWegRastern$",
+      "vorher": {
+        "last": [
+          3.89,
+          4.13,
+          4.75
+        ],
+        "fremd": {
+          "summe": 114.2,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 83.1,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 11.8,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 5.2,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 3.5,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            },
+            {
+              "pid": 2345,
+              "ppid": 1,
+              "cpu": 1.8,
+              "name": "/System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.Networking.xpc/Contents/MacOS/com.apple.WebKit.Networking"
+            }
+          ]
+        },
+        "gewartetS": 0
+      },
+      "ok": true,
+      "fehler": null,
+      "werte": [
+        {
+          "name": "BenchmarkWegRastern",
+          "ns": {
+            "n": 5,
+            "min": 58360850,
+            "median": 63792317,
+            "p95": 75567992,
+            "p99": 75567992,
+            "max": 75567992,
+            "mittel": 64150876.8
+          },
+          "bytes": {
+            "n": 5,
+            "min": 57130129,
+            "median": 57144964,
+            "p95": 58038705,
+            "p99": 58038705,
+            "max": 58038705,
+            "mittel": 57323800
+          },
+          "zuteilungen": {
+            "n": 5,
+            "min": 274380,
+            "median": 274382,
+            "p95": 284532,
+            "p99": 284532,
+            "max": 284532,
+            "mittel": 276412.2
+          },
+          "durchlaeufe": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ]
+        }
+      ],
+      "prozess": {
+        "wandMs": 16453,
+        "cpuS": 18.33,
+        "rssByte": 563249152,
+        "spitzeByte": 521323744
+      },
+      "status": "gemessen",
+      "nachher": {
+        "last": [
+          4.01,
+          4.16,
+          4.75
+        ],
+        "fremd": {
+          "summe": 140.7,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 90.6,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 12.6,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 9.7,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            },
+            {
+              "pid": 29692,
+              "ppid": 29691,
+              "cpu": 9.2,
+              "name": "/Users/david/Library/Application Support/Claude/claude-code/2.1.288/48d54124d3c3/claude.app/Contents/MacOS/claude"
+            },
+            {
+              "pid": 92458,
+              "ppid": 1,
+              "cpu": 7.9,
+              "name": "/System/Library/ExtensionKit/Extensions/Storage.appex/Contents/MacOS/Storage"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "paare",
+      "was": "dieselbe Karte vor, sofort und nach fünf anderen (PERF-04)",
+      "bench": "^BenchmarkKartenpaare$",
+      "vorher": {
+        "last": [
+          4.01,
+          4.16,
+          4.75
+        ],
+        "fremd": {
+          "summe": 140.7,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 90.6,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 12.6,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 9.7,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            },
+            {
+              "pid": 29692,
+              "ppid": 29691,
+              "cpu": 9.2,
+              "name": "/Users/david/Library/Application Support/Claude/claude-code/2.1.288/48d54124d3c3/claude.app/Contents/MacOS/claude"
+            },
+            {
+              "pid": 92458,
+              "ppid": 1,
+              "cpu": 7.9,
+              "name": "/System/Library/ExtensionKit/Extensions/Storage.appex/Contents/MacOS/Storage"
+            }
+          ]
+        },
+        "gewartetS": 0
+      },
+      "ok": true,
+      "fehler": null,
+      "werte": [
+        {
+          "name": "BenchmarkKartenpaare",
+          "ns": {
+            "n": 1,
+            "min": 3406415542,
+            "median": 3406415542,
+            "p95": 3406415542,
+            "p99": 3406415542,
+            "max": 3406415542,
+            "mittel": 3406415542
+          },
+          "bytes": {
+            "n": 1,
+            "min": 2476381672,
+            "median": 2476381672,
+            "p95": 2476381672,
+            "p99": 2476381672,
+            "max": 2476381672,
+            "mittel": 2476381672
+          },
+          "zuteilungen": {
+            "n": 1,
+            "min": 13776780,
+            "median": 13776780,
+            "p95": 13776780,
+            "p99": 13776780,
+            "max": 13776780,
+            "mittel": 13776780
+          },
+          "durchlaeufe": [
+            1
+          ]
+        }
+      ],
+      "paare": [
+        {
+          "runde": 0,
+          "schritt": "A kalt",
+          "karte": 4,
+          "ms": 815.738,
+          "sha256": "83ac8f446f49a734dd784a6159257ed0951b72d99ad96850993dc2d03e47ae29",
+          "speicher": {
+            "pakete.bilder": [
+              0,
+              6
+            ],
+            "render.ebenen": [
+              0,
+              6
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 1,
+          "schritt": "A vorher",
+          "karte": 4,
+          "ms": 55.688,
+          "sha256": "83ac8f446f49a734dd784a6159257ed0951b72d99ad96850993dc2d03e47ae29",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 1,
+          "schritt": "A sofort",
+          "karte": 4,
+          "ms": 58.481,
+          "sha256": "83ac8f446f49a734dd784a6159257ed0951b72d99ad96850993dc2d03e47ae29",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 1,
+          "schritt": "B",
+          "karte": 5,
+          "ms": 79.255,
+          "sha256": "7d19c2e9093f76d1678247c9bdf8cddfbcea68bda9a6a90a0f47b3997c8183b0",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              2,
+              4
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 1,
+          "schritt": "B",
+          "karte": 6,
+          "ms": 76.308,
+          "sha256": "dc77473c0af7b8adc3d7c32f5c0c2d9612779a8410dab658ef0664cd9aa83ef8",
+          "speicher": {
+            "pakete.bilder": [
+              10,
+              1
+            ],
+            "render.ebenen": [
+              2,
+              4
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 1,
+          "schritt": "B",
+          "karte": 7,
+          "ms": 111.825,
+          "sha256": "f77a7ecd5d784606c19192b1d50ebff3702ee3c7c435cb60162c7eab6fdf2f73",
+          "speicher": {
+            "pakete.bilder": [
+              18,
+              3
+            ],
+            "render.ebenen": [
+              2,
+              4
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 1,
+          "schritt": "B",
+          "karte": 8,
+          "ms": 78.395,
+          "sha256": "975b83fa58a2b05e34cad97b8d09da476f7502e5ef86ca7a3fa96f7023e4816d",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              2,
+              4
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 1,
+          "schritt": "B",
+          "karte": 9,
+          "ms": 82.65,
+          "sha256": "7dcae3d31f5e7b9ee91277caa31fcf576b35a02a856bdda48b337fb7c1f76f62",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              2,
+              4
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 1,
+          "schritt": "A nachher",
+          "karte": 4,
+          "ms": 57.611,
+          "sha256": "83ac8f446f49a734dd784a6159257ed0951b72d99ad96850993dc2d03e47ae29",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 2,
+          "schritt": "A vorher",
+          "karte": 4,
+          "ms": 56.928,
+          "sha256": "83ac8f446f49a734dd784a6159257ed0951b72d99ad96850993dc2d03e47ae29",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 2,
+          "schritt": "A sofort",
+          "karte": 4,
+          "ms": 56.6,
+          "sha256": "83ac8f446f49a734dd784a6159257ed0951b72d99ad96850993dc2d03e47ae29",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 2,
+          "schritt": "B",
+          "karte": 6,
+          "ms": 56.483,
+          "sha256": "dc77473c0af7b8adc3d7c32f5c0c2d9612779a8410dab658ef0664cd9aa83ef8",
+          "speicher": {
+            "pakete.bilder": [
+              11,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 2,
+          "schritt": "B",
+          "karte": 7,
+          "ms": 57.16,
+          "sha256": "f77a7ecd5d784606c19192b1d50ebff3702ee3c7c435cb60162c7eab6fdf2f73",
+          "speicher": {
+            "pakete.bilder": [
+              21,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 2,
+          "schritt": "B",
+          "karte": 8,
+          "ms": 57.501,
+          "sha256": "975b83fa58a2b05e34cad97b8d09da476f7502e5ef86ca7a3fa96f7023e4816d",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 2,
+          "schritt": "B",
+          "karte": 9,
+          "ms": 63.087,
+          "sha256": "7dcae3d31f5e7b9ee91277caa31fcf576b35a02a856bdda48b337fb7c1f76f62",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 2,
+          "schritt": "B",
+          "karte": 10,
+          "ms": 76.652,
+          "sha256": "b7251e53aa409c9b19515cc759300402a2bf1aa6f653b99d4e4f6595c469a4e0",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              2,
+              4
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 2,
+          "schritt": "A nachher",
+          "karte": 4,
+          "ms": 57.35,
+          "sha256": "83ac8f446f49a734dd784a6159257ed0951b72d99ad96850993dc2d03e47ae29",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 3,
+          "schritt": "A vorher",
+          "karte": 4,
+          "ms": 59.05,
+          "sha256": "83ac8f446f49a734dd784a6159257ed0951b72d99ad96850993dc2d03e47ae29",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 3,
+          "schritt": "A sofort",
+          "karte": 4,
+          "ms": 57.009,
+          "sha256": "83ac8f446f49a734dd784a6159257ed0951b72d99ad96850993dc2d03e47ae29",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 3,
+          "schritt": "B",
+          "karte": 7,
+          "ms": 57.355,
+          "sha256": "f77a7ecd5d784606c19192b1d50ebff3702ee3c7c435cb60162c7eab6fdf2f73",
+          "speicher": {
+            "pakete.bilder": [
+              21,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 3,
+          "schritt": "B",
+          "karte": 8,
+          "ms": 57.502,
+          "sha256": "975b83fa58a2b05e34cad97b8d09da476f7502e5ef86ca7a3fa96f7023e4816d",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 3,
+          "schritt": "B",
+          "karte": 9,
+          "ms": 96.466,
+          "sha256": "7dcae3d31f5e7b9ee91277caa31fcf576b35a02a856bdda48b337fb7c1f76f62",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 3,
+          "schritt": "B",
+          "karte": 10,
+          "ms": 57.178,
+          "sha256": "b7251e53aa409c9b19515cc759300402a2bf1aa6f653b99d4e4f6595c469a4e0",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 3,
+          "schritt": "B",
+          "karte": 11,
+          "ms": 76.039,
+          "sha256": "42eece55c46c60401171f877526f1819d785479a961d589e4764e3527b7688a3",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              2,
+              4
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 3,
+          "schritt": "A nachher",
+          "karte": 4,
+          "ms": 56.14,
+          "sha256": "83ac8f446f49a734dd784a6159257ed0951b72d99ad96850993dc2d03e47ae29",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 4,
+          "schritt": "A vorher",
+          "karte": 4,
+          "ms": 54.896,
+          "sha256": "83ac8f446f49a734dd784a6159257ed0951b72d99ad96850993dc2d03e47ae29",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 4,
+          "schritt": "A sofort",
+          "karte": 4,
+          "ms": 58.421,
+          "sha256": "83ac8f446f49a734dd784a6159257ed0951b72d99ad96850993dc2d03e47ae29",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 4,
+          "schritt": "B",
+          "karte": 8,
+          "ms": 55.323,
+          "sha256": "975b83fa58a2b05e34cad97b8d09da476f7502e5ef86ca7a3fa96f7023e4816d",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 4,
+          "schritt": "B",
+          "karte": 9,
+          "ms": 60.59,
+          "sha256": "7dcae3d31f5e7b9ee91277caa31fcf576b35a02a856bdda48b337fb7c1f76f62",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 4,
+          "schritt": "B",
+          "karte": 10,
+          "ms": 55.149,
+          "sha256": "b7251e53aa409c9b19515cc759300402a2bf1aa6f653b99d4e4f6595c469a4e0",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 4,
+          "schritt": "B",
+          "karte": 11,
+          "ms": 56.584,
+          "sha256": "42eece55c46c60401171f877526f1819d785479a961d589e4764e3527b7688a3",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 4,
+          "schritt": "B",
+          "karte": 12,
+          "ms": 75.73,
+          "sha256": "99e54f00b976264388c58843c461f4d6de2613ec34fb242b85663d3289609d3b",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              2,
+              4
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 4,
+          "schritt": "A nachher",
+          "karte": 4,
+          "ms": 55.499,
+          "sha256": "83ac8f446f49a734dd784a6159257ed0951b72d99ad96850993dc2d03e47ae29",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 5,
+          "schritt": "A vorher",
+          "karte": 4,
+          "ms": 54.476,
+          "sha256": "83ac8f446f49a734dd784a6159257ed0951b72d99ad96850993dc2d03e47ae29",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 5,
+          "schritt": "A sofort",
+          "karte": 4,
+          "ms": 57.973,
+          "sha256": "83ac8f446f49a734dd784a6159257ed0951b72d99ad96850993dc2d03e47ae29",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 5,
+          "schritt": "B",
+          "karte": 9,
+          "ms": 62.01,
+          "sha256": "7dcae3d31f5e7b9ee91277caa31fcf576b35a02a856bdda48b337fb7c1f76f62",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 5,
+          "schritt": "B",
+          "karte": 10,
+          "ms": 58.617,
+          "sha256": "b7251e53aa409c9b19515cc759300402a2bf1aa6f653b99d4e4f6595c469a4e0",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 5,
+          "schritt": "B",
+          "karte": 11,
+          "ms": 57.604,
+          "sha256": "42eece55c46c60401171f877526f1819d785479a961d589e4764e3527b7688a3",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 5,
+          "schritt": "B",
+          "karte": 12,
+          "ms": 87.556,
+          "sha256": "99e54f00b976264388c58843c461f4d6de2613ec34fb242b85663d3289609d3b",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 5,
+          "schritt": "B",
+          "karte": 13,
+          "ms": 74.543,
+          "sha256": "636ee33f14d410edb033c99824245c55e71b0028d7e0601d7e52932a22bb4dc0",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              2,
+              4
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        },
+        {
+          "runde": 5,
+          "schritt": "A nachher",
+          "karte": 4,
+          "ms": 57.934,
+          "sha256": "83ac8f446f49a734dd784a6159257ed0951b72d99ad96850993dc2d03e47ae29",
+          "speicher": {
+            "pakete.bilder": [
+              6,
+              0
+            ],
+            "render.ebenen": [
+              3,
+              3
+            ],
+            "tisch.texturen": [
+              0,
+              0
+            ]
+          }
+        }
+      ],
+      "prozess": {
+        "wandMs": 3556,
+        "cpuS": 3.91,
+        "rssByte": 504299520,
+        "spitzeByte": 465372360
+      },
+      "status": "gemessen",
+      "nachher": {
+        "last": [
+          4.25,
+          4.2,
+          4.76
+        ],
+        "fremd": {
+          "summe": 134.1,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 89.5,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 98170,
+              "ppid": 1,
+              "cpu": 21.6,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/ApplicationsStorageExtension.appex/Contents/MacOS/ApplicationsStorageExtension"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 9.9,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 4.8,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 2.3,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "mcp",
+      "was": "echter Transport: mse-mcp über stdio, drei Ausdrücke",
+      "bench": null,
+      "vorher": {
+        "last": [
+          4.25,
+          4.2,
+          4.76
+        ],
+        "fremd": {
+          "summe": 134.1,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 89.5,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 98170,
+              "ppid": 1,
+              "cpu": 21.6,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/ApplicationsStorageExtension.appex/Contents/MacOS/ApplicationsStorageExtension"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 9.9,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 4.8,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 2.3,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            }
+          ]
+        },
+        "gewartetS": 0
+      },
+      "ok": true,
+      "fehler": null,
+      "werte": [
+        {
+          "name": "lesen.skript: Rechnung",
+          "ms": {
+            "n": 100,
+            "min": 8.761375000001863,
+            "median": 9.762166999978945,
+            "p95": 10.648833999992348,
+            "p99": 10.8247080000001,
+            "max": 40.78920800000196,
+            "mittel": 10.064453770000545
+          },
+          "falsch": 0
+        },
+        {
+          "name": "lesen.skript: Zeichenkette",
+          "ms": {
+            "n": 100,
+            "min": 8.884500000014668,
+            "median": 10.017832999990787,
+            "p95": 10.731166999990819,
+            "p99": 11.252834000013536,
+            "max": 41.52762499998789,
+            "mittel": 10.285332080000371
+          },
+          "falsch": 0
+        },
+        {
+          "name": "lesen.skript: Kartenfeld",
+          "ms": {
+            "n": 100,
+            "min": 9.015457999979844,
+            "median": 9.959042000002228,
+            "p95": 10.78125,
+            "p99": 11.377333000011276,
+            "max": 40.30187500000466,
+            "mittel": 10.260480349999561
+          },
+          "falsch": 0
+        }
+      ],
+      "bereitMs": 802,
+      "prozess": {
+        "rssByte": 505905152,
+        "spitzeByte": 467551456,
+        "cpuS": 7.65
+      },
+      "status": "gemessen",
+      "nachher": {
+        "last": [
+          5.27,
+          4.42,
+          4.83
+        ],
+        "fremd": {
+          "summe": 120.6,
+          "groesste": [
+            {
+              "pid": 98160,
+              "ppid": 1,
+              "cpu": 81.7,
+              "name": "/System/Library/PrivateFrameworks/StorageManagement.framework/PlugIns/StorageManagementService"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 12,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 28849,
+              "ppid": 28799,
+              "cpu": 8.1,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            },
+            {
+              "pid": 92458,
+              "ppid": 1,
+              "cpu": 6.1,
+              "name": "/System/Library/ExtensionKit/Extensions/Storage.appex/Contents/MacOS/Storage"
+            },
+            {
+              "pid": 28810,
+              "ppid": 28799,
+              "cpu": 3.6,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "vollstaendig": true
+}

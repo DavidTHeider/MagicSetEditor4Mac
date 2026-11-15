@@ -1,0 +1,55 @@
+{
+  "bauabdruck": "43e643558f165741bedc789de4427e14e368a8b19da4d9bdf52a54889edbd3b1",
+  "erhoben": "2026-10-20T11:20:44.216Z",
+  "fenster": "1440 × 900",
+  "wege": [
+    {
+      "weg": "H1",
+      "eingang": "bereich",
+      "art": "maus",
+      "handlungen": 5,
+      "sichtwechsel": 1,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 2473,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "H4",
+      "eingang": "bereich",
+      "art": "maus",
+      "handlungen": 2,
+      "sichtwechsel": 1,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 959,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "H5",
+      "eingang": "handel",
+      "art": "maus",
+      "handlungen": 3,
+      "sichtwechsel": 0,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 4455,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "H5",
+      "eingang": "handel-gegenueber",
+      "art": "maus",
+      "handlungen": 3,
+      "sichtwechsel": 0,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 4995,
+      "wirkung": true,
+      "bedingt": []
+    }
+  ]
+}

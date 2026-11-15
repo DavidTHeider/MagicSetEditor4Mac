@@ -1,0 +1,64 @@
+package service_test
+
+// **Ein Beleg, der vor der eigenen Verbuchung ankommt, geht nicht verloren**
+// — TRADE-03.AK-01 (#1717).
+//
+// Der Vermerk der Zustellung stand vor der Gegenzeichnung. Kam die Urkunde,
+// bevor hier verbucht war, scheiterte die Gegenzeichnung — und jede weitere
+// Zustellung derselben Nachricht galt als „bekannt" und zeichnete nie mehr
+// gegen. `beidseitig` wurde nie wahr.
+
+import (
+	"context"
+	"errors"
+	"testing"
+
+	"github.com/DavidTHeider/MagicSetEditor4Mac/internal/domain"
+)
+
+func TestEinFruehererBelegZeichnetNachDerVerbuchungGegen(t *testing.T) {
+	t.Parallel()
+
+	probe, urkunde, drueben := einGegenbelegpaar(t)
+	eigener := probe.stand
+	probe.stand = nil
+
+	post := einePostMitBelegen(t, probe, drueben)
+	nachricht := eineBelegnachricht(urkunde, drueben)
+	sender := string(drueben.Kennung())
+
+	if _, fehler := post.Empfangen(context.Background(), sender, nachricht); !errors.Is(fehler, domain.ErrConflict) {
+		t.Fatalf("vor der Verbuchung kam %v", fehler)
+	}
+
+	// **Jetzt ist hier verbucht**, und die Gegenseite schickt noch einmal.
+	probe.stand = eigener
+
+	antwort, fehler := post.Empfangen(context.Background(), sender, nachricht)
+	if fehler != nil {
+		t.Fatalf("nach der Verbuchung: %v", fehler)
+	}
+
+	if antwort.Art != domain.ZustellungBekannt || len(probe.bekomen) != 1 {
+		t.Errorf("Zustellung %q, gegengezeichnet %dmal", antwort.Art, len(probe.bekomen))
+	}
+}
+
+// **Und solange hier nicht verbucht ist, sagt jeder Anlauf es** — der
+// Absender behält die Nachricht im Ausgang.
+func TestEinFruehererBelegBleibtAbgewiesenBisHierVerbuchtIst(t *testing.T) {
+	t.Parallel()
+
+	probe, urkunde, drueben := einGegenbelegpaar(t)
+	probe.stand = nil
+
+	post := einePostMitBelegen(t, probe, drueben)
+	nachricht := eineBelegnachricht(urkunde, drueben)
+	sender := string(drueben.Kennung())
+
+	for anlauf := range 2 {
+		if _, fehler := post.Empfangen(context.Background(), sender, nachricht); !errors.Is(fehler, domain.ErrConflict) {
+			t.Errorf("Anlauf %d: %v", anlauf+1, fehler)
+		}
+	}
+}

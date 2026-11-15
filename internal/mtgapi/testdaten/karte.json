@@ -1,0 +1,29 @@
+{
+  "cards": [
+    {
+      "name": "Blitzschlag",
+      "manaCost": "{R}",
+      "cmc": 1,
+      "colors": ["Red"],
+      "colorIdentity": ["R"],
+      "type": "Instant",
+      "types": ["Instant"],
+      "rarity": "Common",
+      "set": "PRB",
+      "setName": "Probeset",
+      "text": "Blitzschlag fügt einem Ziel 3 Schadenspunkte zu.",
+      "flavor": "Kurz und heiß.",
+      "artist": "Selbst gezeichnet",
+      "number": "141",
+      "layout": "normal",
+      "multiverseid": 999001,
+      "imageUrl": "https://example.invalid/blitz.png",
+      "printings": ["PRB"],
+      "legalities": [
+        { "format": "Commander", "legality": "Legal" },
+        { "format": "Vintage", "legality": "Restricted" }
+      ],
+      "id": "aaaabbbbccccddddeeeeffff0000111122223333"
+    }
+  ]
+}

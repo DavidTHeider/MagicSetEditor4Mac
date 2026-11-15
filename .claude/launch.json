@@ -1,0 +1,43 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "frontend",
+        "run",
+        "dev"
+      ],
+      "port": 5173
+    },
+    {
+      "name": "wails",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": [
+        "-c",
+        "./scripts/entwickeln.sh browser"
+      ],
+      "port": 34115
+    },
+    {
+      "name": "wails-messheim",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": [
+        "-c",
+        "HOME=/tmp/mse51heim ./scripts/entwickeln.sh browser"
+      ],
+      "port": 34115
+    },
+    {
+      "name": "wails-sichtpruefung",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": [
+        "-c",
+        "ORT=${TMPDIR:-/tmp}/mse-sicht; mkdir -p \"$ORT\"; security create-keychain -p leer \"$ORT/bund.keychain-db\" 2>/dev/null; security unlock-keychain -p leer \"$ORT/bund.keychain-db\"; MSE_BESTAND=\"$ORT/bestand.db\" MSE_SCHLUESSELBUND=\"$ORT/bund.keychain-db\" MSE_DIENST_GESPERRT=an ./scripts/entwickeln.sh browser"
+      ],
+      "port": 34115
+    }
+  ]
+}

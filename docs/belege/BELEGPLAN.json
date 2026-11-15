@@ -1,0 +1,91 @@
+{
+  "zweck": "Jede Freigabezusage mit ihrem Beleg, ihrer Frist und — wo es eine gibt — ihrer Schwelle. Geprüft mit `node scripts/belegplan.mjs` (B06, #2225); rot ist, was fehlt, überfällig ist, keine Herkunft oder kein Urteil nennt, aus einem anderen Stand gebaut wurde oder eine seiner Schwellen reißt.",
+  "eintraege": [
+    { "schritt": "Reichweite der nativen Bindungen (B01)", "beleg": "bindungsreichweite.md", "fristTage": 30, "wert": { "muster": "\\| schreibend \\| \\d+ \\| \\d+ \\| ([\\d,]+) %", "mindestens": 80 } },
+    { "schritt": "Budgets am Fenster (B02)", "beleg": "huellenprobe/budgets.md", "fristTage": 30, "werte": [
+      { "name": "Start kalt, Median", "muster": "\\| Start kalt \\(ms\\) \\| \\d+ \\| \\d+ \\| (\\d+) \\|", "hoechstens": 2000 },
+      { "name": "Start warm, Median", "muster": "\\| Start warm \\(ms\\) \\| \\d+ \\| \\d+ \\| (\\d+) \\|", "hoechstens": 2000 },
+      { "name": "Feld → Vorschaubild, Median", "muster": "\\| Feld → Vorschaubild \\(ms\\) \\| \\d+ \\| \\d+ \\| (\\d+) \\|", "hoechstens": 150 },
+      { "name": "Rollbild in Black, P95", "muster": "\\| Rollbild Black \\(ms\\) \\| \\d+ \\| \\d+ \\| \\d+ \\| (\\d+) \\|", "hoechstens": 50 }
+    ] },
+    { "schritt": "25 Seiten in sechs Zuständen (B03)", "beleg": "huellenprobe/zustaende.md", "fristTage": 30, "wert": { "muster": "(\\d+) Zellen — jede mit Urteil", "mindestens": 150 } },
+    { "schritt": "Zwei Stunden Dauerbetrieb (B04, PERF01)", "beleg": "huellenprobe/dauerbetrieb.md", "fristTage": 60, "werte": [
+      { "name": "Minuten ohne Absturz", "muster": "dieselbe Kennung nach (\\d+) Minuten", "mindestens": 120 },
+      {"name": "Fußabdruck nach 120 Minuten (MiB)", "muster": "\\| Fußabdruck nach 120 Minuten \\(MiB\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 1536}
+    ] },
+    { "schritt": "Zufällige Mutation (B05)", "beleg": "zufallsmutation.md", "fristTage": 60, "wert": { "muster": "Quote gefangen ÷ geeignet: ([\\d,]+) %", "mindestens": 80 } },
+    { "schritt": "Vertragsrundgang am Fenster", "beleg": "huellenprobe/vertrag.md", "fristTage": 30 },
+    { "schritt": "Gezielter Mutationslauf", "beleg": "mutationen.md", "fristTage": 60 },
+    { "schritt": "Fuzzkampagne", "beleg": "fuzzkampagne.md", "fristTage": 60 },
+    { "schritt": "Lastlauf", "beleg": "lastlauf.md", "fristTage": 60 },
+    { "schritt": "Leistungsvergleich mit MSE2", "beleg": "leistungsvergleich.md", "fristTage": 60 },
+    { "schritt": "Läufe gegen bezogene Pakete", "beleg": "fremdpakete.json", "fristTage": 30 },
+    { "schritt": "A02 — nach dem Zurückspielen benutzbar", "beleg": "huellenprobe/a02.md", "fristTage": 90 },
+    { "schritt": "A03 — Kontraste der Überlagerungen", "beleg": "huellenprobe/a03.md", "fristTage": 90, "wert": { "muster": "dunkel: die Befehlspalette — jeder Text hält seine Grenze \\(kleinstes ([\\d,]+) : 1\\)", "mindestens": 4.5 } },
+    { "schritt": "A04 — Zug und Abbruch am Tisch", "beleg": "huellenprobe/a04.md", "fristTage": 90 },
+    { "schritt": "OPS01 — Alter und Plan der Sicherung", "beleg": "huellenprobe/sicherung09.md", "fristTage": 90 },
+    { "schritt": "OPS03 — alles widerrufen am Fenster", "beleg": "huellenprobe/ops03.md", "fristTage": 90 },
+    { "schritt": "OPS03 — alles widerrufen unter launchd, im Gast", "beleg": "huellenprobe/ops03-27.0.1.md", "fristTage": 90 },
+    { "schritt": "#2398 — nach einer Panik im synchronen Ruf kommt der Wartende frei, und die Anwendung läuft weiter", "beleg": "huellenprobe/syncpanik09.md", "fristTage": 90 },
+    { "schritt": "#2412 — Haupt- und Nebenknopf der Rückfrage gleich groß", "beleg": "huellenprobe/rueckfrage09.md", "fristTage": 90 },
+    { "schritt": "#2428 — die Einführung bleibt nach dem Neuladen zu", "beleg": "huellenprobe/einfuehrungneu09.md", "fristTage": 90 },
+    { "schritt": "OPS02 — das Betriebsband am Fenster", "beleg": "huellenprobe/betriebsband09.md", "fristTage": 90, "werte": [
+      {"name": "Betriebsband über die Naht, p95 (ms)", "muster": "über die Naht: p50 [\\d.]+ ms, p95 ([\\d.]+) ms", "hoechstens": 20}
+    ] },
+    { "schritt": "OPS02 — ein Dienst, der endet, unter launchd, im Gast", "beleg": "huellenprobe/betriebsband09-27.0.1.md", "fristTage": 90 },
+    { "schritt": "SEC02 — zehn Neustarts unter launchd, eine Marke, im Gast", "beleg": "huellenprobe/sec02-27.0.1.md", "fristTage": 90 },
+    { "schritt": "PERF01: huellenprobe/budgets09.md", "beleg": "huellenprobe/budgets09.md", "fristTage": 30, "werte": [
+      {"name": "Start kalt (ms)", "muster": "\\| Start kalt \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 2000},
+      {"name": "Start warm (ms)", "muster": "\\| Start warm \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 2000},
+      {"name": "Set öffnen, 3.788 Karten (ms)", "muster": "\\| Set öffnen, 3\\.788 Karten \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 1000},
+      {"name": "Feld → Vorschaubild (ms)", "muster": "\\| Feld → Vorschaubild \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 300},
+      {"name": "Sammlung durchsuchen, 25.000 Zeilen (ms)", "muster": "\\| Sammlung durchsuchen, 25\\.000 Zeilen \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 500},
+      {"name": "Set ausgeben als Bilder, 60 Karten (ms)", "muster": "\\| Set ausgeben als Bilder, 60 Karten \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 60000},
+      {"name": "Druckbogen, 60 Karten (ms)", "muster": "\\| Druckbogen, 60 Karten \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 60000},
+      {"name": "Zurückspielen, 25.000 Zeilen (ms)", "muster": "\\| Zurückspielen, 25\\.000 Zeilen \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 60000},
+      {"name": "Fußabdruck nach jedem Weg (MiB)", "muster": "\\| Fußabdruck nach jedem Weg \\(MiB\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 1536},
+      {"name": "Bündel, logisch (MiB)", "muster": "\\| Bündel, logisch \\(MiB\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 500}
+    ] },
+    { "schritt": "PERF01: huellenprobe/leerlauf09.md", "beleg": "huellenprobe/leerlauf09.md", "fristTage": 30, "werte": [
+      {"name": "Leerlauf sichtbar, Anwendung (% CPU)", "muster": "\\| Leerlauf sichtbar, Anwendung \\(% CPU\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 1},
+      {"name": "Leerlauf sichtbar, Webinhalt (% CPU)", "muster": "\\| Leerlauf sichtbar, Webinhalt \\(% CPU\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 1},
+      {"name": "Leerlauf sichtbar, GPU (% CPU)", "muster": "\\| Leerlauf sichtbar, GPU \\(% CPU\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 1},
+      {"name": "Leerlauf sichtbar, Netz (% CPU)", "muster": "\\| Leerlauf sichtbar, Netz \\(% CPU\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 1},
+      {"name": "Leerlauf ausgeblendet, Anwendung (% CPU)", "muster": "\\| Leerlauf ausgeblendet, Anwendung \\(% CPU\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 1},
+      {"name": "Leerlauf ausgeblendet, Webinhalt (% CPU)", "muster": "\\| Leerlauf ausgeblendet, Webinhalt \\(% CPU\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 1},
+      {"name": "Leerlauf ausgeblendet, GPU (% CPU)", "muster": "\\| Leerlauf ausgeblendet, GPU \\(% CPU\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 1},
+      {"name": "Leerlauf ausgeblendet, Netz (% CPU)", "muster": "\\| Leerlauf ausgeblendet, Netz \\(% CPU\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 1},
+      {"name": "Leerlauf minimiert, Anwendung (% CPU)", "muster": "\\| Leerlauf minimiert, Anwendung \\(% CPU\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 1},
+      {"name": "Leerlauf minimiert, Webinhalt (% CPU)", "muster": "\\| Leerlauf minimiert, Webinhalt \\(% CPU\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 1},
+      {"name": "Leerlauf minimiert, GPU (% CPU)", "muster": "\\| Leerlauf minimiert, GPU \\(% CPU\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 1},
+      {"name": "Leerlauf minimiert, Netz (% CPU)", "muster": "\\| Leerlauf minimiert, Netz \\(% CPU\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 1}
+    ] },
+    { "schritt": "PERF01: dienstspeicher.md", "beleg": "dienstspeicher.md", "fristTage": 30, "werte": [
+      {"name": "Dienst nach Rendern und Ruhe, mse-rest (MiB)", "muster": "\\| Dienst nach Rendern und Ruhe, mse-rest \\(MiB\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 512},
+      {"name": "Dienst nach Rendern und Ruhe, mse-rest, mit GOMEMLIMIT (MiB)", "muster": "\\| Dienst nach Rendern und Ruhe, mse-rest, mit GOMEMLIMIT \\(MiB\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 512},
+      {"name": "Dienst nach Rendern und Ruhe, mse-mcp (MiB)", "muster": "\\| Dienst nach Rendern und Ruhe, mse-mcp \\(MiB\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 512},
+      {"name": "Dienst nach Rendern und Ruhe, mse-mcp, mit GOMEMLIMIT (MiB)", "muster": "\\| Dienst nach Rendern und Ruhe, mse-mcp, mit GOMEMLIMIT \\(MiB\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 512}
+    ] },
+    { "schritt": "PERF02: huellenprobe/kennzahlen09.md", "beleg": "huellenprobe/kennzahlen09.md", "fristTage": 30, "werte": [
+      {"name": "Kennzahl nach dem Start, kalt, 5 Karten (ms)", "muster": "\\| Kennzahl nach dem Start, kalt, 5 Karten \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 500},
+      {"name": "Kennzahl nach dem Start, warm, 5 Karten (ms)", "muster": "\\| Kennzahl nach dem Start, warm, 5 Karten \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 500},
+      {"name": "Kennzahl beim Aufruf der Startseite, 5 Karten (ms)", "muster": "\\| Kennzahl beim Aufruf der Startseite, 5 Karten \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 500},
+      {"name": "Kennzahl nach dem Start, kalt, 3.788 Karten (ms)", "muster": "\\| Kennzahl nach dem Start, kalt, 3\\.788 Karten \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 500},
+      {"name": "Kennzahl nach dem Start, warm, 3.788 Karten (ms)", "muster": "\\| Kennzahl nach dem Start, warm, 3\\.788 Karten \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 500},
+      {"name": "Kennzahl beim Aufruf der Startseite, 3.788 Karten (ms)", "muster": "\\| Kennzahl beim Aufruf der Startseite, 3\\.788 Karten \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 500},
+      {"name": "Kennzahl nach dem Start, kalt, 25.000 Karten in 50 Sets (ms)", "muster": "\\| Kennzahl nach dem Start, kalt, 25\\.000 Karten in 50 Sets \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 500},
+      {"name": "Kennzahl nach dem Start, warm, 25.000 Karten in 50 Sets (ms)", "muster": "\\| Kennzahl nach dem Start, warm, 25\\.000 Karten in 50 Sets \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 500},
+      {"name": "Kennzahl beim Aufruf der Startseite, 25.000 Karten in 50 Sets (ms)", "muster": "\\| Kennzahl beim Aufruf der Startseite, 25\\.000 Karten in 50 Sets \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 500},
+      {"name": "Hintergrundprüfung, 3.788 Karten (ms)", "muster": "\\| Hintergrundprüfung, 3\\.788 Karten \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 60000}
+    ] },
+    { "schritt": "#2532: huellenprobe/budgetswege09.md", "beleg": "huellenprobe/budgetswege09.md", "fristTage": 30, "werte": [
+      {"name": "Markttisch aufschlagen, 25.000 eigene Exemplare (ms)", "muster": "\\| Markttisch aufschlagen, 25\\.000 eigene Exemplare \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 1000},
+      {"name": "Anbieten bis zum neuen Stand (ms)", "muster": "\\| Anbieten bis zum neuen Stand \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 2000},
+      {"name": "Kennzahlleiste Set, 3.788 Karten (ms)", "muster": "\\| Kennzahlleiste Set, 3\\.788 Karten \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 500},
+      {"name": "Kennzahlleiste Sammlung, 25.000 Zeilen (ms)", "muster": "\\| Kennzahlleiste Sammlung, 25\\.000 Zeilen \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 500},
+      {"name": "Kennzahlleiste Deck (ms)", "muster": "\\| Kennzahlleiste Deck \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 500},
+      {"name": "Kennzahlleiste Pakete (ms)", "muster": "\\| Kennzahlleiste Pakete \\(ms\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| ([\\d.]+) \\| [\\d.]+ \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 500},
+      {"name": "Fußabdruck nach Markttisch, Handel und Leisten (MiB)", "muster": "\\| Fußabdruck nach Markttisch, Handel und Leisten \\(MiB\\) \\| \\d+ \\| [\\d.]+ \\| [\\d.]+ \\| (?:[\\d.]+|—) \\| ([\\d.]+) \\| [^|]+ \\| (?:gehalten|gerissen) \\|", "hoechstens": 1536}
+    ] }
+  ]
+}

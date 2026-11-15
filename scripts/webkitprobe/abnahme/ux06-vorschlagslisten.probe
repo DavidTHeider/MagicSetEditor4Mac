@@ -1,0 +1,35 @@
+# UX-06 (#1678) — WebKits eigene Vorschlagslisten im Sammlungsformular.
+#
+# Gegen den Servermodus mit einem Bestand, der Exemplare führt: das
+# Formular steht seit UXR-10 (#1918) in der Schublade hinter „+ Aufnehmen …",
+# die Währung unter „Weitere Angaben". WebKit ordnet selbst: Anfangstreffer
+# vor Treffern im Namen, Pfeil und Enter nehmen den ersten.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+3
+wartetext Aufnehmen …
+klicketext Aufnehmen …
+warte [role=dialog][aria-label="Ein Exemplar aufnehmen"]
+klicketext Weitere Angaben
+zeige [...document.querySelectorAll('[role=dialog] input[list]')].map(e => (e.labels && e.labels[0] ? e.labels[0].innerText.trim() : '?') + ' → ' + e.getAttribute('list') + ' mit ' + document.getElementById(e.getAttribute('list')).options.length + ' Vorschlägen')
+klicketext Sprache
+pruefe document.activeElement.getAttribute('list') !== null
+tippe p
+fenster sprache
+tippe h
+fenster sprache-ph
+taste down
+taste enter
+gleich document.activeElement.value => ph
+klicketext Währung
+tippe eu
+fenster waehrung
+taste down
+taste enter
+gleich document.activeElement.value => EUR
+pruefe !document.activeElement.matches('[aria-invalid=true]')
+abzug formular

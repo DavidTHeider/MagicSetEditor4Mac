@@ -1,0 +1,10 @@
+﻿mse version: 2.0.0
+game: probe
+short name: Wiederholung
+depends on:
+	package: probe.mse-game
+	version: 2026-08-08
+depends on:
+	package: probe-symbole.mse-symbol-font
+	version: 2026-01-01
+card width: 375

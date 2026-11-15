@@ -1,0 +1,76 @@
+# UX-14.AK-02 (#1686) — die Leiste oben, gesetzt über die Einstellungen, in WKWebView.
+#
+# *„Vertikale Navigation ist einklappbar; horizontale Anordnung ist ebenfalls
+# möglich und erhält dieselben Aktionen, Kürzel, Fokuspfade und
+# Aktivmarkierungen."* Gesetzt wird „Lage der Leiste: Oben" unter
+# *Einstellungen › Erscheinungsbild*; danach stehen die Einträge in einer
+# Zeile, ⌘3 wechselt wie vorher, die aufgeschlagene Seite trägt ihre
+# Markierung, Tab erreicht die Leiste als **einen** Halt, und → wandert.
+# **Am Ende wird zurückgesetzt** — die Drehbücher danach laufen auf demselben
+# Bestand.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+pruefe (window.__waehle = (text, wert) => { const s = [...document.querySelectorAll('select')].find((w) => w.checkVisibility() && w.labels && w.labels[0] && w.labels[0].textContent.includes(text)); if (s) { if (s.value !== wert) { s.value = wert; s.dispatchEvent(new Event('change', { bubbles: true })) } return true } const g = [...document.querySelectorAll('[role=radiogroup]')].find((r) => r.checkVisibility() && document.getElementById(r.getAttribute('aria-labelledby')).textContent.includes(text)); const f = g && [...g.querySelectorAll('input[type=radio]')].find((i) => i.value === wert); if (f && !f.checked) f.click(); return !!f }, window.__eintraege = () => [...document.querySelectorAll('nav[aria-label="Hauptnavigation"] button')], true)
+notiz Vorher: links, mit Knopf zum Einklappen
+gleich document.querySelector('[data-lage]').dataset.lage => senkrecht
+notiz „Lage der Leiste: Oben" — Einstellungen, Erscheinungsbild
+taste cmd+,
+wartetext Erscheinungsbild
+pruefe ([...document.querySelectorAll('main button')].find((b) => b.textContent.startsWith('Erscheinungsbild')).dataset.ziel = 'eb', true)
+klicke [data-ziel="eb"]
+# Seit UXR-19 (#1927) steht die Lage der Leiste im Abschnitt „Fenster und Leiste", eingeklappt.
+klicketext Fenster und Leiste
+bis [...document.querySelectorAll('select, [role=radiogroup]')].some((w) => w.checkVisibility() && (w.labels?.[0] ?? document.getElementById(w.getAttribute('aria-labelledby')))?.textContent.includes('Lage der Leiste'))
+bis (window.__waehle('Lage der Leiste', 'waagerecht'), document.querySelector('[data-lage]').dataset.lage === 'waagerecht')
+notiz Die sechs Arbeitsbereiche stehen in einer Zeile, von links nach rechts, und nichts ist einzuklappen
+pruefe (() => { const r = window.__eintraege().slice(0, 6).map((b) => b.getBoundingClientRect()); return r.every((x) => Math.round(x.top) === Math.round(r[0].top)) && r.every((x, i) => i === 0 || x.left > r[i - 1].left) })()
+pruefe !document.querySelector('button[aria-controls="seitenleiste"]')
+abzug leiste-oben
+notiz Kein Eintrag über dem Rand — bei 1.440 × 900 und bei 1.024 × 700, der kleinsten erklärten Größe
+pruefe window.__eintraege().every((b) => { const r = b.getBoundingClientRect(); return r.width > 0 && r.left >= 0 && r.right <= document.documentElement.clientWidth + 1 })
+zeige 'Zeile bei 1440: ' + Math.round(document.querySelector('[data-lage]').getBoundingClientRect().height) + ' Punkte hoch'
+groesse 1024 700
+pause 500
+pruefe window.__eintraege().every((b) => { const r = b.getBoundingClientRect(); return r.width > 0 && r.left >= 0 && r.right <= document.documentElement.clientWidth + 1 })
+zeige 'Zeile bei 1024: ' + Math.round(document.querySelector('[data-lage]').getBoundingClientRect().height) + ' Punkte hoch'
+abzug leiste-oben-1024
+groesse 1440 900
+pause 300
+notiz Dieselben Kürzel und dieselbe Markierung
+taste cmd+3
+wartetext Einlesen und ausgeben …
+gleich window.__eintraege().find((b) => b.getAttribute('aria-current') === 'page').innerText.replace(/\s+/g, ' ').trim() => ▤ Sammeln
+gleich window.__eintraege().find((b) => b.getAttribute('aria-current') === 'page').title => ⌘3
+gleich getComputedStyle(window.__eintraege().find((b) => b.getAttribute('aria-current') === 'page')).borderBottomWidth => 2px
+notiz Derselbe Fokusweg: die Leiste ist ein Halt, → wandert
+lade /
+warte nav
+pause 800
+taste escape
+pruefe (window.__eintraege = () => [...document.querySelectorAll('nav[aria-label="Hauptnavigation"] button')], window.__waehle = (text, wert) => { const s = [...document.querySelectorAll('select')].find((w) => w.checkVisibility() && w.labels && w.labels[0] && w.labels[0].textContent.includes(text)); if (s) { if (s.value !== wert) { s.value = wert; s.dispatchEvent(new Event('change', { bubbles: true })) } return true } const g = [...document.querySelectorAll('[role=radiogroup]')].find((r) => r.checkVisibility() && document.getElementById(r.getAttribute('aria-labelledby')).textContent.includes(text)); const f = g && [...g.querySelectorAll('input[type=radio]')].find((i) => i.value === wert); if (f && !f.checked) f.click(); return !!f }, true)
+taste tab
+gleich document.activeElement.textContent.trim() => Zum Inhalt springen
+taste tab
+gleich document.activeElement.textContent.trim() => Profil wechseln …
+taste tab
+pruefe window.__eintraege().includes(document.activeElement)
+pruefe (window.__erster = document.activeElement, true)
+taste right
+pruefe window.__eintraege().includes(document.activeElement) && document.activeElement !== window.__erster
+taste tab
+pruefe document.activeElement.textContent.includes('Befehlspalette öffnen') && document.activeElement.textContent.includes('⌘K')
+abzug leiste-oben-fokus
+notiz Zurücksetzen
+taste cmd+,
+wartetext Erscheinungsbild
+pruefe ([...document.querySelectorAll('main button')].find((b) => b.textContent.startsWith('Erscheinungsbild')).dataset.ziel = 'eb', true)
+klicke [data-ziel="eb"]
+# Seit UXR-19 (#1927) steht die Lage der Leiste im Abschnitt „Fenster und Leiste", eingeklappt.
+klicketext Fenster und Leiste
+bis [...document.querySelectorAll('select, [role=radiogroup]')].some((w) => w.checkVisibility() && (w.labels?.[0] ?? document.getElementById(w.getAttribute('aria-labelledby')))?.textContent.includes('Lage der Leiste'))
+bis (window.__waehle('Lage der Leiste', 'senkrecht'), document.querySelector('[data-lage]').dataset.lage === 'senkrecht')
+gleich JSON.stringify(window.__probeFehler || []) => []

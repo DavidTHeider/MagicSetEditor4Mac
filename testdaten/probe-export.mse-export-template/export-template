@@ -1,0 +1,23 @@
+mse version: 2.0.0
+short name: Probe-Export
+full name: Ausfuhr zur Probe
+version: 2026-08-15
+game: probe
+file type: *.txt|*.txt
+create directory: false
+option field:
+	# der Kopf über der Liste
+	type: text
+	name: kopfzeile
+	description: Was über der Liste steht
+	default: Meine Karten
+option field:
+	type: choice
+	name: nur namen
+	choice: nein
+	choice: ja
+	initial: nein
+script:
+	zeile := { card.name + " (" + card.farbe + ")" }
+	auswahl := { if options.nur_namen == "ja" then card.name else zeile() }
+	options.kopfzeile + "\n" + to_text(for each card in cards do auswahl() + "\n")

@@ -1,0 +1,65 @@
+# UX-04 (#1676) — das Einstellungszentrum: die Ebenen erklärt, die
+# Verwalterrechte beantwortet, und was nur Fachleute brauchen, eingeklappt.
+#
+# Gemessen vorher, am 2026-09-24: die Ebene stand am Feld und war nirgends
+# erklärt; die vier Einstellungen des Arbeitsplatzes nannten ihre Ebene roh
+# („arbeitsplatz"); und Fristen, Fernweg und Dienste standen offen zwischen
+# dem, was man zum Handeln braucht.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+,
+warte [role=tablist][aria-orientation=vertical]
+notiz Unter der Suche ein Satz über die Ebenen — mit der Tastatur erreichbar, die Erklärung hinter dem Hilfesymbol
+wartetext Jede Einstellung gilt auf einer Ebene
+klicketext Einstellung suchen
+taste tab
+zeige document.activeElement.tagName + ': ' + (document.activeElement.getAttribute('aria-label') || document.activeElement.innerText)
+bis !!document.querySelector('[role=tooltip]')
+zeige document.querySelector('[role=tooltip]').innerText.replace(/\s+/g, ' ')
+gleich document.querySelector('[role=tooltip]').innerText.includes('Verwalterrechte verlangt keine Einstellung') => true
+abzug ebenen
+taste escape
+notiz Die Einstellungen des Arbeitsplatzes nennen ihre Ebene beim Namen
+pruefe ([...document.querySelectorAll('[role=tab]')].find((t) => t.innerText.startsWith('Erscheinungsbild')).dataset.ziel = 'gruppe', true)
+klicke [data-ziel="gruppe"]
+# **In ihrer Falte** — »Spalten und Ansichten« seit UXR-19 (#1927); geöffnet
+# wird positiv (WK03, #2104).
+bis [...document.querySelectorAll('[role=tabpanel] button[aria-expanded]')].some((b) => b.checkVisibility() && b.innerText.trim() === 'Spalten und Ansichten')
+pruefe ([...document.querySelectorAll('[role=tabpanel] button[aria-expanded]')].find((b) => b.checkVisibility() && b.innerText.trim() === 'Spalten und Ansichten').dataset.ziel = 'spaltenfalte', true)
+klicke [data-ziel="spaltenfalte"]
+bis document.querySelector('[data-ziel="spaltenfalte"]').getAttribute('aria-expanded') === 'true'
+# **Seit #2368 (B-18) steht die Ebene nur an einer Abweichung** — als Marke,
+# der ganze Satz in ihrem Titel; an der Vorgabe steht keine. Was bleibt: unter
+# jedem Wert seine Zeile, und kein roher Schlüssel scheint durch.
+bis document.querySelectorAll('[role=tabpanel] [data-einstellungszeile]').length > 0
+gleich [...document.querySelectorAll('[role=tabpanel] [title]')].some((e) => /Ebene [a-zäöü]/.test(e.title)) || document.querySelector('[role=tabpanel]').innerText.includes('Ebene arbeitsplatz') => false
+notiz Unter Verbindungen: Identität, Gegenüber und Proxy offen, die Fristen im Kasten für Fachleute
+pruefe (document.querySelector('[data-ziel="gruppe"]').removeAttribute('data-ziel'), [...document.querySelectorAll('[role=tab]')].find((t) => t.innerText.startsWith('Verbindungen')).dataset.ziel = 'gruppe', true)
+klicke [data-ziel="gruppe"]
+wartetext Proxy für http
+gleich document.querySelector('[role=tabpanel]').innerText.includes('Frist: Verbindungsaufbau') => false
+pruefe ([...document.querySelectorAll('[role=tabpanel] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Was Fachleute hier sonst noch einstellen').dataset.ziel = 'kasten', true)
+gleich document.querySelector('[data-ziel="kasten"]').getAttribute('aria-expanded') => false
+abzug verbindungen-zu
+klicke [data-ziel="kasten"]
+wartetext Frist: Verbindungsaufbau
+gleich document.querySelector('[data-ziel="kasten"]').getAttribute('aria-expanded') => true
+abzug verbindungen-auf
+klicke [data-ziel="kasten"]
+bis !document.querySelector('[role=tabpanel]').innerText.includes('Frist: Verbindungsaufbau')
+notiz Die Suche öffnet den Kasten, wenn der Treffer darin liegt, und Enter springt auf das Feld
+klicketext Einstellung suchen
+tippe frist
+pause 400
+wartetext Frist: Verbindungsaufbau
+gleich [...document.querySelectorAll('[role=tabpanel] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Was Fachleute hier sonst noch einstellen').getAttribute('aria-expanded') => true
+taste enter
+pause 300
+zeige (document.activeElement.closest('[data-einstellung]') || {}).dataset ? document.activeElement.closest('[data-einstellung]').dataset.einstellung : 'kein Feld: ' + document.activeElement.tagName
+abzug suche-frist
+notiz Und die Seite hat keinen Fehler geworfen
+gleich JSON.stringify(window.__probeFehler || []) => []

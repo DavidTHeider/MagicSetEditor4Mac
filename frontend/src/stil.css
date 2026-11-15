@@ -1,0 +1,398 @@
+/* **Ebenen: Mantine über Preflight, unter den Utilities** — #2451, nach
+   mantine.dev, *Mantine styles*, *CSS layers* (abgerufen am 2026-10-16). */
+@layer theme, base, mantine, components, utilities;
+@import 'tailwindcss';
+
+/* **Mantines Stilblatt, in seiner Ebene** — UX-07 (#1679), [0125](../../docs/entscheidungen/0125-mantine-als-bauteilbibliothek.md):
+   die Gestaltungssprache hat das letzte Wort. Ungeschichtet, wie bis #2451,
+   schlug es jede Utility (`font: inherit` an Knöpfen und Feldern); den
+   Hergang erzählt der Nachtrag in 0125. */
+@import '@mantine/core/styles.layer.css';
+
+/* **Mantines Grundmerkmale folgen dem Erscheinungsbild** — A03; warum und
+   was nicht, steht in der Datei selbst. */
+@import './mantinemerkmale.css';
+
+/* **Die Merkmale, die nur dem Erscheinungsbild folgen** — Meldungen,
+   Quelltext, Zeichenfläche und was über einem Bild liegt (AP-2, #2359). */
+@import './erscheinungsmerkmale.css';
+
+/* **Die Gestaltungssprache** — Werkstück E von Phase 4.10
+   (#1325),
+   festgelegt in [0065](../../docs/entscheidungen/0065-wie-diese-anwendung-aussieht.md).
+
+   **Sie steht hier in Merkmalen und nicht in Klassen.** Wer eine Farbe oder
+   eine Schrift unmittelbar in ein Bauteil schreibt, hat die Sprache umgangen:
+   eine Änderung fände dann an zweihundert Stellen statt und an keiner davon
+   sichtbar.
+
+   **Und die Farbwerte sind seit dem 2026-09-03 Pergament und Tinte.** Sie
+   waren zunächst die von Tailwind — „erst steht die Sprache, dann ändert
+   sich, was sie sagt". Sie hat sich geändert; die 85 Kontrastzeilen sind
+   dafür neu erhoben worden. */
+@theme {
+  /* **Zwei Stimmen, beide vom System.** Die Anzeigeschrift trägt
+     Überschriften und Setnamen — dort, wo die Seite sagt, worum es geht; der
+     Fließtext bleibt die Systemschrift, weil §6 macOS-Eigenheiten bedienen
+     und nicht nachahmen will.
+
+     **Keine mitgelieferte Datei.** Eine Schrift, die auf jedem Zielrechner
+     ohnehin liegt, erfüllt die Zusage „ohne Netz" (§16, Regel 5) ohne ein
+     Binärartefakt im Baum. Das Ziel ist darwin/arm64 ab macOS 13 (§12);
+     `Georgia` und `serif` sind der Rückfall für die Ziele, die beschrieben
+     und nicht gebaut werden.
+
+     **Hier steht die Vorgabe, nicht die Wahl.** Seit Werkstück J zu
+     #1325
+     ist die Anzeigeschrift eine Einstellung; `setzeAnzeigeschrift` schreibt
+     dieselbe Variable ans Wurzelelement. Was hier steht, gilt, solange die
+     Einstellungen noch nicht geladen sind — und in jedem Test, der die
+     Anwendung nicht startet. */
+  --font-anzeige:
+    'Hoefler Text', 'Iowan Old Style', Charter, Georgia, 'Hiragino Mincho ProN',
+    'Songti SC', 'Songti TC', serif;
+
+  /* **Mit japanischem und chinesischem Rückfall** (UX-09.AK-02, #1681) —
+     die Reihenfolge begründet `erscheinungsbild.ts`. */
+  --font-text:
+    -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui,
+    'Helvetica Neue', Arial, 'Hiragino Sans', 'PingFang SC', 'PingFang TC',
+    sans-serif;
+
+  /* **Die sechs Farbmerkmale.** Ihre Werte stehen in `@layer base` unten, je
+     Erscheinungsbild — hier steht nur, dass es sie gibt, damit Tailwind
+     `bg-grund`, `text-leise` und ihresgleichen erzeugt. */
+  --color-grund: var(--mse-grund);
+  --color-flaeche: var(--mse-flaeche);
+  --color-text: var(--mse-text);
+  --color-leise: var(--mse-leise);
+  --color-kante: var(--mse-kante);
+  --color-marke: var(--mse-marke);
+
+  /* **Zwei Abstufungen für Zustände** — Werkstück J von Phase 4.10.
+     `hover` und die gewählte Zeile brauchen einen Ton zwischen Grund und
+     Fläche; ohne ihn schriebe jedes Bauteil wieder sein eigenes
+     `hover:bg-slate-100`. */
+  --color-betont: var(--mse-betont);
+  --color-ring: var(--mse-ring);
+
+  /* **Der Hauptknopf trägt die Marke und einen Text darauf.** Welcher davon
+     lesbar ist, hängt am Erscheinungsbild: auf Umbra steht Pergament, auf
+     Gold Tinte. Ein `text-white` an beiden wäre im Dunklen 1,8 : 1. */
+  --color-marketext: var(--mse-marketext);
+
+  /* **Und eine Farbe für das, was schiefging** — gefunden bei der
+     Sichtprüfung zu #1643.
+     `text-warnung` stand an **vierzig** Stellen, und es gab sie nicht:
+     Tailwind erzeugt für einen unbekannten Namen keine Regel, und jede
+     Fehlermeldung erbte damit die **Textfarbe**. Ein `role="alert"`, das
+     aussieht wie ein Absatz, ist keiner. **Seit AP-2 (#2359) heißt sie
+     `fehler`, und es gibt kein zweites Rot** (0065, Nachtrag 2026-10-16);
+     die Variable bleibt `--mse-warnung`, ein Schlüssel in gespeicherten
+     eigenen Farben (0134). */
+  --color-fehler: var(--mse-warnung);
+
+  /* **Zwei Dauern und eine Ebene** — Vermerk 0065, Festlegungen 10 und 11
+     (AP-1, #2337). Mehr gibt es nicht: `--dauer-kurz` für Farbe und
+     Deckkraft bei Hover und Druck, `--dauer-mittel` für das Erscheinen einer
+     Überlagerung; unter wenig Bewegung fallen beide auf 0 ms
+     (`barrierefreiheit.css`). `--shadow-ueberlage` erzeugt die Klasse
+     `shadow-ueberlage` — erlaubt nur an Palette, Popover, Menüliste und
+     Kontextmenü, und dort mit `contrast-more:shadow-none`. Zwei Wächter
+     halten es (`bewegung_test.go`, `schlagschatten_test.go`). */
+  --dauer-kurz: 120ms;
+  --dauer-mittel: 160ms;
+  --shadow-ueberlage: 0 6px 18px rgb(0 0 0 / 0.22);
+}
+
+/* **Das Erscheinungsbild ist wählbar** —
+   #245.
+
+   Tailwind 4 stellt `dark:` von Haus aus auf `prefers-color-scheme`. Das ist
+   die Systemeinstellung und damit **keine Wahl**: wer die Anwendung hell
+   benutzen will, während sein Rechner dunkel steht, konnte es nicht.
+
+   `@custom-variant` schaltet `dark:` auf ein Attribut am Wurzelelement um.
+   Drei Fälle, und der dritte ist der Grund für die Form:
+
+     * `data-erscheinungsbild="dunkel"` — gewählt dunkel,
+     * `data-erscheinungsbild="hell"`   — gewählt hell,
+     * kein Attribut                     — Systemeinstellung.
+
+   Der zweite Selektor greift nur, wenn **kein** Attribut dasteht; sonst
+   überstimmte das System eine getroffene Wahl, und `hell` bliebe auf einem
+   dunklen Rechner wirkungslos. */
+@custom-variant dark {
+  &:where(
+    [data-erscheinungsbild='dunkel'],
+    [data-erscheinungsbild='dunkel'] *
+  ) {
+    @slot;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &:where(
+      html:not([data-erscheinungsbild]),
+      html:not([data-erscheinungsbild]) *
+    ) {
+      @slot;
+    }
+  }
+}
+
+@layer base {
+  /* **Ein Optionsfeld trägt seinen Ring auch bei `:focus`** — gemessen am
+     Fenster (`uxrf2`, #2008): per Pfeiltaste fokussiert hat es in WKWebView
+     `:focus`, aber kein `:focus-visible`, und der Ring blieb aus (WCAG 2.4.7).
+     Ein Mausklick fokussiert dort kein Optionsfeld. */
+  input[type='radio']:focus {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  html {
+    /* **`color-scheme` folgt der Wahl mit.** Es färbt, was der Anwendung nicht
+       gehört: Rollbalken, Auswahllisten, das Fenster hinter dem Inhalt. Bliebe
+       es auf `light dark`, stünde bei gewählt-hell auf einem dunklen Rechner
+       ein dunkler Rollbalken neben weißem Grund. */
+    color-scheme: light dark;
+
+    /* **Die Schriftgröße hängt an einer Variablen** und nicht an einer Klasse.
+       `rem` bezieht sich auf die Wurzelschrift; wer sie hier setzt, skaliert
+       jede Angabe der Oberfläche mit — Abstände, Ränder und Fokusringe
+       eingeschlossen, denn Tailwind gibt sie in `rem` aus. Eine Klasse an
+       einem Container skalierte nur den Text darin und ließe die Abstände
+       stehen: genau der Umbruchschaden, den #245 ausschließt. */
+    font-size: var(--schriftgroesse, 100%);
+  }
+
+  html[data-erscheinungsbild='hell'] {
+    color-scheme: light;
+  }
+
+  html[data-erscheinungsbild='dunkel'] {
+    color-scheme: dark;
+  }
+
+  /* **Die Werte der Gestaltungssprache**, je Erscheinungsbild.
+
+     **Sie stehen als eigene Merkmale (`--mse-*`) und nicht unmittelbar auf
+     `--color-*`.** Tailwind 4 liest `@theme` **einmal** und erzeugt daraus
+     seine Klassen; ein Wert, der später je Erscheinungsbild wechselt, gehört
+     deshalb in eine zweite Ebene, auf die `@theme` zeigt.
+
+     **Pergament und Tinte, seit dem 2026-09-03** — Werkstück J von Phase
+     4.10 (#1325),
+     festgelegt in [0065](../../docs/entscheidungen/0065-wie-diese-anwendung-aussieht.md).
+     Hier standen bis dahin die Werte von Tailwinds `slate-*` — die Vorgabe,
+     die nie eine Entscheidung war.
+
+     **Jede Zahl ist gerechnet**: `text` auf `grund` gibt 13,81 hell und
+     15,07 dunkel, die Ränder 4,75 und 3,68 — über den 3 : 1, an denen
+     `slate-200/700` bei jedem Anlauf gescheitert ist (§3). Wer sie ändert,
+     misst sie neu; der Wächter über `docs/KONTRASTE.md` macht die Pipeline
+     sonst rot. */
+
+  /* **Die Faser des Pergaments** — Werkstück J von Phase 4.10
+     (#1325).
+
+     Eine Farbe allein macht kein Pergament: ein Blatt hat Korn, und ein altes
+     hat Flecken. Beides steht hier als **eine** Kachel, aus zwei Rauschfeldern
+     zusammengesetzt — das feine (`baseFrequency 0.9`) ist die Faser, das grobe
+     (`0.015`) die Alterung; `feComposite` mischt sie 70 zu 30.
+
+     **Die beiden SVG stehen als Datei daneben**, nicht als `data:`-URI hier —
+     dort ist Platz für den Satz, was die `feColorMatrix` rechnet und warum die
+     dunkle Kachel schwächer ist. Ein `data:`-URI wäre eine Zeile ohne Umbruch,
+     die niemand liest.
+
+     **Und sie stehen in einem `:root`**, nicht frei im `@layer`. Das ist der
+     Fehler des ersten Anlaufs, und er war teuer, weil er sich nicht als Fehler
+     zeigte: eine Eigenschaft ohne Selektor liest Tailwinds Parser als Selektor
+     mit Pseudo-Element, verwirft den **ganzen** Block — und die Anwendung
+     stand weiß da, ohne eine einzige Farbe. Gemessen am 2026-09-03 im
+     laufenden Fenster; `getComputedStyle` gab für `--mse-grund` die leere
+     Zeichenkette. Im Bau steht die Ursache als *Warnung*, nicht als Fehler.
+
+     **Gemessen, nicht geschätzt.** `node scripts/pergamentmass.mjs` legt die
+     Kachel über jede Grundfarbe und rechnet den Kontrast am ungünstigsten der
+     810.000 Bildpunkte; die Zahlen stehen in `docs/KONTRASTE.md`. Wer eine
+     Zahl in einem der beiden SVG ändert, misst neu. */
+  :root {
+    --mse-faser-hell: url('./pergament-hell.svg');
+    --mse-faser-dunkel: url('./pergament-dunkel.svg');
+  }
+
+  :root {
+    --mse-grund: #f2e8d5;
+    --mse-flaeche: #fdf9f0;
+    --mse-text: #241c14;
+    --mse-leise: #5c4a34;
+    --mse-kante: #786248;
+    --mse-marke: #6b4423;
+    --mse-betont: #e8dcc2;
+    --mse-ring: #6b4423;
+    --mse-marketext: #fdf9f0;
+    --mse-warnung: #8c2f16;
+    --mse-faser: var(--mse-faser-hell);
+
+    /* **Der Spieltisch** — Werkstück G3 von Phase 5.5
+       (#1460).
+
+       Drei Holztöne und drei Kartentöne. Sie stehen **hier** und nicht in
+       TypeScript, weil der Tisch sonst eine zweite Palette hätte — eine, die
+       den Schalter zwischen hell und dunkel nicht kennt und die kein
+       Kontrastwächter je sähe.
+
+       **Die Kante trägt die Zugänglichkeit.** Zwei Holztöne nebeneinander
+       halten keine 3:1; deshalb umrandet `--mse-tisch-kante` jede Fläche und
+       jede Karte, und sie hält 3:1 gegen **jeden** Untergrund, auf dem sie
+       liegt — zehn Paare, gemessen, in `docs/KONTRASTE.md`. */
+    --mse-tisch-grund: #d4bb94;
+    --mse-tisch-sitz: #dcc4a0;
+    --mse-tisch-eigen: #e4cfae;
+    --mse-tisch-kante: #786248;
+    --mse-tisch-ruecken: #fdf9f0;
+    --mse-tisch-wartet: #e0d0b0;
+    --mse-tisch-auswahl: #2d1206;
+
+    /* **Die Schrift auf dem Tisch** — Zonenname und Kartenzahl (PLAY-03.AK-06).
+
+       **Nicht `--mse-tisch-kante`**, obwohl sie dieselbe Aufgabe zu haben
+       scheint: die Kante steht im hellen Bild bei **3,11 : 1** gegen die
+       Tischplatte. Für eine Linie reicht das (WCAG 1.4.11 verlangt 3:1), für
+       **Text** nicht — 1.4.3 verlangt 4,5:1. Ein Zonenname in Kantenfarbe wäre
+       eine Beschriftung, die man erraten muss.
+
+       **Gleich dem Auswahlrahmen und doch ein eigenes Merkmal**: heute tragen
+       beide denselben Wert, weil beide das Dunkelste dieser Palette brauchen.
+       Sie sagen aber Verschiedenes — der eine markiert eine Wahl, der andere
+       benennt einen Ort —, und ein gemeinsames Merkmal zwänge sie, sich
+       gemeinsam zu ändern. */
+    --mse-tisch-schrift: #2d1206;
+  }
+
+  html[data-erscheinungsbild='dunkel'],
+  html:not([data-erscheinungsbild]) {
+    @media (prefers-color-scheme: dark) {
+      --mse-grund: #15120e;
+      --mse-flaeche: #231e17;
+      --mse-text: #f0e6d2;
+      --mse-leise: #b9a688;
+      --mse-kante: #9b8768;
+      --mse-marke: #d9a441;
+      --mse-betont: #2e2820;
+      --mse-ring: #d9a441;
+      --mse-marketext: #1a150f;
+      --mse-warnung: #f0a07a;
+      --mse-faser: var(--mse-faser-dunkel);
+
+      --mse-tisch-grund: #221b13;
+      --mse-tisch-sitz: #2a2218;
+      --mse-tisch-eigen: #332a1e;
+      --mse-tisch-kante: #9b8768;
+      --mse-tisch-ruecken: #231e17;
+      --mse-tisch-wartet: #3d3226;
+      --mse-tisch-auswahl: #fbf0dc;
+      --mse-tisch-schrift: #fbf0dc;
+    }
+  }
+
+  /* **Und der Tisch gehört dazu** — bis zur Abnahme von 0.7.0 fehlten
+     diesem Block die acht Merkmale darunter: auf einem hellen System bekam
+     ein „dunkel" gewählter Tisch den dunklen Holzgrund aus dem Tischbild,
+     aber Schrift, Kante, Auswahl und Rücken des hellen Satzes. Der
+     Zonenname stand bei 1,03 : 1. `dunkelgewaehlt.test.ts` hält beide
+     Blöcke gleich. */
+  html[data-erscheinungsbild='dunkel'] {
+    --mse-grund: #15120e;
+    --mse-flaeche: #231e17;
+    --mse-text: #f0e6d2;
+    --mse-leise: #b9a688;
+    --mse-kante: #9b8768;
+    --mse-marke: #d9a441;
+    --mse-betont: #2e2820;
+    --mse-ring: #d9a441;
+    --mse-marketext: #1a150f;
+    --mse-warnung: #f0a07a;
+    --mse-faser: var(--mse-faser-dunkel);
+
+    --mse-tisch-grund: #221b13;
+    --mse-tisch-sitz: #2a2218;
+    --mse-tisch-eigen: #332a1e;
+    --mse-tisch-kante: #9b8768;
+    --mse-tisch-ruecken: #231e17;
+    --mse-tisch-wartet: #3d3226;
+    --mse-tisch-auswahl: #fbf0dc;
+    --mse-tisch-schrift: #fbf0dc;
+  }
+
+  /* **Wo die Faser liegt: auf Grund und Fläche, sonst nirgends.**
+
+     Tailwind erzeugt `.bg-grund` und `.bg-flaeche` als Farbklassen; diese
+     Regel hängt ein `background-image` daran. Beides trifft sich, weil es
+     zwei verschiedene Eigenschaften sind — die Farbe bleibt, wo sie war.
+
+     **Nicht an `body` allein.** Die Anwendung setzt ihren Grund auf einem
+     Element im Baum, und eine Textur, die nur ganz unten liegt, sähe man
+     nirgends. Nicht an einer Utility für alles: eine Kartenvorschau trägt
+     **keine** Faser — sie zeigt, was gedruckt würde.
+
+     **`prefers-contrast: more` schaltet sie ab.** Wer im System mehr Kontrast
+     verlangt, hat einen Grund; eine Textur, die um ein Zehntel abdunkelt,
+     arbeitet dagegen. */
+  /* **Die Farbe eines Platzhalters wird gesetzt und nicht geerbt** —
+     Werkstück N8 von Phase 5.4
+     (#1569).
+
+     # Was gemessen war
+
+     Ohne diese Regel nimmt der Browser eine **halbdurchsichtige Ableitung**
+     der Textfarbe. Gemessen am 2026-09-14 über einen Canvas in der laufenden
+     Anwendung: **3,25 : 1** an der Einstellungssuche, **3,12 : 1** am
+     Adressfeld eines Kontakts. WCAG 2.2 AA verlangt **4,5 : 1** für
+     gewöhnlichen Text, und ein Platzhalter ist Text, den jemand liest, um zu
+     wissen, was in das Feld gehört.
+
+     # Warum `--color-leise` und keine eigene Farbe
+
+     **Weil sie schon gemessen ist**: 5,84 bis 6,76 : 1 auf jedem der drei
+     Gründe, in beiden Erscheinungsbildern (`docs/KONTRASTE.md`). Eine eigene
+     Farbe wäre eine siebte Zeile dort und eine mehr, die auseinanderläuft.
+
+     # Und warum `opacity: 1` danebensteht
+
+     **Weil Firefox einem Platzhalter von sich aus eine Deckkraft unter eins
+     gibt.** Ohne diese Zeile wäre die gesetzte Farbe nicht die wirksame, und
+     die Messung oben ginge an der Wirklichkeit vorbei — genau die Gestalt,
+     vor der §10 warnt.
+
+     # Was ein Wächter davon nicht sieht
+
+     **`internal/werkzeuge/kontraste_test.go` liest Vordergrundfarben aus dem
+     Quelltext der Bauteile** — `text-leise` und ihresgleichen. Eine Regel in
+     dieser Datei steht dort nicht, und sie stand vorher auch nicht: die alte
+     Farbe war eine **Browservorgabe** und in keiner Datei zu finden. Genau
+     deshalb ist der Befund erst in der Sichtprüfung aufgefallen. */
+  ::placeholder {
+    color: var(--color-leise);
+    opacity: 1;
+  }
+
+  .bg-grund {
+    background-image: var(--mse-faser);
+  }
+
+  .bg-flaeche {
+    background-image: var(--mse-faser);
+  }
+
+  /* **Die Anzeigeschrift steht an den Überschriften** — und nur dort
+     ([0065](../../docs/entscheidungen/0065-wie-diese-anwendung-aussieht.md),
+     Festlegung 6). Sie zeigt, worum es auf einer Seite geht; der Text, der
+     erklärt, bleibt die Systemschrift. */
+  h1,
+  h2 {
+    font-family: var(--font-anzeige);
+  }
+}

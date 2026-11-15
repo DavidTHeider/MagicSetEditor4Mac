@@ -1,0 +1,27 @@
+# UX-06 und UX-10 (#1678, #1682) — was ein Vorleser an denselben Feldern hört.
+#
+# Über den Motor wk1: WebCores Zugänglichkeitsbaum im eigenen Prozess.
+# **Was er nicht zeigt**: ob VoiceOver die Fehlermeldung vorliest — sie hängt
+# per aria-describedby am Feld, und diese Zuordnung liegt in WKWebView im
+# Web-Prozess, den WebKit 1 nicht hat.
+motor wk1
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+fokus
+taste escape
+fokus
+taste cmd+3
+wartetext Aufnehmen …
+klicketext Aufnehmen …
+warte [role=dialog][aria-label="Ein Exemplar aufnehmen"]
+klicketext Sprache
+fokus
+klicketext Weitere Angaben
+klicketext Währung
+fokus
+tippe €
+taste tab
+klicketext Währung
+fokus

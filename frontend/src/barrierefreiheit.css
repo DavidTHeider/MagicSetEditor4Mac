@@ -1,0 +1,171 @@
+/* **Was die Barrierefreiheit am Aussehen ändert** — Kontrast und Bewegung.
+
+   **Aus `stil.css` herausgezogen**, als der hohe Kontrast seine Farben bekam
+   (UX-10.AK-03, #1682)
+   und die Datei über die Zeilengrenze ging (§2). Der Schnitt folgt der
+   Frage: dort steht, wie die Anwendung aussieht, hier, was eine Einstellung
+   — der Anwendung oder des Systems — davon zurücknimmt.
+
+   **Eingebunden nach `stil.css`** (`main.tsx`) und in derselben Ebene
+   `base`: die Regeln hier müssen nach den Farbwerten je Erscheinungsbild
+   stehen, denn bei gleicher Spezifität gewinnt, was später kommt — und
+   Kaskadenebenen gelten über die Grenzen einer Datei hinweg. */
+@layer base {
+  @media (prefers-contrast: more) {
+    .bg-grund,
+    .bg-flaeche {
+      background-image: none;
+    }
+  }
+
+  /* **Und wer sie in der Anwendung abschaltet, bekommt dasselbe** —
+     Werkstück 8 von Phase 4.12
+     (#1351),
+     Punkt 11.
+
+     **Die Übersteuerung geht nur in eine Richtung**: sie schaltet zu, nie ab.
+     Ein `[data-kontrast='niedrig']` gibt es nicht — wer im System mehr
+     Kontrast verlangt, hat einen Grund, und eine Anwendung, die das aufhebt,
+     arbeitet gegen ihn. */
+  [data-kontrast='hoch'] .bg-grund,
+  [data-kontrast='hoch'] .bg-flaeche {
+    background-image: none;
+  }
+
+  /* **Hoher Kontrast hebt die Farben und nicht nur den Grund** — UX-10.AK-03
+     (#1682).
+
+     Bis zum 2026-09-25 nahm „Hoher Kontrast" nur die Faser weg, und die
+     Farben blieben, wie sie waren: gut für AA, aber vier knapp unter 7 : 1 —
+     im hellen Bild `leise` auf dem Grund (6,96), `marke` (6,98) und `warnung`
+     (6,84), im dunklen `leise` auf der Fläche (6,99). Wer mehr Kontrast
+     verlangte, bekam fast denselben.
+
+     **Jetzt hält jeder Text in den Merkmalen 7 : 1** (WCAG 1.4.6) — **die
+     farbigen Meldungen nicht**: Tailwinds Rot, Bernstein und Smaragd folgen
+     dem Erscheinungsbild und nicht dieser Regel, und im hellen Bild liegen
+     sie auf Grund, Fläche und betonter Fläche von Pergament zwischen 5,21
+     (Bernstein auf der betonten Fläche) und 7,95 : 1 — gerechnet mit
+     `kontrast.ts`, nicht am Element gemessen (Zweitblick über Phase 6.3, M7;
+     die erste Spanne „5,8 bis 6,9" war übernommen, Nachlauf N14). Gemessen
+     im WKWebView
+     (`ux10-darstellung`) und eingetragen in `docs/KONTRASTE.md`: `leise` und
+     `kante` werden Tinte, und im hellen Bild werden `marke` und `warnung`
+     dunkler. **Über `var(--mse-text)` und nicht über einen zweiten Wert**:
+     die Tinte ist je Erscheinungsbild schon gesetzt, und eine Kopie liefe
+     auseinander.
+
+     **`html:root` für das System** und nicht `:root`: gleich spezifisch wie
+     die Regeln des dunklen Bildes und später, sonst gewönne dort das
+     dunkle `leise`. */
+  html[data-kontrast='hoch'] {
+    --mse-leise: var(--mse-text);
+    --mse-kante: var(--mse-text);
+  }
+
+  html[data-kontrast='hoch']:not([data-erscheinungsbild='dunkel']) {
+    --mse-marke: #4e2f16;
+    --mse-ring: #4e2f16;
+    --mse-warnung: #6e2410;
+  }
+
+  @media (prefers-contrast: more) {
+    html:root {
+      --mse-leise: var(--mse-text);
+      --mse-kante: var(--mse-text);
+    }
+
+    html:root:not([data-erscheinungsbild='dunkel']) {
+      --mse-marke: #4e2f16;
+      --mse-ring: #4e2f16;
+      --mse-warnung: #6e2410;
+    }
+  }
+
+  /* **Folgt das Bild dem System und ist das System dunkel**, gelten die
+     dunklen Werte — die halten 7 : 1 schon. Die Regeln darüber griffen sonst
+     auch hier, weil kein Attribut `dunkel` sagt. */
+  @media (prefers-color-scheme: dark) {
+    html[data-kontrast='hoch']:not([data-erscheinungsbild]) {
+      --mse-marke: #d9a441;
+      --mse-ring: #d9a441;
+      --mse-warnung: #f0a07a;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) and (prefers-contrast: more) {
+    html:root:not([data-erscheinungsbild]) {
+      --mse-marke: #d9a441;
+      --mse-ring: #d9a441;
+      --mse-warnung: #f0a07a;
+    }
+  }
+
+  /* **Und keine Bewegung, wo jemand keine will.** WCAG 2.3.3 und Festlegung 5
+     des Vermerks: eine Bewegung darf einen Zustandswechsel zeigen, aber nicht
+     gegen die Systemeinstellung. */
+  @media (prefers-reduced-motion: reduce) {
+    /* **Und die zwei Dauern aus Festlegung 10 sind 0 ms** (AP-1, #2337) —
+       nicht 0,01: wer sie liest, rechnet mit ihnen. */
+    :root {
+      --dauer-kurz: 0ms;
+      --dauer-mittel: 0ms;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    /* **Und ein gedrückter Knopf sinkt nicht** — eine Dauer von null ist
+       keine ausbleibende Bewegung (Zweitblick über Phase 6 von 0.9.0,
+       Befund 6): `active:translate-y-px` senkte ihn weiter um einen Punkt.
+       **Nur der Knopf**, über die Klasse aus `knopfklassen.ts`: hier stand
+       `*:active`, und das nahm auch den Griffen des Zuschnitts ihre Lage
+       auf der Ecke (Nachlauf, R4). */
+    [class~='enabled:not-aria-disabled:active:translate-y-px']:active {
+      translate: none !important;
+    }
+  }
+
+  /* **Und wer sie in der Anwendung abschaltet, bekommt dasselbe** (#1351,
+     Punkt 11) — dieselbe Regel, ein anderer Auslöser. Auch hier nur die eine
+     Richtung: es gibt kein `[data-bewegung='voll']`. */
+  [data-bewegung='reduziert'] {
+    --dauer-kurz: 0ms;
+    --dauer-mittel: 0ms;
+  }
+
+  [data-bewegung='reduziert'] *,
+  [data-bewegung='reduziert'] *::before,
+  [data-bewegung='reduziert'] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-bewegung='reduziert']
+    [class~='enabled:not-aria-disabled:active:translate-y-px']:active {
+    translate: none !important;
+  }
+
+  /* **Der Fokus verschwindet nicht hinter der Fußleiste der Ausgabe** —
+     WCAG 2.2, 2.4.11 *Focus Not Obscured (Minimum)*; AP-10
+     (#2367).
+
+     **Gemessen, nicht vorsorglich**: am 2026-10-17 lagen bei 1.024 × 700
+     „Namensvorlage“ und „Format“ der Bildausgabe nach ⇥ ganz hinter der
+     Leiste, hell wie dunkel (`ap10ausgabe09`). Das Rollen zum Fokus hält eine
+     `sticky`-Leiste nicht für verdeckend; der Rand unten sagt es ihm. Gerollt
+     wird das Dokument — `main` hat kein `overflow` —, also steht er an `html`,
+     und nur, solange eine feste Leiste **zu sehen** ist: die Marke setzt
+     `Ausgabefuss` in einem Effekt, und `Activity` räumt ihn bei einer
+     verborgenen Seite ab. Sechs `rem` tragen die Leiste mit Knopf und
+     Abstand. */
+  html[data-ausgabeleiste='fest'] {
+    scroll-padding-bottom: 6rem;
+  }
+}

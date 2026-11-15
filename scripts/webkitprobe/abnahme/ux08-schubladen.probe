@@ -1,0 +1,43 @@
+# UX-08 (#1680) — die Schubladen des Sets in WKWebView.
+#
+# **In WebKit fokussiert ein Klick keinen Knopf** — die Schublade muss ihren
+# Auslöser deshalb selbst kennen, um den Fokus zurückzugeben. Geprüft mit
+# einem echten Klick und mit der Tastatur; Escape schließt das Innerste.
+#
+# **Dass die Fläche darunter nicht erreichbar ist, prüft dieses Drehbuch
+# nicht** — hier stand es, ohne einen Schritt dazu (G2 aus dem Zweitblick
+# über Phase 6.3). Dreißig Mal Tab in der Schublade und den Punkt neben ihr
+# fährt die Hüllenprobe `phase611` am nativen Fenster.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+2
+wartetext Werkstatt-Testkarten
+klicketext Werkstatt-Testkarten
+wartetext Wie viel du siehst
+notiz Mit der Maus: Klick auf »Eigenschaften«
+klicketext Eigenschaften
+warte [role=dialog]
+pruefe [...document.querySelectorAll('[role=dialog]')].find((e) => e.getClientRects().length > 0).contains(document.activeElement)
+zeige document.activeElement.getAttribute('role') + ': ' + document.activeElement.innerText.replace(/\s+/g, ' ').slice(0, 40)
+abzug schublade-eigenschaften
+taste tab
+taste tab
+taste tab
+pruefe [...document.querySelectorAll('[role=dialog]')].find((e) => e.getClientRects().length > 0).contains(document.activeElement)
+taste escape
+pruefe ![...document.querySelectorAll('[role=dialog]')].some((e) => e.getClientRects().length > 0)
+gleich document.activeElement.innerText.trim() => Eigenschaften
+notiz Mit der Tastatur: Enter auf »Werkzeuge«
+taste tab
+gleich document.activeElement.innerText.trim() => Werkzeuge
+taste enter
+warte [role=dialog]
+pruefe [...document.querySelectorAll('[role=dialog]')].find((e) => e.getClientRects().length > 0).contains(document.activeElement)
+abzug schublade-werkzeuge
+taste escape
+pruefe ![...document.querySelectorAll('[role=dialog]')].some((e) => e.getClientRects().length > 0)
+gleich document.activeElement.innerText.trim() => Werkzeuge

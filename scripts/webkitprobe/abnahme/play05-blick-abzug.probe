@@ -1,0 +1,113 @@
+# PLAY-05 (#1713) — Blick und Tischbild am echten Tisch in WKWebView.
+#
+# AK-01 und AK-05: „Auf die Auswahl" und „Auf meinen Sitz" sind unmittelbar
+# erreichbar und tun, was sie sagen. Gemessen an den Knöpfen über der
+# Leinwand: sie folgen der Kamera, und eine Karte, auf die gezoomt wird, wird
+# größer. AK-03: das Tischbild hat eine Vorschau für sichtbaren Bereich,
+# ganzen Tisch und eine Zone, mit Auflösung und Seitenformat; eine Auflösung
+# außerhalb der Grenzen wird am Feld abgewiesen (AK-04).
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+4
+wartetext Partie anfangen
+klicketext Partie anfangen
+wartetext Weiterspielen
+klicketext Weiterspielen
+klicketext Weiterspielen als Ada
+warte canvas
+pause 1500
+# **Positiv, nicht verneint** — WK01 (#2102): diese Probe handelt später am
+# Tisch, und der nimmt bis zum Ende des Beginns nur ihn an (CR 103.8).
+notiz Vorbedingung: der Beginn ist vorbei — »Passen« steht für Ada offen
+bis [...document.querySelectorAll('button')].some((b) => b.checkVisibility() && b.innerText.trim() === 'Passen' && !b.disabled)
+notiz Die Steuerung nennt beide Ziele als Knöpfe
+pruefe [...document.querySelectorAll('button')].some((b) => (b.getAttribute('aria-label') || b.textContent).trim() === 'Auf meinen Sitz')
+pruefe [...document.querySelectorAll('button')].some((b) => (b.getAttribute('aria-label') || b.textContent).trim() === 'Auf die Auswahl')
+notiz Auf meinen Sitz — Adas Seite füllt den Blick, Bos rückt hinaus
+# Die Sitzfläche ist so breit wie der Tisch (`kamerazielen.ts`: 1200 × 300),
+# der Maßstab bleibt deshalb der des Einpassens; was sich ändert, ist die
+# Lage. Gemessen **relativ zur Leinwand** und bei jedem Blick neu — der Klick
+# scrollt die Seite, und ein festgehaltenes Rechteck mäße das Scrollen mit.
+pruefe (window.__oben = () => { const f = document.querySelector('[role=application]').getBoundingClientRect(); const b = [...document.querySelectorAll('[role=application] li button')].map((x) => x.getBoundingClientRect().top - f.top); return { hoch: Math.min(...b), tief: Math.max(...b), hoehe: f.height } }, true)
+zeige 'vorher ' + JSON.stringify(window.__oben())
+pruefe window.__oben().hoch >= 0
+pruefe ([...document.querySelectorAll('button')].find((b) => (b.getAttribute('aria-label') || b.textContent).trim() === 'Auf meinen Sitz').dataset.ziel = 'sitz', true)
+klicke [data-ziel="sitz"]
+pause 800
+zeige 'nachher ' + JSON.stringify(window.__oben())
+pruefe window.__oben().hoch < 0
+pruefe window.__oben().tief < window.__oben().hoehe
+abzug blick-sitz
+notiz Alles zeigen, dann eine Karte wählen und auf die Auswahl
+klicketext Alles zeigen
+pause 800
+pruefe (() => { const b = [...document.querySelectorAll('[role=application] li button')].filter((x) => (x.getAttribute('aria-label') || x.textContent).includes('Bibliothek')); const unten = b.reduce((a, c) => (c.getBoundingClientRect().top > a.getBoundingClientRect().top ? c : a)); unten.dataset.ziel = 'karte'; window.__kartevorher = unten.getBoundingClientRect().width; return true })()
+klicke [data-ziel="karte"]
+wartetext Mit dieser Karte
+pruefe ([...document.querySelectorAll('button')].find((b) => (b.getAttribute('aria-label') || b.textContent).trim() === 'Auf die Auswahl').dataset.ziel = 'auswahl', true)
+klicke [data-ziel="auswahl"]
+pause 800
+zeige 'Karte vorher ' + Math.round(window.__kartevorher) + ', nachher ' + Math.round(document.querySelector('[data-ziel="karte"]').getBoundingClientRect().width) + ' Punkte'
+pruefe document.querySelector('[data-ziel="karte"]').getBoundingClientRect().width > window.__kartevorher * 1.5
+abzug blick-auswahl
+notiz Das Tischbild — Vorschau für den ganzen Tisch
+klicketext Alles zeigen
+pause 500
+klicketext Tischbild ausgeben
+wartetext Vorschau erzeugen
+pruefe (window.__waehle = (beschriftung, wert) => { const f = [...document.querySelectorAll('label')].find((l) => l.textContent.startsWith(beschriftung)).querySelector('select'); Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype, 'value').set.call(f, wert); f.dispatchEvent(new Event('change', { bubbles: true })); return true }, window.__vorschau = () => { const i = document.querySelector('img[alt="Vorschau des Tischbilds"]'); return i && i.naturalWidth > 0 ? i.naturalWidth + ' × ' + i.naturalHeight : '' }, true)
+zeige [...[...document.querySelectorAll('label')].find((l) => l.textContent.startsWith('Ausschnitt')).querySelectorAll('option')].map((o) => o.textContent).join(' | ')
+zeige 'Auflösungen: ' + [...[...document.querySelectorAll('label')].find((l) => l.textContent.startsWith('Auflösung')).querySelectorAll('option')].map((o) => o.textContent).join(', ')
+pruefe window.__waehle('Ausschnitt', 'tisch')
+klicketext Vorschau erzeugen
+bis window.__vorschau() !== ''
+zeige 'ganzer Tisch: ' + window.__vorschau() + ' Bildpunkte'
+pruefe (window.__ganz = window.__vorschau(), true)
+pruefe [...document.querySelectorAll('select')].some((s) => [...s.options].some((o) => o.textContent === 'A4') && [...s.options].some((o) => o.textContent === 'Letter'))
+abzug abzug-tisch
+notiz Eine Zone — die Wahl der Zone erscheint, und die Vorschau wird kleiner
+pruefe window.__waehle('Ausschnitt', 'zone')
+wartetext Welche Zone
+klicketext Vorschau erzeugen
+bis window.__vorschau() !== '' && window.__vorschau() !== window.__ganz
+zeige 'eine Zone: ' + window.__vorschau() + ' Bildpunkte'
+pruefe (() => { const [b, h] = window.__vorschau().split(' × ').map(Number); const [gb, gh] = window.__ganz.split(' × ').map(Number); return b * h < gb * gh })()
+abzug abzug-zone
+notiz Der sichtbare Bereich — nach „Alles zeigen" ist er der ganze Tisch
+pruefe (window.__zone = window.__vorschau(), window.__waehle('Ausschnitt', 'sichtbar'))
+klicketext Vorschau erzeugen
+bis window.__vorschau() !== window.__zone
+zeige 'sichtbarer Bereich: ' + window.__vorschau() + ' Bildpunkte'
+notiz Die Sicht wechselt bei offener Vorschau — Adas Tischbild verschwindet, und sichern lässt es sich nicht mehr
+# Befund 1 des Zweitblicks über Phase 6.9: die Vorschau hing am Bauteil und
+# nicht an der Sicht; wer zur Zuschauersicht wechselte, sah und sicherte
+# weiter Adas Hand (AK-02).
+pruefe (window.__aufschrift = (b) => [...b.childNodes].filter((n) => !(n.nodeType === 1 && n.getAttribute('aria-hidden') === 'true')).map((n) => n.textContent).join('').trim(), true)
+pruefe [...document.querySelectorAll('button')].some((b) => window.__aufschrift(b) === 'Als PDF sichern')
+pruefe window.__waehle('Sicht für', '')
+bis window.__vorschau() === ''
+pruefe ![...document.querySelectorAll('button')].some((b) => ['Bild sichern', 'Als PDF sichern'].includes(window.__aufschrift(b)))
+abzug abzug-sichtwechsel
+notiz Und in der Zuschauersicht entsteht eine eigene Vorschau
+# **Der Tisch ist beim Wechsel neu aufgebaut** (Nachlauf über Phase 6.9):
+# während die Sicht lädt, steht vom alten Sitz nichts da, die Ausgabe ist
+# danach wieder zugeklappt, und der Maler braucht einen Augenblick — wer
+# vorher klickt, liest „wird gerade aufgebaut".
+wartetext Tischbild ausgeben
+warte canvas
+pause 1500
+# **Und die Kamera beginnt neu** — wie am Anfang dieser Probe erst „Alles
+# zeigen", sonst ist der sichtbare Bereich bei 150 dpi zu groß (und das Feld
+# sagt es).
+klicketext Alles zeigen
+pause 800
+klicketext Tischbild ausgeben
+wartetext Vorschau erzeugen
+klicketext Vorschau erzeugen
+bis window.__vorschau() !== ''
+zeige 'Zuschauersicht: ' + window.__vorschau() + ' Bildpunkte'
+gleich JSON.stringify(window.__probeFehler || []) => []

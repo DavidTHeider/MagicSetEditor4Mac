@@ -1,0 +1,365 @@
+# UX-15 (#1771) — jede registrierte Seite am laufenden Fenster: wie lang sie
+# ist und was man beim Öffnen sieht. **Gemessen, nicht aus dem Quelltext**:
+# das Issue verlangt es so (AGENTS.md §3), und der Wächter über die 140
+# Zeichen sieht nur Text.
+#
+# Je Seite: über die Befehlspalette geöffnet, dann die Überschrift, die Höhe
+# des Inhalts bei 1.440 × 900 und der Anteil, der ohne Rollen zu sehen ist,
+# dazu ein Abzug. Die Seiten eines Sets erst ohne und dann mit offenem Set.
+# **Ob der sichtbare Satz der richtige ist**, beurteilt ein Mensch am Abzug —
+# das Ergebnis steht je Seite in `docs/FLAECHENTEXTE.md`.
+#
+# Gemessen vorher, am 2026-09-24 mit dem echten Paketbestand: die
+# Vorlagenwerkstatt 60.317 Punkte hoch (der Baum mit 536 Paketen trug die
+# Seite), die Startseite 24.827 (536 Hinweise), und der Kartenarbeitsplatz
+# 1.045 Punkte breit — unter der Grenze von 1.072 klappte der Navigator ein,
+# und die Kartenliste fehlte bei 1.440 × 900.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+pause 500
+
+notiz Start
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Start').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-01
+notiz Die Startseite zeigt fünf Hinweise und den Rest auf Wunsch
+pruefe (() => { const b = document.querySelector('section[aria-label="Was Aufmerksamkeit braucht"]'); if (!b) return true; const knoepfe = b.querySelectorAll('ul > li > button').length; return knoepfe <= 5 })()
+
+notiz Sets
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Sets').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-02
+
+notiz Pakete
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Pakete').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-03
+
+notiz Vorlagen
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Vorlagen').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-04
+notiz Die Werkstatt reicht bis an den Fensterrand, der Baum rollt in seiner Spalte
+gleich document.scrollingElement.scrollHeight <= innerHeight + 1 => true
+zeige (() => { const a = document.querySelector('aside[aria-label="Pakete und Dateien"]'); return 'Baum: ' + a.clientHeight + ' hoch sichtbar, ' + a.scrollHeight + ' mit Rollen' })()
+gleich (() => { const t = 'Wähle links im Baum'; return [...document.querySelectorAll('main p')].filter((p) => p.textContent.startsWith(t)).length })() => 1
+
+notiz Sammlung
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Sammlung').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-05
+
+notiz Decks
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Decks').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-06
+notiz Ohne offenes Deck steht der Satz einmal, im Zentrum
+gleich [...document.querySelectorAll('main p')].filter((p) => p.textContent.startsWith('Kein Deck aufgeschlagen')).length => 1
+
+notiz Turniere
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Turniere').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-07
+
+notiz Spielen
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Spielen').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-08
+
+notiz Handeln
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Handeln').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-09
+
+notiz Hilfe
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Hilfe').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+abzug seite-10
+
+notiz Einstellungen
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Einstellungen').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-11
+
+notiz Nutzer und Profile
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Nutzer und Profile').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-12
+
+notiz Ohne offenes Set: die Karten sagen, wohin, und der Knopf führt hin
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Karten').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+wartetext Kein Set offen
+abzug ohne-set
+klicketext Zu den Sets
+wartetext Werkstatt-Testkarten
+klicketext Werkstatt-Testkarten
+wartetext Wie viel du siehst
+pause 1500
+
+notiz Karten
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Karten').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-13
+notiz Bei 1.440 × 900 stehen alle drei Spalten, und die Kartenliste rollt in sich
+gleich !!document.querySelector('aside[aria-label="Karten des Sets"]') => true
+zeige (() => { const r = document.querySelector('[role=region][aria-label="Kartenarbeitsplatz"]'); const a = document.querySelector('aside[aria-label="Karten des Sets"]'); return 'Arbeitsplatz ' + Math.round(r.getBoundingClientRect().width) + ' breit; Navigator ' + a.clientHeight + ' hoch, rollt selbst ' + (a.scrollHeight - a.clientHeight) + ' Punkte' })()
+gleich (() => { const a = document.querySelector('aside[aria-label="Karten des Sets"]'); return a.scrollHeight <= a.clientHeight + 1 })() => true
+
+notiz Bilder
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Bilder').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-14
+
+notiz Suche
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Suche').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-15
+
+notiz Ersetzen
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Ersetzen').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-16
+
+notiz Stil
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Stil').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-17
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((e) => e.getClientRects().length > 0)
+
+notiz Setangaben
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Setangaben').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-18
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((e) => e.getClientRects().length > 0)
+
+notiz Symbol
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Symbol').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-19
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((e) => e.getClientRects().length > 0)
+
+notiz Schlüsselwörter
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Schlüsselwörter').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-20
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((e) => e.getClientRects().length > 0)
+
+notiz Statistik
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Statistik').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-21
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((e) => e.getClientRects().length > 0)
+
+notiz Zufallspack
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Zufallspack').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-22
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((e) => e.getClientRects().length > 0)
+
+notiz Konsole
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Konsole').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-23
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((e) => e.getClientRects().length > 0)
+
+notiz Ausgeben
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Ausgeben').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-24
+
+notiz Druckbogen
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Druckbogen').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1200
+zeige (() => { const m = document.querySelector('main'); const h = [...m.querySelectorAll('h1')].find((e) => e.getClientRects().length > 0); const s = [...document.querySelectorAll('[role=dialog] h2, [role=dialog] h1')].find((e) => e.getClientRects().length > 0); return (h ? h.textContent.trim() : '—') + (s ? ' · Schublade: ' + s.textContent.trim() : '') + ' · ' + document.scrollingElement.scrollHeight + ' hoch, ' + Math.round(Math.min(1, innerHeight / document.scrollingElement.scrollHeight) * 100) + ' % im ersten Blick' })()
+zeige 'lang: ' + JSON.stringify((() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().map((x) => x.slice(0, 60) + '… (' + x.length + ')')) + ' · doppelt: ' + JSON.stringify((() => { const t = [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null).map((p) => p.innerText.replace(/\s+/g, ' ').trim()); return t.filter((x, i) => x.length > 30 && t.indexOf(x) !== i) })())
+gleich (() => { const beschrieben = new Set([...document.querySelectorAll('[aria-describedby]')].flatMap((e) => e.getAttribute('aria-describedby').split(/\s+/))); return [...document.querySelectorAll('main p, [role=dialog] p')].filter((p) => p.offsetParent !== null && !beschrieben.has(p.id)).map((p) => p.innerText.replace(/\s+/g, ' ').trim()).filter((x) => x.length > 140) })().length => 0
+abzug seite-25
+
+notiz Und die Seite hat keinen Fehler geworfen
+gleich JSON.stringify(window.__probeFehler || []) => []

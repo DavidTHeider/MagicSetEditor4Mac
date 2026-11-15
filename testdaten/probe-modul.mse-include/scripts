@@ -1,0 +1,4 @@
+# Ein Modul, wie `magic-default-image.mse-include/scripts` eines ist.
+modul_hintergrund := {
+	"rahmen_" + grundfarbe + ".png"
+}

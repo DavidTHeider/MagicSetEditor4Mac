@@ -1,0 +1,8 @@
+mse version: 2.0.0
+game: probe
+stylesheet: probe-stil
+card:
+	name: Heil
+card:
+	name Ohne Doppelpunkt
+	farbe: rot

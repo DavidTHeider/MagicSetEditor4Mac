@@ -1,0 +1,365 @@
+# UX-10.AK-02 (#1682) — die Arbeitswege ohne Maus, in WKWebView.
+#
+# **Kein `klicke` in diesem Drehbuch**: jeder Schritt ist eine Taste oder
+# getippter Text, wie bei jemandem, der keine Maus benutzt. Je Arbeitsweg
+# der Einstieg über sein Kürzel und eine Handlung darin. **Bei jedem Halt
+# wird gemessen**, dass der Fokus einen sichtbaren Ring trägt — Umriss oder
+# Schatten, berechnet am Element und nicht angenommen —, und die Folge der
+# Halte steht am Ende im Bericht: ob sie sinnvoll ist, sieht ein Mensch.
+#
+# **Was dieses Drehbuch gefunden hat**, am 2026-09-25: nach ⌘2 und ⌘6 bewegte
+# Tab den Fokus gar nicht — WebKit suchte von einem Knoten der vorigen Seite
+# aus weiter (`useFokusNachSeitenwechsel`). Seitdem steht der Fokus nach
+# jedem Wechsel auf dem Inhalt, und die Zahl der Halte hier zählt von dort.
+# Dazu: nach „Bo aufschlagen" stand er auf `body` (`Partnerwahl.tsx`), und
+# die Zahl der Treffer in der Sammlung wurde nicht angesagt.
+#
+# **Was es nicht zeigt**: die nativen Dateidialoge und die Menüleiste — beide
+# gehören dem Wails-Prozess (`docs/HANDPRUEFUNGEN.md`). **Und es setzt zurück,
+# was es ändert** — Name und Suchen —, denn die Drehbücher danach laufen auf
+# demselben Bestand.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+pruefe (window.__ring = () => { const e = document.activeElement; const s = getComputedStyle(e); return (s.outlineStyle !== 'none' && parseFloat(s.outlineWidth) > 0) || s.boxShadow !== 'none' }, window.__halt = () => { const e = document.activeElement; return ((e.getAttribute('aria-label') || e.innerText || e.value || e.getAttribute('placeholder') || e.tagName) + '').trim().replace(/\s+/g, ' ').slice(0, 48) }, window.__halte = [], window.__ohneRing = [], window.__merke = () => { const e = document.activeElement; if (e === document.body) return true; const h = window.__halt(); window.__halte.push(h); if (!window.__ring()) window.__ohneRing.push(h); return true }, window.__imInhalt = () => document.activeElement.id === 'inhalt', true)
+
+notiz Der erste Halt ist der Sprung zum Inhalt — und Enter führt dorthin
+taste tab
+pruefe window.__merke()
+gleich window.__halt() => Zum Inhalt springen
+taste enter
+pause 300
+pruefe window.__imInhalt()
+taste tab
+pruefe window.__merke()
+# **Seit UXR-03 (#1911) ist der erste Halt die Kennzahl der Sets** — »2 Sets«
+# statt eines Knopfs »Zu den Sets«; die Zahl hängt am Bestand.
+# **Die Kachel nennt seitdem auch, wie viele geprüft sind** — »1 Set 0 von 1
+# geprüft«; gezählt wird weiter vorn.
+zeige window.__halt()
+pruefe /^\d+ Sets?\b/.test(window.__halt())
+
+notiz karte — zu den Sets, das Set öffnen, den Namen ändern; ⇥ schreibt, und der Speicherstand sagt es
+taste enter
+wartetext Jedes offene Set liegt im Bestand
+pause 800
+pruefe window.__imInhalt()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+# **Erst die Handlungen im Kopf** — seit R1 stehen »Set öffnen …« und das
+# führende »+ Neues Set« rechts oben (`seiten/Sets.tsx`), vor der Liste. Bis
+# zum 2026-10-06 erwartete diese Probe nach drei Tabs schon die Suche (WK03,
+# #2104); die Kopfaktionen wurden übersprungen, ohne dass es jemand sah.
+gleich window.__halt() => Set öffnen …
+taste tab
+pruefe window.__merke()
+gleich window.__halt() => + Neues Set
+taste tab
+pruefe window.__merke()
+notiz Seit UX-11 (#1683) steht über der Liste die Leiste der Listenansicht — Suche, Ordnung, Ansicht —, und jeder Halt trägt seinen Ring
+gleich window.__halt() => Name oder Spiel
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+# **Seit AP-6 (#2363) ist die Ansicht ein Segment mit einer Tabstelle** —
+# vorher zwei Knöpfe —, und »Nach Marken« steht erst, wenn ein Eintrag eine
+# Marke trägt; im Prüfbestand trägt keiner eine.
+gleich document.activeElement.closest('[role=radiogroup]') !== null => true
+taste tab
+pruefe window.__merke()
+gleich window.__halt() => Werkstatt-Testkarten — Karten dieses Sets zeigen
+taste enter
+wartetext Wie viel du siehst
+pause 1500
+pruefe window.__imInhalt()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+# **Vier Halte mehr als am 2026-10-06** — gemessen am 2026-10-20 (QA01,
+# #2382): nach »Erweitert« stehen »Experte«, »Kunst — Bild wählen« und das
+# Feld »kunst«, dann »name«; danach der Knopf »Name — Vorschlag« (er
+# erscheint mit dem Fokus auf der Feldzeile, AI-05), dann »text«. Welche
+# Halte es sind, nennt die Zeile darunter im Bericht (WK03, #2104).
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+zeige window.__halte.slice(-8).join(' → ')
+gleich window.__halt() => name
+pruefe (window.__vorher = document.activeElement.value, true)
+taste cmd+a
+tippe Ohne Maus
+taste tab
+pruefe window.__merke()
+bis [...document.querySelectorAll('[role=status]')].some((e) => e.textContent.includes('Jede Änderung steht im Bestand.'))
+abzug karte-ohne-maus
+notiz Der Name kommt zurück — die Drehbücher danach laufen auf demselben Bestand
+taste shift+tab
+gleich document.activeElement.value => Ohne Maus
+pruefe (Object.getOwnPropertyDescriptor(Object.getPrototypeOf(document.activeElement), 'value').set.call(document.activeElement, window.__vorher), document.activeElement.dispatchEvent(new Event('input', { bubbles: true })), true)
+taste tab
+pause 1500
+
+notiz deck — ⌘4, das Probe-Deck über Tab und Enter aufschlagen
+taste cmd+4
+wartetext Probe-Deck
+pause 800
+pruefe window.__imInhalt()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+# **»Deck anlegen« steht über der Suche** — ein Halt mehr als am 2026-10-06;
+# die Ansicht ist ein Segment mit einer Tabstelle, und »Nach Marken« steht
+# erst, wenn ein Deck eine Marke trägt.
+gleich window.__halt() => Deck anlegen
+taste tab
+pruefe window.__merke()
+gleich window.__halt() => Name oder Spiel
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+gleich document.activeElement.closest('[role=radiogroup]') !== null => true
+taste tab
+pruefe window.__merke()
+gleich window.__halt() => Öffnen: Probe-Deck
+taste enter
+bis !document.querySelector('main').innerText.includes('Kein Deck aufgeschlagen')
+
+notiz spielen — über den Start zurück, „Partie anfangen" über Tab und Enter
+taste cmd+1
+wartetext Was Aufmerksamkeit braucht
+taste cmd+4
+wartetext Probe-Deck
+pause 800
+pruefe window.__imInhalt()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+# **»Formate …« steht im Kopf vor »Partie anfangen«** — ein Halt mehr als am 2026-10-06.
+taste tab
+pruefe window.__merke()
+gleich window.__halt() => Partie anfangen
+taste enter
+# **Seit UXR-13 (#1921) steht der fremde Tisch hinter einem Knopf im Kopf.**
+wartetext Bei jemandem mitspielen …
+
+notiz sammlung — ⌘3, suchen, und die Zahl steht als Status da
+notiz Seit UXR-10 (#1918) stehen im Kopf »Einlesen und ausgeben …« und »+ Aufnehmen …« — zwei Halte mehr vor dem Suchfeld
+taste cmd+3
+wartetext Einlesen und ausgeben …
+pause 800
+pruefe window.__imInhalt()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+# **Gemessen am 2026-10-20** (QA01, #2382): Erklärung, »Einlesen und
+# ausgeben …«, »+ Aufnehmen …«, die Kachel »Exemplare«, »Navigator
+# ausblenden«, »Inspector ausblenden«, dann die Suche — ein Halt mehr.
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+gleich window.__halt() => Name, Set, Kennung oder Notiz
+tippe scryfall:a
+bis [...document.querySelectorAll('[role=status]')].some((e) => /^1 von \d+$/.test(e.textContent.trim()))
+zeige [...document.querySelectorAll('[role=status]')].map((e) => e.textContent.trim()).filter((t) => / von /.test(t)).join(' | ')
+taste cmd+a
+taste backspace
+bis document.activeElement.value === ''
+
+notiz handeln — ⌘5, „Neuer Tausch …" und darin das Gegenüber über Tab und Enter aufschlagen
+# **Seit UXR-15 (#1923) steht die Wahl in einer Schublade**: vier Halte bis
+# „Neuer Tausch …" (Erklärung, Lasche, Laschenfeld, Knopf), in der Schublade
+# Schließen, die Erklärung und Bo. Nach der Wahl schließt sie, und der Fokus
+# kehrt zum Knopf zurück. **Die Zahl der Halte ist gezählt und nicht
+# gefahren** — stimmt sie nicht, sagt `gleich`, wo der Fokus stand.
+taste cmd+5
+wartetext Mit wem
+pause 800
+pruefe window.__imInhalt()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+gleich window.__halt() => Neuer Tausch …
+taste enter
+bis [...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())
+pause 300
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+gleich window.__halt() => Bo aufschlagen
+taste enter
+bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())
+pause 300
+gleich window.__halt() => Neuer Tausch …
+pruefe window.__merke()
+
+notiz paket — ⌘6, im Katalog suchen, die Zahl als Status
+taste cmd+6
+# Die Seite heißt heute nach ihrem Katalog (»Installierte Pakete«).
+wartetext Installierte Pakete
+pause 800
+zeige document.activeElement.tagName + '#' + document.activeElement.id + ' ' + (document.activeElement.getAttribute('aria-label') || document.activeElement.innerText || '').trim().slice(0, 60)
+pruefe window.__imInhalt()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+# **Gemessen am 2026-10-20** (QA01, #2382): nach »Inspector ausblenden«
+# kommt die Suche — ein Halt mehr als beim Schreiben.
+taste tab
+pruefe window.__merke()
+zeige window.__halte.slice(-8).join(' → ')
+gleich window.__halt() => Name, Art, Herkunft oder Gruppe
+tippe magic
+pause 800
+zeige [...document.querySelectorAll('[role=status]')].map((e) => e.textContent.trim()).filter((t) => / von /.test(t)).join(' | ')
+taste cmd+a
+taste backspace
+bis document.activeElement.value === ''
+
+notiz profil — ⌘', die Laschen mit den Pfeiltasten
+taste cmd+'
+wartetext Persönliches
+pause 800
+pruefe window.__imInhalt()
+taste tab
+pruefe window.__merke()
+taste tab
+pruefe window.__merke()
+# **Erst die Handlung im Kopf**, dann die Laschen — wie auf den Sets (R1).
+gleich window.__halt() => + Profil anlegen …
+taste tab
+pruefe window.__merke()
+# Dann die Erklärung über den Laschen — »Mehr zu …« klappt sie auf.
+pruefe window.__halt().startsWith('Mehr zu')
+# **Dann die linke Spalte** (UXR-20, #1928): Profilwahl und Nutzerwahl, je
+# ein Knopf für jedes andere Profil und jeden anderen Menschen — hier Cleo.
+taste tab
+pruefe window.__merke()
+gleich window.__halt() => Zu Cleo · Mein Profil wechseln
+taste tab
+pruefe window.__merke()
+pruefe window.__halt().startsWith('Mehr zu')
+taste tab
+pruefe window.__merke()
+gleich window.__halt() => Cleo werden
+taste tab
+pruefe window.__merke()
+gleich window.__halt() => Allgemeines
+taste right
+pause 500
+zeige 'Lasche: ' + window.__halt() + ' ausgewählt=' + document.activeElement.getAttribute('aria-selected')
+
+notiz Die Folge der Halte — und keiner ohne sichtbaren Ring
+zeige JSON.stringify(window.__halte)
+gleich JSON.stringify(window.__ohneRing) => []
+gleich JSON.stringify(window.__probeFehler || []) => []

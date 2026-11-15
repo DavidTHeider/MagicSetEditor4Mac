@@ -1,0 +1,46 @@
+// 软件包页面上 **已获取状态** 的文本 — G04 (#2251)。
+// 德语原文为 `de/seitenbezuege.ts`。
+
+export const bezuege = {
+  ueberschrift: '已获取的状态',
+  erklaerung:
+    '已获取的软件包停留在某个提交上，不会自行过时。请询问来源是否有更新的版本——只有这时才会访问网络。',
+  fragen: '询问来源',
+  leer: '尚未获取任何软件包。请通过“获取软件包 …”获取一个——之后这里会显示其来源前进了多少。',
+  bezogen: '已获取：{stand}',
+  geprueft: '已核验：{stand}',
+  ohnePruefung: '不在已核验来源列表中',
+  pakete: '{zahl} 个软件包',
+  paketEins: '1 个软件包',
+  keinPaket: '无软件包',
+  lage: {
+    ungefragt: '尚未询问。',
+    aktuell: '已是来源的最新状态。',
+    neuerEins: '较新状态 {spitze}（{datum}）——领先 1 个提交。',
+    neuer: '较新状态 {spitze}（{datum}）——领先 {vorsprung} 个提交。',
+    abweichend: '来源并未领先——已重置或已分叉（顶端 {spitze}）。',
+    unbekannt: '无法询问来源：{grund}',
+  },
+  ansehenBezeichnung: '查看更新 … ({name})',
+  zurueckBezeichnung: '返回保留的状态 ({name}, {stand})',
+  ansehen: '查看更新 …',
+  aufgehoben: '已保留：{stand}',
+  zurueck: '返回保留的状态',
+  vorschauTitel: '{name} 的更新',
+  vonZu: '{von} → {zu}：领先 {vorsprung}，落后 {rueckstand}',
+  paketzeile: '{paket}：新增 {neu}，更改 {geaendert}，删除 {entfernt}',
+  keinePakete: '没有模板软件包发生变化。',
+  uebrige: '另有 {zahl} 个文件不属于任何软件包。',
+  sets: '这些套牌引用了受影响的软件包：{sets}',
+  keineSets: '没有套牌引用受影响的软件包。',
+  aufheben: '当前状态会被保留，并可以恢复。',
+  vorigeWeicht: '已保留的状态 {stand} 将被替换。',
+  gruende: {
+    setVerliert: '某个套牌引用的软件包会失去文件。',
+    nichtVoraus: '来源并未领先——此次更新将是后退或偏离。',
+    gekuerzt: '来源列出了超过 300 个已更改的文件；上面的列表已被截断。',
+  },
+  bestaetigen: '我已看过原因，仍要更新。',
+  ausfuehren: '更新到 {zu}',
+  verwerfen: '不更新',
+}

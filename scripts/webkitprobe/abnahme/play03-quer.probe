@@ -1,0 +1,58 @@
+# PLAY-03 (#1711) und Artboard *Tisch* — eine getappte Karte liegt quer, der
+# Zug zeigt, wie weit er ist, und unter den Handlungen steht, warum einer
+# fehlt.
+#
+# Gemessen vorher, am 2026-09-24 mit dem Set „Green": zwei getappte Karten
+# überdeckten einander und ragten über den Rand ihres Feldes, ihr Rand stand
+# hochkant um sie herum, und die zuletzt geladene Handkarte blieb ein
+# Platzhalter, bis etwas anderes neu zeichnen ließ. Die Leinwand ist WebGL;
+# was sie zeigt, belegen die Abzüge, was daneben steht, prüfen die Schritte.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+4
+wartetext Partie anfangen
+klicketext Partie anfangen
+wartetext Weiterspielen
+klicketext Weiterspielen
+klicketext Weiterspielen als Ada
+warte canvas
+pause 1500
+notiz Der Beginn ist vorbei — `play-beginn` hat ihn in derselben Partie zu Ende gebracht; vorher nähme der Tisch nur ihn an (CR 103.8, #1851)
+# Alle Drehbücher laufen gegen denselben Bestand, und `play-beginn` läuft vor
+# diesem. Allein gefahren, bräche diese Probe hier ab und nicht erst an einer
+# Handlung, die der Tisch nicht anbietet.
+# **Positiv, nicht verneint** — WK01 (#2102): eine verneinte h3-Abfrage war
+# grün, als die Tafel längst unter h2 stand und der Beginn offen. Der Beginn
+# ist vorbei, wenn der Tisch Ada das Passen anbietet.
+notiz Vorbedingung: der Beginn ist vorbei — »Passen« steht für Ada offen
+bis [...document.querySelectorAll('button')].some((b) => b.checkVisibility() && b.innerText.trim() === 'Passen' && !b.disabled)
+notiz Der Zug zeigt als Balken, wie weit er ist — mit dem Abschnitt als Namen
+gleich (() => { const b = document.querySelector('[role=progressbar][aria-labelledby]'); return b.getAttribute('aria-valuenow') + '/' + b.getAttribute('aria-valuemax') + ' ' + document.getElementById(b.getAttribute('aria-labelledby')).textContent })() => 2/12 Anfangsphase · Versorgung
+zeige (() => { const b = document.querySelector('[role=progressbar][aria-labelledby]'); const farbe = (e) => getComputedStyle(e).backgroundColor; return 'Füllung ' + farbe(b.firstElementChild) + ' auf Bahn ' + farbe(b) + ' im Kasten ' + farbe(b.closest('section')) })()
+notiz Unter den Handlungen steht, warum einer fehlt
+wartetext Angeboten wird nur, was gerade geht
+notiz Die oberste Karte aus Adas Bibliothek aufs Schlachtfeld und tappen
+pruefe (() => { const b = [...document.querySelectorAll('[role=application] li button')].filter((x) => (x.getAttribute('aria-label') || x.textContent).includes('Bibliothek')); const unten = b.reduce((a, c) => (c.getBoundingClientRect().top > a.getBoundingClientRect().top ? c : a)); unten.dataset.ziel = 'bibliothek'; return true })()
+klicke [data-ziel="bibliothek"]
+wartetext Mit dieser Karte
+klicketext Schieben nach…
+bis document.querySelector('[role=group][aria-label="Schieben nach"]') !== null
+pruefe (() => { const s = document.querySelector('[role=group][aria-label="Schieben nach"] select'); const setze = Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype, 'value').set; setze.call(s, 'tisch'); s.dispatchEvent(new Event('change', { bubbles: true })); return true })()
+klicketext Stellen
+bis [...document.querySelectorAll('[role=application] li button')].some((b) => (b.getAttribute('aria-label') || b.textContent).includes('· Schlachtfeld'))
+pruefe ([...document.querySelectorAll('[role=application] li button')].find((b) => (b.getAttribute('aria-label') || b.textContent).includes('· Schlachtfeld')).dataset.ziel = 'schlachtfeld', true)
+# **Seit #2372 tappt der Klick selbst**: er löst die Primärhandlung aus,
+# und die einer Karte auf dem Schlachtfeld ist das Tappen — gewählt wird mit
+# ⌘-Klick, und »Tappen« in der Spalte steht nur noch an der gewählten Karte.
+notiz Ein Klick auf die Karte tappt sie (#2372)
+klicke [data-ziel="schlachtfeld"]
+bis [...document.querySelectorAll('[role=application] li button')].some((b) => /Schlachtfeld.*getappt/.test(b.getAttribute('aria-label') || b.textContent))
+zeige [...document.querySelectorAll('[role=application] li button')].map((b) => b.getAttribute('aria-label') || b.textContent).filter((t) => t.includes('Schlachtfeld')).join(' | ')
+pause 1500
+abzug quer
+notiz Und die Seite hat keinen Fehler geworfen
+gleich JSON.stringify(window.__probeFehler || []) => []

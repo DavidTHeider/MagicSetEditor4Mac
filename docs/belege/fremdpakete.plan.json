@@ -1,0 +1,102 @@
+{
+  "lauf": "fremdpakete",
+  "tag": "fremdpakete",
+  "beleg": "docs/belege/fremdpakete.json",
+  "roh": ".laufbeleg/fremdpakete.jsonl",
+  "frist": "720h",
+  "zeitlimit": "10800s",
+  "misst": [
+    "*.go",
+    "go.mod",
+    "go.sum",
+    "*/testdata/*",
+    "testdaten/*",
+    "saat/*",
+    "docs/belege/kanonstichprobe.json",
+    "internal/storage/migrationen/*",
+    "internal/storage/grundlinie/*",
+    "internal/aktualisierung/freigabeschluessel.asc",
+    "docs/PARITAET.md",
+    "docs/MSE2BESTAND.md",
+    "internal/app/sprachvorlage.json",
+    "internal/domain/schalterwege.json"
+  ],
+  "eingaben": [
+    {
+      "name": "MSE_FREMDPAKETE",
+      "muster": "style"
+    },
+    {
+      "name": "MSE_SCHRIFTWURZEL",
+      "muster": "*.ttf"
+    },
+    {
+      "name": "MSE_SETPAKET",
+      "muster": "*.mse-set"
+    },
+    {
+      "name": "MSE_REFERENZBILDER",
+      "muster": "*.karte"
+    },
+    {
+      "name": "MSE_KANON",
+      "muster": "*.mse-set"
+    },
+    {
+      "name": "MSE_MSE2AUSGABE",
+      "muster": "*.png"
+    },
+    {
+      "name": "MSE2_QUELLE",
+      "muster": "*.cpp"
+    },
+    {
+      "name": "MSE2_BINAER",
+      "muster": "magicseteditor"
+    },
+    {
+      "name": "MSE2_DATEN",
+      "muster": "style"
+    },
+    {
+      "name": "MSE2_SCHRIFTEN",
+      "muster": "*.ttf"
+    }
+  ],
+  "schalter": {
+    "MSE_STICHPROBE": "bestimmt, wie viele Karten der feste Kanonlauf je Satz misst — `alle` misst jede (MESSMETHODIK.md §7); ein Beleg mit einem anderen Wert misst etwas anderes",
+    "MSE_KANON_VORHER": "hält jede gezogene Karte gegen die Werte eines früheren Kanonlaufs (`MSE_KANON_JEKARTE`) — eine Karte, die um mehr als 0,01 schlechter wird, macht den Lauf rot (F02, MESSMETHODIK.md §7)"
+  },
+  "ohneWirkung": {
+    "MSE_SETRUNDLAUF_BERICHT": "ein Ablageort für die Tafel des Setdatei-Rundlaufs gegen MSE2 (F05) — gemessen wird dasselbe, und der Lauf steht im Beleg",
+    "MSE_BUENDEL": "eine Vorrichtung: schaltet die zwei Läufe am gebauten Bündel ein; ob sie liefen, steht als Fall im Beleg",
+    "MSE_PNG_AUSGABE": "ein Ablageort für Referenzkarten zum Ansehen; ob der Fall lief, steht im Beleg",
+    "MSE_SVG_AUSGABE": "ein Ablageort für Referenzkarten zum Ansehen; ob der Fall lief, steht im Beleg",
+    "MSE_PLAN_KARTE": "eine Vorrichtung: zeigt den Plan einer genannten Karte; ob sie lief, steht im Beleg",
+    "MSE_STICHPROBENPLAN": "eine Vorrichtung: zieht den Zufallsplan neu — der gezogene Plan selbst steht unter misst",
+    "MSE_MTGJSON": "die Eingabe dreier Fälle, die hier optional stehen; ob sie liefen, steht im Beleg",
+    "MSE_AUSGABE": "ein Ablageort für Differenzbilder zum Ansehen, kein Maß",
+    "MSE_ABSTANDSBILDER": "ein Ablageort für die weitesten Karten zum Ansehen, kein Maß",
+    "MSE_KARTEN": "wählt Karten, deren Bilder zusätzlich abgelegt werden — gemessen wird dasselbe",
+    "MSE_SCHREIBER": "setzt `schreibwettlauf_test.go` für seinen eigenen Kindprozess",
+    "MSE_ABBRUCHZIEL": "setzt `atomarabbruch_test.go` für seinen eigenen Kindprozess — das Ziel, in das er schreibt, bis er getötet wird",
+    "MSE_PAKETZUHAUSE": "eine Vorrichtung: ein Zuhause mit dem Pack als APFS-Klon, das `scripts/leistungsschnitte.mjs` einmal je Lauf anlegt — ohne sie klont jeder Messlauf selbst (PERF-01, docs/LEISTUNGSSCHNITTE.md)",
+    "MSE_KARTENPAARE_BELEG": "ein Ablageort für den Beleg der Kartenpaare (PERF-04); ohne ihn überspringt sich die Messung, ein Fall des Kanonlaufs ist sie nicht",
+    "MSE_KANON_JEKARTE": "ein Ablageort für den Abstand jeder gezogenen Karte — gemessen wird dasselbe, und die Datei ist die Eingabe für `MSE_KANON_VORHER` im nächsten Lauf",
+    "MSE_STARTMARKE_ORDNER": "setzt `startmarkekind_intern_test.go` für seinen eigenen Kindprozess — der Ordner, in dem er seine Startmarke legt (F04)"
+  },
+  "trend": {
+    "internal/app.TestDerAbstandZuMSE2": "absichtlich rot: er beziffert den Abstand zu den Referenzbildern, statt ihn wegzudefinieren — gelesen wird die Bewegung der Zahl (docs/RELEASE.md)"
+  },
+  "optional": {
+    "internal/mtgjson.TestFremdesMTGJSONWirdGelesen": "braucht eine Datei von MTGJSON (MSE_MTGJSON), und auf diesem Rechner liegt keine — die Gestalt prüft der Netzlauf gegen LEA.json (docs/HAERTUNG.md, Abschnitt 4)",
+    "internal/mtgjson.TestFremdeDatenBestaetigenDieSchluesseltabelle": "braucht eine Datei von MTGJSON (MSE_MTGJSON), und auf diesem Rechner liegt keine — die Gestalt prüft der Netzlauf gegen LEA.json (docs/HAERTUNG.md, Abschnitt 4)",
+    "internal/mtgjson.TestFremdeDatenUeberstehenDenRundlauf": "braucht eine Datei von MTGJSON (MSE_MTGJSON), und auf diesem Rechner liegt keine — die Gestalt prüft der Netzlauf gegen LEA.json (docs/HAERTUNG.md, Abschnitt 4)",
+    "internal/app.TestNurAusDemBuendel": "braucht ein gebautes Bündel (MSE_BUENDEL, scripts/mitliefern.sh) — läuft in Schritt 6a der Freigabe (RELEASE.md), nicht in diesem Messlauf",
+    "internal/app.TestRundlaufUeberDasMitgelieferteSet": "braucht ein gebautes Bündel (MSE_BUENDEL, scripts/mitliefern.sh) — läuft in Schritt 6a der Freigabe (RELEASE.md), nicht in diesem Messlauf",
+    "internal/app.TestSchreibeReferenzkartenAlsPNG": "ein Handgriff und kein Wächter: schreibt die Referenzkarten nach MSE_PNG_AUSGABE, um sie anzusehen",
+    "internal/app.TestSchreibeReferenzkartenAlsSVG": "ein Handgriff und kein Wächter: schreibt die Referenzkarten nach MSE_SVG_AUSGABE, um sie anzusehen",
+    "internal/app.TestZeigeDenPlan": "ein Handgriff und kein Wächter: zeigt den Plan der Karte aus MSE_PLAN_KARTE",
+    "internal/app.TestZieheDenStichprobenplan": "eine Vorrichtung: zieht den Zufallsplan nur mit MSE_STICHPROBENPLAN neu — ein neuer Plan ist eine neue Kohorte und wird mit Absicht gezogen, nicht in jedem Lauf (QA-02)"
+  }
+}

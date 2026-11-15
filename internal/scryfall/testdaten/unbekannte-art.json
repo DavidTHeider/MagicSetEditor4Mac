@@ -1,0 +1,14 @@
+{
+  "object": "card",
+  "id": "00000000-0000-4000-8000-000000000004",
+  "name": "Seltsam",
+  "lang": "de",
+  "layout": "eine_gestalt_die_es_2027_gibt",
+  "mana_cost": "{G}",
+  "cmc": 1.0,
+  "type_line": "Verzauberung",
+  "rarity": "eine_seltenheit_die_es_2027_gibt",
+  "set": "prb",
+  "set_name": "Prüfblock",
+  "collector_number": "4"
+}

@@ -1,0 +1,1 @@
+{"error":{"message":"The session's transcript exceeded the model's context size.","code":"500","type":"server_error"}}

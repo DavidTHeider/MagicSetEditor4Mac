@@ -1,0 +1,28 @@
+{
+  "fassung": "testsatz-1",
+  "zweck": "Acht selbst geschriebene Karten, je Name und Flavortext, auf Deutsch und Englisch — AI-03.AK-04 (#1744) und AI-02.AK-03 (#1743). Kein fremder Text (AGENTS.md §11).",
+  "karten": [
+    { "typ": "Kreatur — Hirsch", "text": "Wachsamkeit. Wenn diese Kreatur ins Spiel kommt, erhältst du 2 Lebenspunkte." },
+    { "typ": "Kreatur — Drache", "text": "Fliegend. Zu Beginn deines Zuges fügt diese Kreatur jedem Gegner 1 Schadenspunkt zu." },
+    { "typ": "Spontanzauber", "text": "Ziehe zwei Karten, dann wirf eine Karte ab." },
+    { "typ": "Hexerei", "text": "Zerstöre eine Kreatur mit Stärke 4 oder mehr." },
+    { "typ": "Artefakt", "text": "Tippe dieses Artefakt: Erzeuge ein Mana beliebiger Farbe." },
+    { "typ": "Verzauberung", "text": "Kreaturen, die du kontrollierst, erhalten +1/+1." },
+    { "typ": "Land", "text": "Tippe: Erzeuge {G}. Dieses Land kommt getappt ins Spiel." },
+    { "typ": "Kreatur — Golem", "text": "Verteidiger. Diese Kreatur kann nicht angreifen." }
+  ],
+  "auftraege": {
+    "de": {
+      "name": "Schlage einen passenden Eigennamen für diese Karte vor — nicht den Kartentyp und keine Beschreibung der Regel. Antworte auf Deutsch, nur mit dem Namen.",
+      "flavor text": "Schlage einen kurzen Flavortext für diese Karte vor, ein oder zwei Sätze: Stimmung oder Geschichte, die den Regeltext nicht wiederholt. Antworte auf Deutsch."
+    },
+    "en": {
+      "name": "Suggest a fitting proper name for this card — not the card type and not a description of its rules. Answer in English, with the name only.",
+      "flavor text": "Suggest a short flavor text for this card, one or two sentences: mood or story that does not repeat the rules text. Answer in English."
+    }
+  },
+  "kartebisher": {
+    "de": "Die Karte bisher:",
+    "en": "The card so far:"
+  }
+}

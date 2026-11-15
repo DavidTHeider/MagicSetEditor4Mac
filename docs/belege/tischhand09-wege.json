@@ -1,0 +1,115 @@
+{
+  "bauabdruck": "43e643558f165741bedc789de4427e14e368a8b19da4d9bdf52a54889edbd3b1",
+  "erhoben": "2026-10-20T11:26:41.559Z",
+  "fenster": "1440 × 900",
+  "wege": [
+    {
+      "weg": "S3",
+      "eingang": "tisch-klick",
+      "art": "maus",
+      "handlungen": 1,
+      "sichtwechsel": 0,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 692,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "S5",
+      "eingang": "tisch-klick",
+      "art": "maus",
+      "handlungen": 1,
+      "sichtwechsel": 0,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 588,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "S6",
+      "eingang": "tisch-menue",
+      "art": "maus",
+      "handlungen": 2,
+      "sichtwechsel": 2,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 1333,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "S7",
+      "eingang": "tisch-regler",
+      "art": "maus",
+      "handlungen": 3,
+      "sichtwechsel": 0,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 1490,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "S3",
+      "eingang": "liste",
+      "art": "tastatur",
+      "handlungen": 5,
+      "sichtwechsel": 0,
+      "tabstellen": 4,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 1910,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "S5",
+      "eingang": "liste",
+      "art": "tastatur",
+      "handlungen": 15,
+      "sichtwechsel": 0,
+      "tabstellen": 14,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 5676,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "S6",
+      "eingang": "liste-menue",
+      "art": "tastatur",
+      "handlungen": 78,
+      "sichtwechsel": 2,
+      "tabstellen": 75,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 28640,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "S7",
+      "eingang": "liste",
+      "art": "tastatur",
+      "handlungen": 36,
+      "sichtwechsel": 0,
+      "tabstellen": 33,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 13398,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "S6",
+      "eingang": "liste-geste",
+      "art": "tastatur",
+      "handlungen": 88,
+      "sichtwechsel": 0,
+      "tabstellen": 83,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 32892,
+      "wirkung": true,
+      "bedingt": []
+    }
+  ]
+}

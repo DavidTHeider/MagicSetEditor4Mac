@@ -1,0 +1,24 @@
+{
+  "cards": [
+    {
+      "name": "Probewesen",
+      "manaCost": "{2}{G}",
+      "cmc": 3,
+      "colors": ["Green"],
+      "colorIdentity": ["G"],
+      "type": "Creature — Beast",
+      "types": ["Creature"],
+      "subtypes": ["Beast"],
+      "supertypes": ["Legendary"],
+      "rarity": "Rare",
+      "set": "PRB",
+      "setName": "Probeset",
+      "text": "Trampelschaden.",
+      "power": "3",
+      "toughness": "4",
+      "number": "7",
+      "layout": "normal",
+      "id": "1111222233334444555566667777888899990000"
+    }
+  ]
+}

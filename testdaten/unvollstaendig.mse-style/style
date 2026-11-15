@@ -1,0 +1,8 @@
+﻿mse version: 2.0.0
+game: probe
+short name: Unvollstaendig
+version: 2026-08-08
+depends on:
+	package: probe.mse-game
+depends on:
+	version: 2026-01-01

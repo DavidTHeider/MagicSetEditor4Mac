@@ -1,0 +1,14 @@
+{
+  "fassung": 1,
+  "bereiche": {
+    "arbeitsplatz": {
+      "arbeitsplatz.inspektor": "verborgen",
+      "arbeitsplatz.navigatorbreite": "280"
+    },
+    "nutzer": {},
+    "profil": {
+      "erscheinungsbild": "dunkel",
+      "sprache": "en"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "resp_probe",
+  "object": "response",
+  "created_at": 1741476542,
+  "status": "completed",
+  "error": null,
+  "incomplete_details": null,
+  "model": "gpt-probe",
+  "output": [
+    {
+      "type": "message",
+      "id": "msg_probe",
+      "status": "completed",
+      "role": "assistant",
+      "content": [
+        { "type": "output_text", "text": "{\"name\": \"Blitzschlag\"}", "annotations": [] }
+      ]
+    }
+  ],
+  "usage": {
+    "input_tokens": 36,
+    "input_tokens_details": { "cached_tokens": 0 },
+    "output_tokens": 87,
+    "output_tokens_details": { "reasoning_tokens": 0 },
+    "total_tokens": 123
+  }
+}

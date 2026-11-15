@@ -1,0 +1,160 @@
+﻿mse version: 2.0.0
+short name: Probe
+full name: Probespiel der Saat
+version: 2026-08-15
+
+init script:
+	include file: skript
+
+card field:
+	type: text
+	name: name
+card field:
+	type: text
+	name: text
+	multi line: true
+card field:
+	type: choice
+	name: farbe
+	choice: rot
+	choice: blau
+card field:
+	type: image
+	name: kunst
+
+set field:
+	type: text
+	name: title
+set field:
+	type: text
+	name: copyright
+	default: Probe
+
+############################################################## Wortlisten
+
+# **Damit sich die Auswahl auch ohne bezogenes Pack vorführen lässt**
+# (#1074).
+# Dieselbe Gestalt wie in `magic.mse-game/word_lists`, mit eigenem Inhalt
+# (§11): gelesen wird dort, übernommen wird nichts.
+#
+# Ein Feldwert, der `<word-list-probe-art>…</word-list-probe-art>` trägt,
+# bekommt dieses Menü — ein Kästchen für das Präfix, Punkte für den Rest.
+word list:
+	name: probe-art
+	word:
+		name: Große 
+		is prefix: true
+		line below: true
+	word: Kreatur
+	word: Spruch
+	word:
+		name: Selten
+		word: Wunder
+		word: Zeichen
+
+############################################################## Auto replace
+
+# **Damit sich die Ersetzung auch ohne bezogenes Pack vorführen lässt**
+# (#897).
+# Dieselbe Gestalt wie in `magic.mse-game/auto_replace`, mit eigenem Inhalt
+# (§11): gelesen wird dort, übernommen wird nichts.
+auto replace:
+	match: (C)
+	replace: ©
+auto replace:
+	match: --
+	replace: —
+auto replace:
+	match: ->
+	replace: →
+
+############################################################## Packarten
+
+# **Damit sich das Zufallspack auch ohne bezogenes Pack fahren lässt**
+# (#889).
+# Dieselbe Gestalt wie in `magic.mse-game/packs`, mit eigenem Inhalt (§11).
+#
+# **`alles` trägt einen Filter, der jede Karte durchlässt** — bei MSE füllt
+# allein der Filter die Kartenliste einer Packart (`src/data/pack.cpp`,
+# Zeilen 110–117, Fassung f9d9356 vom 2021-07-06); ohne ihn zöge sie nichts.
+pack type:
+	name: alles
+	select: no replace
+	filter: true
+pack type:
+	name: probepack
+	selectable: true
+	select: all
+	item:
+		name: alles
+		amount: 2
+
+######################################################### Karten aus Skripten
+
+# **Damit sich `add cards script:` auch ohne bezogenes Pack fahren lässt**
+# (#1337).
+# Dieselbe Gestalt wie in `magic.mse-game/add_cards_scripts`, mit eigenem
+# Inhalt (§11).
+#
+# **Das `&` markiert das Tastenkürzel** — wxWidgets-Schreibweise, und der
+# Leser trennt es vom angezeigten Namen ab.
+add cards script:
+	name: &Zwei Farben
+	description: Legt je eine rote und eine blaue Karte an
+	script:
+		[ new_card([name: "Rot", farbe: "rot"])
+		, new_card([name: "Blau", farbe: "blau"])
+		]
+
+# **Ein Skript, das nichts gibt** — für die Zusage „ein leerer Zug legt nichts
+# an und schreibt keinen Verlaufsschritt".
+add cards script:
+	name: Leerer Zug
+	description: Legt nichts an
+	script:
+		[]
+
+# **Damit sich `statistics dimension:` auch ohne bezogenes Pack fahren lässt**
+# (#1338).
+# Dieselbe Gestalt wie in `magic.mse-game/statistics_en`, mit eigenem Inhalt
+# (§11).
+#
+# **Die Reihenfolge der Gruppen ist erklärt** — „blau" steht vorn, obwohl
+# „rot" alphabetisch früher käme. Genau daran lässt sich prüfen, dass die
+# Erklärung gilt und nicht die Sortierung.
+statistics dimension:
+	name: farbe
+	description: Wie viele Karten je Farbe im Set liegen
+	show empty: false
+	script: card.farbe
+	group: blau
+	group: rot
+	colors:
+		blau	: rgb(15,80,166)
+		rot	: rgb(156,15,15)
+
+# **Damit sich die Parameterhilfen auch ohne bezogenes Pack fahren lassen**
+# (#1342).
+# Dieselbe Gestalt wie in `magic.mse-game/keywords_en`, mit eigenem Inhalt
+# (§11).
+#
+# **Zwei Arten, und die zweite trägt Verweisskripte.** Daran hängt die
+# Unterscheidung, die MSE macht: eine Art ohne bekommt die schlichte Form
+# `{paramN}`, eine mit bietet je Skript einen Eintrag.
+keyword parameter type:
+	name: zahl
+	match: [0-9]+
+	description: Eine Zahl
+keyword parameter type:
+	name: farbwort
+	match: [a-z]+
+	description: Ein Farbname
+	refer script:
+		name: schlicht
+		description: Ohne Änderung
+		script: \{{input}\}
+	refer script:
+		name: in Klammern
+		description: In runden Klammern
+		script: (\{{input}\})
+

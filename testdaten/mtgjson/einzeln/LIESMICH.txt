@@ -1,0 +1,2 @@
+Keine JSON-Datei — sie steht hier, damit der Leser belegen kann, dass er
+Fremdes im Verzeichnis übergeht statt daran zu scheitern.

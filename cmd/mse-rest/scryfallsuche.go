@@ -1,0 +1,54 @@
+package main
+
+// **Die Kartensuche für den Dienst** — Werkstück 1 von Phase 3.6
+// (#1167).
+
+import (
+	"context"
+	"database/sql"
+
+	"github.com/DavidTHeider/MagicSetEditor4Mac/internal/app"
+	"github.com/DavidTHeider/MagicSetEditor4Mac/internal/rest"
+)
+
+// fremdsuche reicht die Suche an die Naht durch.
+// **Sie hält den Bestand, seit es Dienstschalter gibt** (Phase 4.8): dort
+// steht, ob Scryfall gefragt werden darf.
+type fremdsuche struct{ db *sql.DB }
+
+// Suche gibt die Treffer zu einer Frage.
+//
+// **Die Naht wird je Ruf gebaut**, wie bei jeder anderen Scryfall-Fähigkeit
+// dieses Prozesses: es gibt keinen Start, an dem sie einmal entstünde.
+func (f fremdsuche) Kartensuche(ctx context.Context, frage string) (rest.Suchergebnis, error) {
+	naht, err := app.Fremdsuchnaht(ctx, f.db)
+	if err != nil {
+		return rest.Suchergebnis{}, err
+	}
+
+	ergebnis, suchfehler := naht.Suche(ctx, frage)
+	if suchfehler != nil {
+		return rest.Suchergebnis{}, suchfehler
+	}
+
+	// **Feld für Feld und nicht über JSON** — dieselbe Regel wie bei der
+	// Sammlung: ein Umweg über `Marshal` sähe kürzer aus und verlöre beim
+	// ersten Feld, dessen Marken auseinanderlaufen, genau dieses Feld, still.
+	treffer := make([]rest.Suchtreffersicht, 0, len(ergebnis.Treffer))
+	for _, eines := range ergebnis.Treffer {
+		treffer = append(treffer, rest.Suchtreffersicht{
+			Kennung: eines.Kennung, Name: eines.Name,
+			Setcode: eines.Setcode, Setname: eines.Setname,
+			Nummer: eines.Nummer, Seltenheit: eines.Seltenheit,
+			Manakosten: eines.Manakosten, Typzeile: eines.Typzeile,
+			Bild: eines.Bild,
+		})
+	}
+
+	return rest.Suchergebnis{
+		Treffer:      treffer,
+		Weitere:      ergebnis.Weitere,
+		AlterStunden: ergebnis.AlterStunden,
+		Befunde:      ergebnis.Befunde,
+	}, nil
+}

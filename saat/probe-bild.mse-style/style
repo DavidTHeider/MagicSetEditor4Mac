@@ -1,0 +1,44 @@
+mse version: 2.0.0
+game: probe
+short name: Mit Rahmen
+full name: Stil der Saat mit Rahmen und Maske
+version: 2026-08-15
+depends on:
+	package: probe.mse-game
+	version: 2026-08-15
+
+card width: 375
+card height: 523
+card dpi: 150
+
+############ Der Kartenstil
+card style:
+	rahmen:
+		left: 0
+		top: 0
+		width: 375
+		height: 523
+		z index: 0
+		render style: image
+		image: rahmen.png
+		mask: rand_maske.png
+	name:
+		left: 48
+		top: 48
+		width: 279
+		height: 28
+		z index: 1
+		font:
+			name: Helvetica
+			size: 20
+			color: black
+	text:
+		left: 48
+		top: { if card.farbe == "rot" then 300 else 320 }
+		width: 279
+		height: 140
+		z index: 2
+		font:
+			name: Helvetica
+			size: 13
+			color: black

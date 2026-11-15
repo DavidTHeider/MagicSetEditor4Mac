@@ -1,0 +1,41 @@
+# PLAY-01, PLAY-02 (#1709, #1710) und UX-08 (#1680) — „Eine Partie anfangen"
+# nach dem Artboard: zwei Tafeln, die Regelgrenzen eingeklappt, der Anfang
+# als Hauptknopf (S11.NAT-01 bis 04, Befund F13).
+#
+# Gemessen vorher, mit zwei gewählten Decks: die Seite 4.890 Punkte hoch, die
+# ganze Regelschau zwischen den Sitzen und dem Knopf. Und mit nur einem Deck
+# im Bestand stand gar kein Formular da — die Seite verlangte zwei.
+#
+# Die Decks werden per Skript gewählt (Wert setzen, `change` auslösen): das
+# Drehbuch prüft die Anordnung danach, nicht das native Auswahlmenü — das
+# nimmt `ux06-vorschlagslisten` ab.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+4
+wartetext Partie anfangen
+klicketext Partie anfangen
+wartetext Wer sitzt am Tisch
+notiz Die Seite heißt, was sie tut, und ein einziges Deck genügt
+gleich [...document.querySelectorAll('main h1')].find((e) => e.getClientRects().length > 0).textContent => Eine Partie anfangen
+gleich [...document.querySelectorAll('nav[aria-label="Wo du bist"] li')].map((l) => l.textContent.replace('›', '').trim()).join(' › ') => Spielen › Partie anfangen
+pruefe document.querySelectorAll('main select').length >= 2
+notiz Beide Sitze wählen dasselbe Deck
+pruefe (() => { const setze = Object.getOwnPropertyDescriptor(HTMLSelectElement.prototype, 'value').set; [...document.querySelectorAll('section[aria-label="Wer sitzt am Tisch"] select')].forEach((e) => { setze.call(e, '1'); e.dispatchEvent(new Event('change', { bubbles: true })) }); return true })()
+warte section[aria-label="Nach welchen Regeln"]
+pause 500
+notiz Die Regelgrenzen stehen eingeklappt, der Anfang steht davor im Blick
+pruefe [...document.querySelectorAll('main button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Regelgrenzen im Einzelnen').getAttribute('aria-expanded') === 'false'
+pruefe ![...document.querySelectorAll('main h3')].some((h) => h.textContent === 'Was durchgesetzt wird')
+zeige (() => { const k = [...document.querySelectorAll('main button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Partie anfangen'); return 'Seite ' + document.querySelector('main').scrollHeight + ' hoch, Startknopf bei ' + Math.round(k.getBoundingClientRect().top + scrollY) })()
+pruefe [...document.querySelectorAll('main button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Partie anfangen').getBoundingClientRect().top + scrollY < 1400
+notiz Keine rohe Auszeichnung in den Regeltexten
+klicketext Regelgrenzen im Einzelnen
+bis [...document.querySelectorAll('main h3')].some((h) => h.textContent === 'Was durchgesetzt wird')
+pruefe !document.querySelector('main').innerText.includes('**')
+abzug anfang
+notiz Und die Seite hat keinen Fehler geworfen
+gleich JSON.stringify(window.__probeFehler || []) => []

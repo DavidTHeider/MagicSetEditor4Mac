@@ -1,0 +1,1187 @@
+{
+  "fassung": "frageset-1",
+  "datum": "2026-09-12",
+  "korpus": "probe-1",
+  "fragen": [
+    {
+      "kennung": "syn-en-1",
+      "klasse": "synonym",
+      "richtung": "en-en",
+      "frage": "burn spell that hits any target for three",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:blitzschlag",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:funkenstoss",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "syn-en-2",
+      "klasse": "synonym",
+      "richtung": "en-en",
+      "frage": "cancel a spell on the stack",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:gegenzauber",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:wortbruch",
+          "stufe": 1
+        },
+        {
+          "kennung": "probe-oracle-en:gedankenriss",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "syn-en-3",
+      "klasse": "synonym",
+      "richtung": "en-en",
+      "frage": "kill a creature outright",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:todesstoss",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:graburteil",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "syn-en-4",
+      "klasse": "synonym",
+      "richtung": "en-en",
+      "frage": "card that makes a creature bigger this turn",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:waldwuchs",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:wildwuchsriese",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "syn-en-5",
+      "klasse": "synonym",
+      "richtung": "en-en",
+      "frage": "board wipe that destroys every creature",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:aschesturm",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:graburteil",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "syn-en-6",
+      "klasse": "synonym",
+      "richtung": "en-en",
+      "frage": "ramp spell that fetches basic lands",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:landraub",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "syn-de-1",
+      "klasse": "synonym",
+      "richtung": "de-en",
+      "frage": "Zauber, der einem beliebigen Ziel drei Schaden zufügt",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:blitzschlag",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:funkenstoss",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "syn-de-2",
+      "klasse": "synonym",
+      "richtung": "de-en",
+      "frage": "einen Zauberspruch neutralisieren",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:gegenzauber",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:wortbruch",
+          "stufe": 1
+        },
+        {
+          "kennung": "probe-oracle-en:gedankenriss",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "syn-de-3",
+      "klasse": "synonym",
+      "richtung": "de-en",
+      "frage": "eine Kreatur zerstören",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:todesstoss",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:graburteil",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "syn-de-4",
+      "klasse": "synonym",
+      "richtung": "de-en",
+      "frage": "Karten nachziehen",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:tiefenblick",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:wissensflut",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:schattenhandel",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "syn-de-5",
+      "klasse": "synonym",
+      "richtung": "de-en",
+      "frage": "Kreatur mit Flugfähigkeit",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:windreiter",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:engelsruf",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:zwielichtbote",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:weltenbrecher",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "syn-de-6",
+      "klasse": "synonym",
+      "richtung": "de-en",
+      "frage": "Länderholen aus der Bibliothek",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:landraub",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mech-en-1",
+      "klasse": "mechanik",
+      "richtung": "en-en",
+      "frage": "creatures with first strike",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:ordenswache",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:silberklinge",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mech-en-2",
+      "klasse": "mechanik",
+      "richtung": "en-en",
+      "frage": "trample",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:wildwuchsriese",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:tiefwurzler",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:weltenbrecher",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "mech-en-3",
+      "klasse": "mechanik",
+      "richtung": "en-en",
+      "frage": "defender, cannot attack",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:baumhueter",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:eisenmauer",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mech-en-4",
+      "klasse": "mechanik",
+      "richtung": "en-en",
+      "frage": "lifelink",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:engelsruf",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mech-en-5",
+      "klasse": "mechanik",
+      "richtung": "en-en",
+      "frage": "haste",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:steinhauer",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mech-en-6",
+      "klasse": "mechanik",
+      "richtung": "en-en",
+      "frage": "protection from a color",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:heiligenschein",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:silberklinge",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:spiegelschild",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "mech-de-1",
+      "klasse": "mechanik",
+      "richtung": "de-en",
+      "frage": "Kreaturen mit Erstschlag",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:ordenswache",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:silberklinge",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mech-de-2",
+      "klasse": "mechanik",
+      "richtung": "de-en",
+      "frage": "Trampelschaden",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:wildwuchsriese",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:tiefwurzler",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:weltenbrecher",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "mech-de-3",
+      "klasse": "mechanik",
+      "richtung": "de-en",
+      "frage": "Verteidiger",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:baumhueter",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:eisenmauer",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mech-de-4",
+      "klasse": "mechanik",
+      "richtung": "de-en",
+      "frage": "Lebensverknüpfung",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:engelsruf",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mech-de-5",
+      "klasse": "mechanik",
+      "richtung": "de-en",
+      "frage": "Eile",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:steinhauer",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mech-de-6",
+      "klasse": "mechanik",
+      "richtung": "de-en",
+      "frage": "Schutz vor einer Farbe",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:heiligenschein",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:silberklinge",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:spiegelschild",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "aehn-en-1",
+      "klasse": "aehnlichkeit",
+      "richtung": "en-en",
+      "frage": "something like Sparkbolt but cheaper damage",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:funkenstoss",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:blitzschlag",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "aehn-en-2",
+      "klasse": "aehnlichkeit",
+      "richtung": "en-en",
+      "frage": "a cheaper Unweave",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:gedankenriss",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:wortbruch",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:gegenzauber",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "aehn-en-3",
+      "klasse": "aehnlichkeit",
+      "richtung": "en-en",
+      "frage": "another zombie",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:gruftwacht",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:knochenhorde",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "aehn-en-4",
+      "klasse": "aehnlichkeit",
+      "richtung": "en-en",
+      "frage": "a mana producing artifact",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:stillstein",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:sandwueste",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "aehn-en-5",
+      "klasse": "aehnlichkeit",
+      "richtung": "en-en",
+      "frage": "an enchantment that punishes instants",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:flammenkult",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:bannkreis",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "aehn-en-6",
+      "klasse": "aehnlichkeit",
+      "richtung": "en-en",
+      "frage": "a two color rogue that makes players discard",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:erinnerungsdieb",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:seelenraub",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "aehn-de-1",
+      "klasse": "aehnlichkeit",
+      "richtung": "de-en",
+      "frage": "so etwas wie Blitzschlag, nur schwächer",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:funkenstoss",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:blitzschlag",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "aehn-de-2",
+      "klasse": "aehnlichkeit",
+      "richtung": "de-en",
+      "frage": "ein billigerer Gegenzauber",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:gedankenriss",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:wortbruch",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:gegenzauber",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "aehn-de-3",
+      "klasse": "aehnlichkeit",
+      "richtung": "de-en",
+      "frage": "noch ein Zombie",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:gruftwacht",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:knochenhorde",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "aehn-de-4",
+      "klasse": "aehnlichkeit",
+      "richtung": "de-en",
+      "frage": "ein Artefakt, das Mana erzeugt",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:stillstein",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:sandwueste",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "aehn-de-5",
+      "klasse": "aehnlichkeit",
+      "richtung": "de-en",
+      "frage": "eine Verzauberung, die Spontanzauber bestraft",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:flammenkult",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:bannkreis",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "aehn-de-6",
+      "klasse": "aehnlichkeit",
+      "richtung": "de-en",
+      "frage": "ein zweifarbiger Schurke, der abwerfen lässt",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:erinnerungsdieb",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:seelenraub",
+          "stufe": 1
+        }
+      ]
+    },
+    {
+      "kennung": "tmpl-en-1",
+      "klasse": "templating",
+      "richtung": "en-en",
+      "frage": "enters the battlefield trigger",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:wildwuchsriese",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:zwielichtbote",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "tmpl-en-2",
+      "klasse": "templating",
+      "richtung": "en-en",
+      "frage": "as an additional cost sacrifice a creature",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:dunkelpakt",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "tmpl-en-3",
+      "klasse": "templating",
+      "richtung": "en-en",
+      "frage": "at the beginning of your upkeep",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:hexenzirkel",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "tmpl-en-4",
+      "klasse": "templating",
+      "richtung": "en-en",
+      "frage": "it can't be regenerated",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:todesstoss",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:aschesturm",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "tmpl-en-5",
+      "klasse": "templating",
+      "richtung": "en-en",
+      "frage": "whenever this deals combat damage to a player",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:erinnerungsdieb",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "tmpl-en-6",
+      "klasse": "templating",
+      "richtung": "en-en",
+      "frage": "equip 2",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:spiegelschild",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "tmpl-de-1",
+      "klasse": "templating",
+      "richtung": "de-en",
+      "frage": "wenn sie ins Spiel kommt",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:wildwuchsriese",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:zwielichtbote",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "tmpl-de-2",
+      "klasse": "templating",
+      "richtung": "de-en",
+      "frage": "als zusätzliche Kosten eine Kreatur opfern",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:dunkelpakt",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "tmpl-de-3",
+      "klasse": "templating",
+      "richtung": "de-en",
+      "frage": "zu Beginn deines Versorgungssegments",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:hexenzirkel",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "tmpl-de-4",
+      "klasse": "templating",
+      "richtung": "de-en",
+      "frage": "kann nicht regeneriert werden",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:todesstoss",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:aschesturm",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "tmpl-de-5",
+      "klasse": "templating",
+      "richtung": "de-en",
+      "frage": "immer wenn sie einem Spieler Kampfschaden zufügt",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:erinnerungsdieb",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "tmpl-de-6",
+      "klasse": "templating",
+      "richtung": "de-en",
+      "frage": "ausrüsten für zwei",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:spiegelschild",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "reg-en-1",
+      "klasse": "regeln",
+      "richtung": "en-en",
+      "frage": "how does trample assign excess damage",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-regel-en:702.9b",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "reg-en-2",
+      "klasse": "regeln",
+      "richtung": "en-en",
+      "frage": "what is color identity",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-regel-en:903.4",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "reg-en-3",
+      "klasse": "regeln",
+      "richtung": "en-en",
+      "frage": "who decides which creatures block",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-regel-en:509.1a",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "reg-en-4",
+      "klasse": "regeln",
+      "richtung": "en-en",
+      "frage": "when does a creature die from toughness",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-regel-en:704.5g",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "reg-en-5",
+      "klasse": "regeln",
+      "richtung": "en-en",
+      "frage": "what can block a flying creature",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-regel-en:509.1b",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "reg-en-6",
+      "klasse": "regeln",
+      "richtung": "en-en",
+      "frage": "when may a mana ability be activated",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-regel-en:117.3c",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "reg-de-1",
+      "klasse": "regeln",
+      "richtung": "de-en",
+      "frage": "wie wird überschüssiger Trampelschaden zugewiesen",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-regel-en:702.9b",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "reg-de-2",
+      "klasse": "regeln",
+      "richtung": "de-en",
+      "frage": "was ist die Farbidentität",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-regel-en:903.4",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "reg-de-3",
+      "klasse": "regeln",
+      "richtung": "de-en",
+      "frage": "wer entscheidet, welche Kreaturen blocken",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-regel-en:509.1a",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "reg-de-4",
+      "klasse": "regeln",
+      "richtung": "de-en",
+      "frage": "wann stirbt eine Kreatur an Widerstandskraft",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-regel-en:704.5g",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "reg-de-5",
+      "klasse": "regeln",
+      "richtung": "de-en",
+      "frage": "was kann eine fliegende Kreatur blocken",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-regel-en:509.1b",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "reg-de-6",
+      "klasse": "regeln",
+      "richtung": "de-en",
+      "frage": "wann darf eine Manafähigkeit aktiviert werden",
+      "halte": false,
+      "urteile": [
+        {
+          "kennung": "probe-regel-en:117.3c",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mkrit-en-1",
+      "klasse": "mehrkriterium",
+      "richtung": "en-en",
+      "frage": "red instant that deals damage for one mana",
+      "halte": true,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:blitzschlag",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:funkenstoss",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mkrit-en-2",
+      "klasse": "mehrkriterium",
+      "richtung": "en-en",
+      "frage": "white creature with first strike for two mana",
+      "halte": true,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:ordenswache",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:silberklinge",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mkrit-en-3",
+      "klasse": "mehrkriterium",
+      "richtung": "en-en",
+      "frage": "green creature with trample and six mana value",
+      "halte": true,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:wildwuchsriese",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mkrit-en-4",
+      "klasse": "mehrkriterium",
+      "richtung": "en-en",
+      "frage": "blue card that draws and costs three",
+      "halte": true,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:tiefenblick",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mkrit-en-5",
+      "klasse": "mehrkriterium",
+      "richtung": "en-en",
+      "frage": "black enchantment that loses life each turn",
+      "halte": true,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:hexenzirkel",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mkrit-en-6",
+      "klasse": "mehrkriterium",
+      "richtung": "en-en",
+      "frage": "artifact that pumps your whole team",
+      "halte": true,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:kriegshorn",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mkrit-de-1",
+      "klasse": "mehrkriterium",
+      "richtung": "de-en",
+      "frage": "roter Spontanzauber mit Schaden für ein Mana",
+      "halte": true,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:blitzschlag",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:funkenstoss",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mkrit-de-2",
+      "klasse": "mehrkriterium",
+      "richtung": "de-en",
+      "frage": "weiße Kreatur mit Erstschlag für zwei Mana",
+      "halte": true,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:ordenswache",
+          "stufe": 2
+        },
+        {
+          "kennung": "probe-oracle-en:silberklinge",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mkrit-de-3",
+      "klasse": "mehrkriterium",
+      "richtung": "de-en",
+      "frage": "grüne Kreatur mit Trampelschaden und Manawert sechs",
+      "halte": true,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:wildwuchsriese",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mkrit-de-4",
+      "klasse": "mehrkriterium",
+      "richtung": "de-en",
+      "frage": "blaue Karte, die zieht und drei kostet",
+      "halte": true,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:tiefenblick",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mkrit-de-5",
+      "klasse": "mehrkriterium",
+      "richtung": "de-en",
+      "frage": "schwarze Verzauberung, die jede Runde Leben kostet",
+      "halte": true,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:hexenzirkel",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "mkrit-de-6",
+      "klasse": "mehrkriterium",
+      "richtung": "de-en",
+      "frage": "Artefakt, das alle eigenen Kreaturen stärkt",
+      "halte": true,
+      "urteile": [
+        {
+          "kennung": "probe-oracle-en:kriegshorn",
+          "stufe": 2
+        }
+      ]
+    },
+    {
+      "kennung": "neg-en-1",
+      "klasse": "negativ",
+      "richtung": "en-en",
+      "frage": "planeswalker that ultimates for the win",
+      "halte": false,
+      "urteile": []
+    },
+    {
+      "kennung": "neg-en-2",
+      "klasse": "negativ",
+      "richtung": "en-en",
+      "frage": "card that lets you play an extra turn",
+      "halte": false,
+      "urteile": []
+    },
+    {
+      "kennung": "neg-en-3",
+      "klasse": "negativ",
+      "richtung": "en-en",
+      "frage": "tribal support for merfolk",
+      "halte": false,
+      "urteile": []
+    },
+    {
+      "kennung": "neg-de-1",
+      "klasse": "negativ",
+      "richtung": "de-en",
+      "frage": "Planeswalker mit einer Endfähigkeit",
+      "halte": false,
+      "urteile": []
+    },
+    {
+      "kennung": "neg-de-2",
+      "klasse": "negativ",
+      "richtung": "de-en",
+      "frage": "Karte für einen zusätzlichen Zug",
+      "halte": false,
+      "urteile": []
+    },
+    {
+      "kennung": "neg-de-3",
+      "klasse": "negativ",
+      "richtung": "de-en",
+      "frage": "Unterstützung für Meervolk",
+      "halte": false,
+      "urteile": []
+    }
+  ]
+}

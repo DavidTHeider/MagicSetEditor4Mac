@@ -1,0 +1,137 @@
+// Renovate für MagicSetEditor4Mac — entschieden in #1779.
+//
+// **Renovate schlägt vor, entschieden wird hier.** AGENTS.md §1 pinnt jede
+// Abhängigkeit, mehrere davon aus gemessenen Gründen gegen den neuesten Stand.
+// Deshalb braucht jede gewöhnliche Aktualisierung eine Freigabe auf dem
+// Dashboard (#1784), und was §1 ausdrücklich zurückhält, schlägt Renovate gar
+// nicht erst vor.
+//
+// **Sicherheitsaktualisierungen kommen ohne Freigabe** — die Freigabepflicht
+// gilt für sie nicht (so die Dokumentation zu `:dependencyDashboardApproval`,
+// nachgelesen über Context7 am 2026-09-23).
+//
+// **Gemergt wird nie von selbst.** Es gibt nur den lokalen Lauf (§4, 0007):
+// ein Renovate-PR ist erst gut, wenn `make ci` auf diesem Rechner für genau
+// seinen Stand grün war.
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'config:recommended',
+    ':dependencyDashboardApproval',
+    // §1: Actions hängen an einem Commit, der Kommentar dahinter nennt die
+    // Fassung. Renovate hält beides nach.
+    'helpers:pinGitHubActionDigests',
+  ],
+  automerge: false,
+  osvVulnerabilityAlerts: true,
+  vulnerabilityAlerts: {
+    enabled: true,
+  },
+  postUpdateOptions: ['gomodTidy'],
+  prConcurrentLimit: 4,
+  // ENG-04: die Pflege der Sperrdatei — Renovate baut sie neu und hebt
+  // damit, was transitiv innerhalb seiner Bereiche gehoben werden kann. Ein
+  // eigener PR (sie wird nie mit anderem gebündelt), in Renovates Vorgabe
+  // wöchentlich vorgeschlagen und wie alles andere erst nach Freigabe; ihr
+  // Diff ist genau der, den man lesen will.
+  lockFileMaintenance: {
+    enabled: true,
+  },
+  packageRules: [
+    // **Gebündelt** (ENG-04.AK-02, #1729). Jede Aktualisierung braucht hier
+    // einen ganzen `make ci` auf diesem Rechner (§4, 0007) — ein PR je Paket
+    // hieße zwanzig Minuten je Paket. Also eine Gruppe je Ökosystem für
+    // alles unterhalb einer Hauptfassung. **Sicherheitsaktualisierungen
+    // bündelt Renovate nie** (`vulnerabilityAlerts` setzt `groupName: null`,
+    // nachgelesen über Context7 am 2026-09-24), und was §1 koppelt, bekommt
+    // weiter unten seine eigene Gruppe — eine spätere Regel überschreibt die
+    // frühere.
+    {
+      matchManagers: ['npm'],
+      matchUpdateTypes: ['minor', 'patch'],
+      groupName: 'Oberfläche (npm), ohne Hauptfassung',
+    },
+    {
+      matchManagers: ['gomod'],
+      matchUpdateTypes: ['minor', 'patch', 'digest'],
+      groupName: 'Go-Module, ohne Hauptfassung',
+    },
+    {
+      // Die Werkzeuge gehen nicht ins Programm; ihr Lauf prüft sich selbst.
+      matchManagers: ['gomod'],
+      matchFileNames: ['tools/go.mod'],
+      matchUpdateTypes: ['minor', 'patch', 'digest'],
+      groupName: 'Werkzeuge der Pipeline, ohne Hauptfassung',
+    },
+    {
+      matchManagers: ['github-actions'],
+      groupName: 'Actions',
+    },
+    {
+      // §1: typescript-eslint gibt `typescript@>=4.8.4 <6.1.0` an und weist 7
+      // ab — und wer eine Hauptversion prüft, prüft jede dazwischen.
+      matchPackageNames: ['typescript'],
+      allowedVersions: '<6.1.0',
+    },
+    {
+      // §1: eslint-plugin-jsx-a11y@6.10.2 geht nur bis `^9`; der Wechsel
+      // kostete `--legacy-peer-deps` für jeden Installationsweg.
+      // `@eslint/js` ist mit ESLint gleichauf versioniert.
+      matchPackageNames: ['eslint', '@eslint/js'],
+      allowedVersions: '<10.0.0',
+    },
+    {
+      // §1: Node ist 24; die Typen folgen der Laufzeit, nicht umgekehrt.
+      matchPackageNames: ['@types/node'],
+      allowedVersions: '<25.0.0',
+    },
+    {
+      // §1: auf die Stelle genau gepinnt (`--save-exact`) — eine
+      // Grafikbibliothek, die sich zwischen zwei Installationen ändert,
+      // ändert das Bild.
+      matchPackageNames: ['pixi.js', '@mantine/**', 'vitest', '@vitest/**'],
+      rangeStrategy: 'pin',
+    },
+    {
+      // ENG-04: für sich — eine Grafikbibliothek, die sich ändert, ändert
+      // das Bild, und das sieht nur eine Sichtprüfung des Tischs.
+      matchPackageNames: ['pixi.js'],
+      groupName: 'PixiJS',
+    },
+    {
+      // §1: `@mantine/hooks` verlangt dieselbe Zahl wie `@mantine/core`,
+      // ohne Spielraum — getrennt gehoben gäbe es keine Auflösung.
+      matchPackageNames: ['@mantine/**'],
+      groupName: 'Mantine',
+    },
+    {
+      // §1: `@vitest/coverage-v8` verlangt dieselbe Zahl wie `vitest`.
+      matchPackageNames: ['vitest', '@vitest/**'],
+      groupName: 'Vitest',
+    },
+    {
+      // §1, 0132: die Hülle und ihre Laufzeit in der Oberfläche tragen
+      // dieselbe Zahl — sie sprechen ein Protokoll ohne Fassungszusage, und
+      // ein Wächter hält die Gleichheit. Getrennt gehoben wäre jeder der zwei
+      // PRs rot. Auf die Stelle genau, wie jede Vorabfassung.
+      matchPackageNames: ['github.com/wailsapp/wails/v3', '@wailsio/runtime'],
+      groupName: 'Wails 3',
+      rangeStrategy: 'pin',
+    },
+    {
+      // §1: Go ist über `GOTOOLCHAIN` in `scripts/ci.sh` und
+      // `scripts/activate.sh` gepinnt, nicht nur über `go.mod`. Ein Heben der
+      // `go`- oder `toolchain`-Zeile allein wären zwei Pipelines — gehoben
+      // wird auf Zuruf, an allen drei Stellen zugleich. Beide Zeilen kommen
+      // aus der Datenquelle `golang-version`.
+      matchDatasources: ['golang-version'],
+      enabled: false,
+    },
+    {
+      // Und keine Abhängigkeit, die eine neuere Go-Fassung verlangt, als
+      // `go.mod` nennt — sie bräche den gepinnten Lauf.
+      matchManagers: ['gomod'],
+      constraintsFiltering: 'strict',
+    },
+  ],
+}

@@ -1,0 +1,1775 @@
+{
+  "stand": "2026-10-04",
+  "quelle": "UX-01.AK-01 — #1673 — sieben Zustände seit S12.NAT-03 (#1672)",
+  "seiten": {
+    "start": {
+      "art": "anwendung",
+      "pfad": "/",
+      "komponente": "frontend/src/seiten/Start.tsx",
+      "aufgaben": [
+        "vier Kacheln zur Navigation, „Zuletzt benutzt\" (neun Sets) — keine Schreibbindung"
+      ],
+      "einstiege": [
+        "Seitenleiste, Bereich start",
+        "Befehlspalette (⌘K)",
+        "⌘1"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "schreibt nichts"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/ueberblick.test.tsx :: steht auch bei leerem Bestand"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/ueberblick.test.tsx :: zählt Sets, Karten, Exemplare und Decks"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "offen",
+          "grund": "kein Test benennt einen Fehlerzustand dieser Seite"
+        },
+        "offline": {
+          "stand": "nicht vorhanden",
+          "grund": "die Seite geht nicht ins Netz"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/start.jpg"
+        }
+      }
+    },
+    "sets": {
+      "art": "anwendung",
+      "pfad": "/sets",
+      "komponente": "frontend/src/seiten/Sets.tsx",
+      "aufgaben": [
+        "öffnen, anlegen, sichern, sichern unter, über Exportvorlage, als MTG JSON, löschen (Name bestätigt), Beispielsets, MTG JSON und Scryfall einlesen"
+      ],
+      "einstiege": [
+        "Seitenleiste, Bereich gestalten",
+        "Befehlspalette (⌘K)",
+        "⌘2"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/sets.test.tsx :: erklärt den nächsten Schritt, wenn kein Set da ist"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/sets.test.tsx :: zeigt die Sets mit ihren Angaben"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/sets.test.tsx :: meldet einen Fehler beim Öffnen"
+        },
+        "offline": {
+          "stand": "offen",
+          "grund": "die Seite geht ins Netz; ein Lauf ohne Netz ist nicht belegt"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/sets.jpg"
+        }
+      }
+    },
+    "pakete": {
+      "art": "anwendung",
+      "pfad": "/pakete",
+      "komponente": "frontend/src/seiten/Pakete.tsx",
+      "aufgaben": [
+        "beziehen (mit Zustimmung an Ort und Stelle), einbinden, anlegen, entfernen, suchen, filtern, MSE2 übernehmen, Sammeldaten holen"
+      ],
+      "einstiege": [
+        "Seitenleiste, Bereich ressourcen",
+        "Befehlspalette (⌘K)",
+        "⌘6"
+      ],
+      "rollen": {
+        "traeger": "Rechner",
+        "lesen": "jede",
+        "schreiben": "keine Profilrolle — Pakete gehören dem Rechner"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "offen",
+          "grund": "kein Test benennt den leeren Zustand dieser Seite"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/paketliste.test.tsx :: zeigt Name, Art, Fassung und Herkunft — und das Übrige im Inspector"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/pakete.test.tsx :: meldet einen Aufruf, der scheitert"
+        },
+        "offline": {
+          "stand": "offen",
+          "grund": "die Seite geht ins Netz; ein Lauf ohne Netz ist nicht belegt"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/pakete.jpg"
+        }
+      }
+    },
+    "vorlagen": {
+      "art": "anwendung",
+      "pfad": "/vorlagen",
+      "komponente": "frontend/src/seiten/Vorlagen.tsx",
+      "aufgaben": [
+        "Datei im Baum wählen, ändern, Änderungen sehen, speichern, bei Konflikt neu laden, Testkarte wählen, zur Stelle eines Befunds oder zur Definition eines Namens springen"
+      ],
+      "einstiege": [
+        "Seitenleiste, Bereich ressourcen",
+        "Befehlspalette (⌘K)"
+      ],
+      "rollen": {
+        "traeger": "Rechner",
+        "lesen": "jede",
+        "schreiben": "keine Profilrolle — Vorlagen gehören dem Rechner"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "offen",
+          "grund": "kein Test benennt den leeren Zustand dieser Seite"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/vorlagen.test.tsx :: schlägt eine Datei auf und speichert sie mit ihrem Stand"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/vorlagennebenlauf.test.tsx :: meldet einen Fehler beim Aufschlagen"
+        },
+        "offline": {
+          "stand": "nicht vorhanden",
+          "grund": "die Seite geht nicht ins Netz"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/vorlagen.jpg"
+        }
+      }
+    },
+    "sammlung": {
+      "art": "anwendung",
+      "pfad": "/sammlung",
+      "komponente": "frontend/src/seiten/Sammlung.tsx",
+      "aufgaben": [
+        "aufnehmen, ändern, löschen, Liste einlesen, CSV hinaus und zurück, Preise holen, Masse ändern/löschen, suchen, sortieren, filtern"
+      ],
+      "einstiege": [
+        "Seitenleiste, Bereich sammeln",
+        "Befehlspalette (⌘K)",
+        "⌘3"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/sammlung.test.tsx :: erklärt bei leerer Sammlung, was zu tun ist"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/sammlung.test.tsx :: zeigt die Exemplare mit Menge, Zustand und Ausführung in der Liste"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/sammlung.test.tsx :: meldet einen Fehler beim Lesen der Sammlung"
+        },
+        "offline": {
+          "stand": "offen",
+          "grund": "die Seite geht ins Netz; ein Lauf ohne Netz ist nicht belegt"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/sammlung.jpg"
+        }
+      }
+    },
+    "decks": {
+      "art": "anwendung",
+      "pfad": "/decks",
+      "komponente": "frontend/src/seiten/Decks.tsx",
+      "aufgaben": [
+        "anlegen, öffnen, umbenennen, löschen, Karte hineinlegen und herausnehmen, Format wählen und prüfen, Formate verwalten, aus fremdem Profil holen"
+      ],
+      "einstiege": [
+        "Seitenleiste, Bereich spielen",
+        "Befehlspalette (⌘K)",
+        "⌘4"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/decks.test.tsx :: sagt es, wenn noch kein Deck da ist"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/decks.test.tsx :: zeigt die Decks samt ihren Zahlen"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/decks.test.tsx :: meldet einen Ladefehler"
+        },
+        "offline": {
+          "stand": "nicht vorhanden",
+          "grund": "die Seite geht nicht ins Netz"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/decks.jpg"
+        }
+      }
+    },
+    "turniere": {
+      "art": "anwendung",
+      "pfad": "/turniere",
+      "komponente": "frontend/src/seiten/Turniere.tsx",
+      "aufgaben": [
+        "anlegen, öffnen, löschen, an- und abmelden, Runde ansehen und legen, Ergebnis eintragen und zurücknehmen"
+      ],
+      "einstiege": [
+        "Seitenleiste, Bereich spielen",
+        "Befehlspalette (⌘K)"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/turniere.test.tsx :: sagt es, wenn noch kein Turnier da ist"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/turnierstand.test.tsx :: zeigt ein Bye als Ergebnis und nicht als fehlenden Gegner"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/turniernebenwege.test.tsx :: meldet einen Fehler beim Aufschlagen"
+        },
+        "offline": {
+          "stand": "nicht vorhanden",
+          "grund": "die Seite geht nicht ins Netz"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/turniere.jpg"
+        }
+      }
+    },
+    "spielen": {
+      "art": "anwendung",
+      "pfad": "/spielen",
+      "komponente": "frontend/src/seiten/Spielen.tsx",
+      "aufgaben": [
+        "eine Partie aus Decks anfangen, die Sicht eines Sitzes ansehen, Karten bewegen, tappen, umdrehen, die Bibliothek durchsehen und mischen, anhalten und beenden"
+      ],
+      "einstiege": [
+        "Seitenleiste, Bereich spielen",
+        "Befehlspalette (⌘K)"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "offen",
+          "grund": "kein Test benennt den leeren Zustand dieser Seite"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/bausteine/partienliste.test.tsx :: steigt in den gewählten Sitz ein"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "offen",
+          "grund": "kein Test benennt einen Fehlerzustand dieser Seite"
+        },
+        "offline": {
+          "stand": "offen",
+          "grund": "die Seite geht ins Netz; ein Lauf ohne Netz ist nicht belegt"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/spielen.jpg"
+        }
+      }
+    },
+    "handeln": {
+      "art": "anwendung",
+      "pfad": "/handeln",
+      "komponente": "frontend/src/seiten/Handeln.tsx",
+      "aufgaben": [
+        "ein bestätigtes Gegenüber aufschlagen, den Abgleich fahren, sehen, was unterwegs ist, und verbuchen, was den Besitzer gewechselt hat"
+      ],
+      "einstiege": [
+        "Seitenleiste, Bereich handeln",
+        "Befehlspalette (⌘K)",
+        "⌘5"
+      ],
+      "rollen": {
+        "traeger": "Profil und Nutzer",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter; ein verbindlicher Schritt verlangt die Zustimmung am Fenster"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "offen",
+          "grund": "kein Test benennt den leeren Zustand dieser Seite"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/handelsliste.test.tsx :: nennt jeden Handel mit Gegenüber, Lage und Karten"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/tauschabgleich.test.tsx :: meldet einen gescheiterten Abgleich"
+        },
+        "offline": {
+          "stand": "offen",
+          "grund": "die Seite geht ins Netz; ein Lauf ohne Netz ist nicht belegt"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/handeln.jpg"
+        }
+      }
+    },
+    "nutzer": {
+      "art": "anwendung",
+      "pfad": "/nutzer",
+      "komponente": "frontend/src/seiten/Nutzerseite.tsx",
+      "aufgaben": [
+        "anlegen, ändern, löschen (in der Zeile bestätigt), Bild und Abzeichen, wechseln (Profil und Mensch), Konto und Anmeldung, zweiter Faktor, Freigaben, Token, Vorgaben, Daten sichern"
+      ],
+      "einstiege": [
+        "Seitenleiste, Bereich programm",
+        "Befehlspalette (⌘K)",
+        "⌘'"
+      ],
+      "rollen": {
+        "traeger": "Nutzer",
+        "lesen": "wer arbeitet, über sich",
+        "schreiben": "über sich; fremde Nutzer verlangen deren zweiten Faktor"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/nutzerleere.test.tsx :: sagt, wenn ein Nutzer noch kein Profil hat"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/nutzerseite.test.tsx :: zeigt jeden Nutzer mit seinen Profilen"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/zweiterfaktor.test.tsx :: meldet einen Fehler beim Laden"
+        },
+        "offline": {
+          "stand": "offen",
+          "grund": "die Seite geht ins Netz; ein Lauf ohne Netz ist nicht belegt"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/nutzer.jpg"
+        }
+      }
+    },
+    "hilfe": {
+      "art": "anwendung",
+      "pfad": "/hilfe",
+      "komponente": "frontend/src/seiten/Hilfe.tsx",
+      "aufgaben": [
+        "lesen, springen, „Über\""
+      ],
+      "einstiege": [
+        "Seitenleiste, Bereich programm",
+        "Befehlspalette (⌘K)",
+        "⌘?",
+        "Menü: hilfe › HilfeOeffnen"
+      ],
+      "rollen": {
+        "traeger": "Rechner",
+        "lesen": "jede",
+        "schreiben": "schreibt nichts"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "nicht vorhanden",
+          "grund": "die Texte kommen aus den Katalogen und sind nie leer"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/hilfe.test.tsx :: zeigt jede Seite in der Reihenfolge aus navigation.ts"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/hilfe.test.tsx :: trägt die Grenzen auch ohne Tabellen und zeigt einen Fehler am Ort"
+        },
+        "offline": {
+          "stand": "nicht vorhanden",
+          "grund": "die Seite geht nicht ins Netz"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/hilfe.jpg"
+        }
+      }
+    },
+    "einstellungen": {
+      "art": "anwendung",
+      "pfad": "/einstellungen",
+      "komponente": "frontend/src/seiten/Einstellungen.tsx",
+      "aufgaben": [
+        "Werte setzen, Dienste schalten, Zugänge und Geheimnisse, Bestand sichern und zurückspielen (Rückfrage im Seitenbereich), Verschlüsselung, Diagnose, Kürzeltafel"
+      ],
+      "einstiege": [
+        "Seitenleiste, Bereich programm",
+        "Befehlspalette (⌘K)",
+        "⌘,",
+        "Menü: ablage › Einstellungen (⌘,)"
+      ],
+      "rollen": {
+        "traeger": "Profil, Nutzer und Rechner je Einstellung",
+        "lesen": "leser",
+        "schreiben": "je Einstellung — docs/AUTORISIERUNG.md"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "nicht vorhanden",
+          "grund": "jede Einstellung hat einen Wert oder ihre Vorgabe"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/dienstschalter.test.tsx :: nennt die Dienste bei ihrem Eigennamen"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "offen",
+          "grund": "kein Test benennt einen Fehlerzustand dieser Seite"
+        },
+        "offline": {
+          "stand": "offen",
+          "grund": "die Seite geht ins Netz; ein Lauf ohne Netz ist nicht belegt"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/einstellungen.jpg"
+        }
+      }
+    },
+    "karten": {
+      "art": "set",
+      "pfad": "/karten",
+      "komponente": "frontend/src/seiten/Karten.tsx",
+      "aufgaben": [
+        "anlegen (auch aus Scryfall und aus einem Skript), duplizieren, löschen (Rückfrage, „Trotzdem löschen\" bei Deckbezug), ordnen, kopieren/ausschneiden/einfügen, blättern (⇞/⇟), Felder füllen, Bild wählen und zuschneiden (im Editor, kein Modal), Symbol, Verweis, Marken, Notizen, Spalten, Massenänderung, Scryfall-Abgleich"
+      ],
+      "einstiege": [
+        "Seitenleiste, Bereich gestalten",
+        "Befehlspalette (⌘K)"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/erstekarte.test.tsx :: zeigt bei einem leeren Set weiter seinen leeren Zustand"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/karten.test.tsx :: zeigt die Karten mit ihrer Nummer"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/scryfallsuche.test.tsx :: meldet einen Fehler"
+        },
+        "offline": {
+          "stand": "offen",
+          "grund": "die Seite geht ins Netz; ein Lauf ohne Netz ist nicht belegt"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/karten.jpg"
+        }
+      }
+    },
+    "setangaben": {
+      "art": "set",
+      "pfad": "/setangaben",
+      "komponente": "frontend/src/seiten/Setangaben.tsx",
+      "aufgaben": [
+        "Werte ändern (beim Verlassen geschrieben), Vorbehalte ansehen"
+      ],
+      "einstiege": [
+        "Schublade „Eigenschaften\" — Knopf im Kopf des Setarbeitsplatzes, dann ihre Lasche (UX-08, #1680)",
+        "Befehlspalette (⌘K)",
+        "⌥⌘6"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/setangaben.test.tsx :: erklärt den leeren Zustand"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/setangaben.test.tsx :: zeigt je Feld ein Eingabefeld mit seinem Wert"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/setangaben.test.tsx :: meldet einen Ladefehler"
+        },
+        "offline": {
+          "stand": "nicht vorhanden",
+          "grund": "die Seite geht nicht ins Netz"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/setangaben.jpg"
+        }
+      }
+    },
+    "schluesselwoerter": {
+      "art": "set",
+      "pfad": "/schluesselwoerter",
+      "komponente": "frontend/src/seiten/Schluesselwoerter.tsx",
+      "aufgaben": [
+        "anlegen, ändern, löschen, die des Spiels zeigen, Parameter einsetzen"
+      ],
+      "einstiege": [
+        "Schublade „Eigenschaften\" — Knopf im Kopf des Setarbeitsplatzes, dann ihre Lasche (UX-08, #1680)",
+        "Befehlspalette (⌘K)",
+        "⌥⌘7"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "offen",
+          "grund": "kein Test benennt den leeren Zustand dieser Seite"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/schluesselwoerter.test.tsx :: zeigt die eigenen zum Bearbeiten"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/schluesselwoerter.test.tsx :: meldet einen Fehler beim Schreiben"
+        },
+        "offline": {
+          "stand": "nicht vorhanden",
+          "grund": "die Seite geht nicht ins Netz"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/schluesselwoerter.jpg"
+        }
+      }
+    },
+    "konsole": {
+      "art": "set",
+      "pfad": "/konsole",
+      "komponente": "frontend/src/seiten/Skriptkonsole.tsx",
+      "aufgaben": [
+        "auswerten, Namen zeigen und eingrenzen, Beispiele einsetzen, Vervollständigung"
+      ],
+      "einstiege": [
+        "Schublade „Werkzeuge\" — Knopf im Kopf des Setarbeitsplatzes, dann ihre Lasche (UX-08, #1680)",
+        "Befehlspalette (⌘K)"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "offen",
+          "grund": "kein Test benennt den leeren Zustand dieser Seite"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/skriptkonsolelauf.test.tsx :: wertet mit ⌘↩ aus, zeigt die Dauer und trägt den Lauf in den Verlauf"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/skriptnamen.test.tsx :: melden einen Fehler und lassen die Konsole stehen"
+        },
+        "offline": {
+          "stand": "nicht vorhanden",
+          "grund": "die Seite geht nicht ins Netz"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/konsole.jpg"
+        }
+      }
+    },
+    "pack": {
+      "art": "set",
+      "pfad": "/pack",
+      "komponente": "frontend/src/seiten/Zufallspack.tsx",
+      "aufgaben": [
+        "Packart wählen, Same setzen, ziehen"
+      ],
+      "einstiege": [
+        "Schublade „Werkzeuge\" — Knopf im Kopf des Setarbeitsplatzes, dann ihre Lasche (UX-08, #1680)",
+        "Befehlspalette (⌘K)"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "offen",
+          "grund": "kein Test benennt den leeren Zustand dieser Seite"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/zufallspack.test.tsx :: zieht mit der gewählten Art und dem angegebenen Samen"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/zufallspack.test.tsx :: meldet einen Fehler beim Ziehen"
+        },
+        "offline": {
+          "stand": "nicht vorhanden",
+          "grund": "die Seite geht nicht ins Netz"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/pack.jpg"
+        }
+      }
+    },
+    "symbol": {
+      "art": "set",
+      "pfad": "/symbol",
+      "komponente": "frontend/src/seiten/Symbol.tsx",
+      "aufgaben": [
+        "Grundformen, nachzeichnen, Punkte, Gruppen, Symmetrie, Verrechnung, ins Set legen"
+      ],
+      "einstiege": [
+        "Schublade „Eigenschaften\" — Knopf im Kopf des Setarbeitsplatzes, dann ihre Lasche (UX-08, #1680)",
+        "Befehlspalette (⌘K)",
+        "⌥⌘5"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "offen",
+          "grund": "kein Test benennt den leeren Zustand dieser Seite"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/symbol.test.tsx :: legt eine Grundform an und zeigt ihre Punkte"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/symbolgeladen.test.tsx :: meldet einen Ladefehler, statt leer auszusehen"
+        },
+        "offline": {
+          "stand": "nicht vorhanden",
+          "grund": "die Seite geht nicht ins Netz"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/symbol.jpg"
+        }
+      }
+    },
+    "stil": {
+      "art": "set",
+      "pfad": "/stil",
+      "komponente": "frontend/src/seiten/Stil.tsx",
+      "aufgaben": [
+        "Stil wählen (Rückfrage mit Folgen), Optionen setzen und zurücksetzen"
+      ],
+      "einstiege": [
+        "Schublade „Eigenschaften\" — Knopf im Kopf des Setarbeitsplatzes, dann ihre Lasche (UX-08, #1680)",
+        "Befehlspalette (⌘K)",
+        "⌥⌘4"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/stilvorschau.test.tsx :: erklärt ein Set ohne Karten"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/stil.test.tsx :: zeigt mit Set die Stilwahl"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "offen",
+          "grund": "kein Test benennt einen Fehlerzustand dieser Seite"
+        },
+        "offline": {
+          "stand": "nicht vorhanden",
+          "grund": "die Seite geht nicht ins Netz"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/stil.jpg"
+        }
+      }
+    },
+    "suche": {
+      "art": "set",
+      "pfad": "/suche",
+      "komponente": "frontend/src/seiten/Suche.tsx",
+      "aufgaben": [
+        "suchen, auf Feld und Set eingrenzen, Treffer aufschlagen"
+      ],
+      "einstiege": [
+        "Laschenleiste des Setarbeitsplatzes",
+        "Befehlspalette (⌘K)",
+        "⌥⌘2",
+        "Menü: setzweig › Suchen"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/suche.test.tsx :: erklärt eine leere Trefferliste, statt nichts zu zeigen"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/suche.test.tsx :: zeigt Treffer mit Kartenname, Feld und Wert"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/suche.test.tsx :: meldet einen Fehler aus der Bindung am Ort"
+        },
+        "offline": {
+          "stand": "nicht vorhanden",
+          "grund": "die Seite geht nicht ins Netz"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/suche.jpg"
+        }
+      }
+    },
+    "ersetzen": {
+      "art": "set",
+      "pfad": "/ersetzen",
+      "komponente": "frontend/src/seiten/Ersetzen.tsx",
+      "aufgaben": [
+        "vorschauen, dann ersetzen (Zweischritt statt Dialog), ⌘Z nimmt den Zug zurück"
+      ],
+      "einstiege": [
+        "Laschenleiste des Setarbeitsplatzes",
+        "Befehlspalette (⌘K)",
+        "⌥⌘3",
+        "Menü: setzweig › Ersetzen"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/ersetzen.test.tsx :: bleibt leer, wenn keine Vorschau dasteht"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/ersetzen.test.tsx :: zeigt die Vorschau, ohne zu schreiben"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/ersetzen.test.tsx :: meldet einen Fehler und meldet den Bestand nicht als geändert"
+        },
+        "offline": {
+          "stand": "nicht vorhanden",
+          "grund": "die Seite geht nicht ins Netz"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/ersetzen.jpg"
+        }
+      }
+    },
+    "statistik": {
+      "art": "set",
+      "pfad": "/statistik",
+      "komponente": "frontend/src/seiten/Statistik.tsx",
+      "aufgaben": [
+        "Feld und Dimension wählen"
+      ],
+      "einstiege": [
+        "Schublade „Werkzeuge\" — Knopf im Kopf des Setarbeitsplatzes, dann ihre Lasche (UX-08, #1680)",
+        "Befehlspalette (⌘K)",
+        "⌥⌘8"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/statistik.test.tsx :: erklärt eine leere Verteilung"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/statistik.test.tsx :: zeigt die Kennzahlen, wie sie kommen"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/statistik.test.tsx :: meldet einen Fehler aus der Bindung"
+        },
+        "offline": {
+          "stand": "nicht vorhanden",
+          "grund": "die Seite geht nicht ins Netz"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/statistik.jpg"
+        }
+      }
+    },
+    "bilder": {
+      "art": "set",
+      "pfad": "/bilder",
+      "komponente": "frontend/src/seiten/Bilder.tsx",
+      "aufgaben": [
+        "Ordner wählen (nativer Dialog), Vorlage, Konflikt, Format, Güte, Breite, Auswahl, ausgeben, anhalten"
+      ],
+      "einstiege": [
+        "Ausgabeassistent: Knopf »Ausgeben« im Kopf des Setarbeitsplatzes, Ziel »Bilder« unter »Wohin?« (UXR-09, #1917)",
+        "Befehlspalette (⌘K)",
+        "⌥⌘1",
+        "Menü: ausgabe › Bilder"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "offen",
+          "grund": "kein Test benennt den leeren Zustand dieser Seite"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/bilder.test.tsx :: schreibt jede Karte und zeigt, wie weit es ist"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/bilder.test.tsx :: hält beim ersten Fehler an und sagt, wie weit es kam"
+        },
+        "offline": {
+          "stand": "nicht vorhanden",
+          "grund": "die Seite geht nicht ins Netz"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/bilder.jpg"
+        }
+      }
+    },
+    "druckbogen": {
+      "art": "set",
+      "pfad": "/druckbogen",
+      "komponente": "frontend/src/seiten/Druckbogen.tsx",
+      "aufgaben": [
+        "Papier, Anschnitt, Auflösung, Schnittmarken, Auswahl, legen (nativer Dialog)"
+      ],
+      "einstiege": [
+        "Ausgabeassistent: Knopf »Ausgeben« im Kopf des Setarbeitsplatzes, Ziel »Druckbogen« unter »Wohin?« (UXR-09, #1917)",
+        "Befehlspalette (⌘K)",
+        "⌥⌘0",
+        "Menü: ausgabe › Druckbogen"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "offen",
+          "grund": "kein Test benennt den leeren Zustand dieser Seite"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/druckbogen.test.tsx :: legt den Bogen mit den Vorgaben"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/druckbogen.test.tsx :: meldet einen Fehler beim Legen"
+        },
+        "offline": {
+          "stand": "nicht vorhanden",
+          "grund": "die Seite geht nicht ins Netz"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/druckbogen.jpg"
+        }
+      }
+    },
+    "ausgeben": {
+      "art": "set",
+      "pfad": "/ausgeben",
+      "komponente": "frontend/src/seiten/Ausgeben.tsx",
+      "aufgaben": [
+        "Setdatei, Bilder, PDF, Exportvorlage, MTG JSON"
+      ],
+      "einstiege": [
+        "Knopf »Ausgeben« im Kopf des Setarbeitsplatzes (UXR-09, #1917)",
+        "Befehlspalette (⌘K)",
+        "⌥⌘9",
+        "Menü: ausgabe › Exportvorlage"
+      ],
+      "rollen": {
+        "traeger": "Profil",
+        "lesen": "leser",
+        "schreiben": "mitarbeiter"
+      },
+      "zustaende": {
+        "leer": {
+          "stand": "offen",
+          "grund": "kein Test benennt den leeren Zustand dieser Seite"
+        },
+        "befuellt": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/ausgeben.test.tsx :: nennt jeden Ausgang mit seinem Satz"
+        },
+        "laden": {
+          "stand": "offen",
+          "grund": "kein sichtbarer Ladezustand der Seite belegt — ausgewiesen in S12"
+        },
+        "fehler": {
+          "stand": "belegt",
+          "beleg": "frontend/src/seiten/mtgjsonsichern.test.tsx :: meldet einen Fehler beim Schreiben"
+        },
+        "offline": {
+          "stand": "nicht vorhanden",
+          "grund": "die Seite geht nicht ins Netz"
+        },
+        "nurLesen": {
+          "stand": "anwendungsweit",
+          "beleg": "frontend/src/bausteine/nurlesehinweis.test.tsx :: sagt es, wenn nur gelesen werden darf"
+        },
+        "fehlendeBerechtigung": {
+          "stand": "anwendungsweit",
+          "beleg": "internal/app/ohnerolle_test.go :: TestOhneRolleWirdImFremdenProfilNichtsGeschrieben"
+        }
+      },
+      "pruefung": {
+        "dom": {
+          "stand": "belegt",
+          "beleg": "frontend/src/barrierefreiheit.test.tsx"
+        },
+        "nativ": {
+          "stand": "bestanden",
+          "beleg": "docs/belege/huellenprobe/inventur/ausgeben.jpg"
+        }
+      }
+    }
+  },
+  "arbeitswege": {
+    "quelle": "UX-01.NAT-01 — docs/audits/0.6.0/planung/sichtpruefung/pruefaufgaben.csv, nativer Audit am Stand 4cf2f38b (Fassung 0.5.0). Status und Aufgabe wörtlich; »offen« aus der Spalte »grenze«; Träger aus kriterien.csv und native-kriterien.csv",
+    "wege": [
+      {
+        "id": "A01",
+        "aufgabe": "Set und Karte mit Bild/Text anlegen",
+        "bisher": "bestanden in Stichprobe",
+        "seiten": [
+          "sets",
+          "karten",
+          "stil"
+        ],
+        "offen": [
+          "ein transportabler Setdatei-Rundlauf (F02) — gebaut in #1750, nativ nicht abgenommen",
+          "Gestaltung über den Stil magic-m15 hinaus"
+        ],
+        "traeger": [
+          "#1746",
+          "#1677"
+        ]
+      },
+      {
+        "id": "A02",
+        "aufgabe": "Speichern, exportieren, Neustart und erneut öffnen",
+        "bisher": "teilweise bestanden / Setdatei fehlgeschlagen",
+        "seiten": [
+          "sets",
+          "ausgeben",
+          "druckbogen"
+        ],
+        "offen": [
+          "⌘S und Sichern unter als Setdatei (F02) — gebaut in #1750, nativ nicht abgenommen",
+          "Export, Neustart und Öffnen am ausgelieferten Bündel (S12.NAT-01)"
+        ],
+        "traeger": [
+          "#1746",
+          "#1672"
+        ]
+      },
+      {
+        "id": "A03",
+        "aufgabe": "Rücknahme, unbekannte Felder, Normal-/Expertenansicht",
+        "bisher": "teilweise geprüft",
+        "seiten": [
+          "karten"
+        ],
+        "offen": [
+          "Undo: ⌘Z ließ den geänderten Namen stehen, die Ursache ist nicht isoliert",
+          "unbekannte Felder im Dateirundlauf",
+          "Normal-, Erweitert- und Expertenmodus des Kartenformulars"
+        ],
+        "traeger": [
+          "#1677",
+          "#1682",
+          "#1691"
+        ]
+      },
+      {
+        "id": "A04",
+        "aufgabe": "Vorlage kopieren, validieren, korrigieren, verwenden",
+        "bisher": "teilweise bestanden",
+        "seiten": [
+          "vorlagen",
+          "pakete",
+          "karten"
+        ],
+        "offen": [
+          "Vorlagenkopie mit Karteneinsatz — im Audit fand sich kein Kopierweg",
+          "Wirkung der Validierung und die Vorschau nach einer Korrektur"
+        ],
+        "traeger": [
+          "#1691"
+        ]
+      },
+      {
+        "id": "A05",
+        "aufgabe": "Sammlungsimport und Dubletten",
+        "bisher": "fehlgeschlagen",
+        "seiten": [
+          "sammlung"
+        ],
+        "offen": [
+          "Listenimport, der einen künstlichen Namen nicht findet",
+          "CSV-Import, der vor der Ausführung scheitert (F03)",
+          "die Erklärung einer Doppelaufnahme (F08)"
+        ],
+        "traeger": [
+          "#1747",
+          "#1698"
+        ]
+      },
+      {
+        "id": "A06",
+        "aufgabe": "Sammlung suchen/filtern/Ansichten/Mengen",
+        "bisher": "teilweise bestanden",
+        "seiten": [
+          "sammlung"
+        ],
+        "offen": [
+          "Suchfilter",
+          "Gruppen",
+          "Mengenänderung"
+        ],
+        "traeger": [
+          "#1698",
+          "#1683",
+          "#1684"
+        ]
+      },
+      {
+        "id": "A07",
+        "aufgabe": "Deck aus Sammlung und Testpartie",
+        "bisher": "teilweise bestanden",
+        "seiten": [
+          "decks",
+          "sammlung",
+          "spielen"
+        ],
+        "offen": [
+          "sammlungsbasierter Deckbau — die Decks entstanden aus eigenen Setkarten"
+        ],
+        "traeger": [
+          "#1698"
+        ]
+      },
+      {
+        "id": "A08",
+        "aufgabe": "Turnier mit Ergebnissen",
+        "bisher": "bestanden in Stichprobe",
+        "seiten": [
+          "turniere"
+        ],
+        "offen": [
+          "Tiebreaker und mehrere Runden"
+        ],
+        "traeger": [
+          "#1699"
+        ]
+      },
+      {
+        "id": "A09",
+        "aufgabe": "Zweite lokale Instanz, Einladung, Trennung",
+        "bisher": "teilweise bestanden",
+        "seiten": [
+          "handeln",
+          "nutzer",
+          "einstellungen"
+        ],
+        "offen": [
+          "automatische Schnittstellenwahl für mDNS (F16) — nur mit ausdrücklich gewähltem en0",
+          "Einladung über fremde Netze",
+          "vollständiger Ablauf aus Trennung und Wiederverbindung",
+          "zwei Geräte statt zweier Instanzen auf einem Mac (QA-10.AK-04)"
+        ],
+        "traeger": [
+          "#1706",
+          "#1705",
+          "#1708",
+          "#1741"
+        ]
+      },
+      {
+        "id": "A10",
+        "aufgabe": "Testhandel und Zustandsfolge",
+        "bisher": "teilweise bestanden / Abschluss fehlgeschlagen",
+        "seiten": [
+          "handeln"
+        ],
+        "offen": [
+          "ein abgeschlossener und beidseitig verbuchter Handel",
+          "Pause, Fortsetzen und Abbruch"
+        ],
+        "traeger": [
+          "#1715",
+          "#1717"
+        ]
+      },
+      {
+        "id": "A11",
+        "aufgabe": "Spieltisch Karten, Tokens, Counter, Anhänge",
+        "bisher": "teilweise bestanden",
+        "seiten": [
+          "spielen"
+        ],
+        "offen": [
+          "Handbewegung (F04) — gebaut in #1750, nativ nicht abgenommen",
+          "Tappen",
+          "Token, Counter und Anhänge",
+          "Abzug als Bild und PDF"
+        ],
+        "traeger": [
+          "#1748",
+          "#1711",
+          "#1712",
+          "#1713"
+        ]
+      },
+      {
+        "id": "A12",
+        "aufgabe": "Gegnerperspektive und verdeckte Daten",
+        "bisher": "teilweise geprüft",
+        "seiten": [
+          "spielen"
+        ],
+        "offen": [
+          "eine Handkarte in der Gegnersicht — im Audit verhinderte der Bewegungsfehler sie",
+          "Peer- und Zweigerätebeweis für verdeckte Informationen (S12.NAT-04)"
+        ],
+        "traeger": [
+          "#1748",
+          "#1713",
+          "#1672"
+        ]
+      },
+      {
+        "id": "A13",
+        "aufgabe": "Nutzer/Profile/Nur-Lesen/Rechteentzug",
+        "bisher": "fehlgeschlagen in mehreren Schreibwegen",
+        "seiten": [
+          "nutzer",
+          "einstellungen"
+        ],
+        "offen": [
+          "Schreibwege ohne Freigabe: Profiltext, Lagerort, Turnier, Set, Kartenersetzung, Schlüsselwort, Symbol, Stiländerung",
+          "Paket- und Vorlagenressourcen, gesondert zu bewerten"
+        ],
+        "traeger": [
+          "#1702"
+        ]
+      },
+      {
+        "id": "A14",
+        "aufgabe": "Einstellungen, KI, CLI, Diagnose",
+        "bisher": "teilweise bestanden",
+        "seiten": [
+          "einstellungen"
+        ],
+        "offen": [
+          "eine KI-Anfrage",
+          "die Installation der Kommandozeile",
+          "ein erzeugtes Diagnosepaket"
+        ],
+        "traeger": [
+          "#1742",
+          "#1720",
+          "#1702"
+        ]
+      },
+      {
+        "id": "A15",
+        "aufgabe": "Testbestand sichern und restaurieren",
+        "bisher": "bestanden in Stichprobe",
+        "seiten": [
+          "einstellungen"
+        ],
+        "offen": [
+          "alle Objektarten statt eines identischen Teststands",
+          "eine unterbrochene Wiederherstellung"
+        ],
+        "traeger": [
+          "#1723",
+          "#1672"
+        ]
+      },
+      {
+        "id": "A16",
+        "aufgabe": "Hilfe, Lizenz, Datenschutz, Sprachinfo",
+        "bisher": "bestanden in Sichtstichprobe",
+        "seiten": [
+          "hilfe"
+        ],
+        "offen": [
+          "das tatsächliche Netzverhalten gegen das, was die Texte sagen"
+        ],
+        "traeger": [
+          "#1724"
+        ]
+      },
+      {
+        "id": "A17",
+        "aufgabe": "Fenstergrößen, Sprachen, Schrift, Bewegung",
+        "bisher": "teilweise bestanden",
+        "seiten": [
+          "einstellungen"
+        ],
+        "offen": [
+          "Mindestgröße",
+          "reduzierte Bewegung",
+          "weitere Sprachen als Deutsch und Englisch"
+        ],
+        "traeger": [
+          "#1686",
+          "#1682",
+          "#1687",
+          "#1672"
+        ]
+      },
+      {
+        "id": "A18",
+        "aufgabe": "Tastatur/Fokus/Navigation",
+        "bisher": "teilweise bestanden",
+        "seiten": [
+          "start",
+          "einstellungen"
+        ],
+        "offen": [
+          "vollständiger Fokuszyklus",
+          "VoiceOver, Kontrast und Bewegung",
+          "die Befehlspalette navigiert mit Return ohne Auswahl nicht"
+        ],
+        "traeger": [
+          "#1682",
+          "#1679",
+          "#1674"
+        ]
+      }
+    ]
+  }
+}

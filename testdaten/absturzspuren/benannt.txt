@@ -1,0 +1,6 @@
+panic: main.benannt("hunter2
+	zwei")
+
+goroutine 1 [running]:
+main.main()
+	spurgen/main.go:32 +0x3fc

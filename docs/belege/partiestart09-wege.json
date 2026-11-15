@@ -1,0 +1,67 @@
+{
+  "bauabdruck": "43e643558f165741bedc789de4427e14e368a8b19da4d9bdf52a54889edbd3b1",
+  "erhoben": "2026-10-20T11:21:12.587Z",
+  "fenster": "1440 × 900",
+  "wege": [
+    {
+      "weg": "S1",
+      "eingang": "bereich",
+      "art": "maus",
+      "handlungen": 3,
+      "sichtwechsel": 3,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 1654,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "S2",
+      "eingang": "tisch",
+      "art": "maus",
+      "handlungen": 3,
+      "sichtwechsel": 1,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 1655,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "S1",
+      "eingang": "bereich",
+      "art": "tastatur",
+      "handlungen": 22,
+      "sichtwechsel": 3,
+      "tabstellen": 19,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 8418,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "S1",
+      "eingang": "deck",
+      "art": "maus",
+      "handlungen": 3,
+      "sichtwechsel": 3,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 1605,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "S1",
+      "eingang": "palette",
+      "art": "maus",
+      "handlungen": 2,
+      "sichtwechsel": 2,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 946,
+      "wirkung": true,
+      "bedingt": []
+    }
+  ]
+}

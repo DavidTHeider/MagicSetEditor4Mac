@@ -1,0 +1,45 @@
+{
+  "10050": [
+    {
+      "id": 101862104,
+      "blueprint_id": 10050,
+      "name_en": "Dragon Fodder",
+      "quantity": 3,
+      "price": {"cents": 217, "currency": "EUR"},
+      "description": "gerade gezogen",
+      "properties_hash": {"condition": "Moderately Played", "signed": false,
+                          "mtg_foil": false, "mtg_language": "en",
+                          "altered": false},
+      "expansion": {"id": 92, "code": "ptkdf", "name_en": "Tarkir Dragonfury"},
+      "user": {"id": 41687, "username": "einer", "can_sell_via_hub": true,
+               "country_code": "FI", "user_type": "normal",
+               "max_sellable_in24h_quantity": null},
+      "graded": false,
+      "on_vacation": false,
+      "bundle_size": 1
+    },
+    {
+      "id": 101862105,
+      "blueprint_id": 10050,
+      "name_en": "Dragon Fodder",
+      "quantity": 1,
+      "price": {"cents": 1900, "currency": "EUR"},
+      "properties_hash": {"condition": "Near Mint", "signed": true,
+                          "mtg_foil": true, "mtg_language": "de",
+                          "altered": false},
+      "expansion": {"id": 92, "code": "ptkdf", "name_en": "Tarkir Dragonfury"},
+      "user": {"id": 9, "username": "andere", "country_code": "DE"},
+      "graded": true,
+      "on_vacation": true,
+      "bundle_size": 4
+    },
+    {
+      "id": 101862106,
+      "blueprint_id": 10050,
+      "quantity": 2,
+      "price": {"cents": 0, "currency": ""},
+      "properties_hash": {},
+      "bundle_size": 0
+    }
+  ]
+}

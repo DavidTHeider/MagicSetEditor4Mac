@@ -1,0 +1,26 @@
+﻿mse version: 2.0.0
+short name: Probesymbole
+image font size: 12
+symbol:
+	code: W
+	image: weiss.png
+symbol:
+	code: U
+	image: blau.png
+symbol:
+	code: 
+	image: ohnecode.png
+symbol:
+	code: R
+insert symbol menu:
+	item: W
+	item: U
+	item:
+		type: line
+	item:
+		type: custom
+		name: generic
+	item:
+		name: halb
+		item: 1/2
+		item: 1/4

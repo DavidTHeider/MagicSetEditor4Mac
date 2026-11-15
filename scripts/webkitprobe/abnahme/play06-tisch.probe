@@ -1,0 +1,100 @@
+# PLAY-06 (#1714) — der Tisch in WKWebView: WebGL, Bildrate, keine Fehler.
+#
+# Gegen den Servermodus mit einer laufenden Partie („Weiterspielen als Ada").
+# Die Framezeiten der Leistungsszene misst `TISCHBROWSER=webkit node
+# scripts/tischframezeit.mjs`; hier geht es darum, dass der echte Tisch der
+# Anwendung in WebKit zeichnet — mit der GPU und ohne Fehler der Seite.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+notiz Wie lange die Oberfläche braucht (PLAY-06.AK-03)
+# Seit dem Beginn des Ladens, gemessen von der Seite selbst — in WebKit und
+# im Servermodus, also ohne den Start des Go-Prozesses, den das Fenster
+# davor hat.
+zeige 'Oberfläche bereit nach ' + Math.round(performance.now()) + ' ms'
+taste escape
+taste cmd+4
+wartetext Partie anfangen
+klicketext Partie anfangen
+wartetext Weiterspielen
+klicketext Weiterspielen
+pruefe (window.__tischstart = performance.now(), true)
+klicketext Weiterspielen als Ada
+warte canvas
+bis document.querySelectorAll('[role=application] li button').length > 0
+zeige 'Tisch mit seinen Knöpfen nach ' + Math.round(performance.now() - window.__tischstart) + ' ms'
+pause 1500
+notiz Der Tisch steht im Blick, der Fokus am neuen Arbeitsplatz (F09)
+# Befund F09 der nativen Prüfung von 0.5.0: nach dem Anfangen lag der Tisch
+# unter der Falz, und man musste zurückscrollen. Die Seite steht jetzt oben,
+# „Am Tisch" hat den Fokus, und der Tisch endet über dem unteren Fensterrand.
+gleich document.activeElement.tagName + ' ' + document.activeElement.textContent => H1 Am Tisch
+gleich window.scrollY => 0
+pruefe document.querySelector('[role=application]').getBoundingClientRect().bottom <= innerHeight
+notiz Die Brotkrume nennt die Partie (UX-03.AK-02, #1675)
+# Bis zum 2026-09-24 stand über dem Tisch „Spielen › Spielen" — der Rahmen
+# kannte nur das offene Set als Bezugsobjekt. Das Artboard *Tisch* sagt
+# „Spielen › Partie gegen Bo › Am Tisch", und nur die letzte Station ist die
+# aktuelle.
+gleich [...document.querySelectorAll('nav[aria-label="Wo du bist"] li')].map((l) => l.textContent.replace('›', '').trim()).join(' › ') => Spielen › Partie gegen Bo › Am Tisch
+gleich document.querySelectorAll('nav[aria-label="Wo du bist"] [aria-current=page]').length => 1
+notiz WebGL 2 über die GPU, der Kontext hält
+zeige (() => { const g = document.querySelector('canvas').getContext('webgl2'); const i = g && g.getExtension('WEBGL_debug_renderer_info'); return g ? g.getParameter(g.VERSION) + ' | ' + (i ? g.getParameter(i.UNMASKED_RENDERER_WEBGL) : '?') : 'kein webgl2' })()
+pruefe (() => { const g = document.querySelector('canvas').getContext('webgl2'); return !!g && !g.isContextLost() })()
+notiz Mindestens fünfzig Bilder je Sekunde, auch außerhalb des Bildschirms
+pruefe (window.__bilder = 0, (function zaehle() { window.__bilder++; requestAnimationFrame(zaehle) })(), true)
+pause 2000
+zeige window.__bilder + ' Bilder in 2 s'
+pruefe window.__bilder >= 100
+notiz Der Tisch füllt seine Fläche, auch bei doppelter Dichte
+# Bis zum 2026-09-24 teilte `pixinaht.ts` die Fläche durch die Dichte, die
+# PixiJS 8 schon herausgerechnet hat: auf einem Retina-Bildschirm lag der
+# Tisch samt seinen Knöpfen im linken oberen Viertel. Eingepasst reicht er
+# in einer Richtung bis an den Rand; im Viertel reichte er in keiner über
+# die Mitte.
+zeige (() => { const f = document.querySelector('[role=application]').getBoundingClientRect(); const k = [...document.querySelectorAll('[role=application] li')].map((l) => l.getBoundingClientRect()); return devicePixelRatio + '-fache Dichte, Fläche ' + Math.round(f.width) + ' × ' + Math.round(f.height) + ', Knöpfe bis ' + Math.round(Math.max(...k.map((b) => b.right)) - f.left) + ' × ' + Math.round(Math.max(...k.map((b) => b.bottom)) - f.top) })()
+pruefe (() => { const f = document.querySelector('[role=application]').getBoundingClientRect(); const k = [...document.querySelectorAll('[role=application] li')].map((l) => l.getBoundingClientRect()); return Math.max(...k.map((b) => b.right)) - f.left > 0.6 * f.width || Math.max(...k.map((b) => b.bottom)) - f.top > 0.6 * f.height })()
+notiz Und die Seite hat keinen Fehler geworfen
+gleich JSON.stringify(window.__probeFehler || []) => []
+abzug tisch
+notiz Im schmalen Fenster steht der Zug unter dem Tisch — und trotzdem im Blick
+# **Rot war es seit 0.9.0** (#2526):
+# Rücknahmeknopf, Tischleiste und Kopf nahmen die Reserve von 11rem, und der
+# Zug ragte bei 1024 × 700 95 Punkte unter die Falz. Entschieden am
+# 2026-10-20: die Rücknahme unter den Zug und die Tischleiste hier in einer
+# Zeile — Blick in der Zeile, Ziel und Darstellung hinter „Darstellung". Der
+# Tisch lässt dem Zug 13rem statt 11 (gemessen: 162 Punkte und zwei Abstände)
+# und ist mindestens 17rem hoch; die Leinwand 222 statt 234 Punkte. Die
+# Prüfung bleibt, wie sie ist. F09 verlangt Tisch **und** aktuellen Zug sichtbar. Unter 56rem Inhalt stehen
+# die Spalten untereinander, und der Tisch lässt dem Zug 11rem. Bis zum
+# 2026-09-24 überstimmte dort `flex-1` die Höhe, und die Leinwand nahm ihre
+# Inhaltshöhe: 734 statt 321 Punkte, der Zug lag unter der Falz.
+pruefe (window.__groesse = performance.now(), window.__passend = undefined, new ResizeObserver(() => { if (window.__passend === undefined) window.__passend = performance.now() }).observe(document.querySelector('[role=application] canvas')), true)
+groesse 1024 700
+zeige window.__passend === undefined ? 'die Leinwand folgte nicht' : 'Leinwand folgte nach ' + Math.round(window.__passend - window.__groesse) + ' ms'
+pruefe window.__passend !== undefined
+zeige (() => { const t = document.querySelector('[role=application]').getBoundingClientRect(); const z = document.querySelector('[aria-label="Der Zug"]').getBoundingClientRect(); return 'Tisch ' + Math.round(t.top) + '–' + Math.round(t.bottom) + ', Zug ' + Math.round(z.top) + '–' + Math.round(z.bottom) + ', Fenster ' + innerHeight })()
+zeige (() => { const k = [...document.querySelectorAll('[aria-label="Ansicht des Tisches"], [aria-label="Springen zu"], [data-tischleiste="schmal"]')].flatMap((g) => [...g.querySelectorAll('button')]).filter((b) => b.checkVisibility() && b.getBoundingClientRect().width > 0); return k.length + ' Knöpfe in der Leiste, oben bei ' + [...new Set(k.map((b) => Math.round(b.getBoundingClientRect().top)))].join(', ') })()
+zeige (() => { const l = document.querySelector('[data-tischleiste]')?.closest('.rounded-sm'); const b = l?.getBoundingClientRect(); return b ? 'Leiste ' + Math.round(b.top) + '–' + Math.round(b.bottom) : 'keine Leiste' })()
+abzug tisch-1024
+pruefe (() => { const t = document.querySelector('[role=application]').getBoundingClientRect(); const z = document.querySelector('[aria-label="Der Zug"]').getBoundingClientRect(); return t.bottom <= z.top && z.bottom <= innerHeight && t.height >= 150 })()
+# **Und die Tischleiste ist eine Zeile** — jeder sichtbare Knopf auf
+# derselben Höhe (#2526). Hintergrund, eigenes Bild und Ausgabe stehen
+# hinter „Darstellung".
+pruefe (() => { const k = [...document.querySelectorAll('[aria-label="Ansicht des Tisches"], [aria-label="Springen zu"], [data-tischleiste="schmal"]')].flatMap((g) => [...g.querySelectorAll('button')]).filter((b) => b.checkVisibility() && b.getBoundingClientRect().width > 0); return k.length === 5 && new Set(k.map((b) => Math.round(b.getBoundingClientRect().top))).size === 1 })()
+notiz Und der Tisch passt sich an — kein Knopf liegt außerhalb der Leinwand
+# PixiJS folgt seinem Behälter erst im nächsten Bild; bis zum 2026-09-24 las
+# `useTisch` die Fläche im selben Augenblick und passte den Tisch in die
+# alte ein — er stand abgeschnitten da, die Knöpfe mit ihm.
+pruefe (() => { const f = document.querySelector('[role=application]').getBoundingClientRect(); return [...document.querySelectorAll('[role=application] li')].every((l) => { const b = l.getBoundingClientRect(); return b.left >= f.left - 1 && b.right <= f.right + 1 && b.top >= f.top - 1 && b.bottom <= f.bottom + 1 }) })()
+abzug tisch-schmal
+notiz Was hinter „Darstellung" steht, bleibt erreichbar
+klicke [data-tischleiste="schmal"] button
+wartetext Tischbild ausgeben
+pruefe (() => { const g = [...document.querySelectorAll('[role=group][aria-labelledby]')].find((x) => document.getElementById(x.getAttribute('aria-labelledby'))?.textContent === 'Darstellung'); return !!g && !!g.querySelector('select') && [...g.querySelectorAll('button')].some((b) => b.textContent.trim() === 'Tischbild ausgeben') })()
+abzug tisch-darstellung
+taste escape
+pause 400
+pruefe document.querySelector('[data-tischleiste="schmal"] button').getAttribute('aria-expanded') === 'false' && document.activeElement === document.querySelector('[data-tischleiste="schmal"] button')

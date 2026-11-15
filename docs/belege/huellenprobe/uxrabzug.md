@@ -1,0 +1,103 @@
+# Hüllenprobe: uxrabzug
+
+**bestanden** — Commit `1c0b74221`,
+2026-10-09 22:18 UTC, Mac17,3, macOS 27.0.1,
+das Bündel aus `scripts/bauen.sh abnahme`, gestartet über LaunchServices.
+Lauf `2026-10-09T19-47-35Z-46912`, Bauabdruck `1b6e1cccf72a`.
+
+- de-hell: {"X":95,"Y":119,"B":1280,"H":800}
+- de, hell: Start · Sets · Pakete · Vorlagen · Sammlung · Decks · Turniere · Spielen · Handeln · Hilfe · Einstellungen · Nutzer und Profile · Karten · Bilder · Suche · Ersetzen · Stil · Symbol · Setangaben · Schlüsselwörter · Statistik · Zufallspack · Ausgeben · Druckbogen · Konsole
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/start-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/sets-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/pakete-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/vorlagen-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/sammlung-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/decks-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/turniere-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/spielen-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/handeln-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/einstellungen-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/hilfe-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/nutzer-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/karten-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/suche-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/stil-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/symbol-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/statistik-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/ausgeben-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/druckbogen-de-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/konsole-de-hell.png`
+- ✓ ⌘Q beendet die Anwendung (de, hell)
+- de-dunkel: {"X":95,"Y":118,"B":1280,"H":800}
+- de, dunkel: Start · Sets · Pakete · Vorlagen · Sammlung · Decks · Turniere · Spielen · Handeln · Hilfe · Einstellungen · Nutzer und Profile · Karten · Bilder · Suche · Ersetzen · Stil · Symbol · Setangaben · Schlüsselwörter · Statistik · Zufallspack · Ausgeben · Druckbogen · Konsole
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/start-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/sets-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/pakete-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/vorlagen-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/sammlung-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/decks-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/turniere-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/spielen-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/handeln-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/einstellungen-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/hilfe-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/nutzer-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/karten-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/suche-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/stil-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/symbol-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/statistik-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/ausgeben-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/druckbogen-de-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/konsole-de-dunkel.png`
+- ✓ ⌘Q beendet die Anwendung (de, dunkel)
+- en-hell: {"X":95,"Y":118,"B":1280,"H":800}
+- en, hell: Home · Sets · Packages · Templates · Collection · Decks · Tournaments · Play · Trading · Help · Settings · Users and profiles · Cards · Images · Search · Replace · Style · Symbol · Set info · Keywords · Statistics · Random pack · Export · Print sheet · Console
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/start-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/sets-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/pakete-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/vorlagen-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/sammlung-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/decks-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/turniere-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/spielen-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/handeln-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/einstellungen-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/hilfe-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/nutzer-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/karten-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/suche-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/stil-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/symbol-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/statistik-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/ausgeben-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/druckbogen-en-hell.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/konsole-en-hell.png`
+- ✓ ⌘Q beendet die Anwendung (en, hell)
+- en-dunkel: {"X":95,"Y":118,"B":1280,"H":800}
+- en, dunkel: Home · Sets · Packages · Templates · Collection · Decks · Tournaments · Play · Trading · Help · Settings · Users and profiles · Cards · Images · Search · Replace · Style · Symbol · Set info · Keywords · Statistics · Random pack · Export · Print sheet · Console
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/start-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/sets-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/pakete-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/vorlagen-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/sammlung-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/decks-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/turniere-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/spielen-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/handeln-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/einstellungen-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/hilfe-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/nutzer-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/karten-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/suche-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/stil-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/symbol-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/statistik-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/ausgeben-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/druckbogen-en-dunkel.png`
+- Bild: `/Users/david/MagicSetEditor4Mac/.huellenprobe/laeufe/2026-10-09T19-47-35Z-46912/bilder/uxrabzug/konsole-en-dunkel.png`
+- ✓ ⌘Q beendet die Anwendung (en, dunkel)
+- ✓ jede Fläche aufgenommen — 80 von 80
+- ✓ die echten Orte dieses Rechners blieben unberührt
+- ✓ die echten Orte ließen sich vollständig lesen
+- ✓ die Schutzrichtlinie wies nichts ab, was das Drehbuch braucht

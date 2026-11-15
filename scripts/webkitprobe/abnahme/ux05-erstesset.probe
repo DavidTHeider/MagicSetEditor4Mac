@@ -1,0 +1,40 @@
+# UX-05 (#1677) — ein Set anlegen, ohne einen Paketnamen zu kennen.
+#
+# S07.NAT-01: das erste Set ist ohne Kenntnis eines Paketnamens anlegbar —
+# Spiel und Stil sind vorgewählt, getippt wird nur der Name. **Seit dem
+# Assistenten** (S07.NAT-03) heißt das: überspringen, Namen tippen, anlegen.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+2
+# **Seit dem Umbau der Setseite steht das Anlegen hinter »Neues Set«** —
+# die Seite zeigt zuerst die Sets im Bestand.
+wartetext Neues Set
+klicketext Neues Set
+wartetext Ein neues Set
+# **Zwei Spiele aus eigener Vorrichtung** — die Saat und `wahlspiel`
+# (`testdaten/assistent/`, WK04 #2105) —, also gehört der Schritt „Art" hier
+# hin. Bis zum 2026-10-06 setzte diese Probe die Pakete des Rechners voraus.
+# Dass er bei einem einzigen Spiel entfällt, halten `setneuspielwahl.test.tsx`
+# und am nativen Fenster `fix-f02`.
+notiz Vorbedingung: zwei Spiele, also drei Schritte (testdaten/assistent)
+bis document.querySelectorAll('ol[aria-label="Schritte zum neuen Set"] li').length === 3
+# **»Neues Set« springt seit #2367 gleich zum Namen**, wie ⌘N — Spiel und
+# Stil stehen vorgewählt, und das Überspringen ist der Weg selbst. Den
+# Knopf »Überspringen« am ersten Schritt hält `ux05-assistent`.
+notiz Der Fokus steht im Namen, und darunter steht, was vorgewählt ist
+bis document.querySelector('ol[aria-label="Schritte zum neuen Set"] li[aria-current="step"]')?.lastChild.textContent === 'Name'
+bis document.activeElement.labels && document.activeElement.labels.length > 0 && document.activeElement.labels[0].textContent.includes('Name des Sets')
+zeige [...document.querySelectorAll('section p')].map((p) => p.textContent).find((t) => t.includes(' · ')) || 'ohne Zusammenfassung'
+tippe Nachtprobe
+pruefe [...document.querySelectorAll('section p')].some((p) => p.textContent === 'Wahlspiel · Mondlicht')
+klicketext Set anlegen
+wartetext Nachtprobe
+notiz Das Set steht mit seinem Namen da, und der Editor öffnet es
+bis [...document.querySelectorAll('nav[aria-label="Wo du bist"] li')].some((l) => l.textContent.includes('Nachtprobe'))
+zeige [...document.querySelectorAll('nav[aria-label="Wo du bist"] li')].map((l) => l.textContent.replace('›', '').trim()).join(' › ')
+abzug erstes-set
+gleich JSON.stringify(window.__probeFehler || []) => []

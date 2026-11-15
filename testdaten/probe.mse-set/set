@@ -1,0 +1,17 @@
+﻿mse version: 2.0.0
+game: probe
+stylesheet: probe-stil
+set info:
+	title: Mein Probeset
+	copyright: frei
+card:
+	name: Feuerball
+	farbe: rot
+card:
+	name: Eisball
+	farbe: blau
+card:
+	name: Doppelt
+	farbe: gruen
+unverstandener block:
+	irgendwas: bleibt liegen

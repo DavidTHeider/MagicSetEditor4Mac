@@ -1,0 +1,34 @@
+mse version: 2.0.0
+game: probe
+stylesheet: probe-kunst
+set info:
+	title: Werkstatt-Testkarten
+	copyright: Probe
+card:
+	name: Langtext
+	farbe: rot
+	text: Diese Karte trägt absichtlich mehr Text, als in ihr Feld passt. Wer eine Vorlage ändert, sieht hier zuerst, ob der Umbruch trägt, ob die Schrift beim Verkleinern lesbar bleibt und ob das Feld den Rest still abschneidet oder ihn über den Rand laufen lässt. Ein Regeltext einer echten Karte hat zwischen zwei und zwölf Zeilen; dieser hat mehr, damit die Vorlage am schlimmsten Fall geprüft wird und nicht am bequemsten. Wer die Höhe des Textfeldes ändert, die Schriftgröße, den Zeilenabstand oder die Ränder, prüft an dieser Karte, was die Änderung mit dem längsten Text tut, den ein Set enthalten kann. Und wer den Text kürzt, hat die Karte entwertet — sie ist lang, weil sie lang sein soll.
+card:
+	name: Sonderlayout — ein Name, der so lang ist, dass er das Namensfeld sprengt
+	farbe: blau
+	text:
+		Erste Zeile.
+		
+		Dritte Zeile nach einer leeren — Absätze, Einrückung und Umbrüche, die eine Vorlage setzen oder verschlucken kann.
+		Vierte Zeile mit einem sehr langen Wort: Donaudampfschifffahrtsgesellschaftskapitänsmützenabzeichen.
+card:
+	name: Zweiseitig
+	farbe: rot
+	text:
+		Vorderseite: Was hier steht, gilt, solange die Karte offen liegt.
+		// Rückseite //
+		Rückseite: Die zweite Seite dieser Karte — das Probespiel kennt keine zweite Seite als eigenes Feld, deshalb steht sie als zweiter Absatz hinter der Marke. Eine Vorlage, die Seiten trennt, findet hier ihren Prüfstein.
+card:
+	name: Ohne Bild
+	farbe: blau
+	kunst: gibt-es-nicht.png
+	text: Das Feld kunst nennt eine Datei, die nicht im Set liegt. Eine Vorlage, die ein Bild verlangt, zeigt hier, was sie ohne eines tut — einen Kasten, eine Fläche oder einen Befund.
+card:
+	name: Sonderzeichen ÄÖÜ ß «» ✦ ☙ 漢字 🃏
+	farbe: rot
+	text: Umlaute, Ligaturen (ﬁ ﬂ), ein Gedankenstrich — ein Halbgeviertstrich –, Anführungszeichen „unten“ und “oben”, Pfeile → ← ↔, ein Kartensymbol 🃏 und Schriftzeichen 漢字: was die Schrift der Vorlage nicht hat, holt sich der Rasterer aus einer anderen — oder zeigt ein Kästchen. Genau das soll hier zu sehen sein.

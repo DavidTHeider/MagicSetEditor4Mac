@@ -1,0 +1,16 @@
+{
+  "code": "ALT",
+  "name": "Set ohne Umschlag",
+  "releaseDate": "2019-05-01",
+  "cards": [
+    {
+      "name": "Alter Bekannter",
+      "manaCost": "{1}{W}",
+      "types": ["Creature"],
+      "subtypes": ["Human"],
+      "power": "2",
+      "toughness": "2",
+      "rarity": "common"
+    }
+  ]
+}

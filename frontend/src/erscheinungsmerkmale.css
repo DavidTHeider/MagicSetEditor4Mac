@@ -1,0 +1,181 @@
+/* **Merkmale, die dem Erscheinungsbild folgen und nicht der Farbwelt** —
+   AP-2 (#2359),
+   Vermerk 0065, Nachtrag vom 2026-10-16.
+
+   Bis dahin standen sie als Tailwinds Palette in den Bauteilen
+   (`text-amber-800 dark:text-amber-300`, `fill-sky-200/60` …), und keine
+   Farbwelt, kein hoher Kontrast und keine Sperre wusste von ihnen. Die
+   Werte sind dieselben, in sRGB umgerechnet; gemessen sind sie in
+   `docs/KONTRASTE.md`, Abschnitt »Ein Fehlersystem und die Merkmale der
+   Meldungen«, und am Fenster mit `farbsprache09`.
+
+   **Eingebunden von `stil.css`** wie `mantinemerkmale.css` — Tailwind liest
+   ein lokales `@import` mit, und die Wächter über die Farbnamen tun es
+   ebenso (`farbklassen.test.ts`, `farbklassen_test.go`,
+   `verduennung_test.go`). Eine eigene Datei, weil `stil.css` sonst über die
+   Zeilengrenze aus §2 wüchse.
+
+   **Der Fehler steht nicht hier**: `text-fehler` kommt aus `--mse-warnung`,
+   und das setzt jede Farbwelt (`stil.css`, `themen.css`). */
+@theme {
+  /* **Hinweis und Erfolg** — die anderen beiden Stimmen der Meldungen
+     (AP-2, #2359). Ihre Werte sind die bisherigen aus Tailwinds Palette,
+     in sRGB umgerechnet (`kontrast.ts`, `statusfarben`); sie folgen dem
+     Erscheinungsbild, nicht der Farbwelt. */
+  --color-hinweis: var(--mse-hinweis);
+  --color-erfolg: var(--mse-erfolg);
+
+  /* **Zwei Farben des Quelltexts** — Zeichenkette und Zahl (`farben.ts`). */
+  --color-zeichenkette: var(--mse-zeichenkette);
+  --color-zahl: var(--mse-zahl);
+
+  /* **Was auf einer Zeichenfläche gewählt oder markiert ist** — die gewählte
+     Form des Symboleditors und ihre Kante, die Bildgrenzen der Vorschau; der
+     Mittelpunkt der Symmetrie und die Beschnittlinie. Hellblau und
+     Bernstein, wie bisher, und sie stehen nur hier. */
+  --color-auswahl: var(--mse-auswahl);
+  --color-auswahlkante: var(--mse-auswahlkante);
+  --color-markierung: var(--mse-markierung);
+  --color-markierungskante: var(--mse-markierungskante);
+
+  /* **Was über einem Bild liegt**, gleich in jedem Erscheinungsbild — der
+     Rahmen des Zuschnitts und der Grund einer Symbolvorschau: ein Bild hat
+     keine Farbwelt, und ein Rahmen, der mit ihr wechselte, verschwände auf
+     der Hälfte der Bilder. */
+  --color-bildhell: #ffffff;
+  --color-bilddunkel: #0f172b;
+
+  /* **Drei Rundungen und rund** — Vermerk 0065, Festlegung 3; AP-2 (#2359).
+     Ein Feld und ein Knopf `sm`, ein Kasten `md`, eine Überlagerung `lg`,
+     eine Marke `full`. Die Werte sind Tailwinds, sie stehen nur hier, und
+     `farbsprache.test.ts` hält jede Stelle daran. */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+}
+
+@layer base {
+  :root {
+    --mse-hinweis: #973c00;
+    --mse-erfolg: #006045;
+    --mse-zeichenkette: #006045;
+    --mse-zahl: #5d0ec0;
+    --mse-auswahl: #b8e6fe;
+    --mse-auswahlkante: #0069a8;
+    --mse-markierung: #fee685;
+    --mse-markierungskante: #bb4d00;
+  }
+
+  /* **Dieselben Wähler wie in `stil.css`**: dunkel, wenn das System es ist
+     und nichts gewählt wurde, und dunkel, wenn es gewählt wurde. */
+  html[data-erscheinungsbild='dunkel'],
+  html:not([data-erscheinungsbild]) {
+    @media (prefers-color-scheme: dark) {
+      --mse-hinweis: #ffd230;
+      --mse-erfolg: #a4f4cf;
+      --mse-zeichenkette: #a4f4cf;
+      --mse-zahl: #c4b4ff;
+      --mse-auswahl: #024a70;
+      --mse-auswahlkante: #74d4ff;
+      --mse-markierung: #7b3306;
+      --mse-markierungskante: #ffd230;
+    }
+  }
+
+  html[data-erscheinungsbild='dunkel'] {
+    --mse-hinweis: #ffd230;
+    --mse-erfolg: #a4f4cf;
+    --mse-zeichenkette: #a4f4cf;
+    --mse-zahl: #c4b4ff;
+    --mse-auswahl: #024a70;
+    --mse-auswahlkante: #74d4ff;
+    --mse-markierung: #7b3306;
+    --mse-markierungskante: #ffd230;
+  }
+}
+
+/* **Ein Pfeil für jede Auswahl** — AP-3
+   (#2360),
+   Befund B-10.
+
+   Das native Feld trug den Pfeil von WebKit, die Auswahl mit Suche ein
+   Zeichen »▾« daneben — in den Einstellungen standen »Sprache« und
+   »Zeitzone« untereinander mit zwei verschiedenen. **Jetzt zeichnen beide
+   denselben**, aus zwei Verläufen in `leise` statt aus einer Bilddatei: so
+   folgt er jeder Farbwelt und jedem Erscheinungsbild ohne eigenen Wert, und
+   `leise` ist gegen `grund` und `flaeche` gemessen (`docs/KONTRASTE.md`).
+
+   **Über der Faser, nicht an ihrer Stelle**: Pergament legt seine Faser als
+   `background-image` an `.bg-grund` und `.bg-flaeche` (`stil.css`). Ein
+   Pfeil, der das Bild setzt, nähme sie dem Feld; deshalb liegt er dort als
+   oberste Schicht, und die Faser bleibt darunter — der erste Lauf von
+   `ap3gestalt` hat sie an »Sprache« und »Zeitzone« gefunden.
+
+   **Ohne Ebene für das native Feld**: Tailwinds `px-2` stünde in der Ebene
+   der Utilities über jeder Basisregel, und der Text liefe unter den Pfeil.
+   Ein Feld mit `multiple` oder `size` ist eine Liste und hat keinen. */
+@utility auswahlpfeil {
+  --auswahlpfeil:
+    linear-gradient(45deg, transparent 50%, var(--color-leise) 50%),
+    linear-gradient(135deg, var(--color-leise) 50%, transparent 50%);
+  background-image: var(--auswahlpfeil);
+  background-position:
+    right 0.8rem center,
+    right 0.5rem center;
+  background-size:
+    0.3rem 0.3rem,
+    0.3rem 0.3rem;
+  background-repeat: no-repeat, no-repeat;
+
+  &:is(.bg-grund, .bg-flaeche) {
+    background-image: var(--auswahlpfeil), var(--mse-faser);
+    background-position:
+      right 0.8rem center,
+      right 0.5rem center,
+      0 0;
+    background-size:
+      0.3rem 0.3rem,
+      0.3rem 0.3rem,
+      auto;
+    background-repeat: no-repeat, no-repeat, repeat;
+  }
+}
+
+select:not([multiple]):not([size]) {
+  @apply auswahlpfeil;
+  appearance: none;
+  padding-right: 1.75rem;
+}
+
+/* **Eine Überlagerung erscheint, statt zu springen** — AP-4
+   (#2361),
+   Befund B-11, Vermerk 0065 Festlegung 10: Deckkraft und Lage, in
+   `--dauer-mittel` (160 ms), und unter wenig Bewegung 0 ms — die Variable
+   setzt `barrierefreiheit.css`, und dort steht auch die Regel, die jede
+   Animation auf 0,01 ms kürzt.
+
+   **Als Animation beim Einhängen und nicht als Mantines Übergang**: Dialog
+   und Schublade werden offen gezeichnet, und Mantine beginnt dann im Zustand
+   „eingetreten“ — eine Dauer dort hätte nach Bewegung ausgesehen und keine
+   gebracht. Beim Schließen verschwinden sie, wie bisher. */
+@keyframes auftauchen {
+  from {
+    opacity: 0;
+    translate: 0 0.25rem;
+  }
+}
+
+@keyframes einschieben {
+  from {
+    opacity: 0;
+    translate: 1.5rem 0;
+  }
+}
+
+@utility auftauchen {
+  animation: auftauchen var(--dauer-mittel) ease-out;
+}
+
+@utility einschieben {
+  animation: einschieben var(--dauer-mittel) ease-out;
+}

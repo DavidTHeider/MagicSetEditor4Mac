@@ -1,0 +1,601 @@
+# UX-14.AK-03/AK-04 und S06.NAT-01/03/04 (#1686) — jede registrierte Seite bei der kleinsten erklärten Größe, in WKWebView.
+#
+# *„Jede registrierte Seite erhält mindestens eine Resize-Abnahme mit
+# belastetem oder repräsentativ befülltem Zustand."* Je Seite, über die
+# Befehlspalette geöffnet, bei **1.024 × 700** — erst in normaler, dann in
+# sehr großer Schrift: die Seite rollt nicht waagerecht, kein Knopf ragt über
+# den Rand (was in einem rollenden Kasten steht, zählt nicht), und keine
+# Spalte ist gesperrt. **Befüllt ist der Bestand der Abnahme**: ein Set mit
+# fünf Karten, fünf Exemplare, ein Deck, eine Partie, zwei Gegenüber.
+#
+# **Maximieren und Zurückkehren** (S06.NAT-03) prüft der Kartenarbeitsplatz:
+# die gewählte Karte, ein halb getippter Name und eine aufgeklappte Spalte
+# überstehen 1.440 × 900 und den Weg zurück.
+#
+# **Zweimal Escape nach einer Schublade**: liegt über ihr ein Tooltip — der
+# Zeiger steht vom letzten Klick noch da —, schließt der erste ihn (WCAG
+# 1.4.13) und erst der zweite die Schublade.
+#
+# **Was es nicht zeigt**: einen zweiten Bildschirm und das native Maximieren
+# — beides steht in `docs/HANDPRUEFUNGEN.md`. Retina ist dieser Rechner
+# (die Probe meldet ihr Verhältnis unten).
+#
+# **Und was es überspringt** — M5 und M14 aus dem Zweitblick über Phase 6.3:
+# jeden Knopf in einem Kasten mit `overflow` (das sind alle Spalten der
+# Arbeitsplätze), die Zahl der geprüften Knöpfe, die Leiste oben und eine
+# eigene Schrift. Das hält seit Phase 6.11 die Hüllenprobe `phase611` am
+# nativen Fenster: jede Seite der Palette bei 1.024 × 700, Leiste oben,
+# „Sehr groß" und „Buch" über die ganze Oberfläche, mit Zahl.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+groesse 1024 700
+pause 500
+pruefe (window.__enge = () => { const breite = document.documentElement.clientWidth; const befunde = []; if (document.scrollingElement.scrollWidth > innerWidth + 1) befunde.push('die Seite rollt waagerecht'); const rollt = (e) => { for (let x = e.parentElement; x; x = x.parentElement) { const o = getComputedStyle(x).overflowX; if (o === 'auto' || o === 'scroll') return true } return false }; for (const b of document.querySelectorAll('main button, main a[href]')) { if (!b.checkVisibility() || rollt(b)) continue; const r = b.getBoundingClientRect(); if (r.width > 0 && (r.left < -1 || r.right > breite + 1)) befunde.push('abgeschnitten: ' + (b.getAttribute('aria-label') || b.innerText).trim().slice(0, 40)) } for (const b of document.querySelectorAll('main button[disabled]')) { if (b.checkVisibility() && /einblenden|Show the/.test(b.innerText)) befunde.push('gesperrt: ' + b.innerText.trim()) } return befunde }, window.__waehle = (text, wert) => { const s = [...document.querySelectorAll('select')].find((w) => w.checkVisibility() && w.labels && w.labels[0] && w.labels[0].textContent.includes(text)); if (s && s.value !== wert) { s.value = wert; s.dispatchEvent(new Event('change', { bubbles: true })) } return true }, true)
+zeige 'Bildpunkte je Punkt: ' + window.devicePixelRatio
+
+notiz Das Set öffnen — die Seiten eines Sets brauchen eines
+taste cmd+2
+wartetext Werkstatt-Testkarten
+klicketext Werkstatt-Testkarten
+wartetext Wie viel du siehst
+pause 1200
+
+notiz Start — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Start').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Sets — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Sets').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Pakete — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Pakete').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Vorlagen — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Vorlagen').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Sammlung — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Sammlung').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Decks — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Decks').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Turniere — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Turniere').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Spielen — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Spielen').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Handeln — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Handeln').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Hilfe — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Hilfe').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Einstellungen — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Einstellungen').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Nutzer und Profile — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Nutzer und Profile').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Karten — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Karten').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Bilder — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Bilder').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Suche — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Suche').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Ersetzen — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Ersetzen').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Stil — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Stil').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+taste escape
+pause 300
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())
+
+notiz Setangaben — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Setangaben').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+taste escape
+pause 300
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())
+
+notiz Symbol — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Symbol').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+taste escape
+pause 300
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())
+
+notiz Schlüsselwörter — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Schlüsselwörter').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+taste escape
+pause 300
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())
+
+notiz Statistik — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Statistik').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+taste escape
+pause 300
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())
+
+notiz Zufallspack — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Zufallspack').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+taste escape
+pause 300
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())
+
+notiz Konsole — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Konsole').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+taste escape
+pause 300
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())
+
+notiz Ausgeben — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Ausgeben').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Druckbogen — normale Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Druckbogen').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Maximieren und zurück — gewählte Karte, halber Name und offene Spalte bleiben (S06.NAT-03)
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Karten').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+wartetext Wie viel du siehst
+pause 800
+klicketext Navigator einblenden
+bis !!document.querySelector('aside[data-ueber="zentrum"]')
+pruefe ([...document.querySelectorAll('main button')].find((b) => (b.getAttribute('aria-label') || '').startsWith('Nächste Karte')).dataset.ziel = 'naechste', true)
+klicke [data-ziel="naechste"]
+pause 800
+pruefe (window.__karte = [...document.querySelectorAll('nav[aria-label="Wo du bist"] li')].pop().textContent.trim(), true)
+klicke input[aria-label="name"]
+tippe Halb
+pruefe (window.__entwurf = document.activeElement.value, true)
+zeige 'vorher: ' + window.__karte + ' / ' + window.__entwurf
+groesse 1440 900
+pause 800
+gleich [...document.querySelectorAll('nav[aria-label="Wo du bist"] li')].pop().textContent.trim() === window.__karte => true
+gleich document.activeElement.value === window.__entwurf => true
+groesse 1024 700
+pause 800
+gleich [...document.querySelectorAll('nav[aria-label="Wo du bist"] li')].pop().textContent.trim() === window.__karte => true
+gleich document.activeElement.value === window.__entwurf => true
+gleich !!document.querySelector('aside[data-ueber="zentrum"]') => true
+abzug zurueck-1024
+notiz Den halben Namen wegnehmen, ohne zu schreiben — die Drehbücher danach laufen auf demselben Bestand
+pruefe (Object.getOwnPropertyDescriptor(Object.getPrototypeOf(document.activeElement), 'value').set.call(document.activeElement, window.__entwurf.slice(0, -4)), document.activeElement.dispatchEvent(new Event('input', { bubbles: true })), true)
+taste escape
+
+notiz Sehr große Schrift — Einstellungen, Erscheinungsbild
+taste cmd+,
+wartetext Erscheinungsbild
+pruefe ([...document.querySelectorAll('main button')].find((b) => b.textContent.startsWith('Erscheinungsbild')).dataset.ziel = 'eb', true)
+klicke [data-ziel="eb"]
+bis [...document.querySelectorAll('select')].some((w) => w.checkVisibility() && w.labels && w.labels[0] && w.labels[0].textContent.includes('Schriftgröße'))
+bis (window.__waehle('Schriftgröße', 'sehrgross'), getComputedStyle(document.documentElement).fontSize === '20px')
+
+notiz Start — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Start').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Sets — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Sets').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Pakete — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Pakete').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Vorlagen — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Vorlagen').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Sammlung — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Sammlung').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Decks — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Decks').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Turniere — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Turniere').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Spielen — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Spielen').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Handeln — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Handeln').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Hilfe — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Hilfe').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Einstellungen — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Einstellungen').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Nutzer und Profile — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Nutzer und Profile').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Karten — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Karten').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Bilder — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Bilder').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Suche — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Suche').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Ersetzen — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Ersetzen').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Stil — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Stil').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+taste escape
+pause 300
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())
+
+notiz Setangaben — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Setangaben').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+taste escape
+pause 300
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())
+
+notiz Symbol — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Symbol').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+taste escape
+pause 300
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())
+
+notiz Schlüsselwörter — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Schlüsselwörter').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+taste escape
+pause 300
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())
+
+notiz Statistik — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Statistik').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+taste escape
+pause 300
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())
+
+notiz Zufallspack — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Zufallspack').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+taste escape
+pause 300
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())
+
+notiz Konsole — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Konsole').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+taste escape
+pause 300
+taste escape
+bis ![...document.querySelectorAll('[role=dialog]')].some((d) => d.checkVisibility())
+
+notiz Ausgeben — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Ausgeben').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Druckbogen — sehr große Schrift
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe ([...document.querySelectorAll('[role=dialog] button')].find((b) => b.getClientRects().length > 0 && b.innerText.trim() === 'Druckbogen').dataset.ziel = 'seite', true)
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+pause 1000
+gleich JSON.stringify(window.__enge()) => []
+
+notiz Zurücksetzen
+taste cmd+,
+wartetext Erscheinungsbild
+pruefe ([...document.querySelectorAll('main button')].find((b) => b.textContent.startsWith('Erscheinungsbild')).dataset.ziel = 'eb', true)
+klicke [data-ziel="eb"]
+bis [...document.querySelectorAll('select')].some((w) => w.checkVisibility() && w.labels && w.labels[0] && w.labels[0].textContent.includes('Schriftgröße'))
+bis (window.__waehle('Schriftgröße', 'erben'), getComputedStyle(document.documentElement).fontSize === '16px')
+groesse 1440 900
+gleich JSON.stringify(window.__probeFehler || []) => []

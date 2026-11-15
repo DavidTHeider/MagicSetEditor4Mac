@@ -1,0 +1,39 @@
+﻿mse version: 2.0.0
+game: probe
+short name: Nachbarvorgabe
+version: 2026-08-22
+depends on:
+	package: probe.mse-game
+	version: 2026-08-15
+
+card width: 375
+card height: 523
+card dpi: 150
+############ Der Kartenstil
+card style:
+	card color:
+		left: 0
+		top: 0
+		width:	375
+		height:	523
+		z index: 0
+		render style: image
+############ Die Stiloptionen
+# **Eine Vorgabe, die ihre Nachbaroption liest** (#860).
+#
+# MSE legt in `styling` die **gespeicherten** Werte des Sets ab
+# (`src/script/script_manager.cpp`, Zeilen 30–61, Fassung f9d9356 vom
+# 2021-07-06). Ein `default:`, das nur die Anfangswerte sähe, gäbe für ein Set
+# mit gespeichertem `dunkel` weiterhin Schwarz.
+styling field:
+	type:			choice
+	name:			hintergrund
+	description:	Hell oder dunkel.
+	choice:			hell
+	choice:			dunkel
+styling field:
+	type:			text
+	name:			schriftfarbe
+	description:	Die Schriftfarbe, aus dem Hintergrund gerechnet.
+	default:		{ if styling.hintergrund == "dunkel" then "weiß" else "schwarz" }
+	initial:		rot

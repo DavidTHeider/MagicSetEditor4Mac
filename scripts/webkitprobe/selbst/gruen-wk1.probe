@@ -1,0 +1,10 @@
+# Selbstprobe der WebKit-Probe — Motor wk1: was ein Vorleser sieht.
+motor wk1
+lade seite.html
+warte #oeffnen
+baum
+klicke #oeffnen
+fokus
+baum #palette
+taste tab
+fokus

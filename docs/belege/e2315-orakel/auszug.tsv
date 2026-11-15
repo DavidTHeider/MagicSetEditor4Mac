@@ -1,0 +1,90 @@
+set	karte	gang	feld	start	ende	zeilen	groesse	kasten
+Black	Cruel Revival	erster	name	1.000000	1.000000	1	16.0000	249.00x23.00
+Black	Cruel Revival	erster	type	1.000000	1.000000	1	13.0000	288.00x20.00
+Black	Cruel Revival	erster	text	1.000000	1.000000	6	14.0000	314.00x154.00
+Black	Cruel Revival	erster	pt	1.000000	1.000000	1	16.0000	60.00x28.00
+Black	Cruel Revival	erster	illustrator	1.000000	1.000000	1	7.2500	58.00x10.00
+Black	Cruel Revival	erster	card_code	1.000000	1.000000	1	7.0000	120.00x10.00
+Black	Cruel Revival	erster	set_code	1.000000	1.000000	1	7.0000	40.00x10.00
+Black	Cruel Revival	erster	auto_copyright	1.000000	1.000000	1	6.5000	140.00x10.00
+Black	Cruel Revival	erster	secondary_copyright	1.000000	1.000000	1	6.5000	96.00x10.00
+Black	Cruel Revival	erster	casting_cost	1.000000	1.000000	1	15.0000	65.00x23.00
+Black	Cruel Revival	erster	vorthos_box	1.000000	1.000000	1	7.0000	70.00x10.00
+Black	Cruel Revival	zweiter	name	1.000000	1.000000	1	16.0000	269.00x23.00
+Black	Cruel Revival	zweiter	illustrator	1.000000	1.000000	1	7.2500	60.25x10.00
+Black	Cruel Revival	zweiter	casting_cost	1.000000	1.000000	1	15.0000	45.00x23.00
+Black	Bleed Dry	erster	name	1.000000	1.000000	1	16.0000	249.00x23.00
+Black	Bleed Dry	erster	type	1.000000	1.000000	1	13.0000	288.00x20.00
+Black	Bleed Dry	erster	text	1.000000	1.000000	5	14.0000	314.00x154.00
+Black	Bleed Dry	erster	pt	1.000000	1.000000	1	16.0000	60.00x28.00
+Black	Bleed Dry	erster	illustrator	1.000000	1.000000	1	7.2500	57.75x10.00
+Black	Bleed Dry	erster	card_code	1.000000	1.000000	1	7.0000	120.00x10.00
+Black	Bleed Dry	erster	set_code	1.000000	1.000000	1	7.0000	40.00x10.00
+Black	Bleed Dry	erster	auto_copyright	1.000000	1.000000	1	6.5000	140.00x10.00
+Black	Bleed Dry	erster	secondary_copyright	1.000000	1.000000	1	6.5000	96.00x10.00
+Black	Bleed Dry	erster	casting_cost	1.000000	1.000000	1	15.0000	65.00x23.00
+Black	Bleed Dry	erster	vorthos_box	1.000000	1.000000	1	7.0000	70.00x10.00
+Black	Bleed Dry	zweiter	illustrator	1.000000	1.000000	1	7.2500	50.00x10.00
+Black	Noxious Ghoul	erster	name	1.000000	1.000000	1	16.0000	249.00x23.00
+Black	Noxious Ghoul	erster	type	1.000000	1.000000	1	13.0000	288.00x20.00
+Black	Noxious Ghoul	erster	text	1.000000	1.000000	4	14.0000	314.00x154.00
+Black	Noxious Ghoul	erster	pt	1.000000	1.000000	1	16.0000	60.00x28.00
+Black	Noxious Ghoul	erster	illustrator	1.000000	1.000000	1	7.2500	55.75x10.00
+Black	Noxious Ghoul	erster	card_code	1.000000	1.000000	1	7.0000	120.00x10.00
+Black	Noxious Ghoul	erster	set_code	1.000000	1.000000	1	7.0000	40.00x10.00
+Black	Noxious Ghoul	erster	auto_copyright	1.000000	1.000000	1	6.5000	140.00x10.00
+Black	Noxious Ghoul	erster	vorthos_box	1.000000	1.000000	1	7.0000	65.00x10.00
+Black	Noxious Ghoul	erster	secondary_copyright	1.000000	1.000000	1	6.5000	24.00x10.00
+Black	Noxious Ghoul	erster	casting_cost	1.000000	1.000000	1	15.0000	65.00x23.00
+Black	Noxious Ghoul	erster	vorthos_box	1.000000	1.000000	1	7.0000	15.00x10.00
+Black	Noxious Ghoul	zweiter	illustrator	1.000000	1.000000	1	7.2500	51.00x10.00
+Black	Liliana Deaths Majesty	erster	colon_1	1.000000	1.000000	1	15.0000	5.00x10.00
+Black	Liliana Deaths Majesty	erster	colon_2	1.000000	1.000000	1	15.0000	5.00x10.00
+Black	Liliana Deaths Majesty	erster	colon_3	1.000000	1.000000	1	15.0000	5.00x10.00
+Black	Liliana Deaths Majesty	erster	name	1.000000	1.000000	1	16.0000	248.00x23.00
+Black	Liliana Deaths Majesty	erster	type	1.000000	1.000000	1	13.0000	287.00x20.00
+Black	Liliana Deaths Majesty	erster	text	1.000000	1.000000	8	14.0000	300.00x146.00
+Black	Liliana Deaths Majesty	erster	loyalty_cost_1	1.000000	1.000000	1	11.0000	18.00x35.00
+Black	Liliana Deaths Majesty	erster	loyalty_cost_2	1.000000	1.000000	1	11.0000	18.00x35.00
+Black	Liliana Deaths Majesty	erster	loyalty_cost_3	1.000000	1.000000	1	11.0000	18.00x35.00
+Black	Liliana Deaths Majesty	erster	loyalty_cost_4	1.000000	1.000000	1	11.0000	18.00x35.00
+Black	Liliana Deaths Majesty	erster	loyalty	1.000000	1.000000	1	14.0000	13.16x34.63
+Black	Liliana Deaths Majesty	erster	illustrator	1.000000	1.000000	1	7.2500	55.50x10.00
+Black	Liliana Deaths Majesty	erster	card_code	1.000000	1.000000	1	7.0000	120.00x10.00
+Black	Liliana Deaths Majesty	erster	set_code	1.000000	1.000000	1	7.0000	40.00x10.00
+Black	Liliana Deaths Majesty	erster	auto_copyright	1.000000	1.000000	1	6.5000	140.00x10.00
+Black	Liliana Deaths Majesty	erster	vorthos_box	1.000000	1.000000	1	7.0000	65.00x10.00
+Black	Liliana Deaths Majesty	erster	secondary_copyright	1.000000	1.000000	1	6.5000	40.00x10.00
+Black	Liliana Deaths Majesty	erster	casting_cost	1.000000	1.000000	1	1.0000	65.00x23.00
+Black	Liliana Deaths Majesty	erster	vorthos_box	1.000000	1.000000	1	7.0000	15.00x10.00
+Black	Liliana Deaths Majesty	zweiter	colon_2	1.000000	1.000000	1	15.0000	5.00x10.00
+Black	Liliana Deaths Majesty	zweiter	colon_3	1.000000	1.000000	1	15.0000	5.00x10.00
+Black	Liliana Deaths Majesty	zweiter	loyalty_cost_2	1.000000	1.000000	1	11.0000	18.00x35.00
+Black	Liliana Deaths Majesty	zweiter	loyalty_cost_3	1.000000	1.000000	1	11.0000	18.00x35.00
+Black	Liliana Deaths Majesty	zweiter	illustrator	1.000000	1.000000	1	7.2500	52.25x10.00
+Red	Minotaur de Force	erster	name	1.000000	1.000000	1	16.0000	269.00x23.00
+Red	Minotaur de Force	erster	type	1.000000	1.000000	1	13.0000	288.00x20.00
+Red	Minotaur de Force	erster	text	1.000000	1.000000	5	14.0000	314.00x154.00
+Red	Minotaur de Force	erster	pt	1.000000	1.000000	1	16.0000	60.00x28.00
+Red	Minotaur de Force	erster	illustrator	1.000000	1.000000	1	7.2500	64.50x10.00
+Red	Minotaur de Force	erster	card_code	1.000000	1.000000	1	7.0000	120.00x10.00
+Red	Minotaur de Force	erster	set_code	1.000000	1.000000	1	7.0000	40.00x10.00
+Red	Minotaur de Force	erster	auto_copyright	1.000000	1.000000	1	6.5000	140.00x10.00
+Red	Minotaur de Force	erster	vorthos_box	1.000000	1.000000	1	7.0000	65.00x10.00
+Red	Minotaur de Force	erster	secondary_copyright	1.000000	1.000000	1	6.5000	24.00x10.00
+Red	Minotaur de Force	erster	casting_cost	1.000000	1.000000	1	15.0000	45.00x23.00
+Red	Minotaur de Force	erster	vorthos_box	1.000000	1.000000	1	7.0000	15.00x10.00
+Red	Minotaur de Force	zweiter	illustrator	1.000000	1.000000	1	7.2500	50.00x10.00
+White	Aerialephant	erster	name	1.000000	1.000000	1	16.0000	269.00x23.00
+White	Aerialephant	erster	type	1.000000	1.000000	1	13.0000	288.00x20.00
+White	Aerialephant	erster	text	1.000000	1.000000	6	14.0000	314.00x154.00
+White	Aerialephant	erster	pt	1.000000	1.000000	1	16.0000	60.00x28.00
+White	Aerialephant	erster	illustrator	1.000000	1.000000	1	7.2500	62.25x10.00
+White	Aerialephant	erster	card_code	1.000000	1.000000	1	7.0000	120.00x10.00
+White	Aerialephant	erster	set_code	1.000000	1.000000	1	7.0000	40.00x10.00
+White	Aerialephant	erster	auto_copyright	1.000000	1.000000	1	6.5000	140.00x10.00
+White	Aerialephant	erster	vorthos_box	1.000000	1.000000	1	7.0000	65.00x10.00
+White	Aerialephant	erster	secondary_copyright	1.000000	1.000000	1	6.5000	24.00x10.00
+White	Aerialephant	erster	casting_cost	1.000000	1.000000	1	15.0000	45.00x23.00
+White	Aerialephant	erster	vorthos_box	1.000000	1.000000	1	7.0000	15.00x10.00
+White	Aerialephant	zweiter	illustrator	1.000000	1.000000	1	7.2500	50.00x10.00

@@ -1,0 +1,5 @@
+# Selbstprobe: ein roter Schritt muss rot sein — und der Lauf danach stehen.
+lade seite.html
+frist 500
+warte #gibtsnicht
+pruefe true

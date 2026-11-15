@@ -1,0 +1,152 @@
+# Hüllenprobe: einstellungshoehen09
+
+**bestanden** — Commit `718bb0ca9`,
+2026-10-20 10:29 UTC, Mac17,3, macOS 27.0.1,
+das Bündel aus `scripts/bauen.sh abnahme`, gestartet über LaunchServices.
+Lauf `2026-10-20T10-13-25Z-83475`, Bauabdruck `43e643558f16`.
+
+- ### Dienste bei 1440 × 838 — Rolltiefe 1.2, sichtbar 807 pt
+- | Teil | Höhe | Anteil an der sichtbaren Höhe |
+- | --- | ---: | ---: |
+- |  Dienste | 37 | 0.05 |
+- |  Eigenes Marktkonto lesen | 104 | 0.13 |
+- |  Fremde Kartendienste | 491 | 0.61 |
+- | › Fremde Kartendienste | 252 | 0.31 |
+- | › Wer beantwortet was | 151 | 0.19 |
+- |  Was die Dienste hier können | 41 | 0.05 |
+- |  Zugangsdaten | 41 | 0.05 |
+- |  Schranken für den Handel | 41 | 0.05 |
+- ### Daten und Sicherung bei 1440 × 838 — Rolltiefe 1.9, sichtbar 807 pt
+- | Teil | Höhe | Anteil an der sichtbaren Höhe |
+- | --- | ---: | ---: |
+- |  Daten und Sicherung | 37 | 0.05 |
+- |  Platz auf der Platte | 1114 | 1.38 |
+- | › Platz auf der Platte | 390 | 0.48 |
+- | › Bestand | 660 | 0.82 |
+- | ›› Bestand | 28 | 0.03 |
+- | ›› Alles, was diese Anwendung führt: Sets, Karten, Feldwerte, d | 60 | 0.07 |
+- | ›› Letzte Sicherung | 140 | 0.17 |
+- | ›› Kennwort (freiwillig) | 160 | 0.20 |
+- | ›› Sicherung zurückspielen … | 30 | 0.04 |
+- | ›› Verschlüsselung des Bestands | 150 | 0.19 |
+- |  Zurückgehen, aufräumen, zurücksetzen | 41 | 0.05 |
+- |  Was ein Auftrag draußen kosten darf | 41 | 0.05 |
+- |  Einstellungen mitnehmen | 41 | 0.05 |
+- |  Ordner und Dateinamen | 41 | 0.05 |
+- ### KI bei 1440 × 838 — Rolltiefe 1.4, sichtbar 807 pt
+- | Teil | Höhe | Anteil an der sichtbaren Höhe |
+- | --- | ---: | ---: |
+- |  KI | 37 | 0.05 |
+- |  Kostenobergrenze in der kleinsten Einheit (bei EUR: Cent) | 79 | 0.10 |
+- |  Sprachmodelle | 726 | 0.90 |
+- | › Sprachmodelle | 172 | 0.21 |
+- | › Lokale KI | 375 | 0.46 |
+- | › Kontingent beim Anbieter | 99 | 0.12 |
+- |  KI-Modelle | 41 | 0.05 |
+- |  Adressen | 41 | 0.05 |
+- ### Erscheinungsbild bei 1440 × 838 — Rolltiefe 1.7, sichtbar 807 pt
+- | Teil | Höhe | Anteil an der sichtbaren Höhe |
+- | --- | ---: | ---: |
+- |  Erscheinungsbild | 37 | 0.05 |
+- |  Wie beim Nutzer | 754 | 0.93 |
+- | › Wie beim Nutzer | 108 | 0.13 |
+- | › Schriftgröße | 127 | 0.16 |
+- | › Anzeigeschrift | 107 | 0.13 |
+- | › Pergament — warm, mit Faser | 124 | 0.15 |
+- | › Nur die Überschriften | 104 | 0.13 |
+- | › Aus | 84 | 0.10 |
+- |  Dein Fensterbild | 141 | 0.17 |
+- |  Eigene Farben | 41 | 0.05 |
+- |  Fenster und Leiste | 41 | 0.05 |
+- |  Spalten und Ansichten | 41 | 0.05 |
+- |  Was Fachleute hier sonst noch einstellen | 41 | 0.05 |
+- ### Diagnose bei 1440 × 838 — Rolltiefe 1.3, sichtbar 807 pt
+- | Teil | Höhe | Anteil an der sichtbaren Höhe |
+- | --- | ---: | ---: |
+- |  Diagnose | 37 | 0.05 |
+- |  Betriebszustand | 139 | 0.17 |
+- |  Diagnose für einen Fehlerbericht | 443 | 0.55 |
+- | › Diagnose für einen Fehlerbericht | 230 | 0.29 |
+- | › Diagnosepaket | 184 | 0.23 |
+- |  Gewirkt seit dem Start | 41 | 0.05 |
+- |  Protokoll | 41 | 0.05 |
+- |  Messung | 41 | 0.05 |
+- |  Zwischenspeicher und Suchindex | 41 | 0.05 |
+- ### Dienste bei 1024 × 700 — Rolltiefe 1.5, sichtbar 669 pt
+- | Teil | Höhe | Anteil an der sichtbaren Höhe |
+- | --- | ---: | ---: |
+- |  Dienste | 37 | 0.06 |
+- |  Eigenes Marktkonto lesen | 124 | 0.19 |
+- |  Fremde Kartendienste | 491 | 0.73 |
+- | › Fremde Kartendienste | 252 | 0.38 |
+- | › Wer beantwortet was | 151 | 0.23 |
+- |  Was die Dienste hier können | 41 | 0.06 |
+- |  Zugangsdaten | 41 | 0.06 |
+- |  Schranken für den Handel | 41 | 0.06 |
+- ### Daten und Sicherung bei 1024 × 700 — Rolltiefe 2.4, sichtbar 669 pt
+- | Teil | Höhe | Anteil an der sichtbaren Höhe |
+- | --- | ---: | ---: |
+- |  Daten und Sicherung | 37 | 0.06 |
+- |  Platz auf der Platte | 1179 | 1.76 |
+- | › Platz auf der Platte | 415 | 0.62 |
+- | ›› Platz auf der Platte | 24 | 0.04 |
+- | ›› ? | 383 | 0.57 |
+- | ››› ? | 74 | 0.11 |
+- | ››› Bestand: 1.1 MB · 3 Datei(en) | 297 | 0.44 |
+- | › Bestand | 700 | 1.05 |
+- | ›› Bestand | 28 | 0.04 |
+- | ›› Alles, was diese Anwendung führt: Sets, Karten, Feldwerte, d | 60 | 0.09 |
+- | ›› Letzte Sicherung | 160 | 0.24 |
+- | ›› Kennwort (freiwillig) | 160 | 0.24 |
+- | ›› Sicherung zurückspielen … | 30 | 0.04 |
+- | ›› Verschlüsselung des Bestands | 170 | 0.25 |
+- |  Zurückgehen, aufräumen, zurücksetzen | 41 | 0.06 |
+- |  Was ein Auftrag draußen kosten darf | 41 | 0.06 |
+- |  Einstellungen mitnehmen | 41 | 0.06 |
+- |  Ordner und Dateinamen | 41 | 0.06 |
+- ### KI bei 1024 × 700 — Rolltiefe 1.7, sichtbar 669 pt
+- | Teil | Höhe | Anteil an der sichtbaren Höhe |
+- | --- | ---: | ---: |
+- |  KI | 37 | 0.06 |
+- |  Kostenobergrenze in der kleinsten Einheit (bei EUR: Cent) | 79 | 0.12 |
+- |  Sprachmodelle | 746 | 1.12 |
+- | › Sprachmodelle | 172 | 0.26 |
+- | › Lokale KI | 375 | 0.56 |
+- | ›› Lokale KI | 20 | 0.03 |
+- | ›› Antwortet hier nichts, läuft Ollama nicht. Diese Anwendung s | 40 | 0.06 |
+- | ›› Lokale KI-Laufzeit | 291 | 0.43 |
+- | › Kontingent beim Anbieter | 119 | 0.18 |
+- |  KI-Modelle | 41 | 0.06 |
+- |  Adressen | 41 | 0.06 |
+- ### Erscheinungsbild bei 1024 × 700 — Rolltiefe 2.1, sichtbar 669 pt
+- | Teil | Höhe | Anteil an der sichtbaren Höhe |
+- | --- | ---: | ---: |
+- |  Erscheinungsbild | 37 | 0.06 |
+- |  Wie beim Nutzer | 794 | 1.19 |
+- | › Wie beim Nutzer | 108 | 0.16 |
+- | › Schriftgröße | 127 | 0.19 |
+- | › Anzeigeschrift | 107 | 0.16 |
+- | › Pergament — warm, mit Faser | 144 | 0.22 |
+- | › Nur die Überschriften | 104 | 0.16 |
+- | › Aus | 104 | 0.16 |
+- |  Dein Fensterbild | 166 | 0.25 |
+- |  Eigene Farben | 41 | 0.06 |
+- |  Fenster und Leiste | 41 | 0.06 |
+- |  Spalten und Ansichten | 41 | 0.06 |
+- |  Was Fachleute hier sonst noch einstellen | 41 | 0.06 |
+- ### Diagnose bei 1024 × 700 — Rolltiefe 1.7, sichtbar 669 pt
+- | Teil | Höhe | Anteil an der sichtbaren Höhe |
+- | --- | ---: | ---: |
+- |  Diagnose | 37 | 0.06 |
+- |  Betriebszustand | 139 | 0.21 |
+- |  Diagnose für einen Fehlerbericht | 523 | 0.78 |
+- | › Diagnose für einen Fehlerbericht | 270 | 0.40 |
+- | › Diagnosepaket | 224 | 0.33 |
+- |  Gewirkt seit dem Start | 41 | 0.06 |
+- |  Protokoll | 41 | 0.06 |
+- |  Messung | 41 | 0.06 |
+- |  Zwischenspeicher und Suchindex | 41 | 0.06 |
+- ✓ ⌘Q beendet die Anwendung
+- ✓ die echten Orte dieses Rechners blieben unberührt
+- ✓ die echten Orte ließen sich vollständig lesen
+- ✓ die Schutzrichtlinie wies nichts ab, was das Drehbuch braucht

@@ -1,0 +1,43 @@
+{
+  "bauabdruck": "25408dc82266de41ead655d2cc479c875d5c2b08c040fd7459cb2016107d3c8a",
+  "erhoben": "2026-10-14T04:38:30.941Z",
+  "fenster": "1440 × 900",
+  "wege": [
+    {
+      "weg": "S12",
+      "eingang": "bereich",
+      "art": "maus",
+      "handlungen": 10,
+      "sichtwechsel": 3,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 4993,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "S13",
+      "eingang": "bereich",
+      "art": "maus",
+      "handlungen": 5,
+      "sichtwechsel": 4,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 2660,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "S13",
+      "eingang": "eroeffnung",
+      "art": "maus",
+      "handlungen": 2,
+      "sichtwechsel": 0,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 901,
+      "wirkung": true,
+      "bedingt": []
+    }
+  ]
+}

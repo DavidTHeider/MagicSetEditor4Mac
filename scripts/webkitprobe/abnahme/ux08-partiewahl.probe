@@ -1,0 +1,59 @@
+# UX-08.AK-04 (#1680) — an einem fremden Tisch mitspielen und ein Deck verleihen, ohne eine Kennung zu tippen, in WKWebView.
+#
+# Vorher standen unter „An einem fremden Tisch mitspielen" zwei Felder: die
+# Peerkennung des Wirts und die Kennung seiner Partie, beide abgelesen von
+# einem anderen Bildschirm. Jetzt steht Bo zur Wahl — die Saat gibt ihm „Eine
+# Partie spielen" frei (`scripts/webkitabnahme.sh`) —, und die Partie nennt
+# der Wirt selbst. Das Feld für sie steht unter „Die Partie selbst nennen",
+# mit dem Satz, wann es gebraucht wird. **Bei der Leihe darunter dasselbe**:
+# Bo und das Probe-Deck stehen zur Wahl, statt Peer- und Deckkennung.
+#
+# **Was dieser Lauf nicht zeigt**: das Hinsetzen. Bo ist ein Ausweis ohne
+# laufendes Programm; wer „Mitspielen" drückte, bekäme die Absage einer
+# Leitung, die niemand annimmt. Den Weg über beide Enden hält
+# `internal/app/partienennung_intern_test.go`.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+4
+wartetext Partie anfangen
+klicketext Partie anfangen
+# **Seit UXR-13 (#1921) steht der Beitritt in einer Schublade** hinter
+# „Bei jemandem mitspielen …" im Kopf der Seite, die Leihe hinter
+# „Verleihen oder leihen …".
+wartetext Bei jemandem mitspielen …
+klicketext Bei jemandem mitspielen …
+pruefe (window.__gast = () => [...document.querySelectorAll('[role=dialog]')].find((d) => d.getAttribute('aria-label') === 'An einem fremden Tisch mitspielen'), window.__mitspielen = () => [...window.__gast().querySelectorAll('button')].find((b) => b.textContent === 'Mitspielen'), true)
+bis window.__gast() !== undefined
+notiz Bo steht zur Wahl — und nirgends ein Feld für eine Peerkennung oder eine Partie
+bis window.__gast().querySelectorAll('input[type=radio]').length === 1
+pruefe ![...window.__gast().querySelectorAll('label')].some((l) => l.checkVisibility() && /Peerkennung|Kennung der Partie/.test(l.textContent))
+zeige [...window.__gast().querySelectorAll('fieldset label')].map((l) => l.innerText.replace(/\s+/g, ' ').trim()).join(' | ')
+pruefe window.__mitspielen().disabled
+notiz Bo wählen — dann geht der Knopf
+pruefe (window.__gast().querySelector('input[type=radio]').dataset.ziel = 'bo', true)
+klicke [data-ziel="bo"]
+bis !window.__mitspielen().disabled
+pruefe window.__gast().querySelector('input[type=radio]').checked
+abzug partiewahl
+notiz Für einen Wirt vor 0.6.0 lässt sich die Partie nennen — der erste Satz sagt, warum es sonst nicht nötig ist, der Rest steht hinter dem Hilfesymbol
+klicketext Die Partie selbst nennen
+bis window.__gast().innerText.includes('Der Wirt nennt seine Partie mit seinem ersten Wort.')
+pruefe [...window.__gast().querySelectorAll('label')].some((l) => l.checkVisibility() && l.textContent.trim().startsWith('Kennung der Partie'))
+abzug partiewahl-fachleute
+notiz Bei der Leihe dasselbe — Bo und das Probe-Deck stehen zur Wahl, keine Kennung wird getippt
+taste escape
+bis !document.querySelector('[role=dialog]')?.checkVisibility()
+klicketext Verleihen oder leihen …
+pruefe (window.__leihe = () => [...document.querySelectorAll('[role=dialog]')].find((d) => d.getAttribute('aria-label') === 'Ein Deck verleihen oder leihen' && d.checkVisibility()), true)
+bis window.__leihe() !== undefined
+bis window.__leihe().querySelectorAll('input[type=radio]').length === 1
+bis [...window.__leihe().querySelectorAll('option')].some((o) => o.textContent === 'Probe-Deck')
+pruefe ![...window.__leihe().querySelectorAll('label')].some((l) => l.checkVisibility() && /Peerkennung|Kennung des Decks|Kennung der Partie/.test(l.textContent))
+zeige [...window.__leihe().querySelectorAll('fieldset label, option')].map((l) => l.textContent.replace(/\s+/g, ' ').trim()).join(' | ')
+pruefe (window.__leihe().scrollIntoView(), true)
+abzug leihwahl
+gleich JSON.stringify(window.__probeFehler || []) => []

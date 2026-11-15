@@ -1,0 +1,9 @@
+panic: hunter2 [recovered, repanicked]
+
+goroutine 1 [running]:
+main.main.func2()
+	spurgen/main.go:27 +0x20
+panic({0x102a326b8?, 0x102a1c058?})
+	runtime/panic.go:859 +0x120
+main.main()
+	spurgen/main.go:28 +0x364

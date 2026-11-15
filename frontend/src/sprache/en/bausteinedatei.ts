@@ -1,0 +1,38 @@
+export const dateiansicht = {
+  ueberschrift: 'The file',
+  laedt: 'Looking at the file …',
+  arten: {
+    paket: 'MSE package',
+    bild: 'Image',
+    vektor: 'Vector image',
+    pdf: 'PDF',
+    text: 'Text',
+    archiv: 'Archive',
+    unbekannt: 'Unknown kind',
+  },
+  name: 'Name',
+  art: 'Kind',
+  groesse: 'Size',
+  geaendert: 'Modified',
+  ort: 'Location',
+  masse: '{breite} × {hoehe} points',
+  seiten: '{anzahl} pages',
+  eintraege: '{anzahl} entries',
+  gekuerzt: 'Showing the beginning — the file goes on.',
+  unsicher:
+    '{anzahl} entries lead out of the file or are links. They are counted and never entered.',
+  unsicherEintrag: 'not entered',
+  verschluesselt:
+    'A backup with a password. What it holds shows only when you restore it.',
+  zuGross: 'Too large for a preview. Open it with its app.',
+  unlesbar: 'The content cannot be read. Name, size and time are correct.',
+  keineVorschau:
+    'There is no preview for this kind: it could be a program. Show it in Finder if you need it.',
+  imFinder: 'Show in Finder',
+  oeffnen: 'Open',
+  imFinderFuer: 'Show {name} in Finder',
+  oeffnenFuer: 'Open {name} with its app',
+  ansehen: 'View',
+  ansehenFuer: 'View {name}',
+  zuklappen: 'Close view',
+} as const

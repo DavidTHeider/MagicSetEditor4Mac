@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "date": "2026-10-13",
+    "version": "5.2.2+20261013"
+  },
+  "data": {
+    "code": "TSP",
+    "name": "Tischprobe",
+    "releaseDate": "2026-10-13",
+    "type": "expansion",
+    "cards": [
+      {
+        "name": "Waldboden",
+        "manaCost": "",
+        "type": "Basic Land — Forest",
+        "supertypes": [
+          "Basic"
+        ],
+        "types": [
+          "Land"
+        ],
+        "subtypes": [
+          "Forest"
+        ],
+        "text": "({T}: Erzeuge {G}.)",
+        "rarity": "common",
+        "artist": "Selbst gezeichnet",
+        "number": "1",
+        "uuid": "00000000-0000-4000-9000-000000000001"
+      },
+      {
+        "name": "Bergpfad",
+        "manaCost": "",
+        "type": "Basic Land — Mountain",
+        "supertypes": [
+          "Basic"
+        ],
+        "types": [
+          "Land"
+        ],
+        "subtypes": [
+          "Mountain"
+        ],
+        "text": "({T}: Erzeuge {R}.)",
+        "rarity": "common",
+        "artist": "Selbst gezeichnet",
+        "number": "2",
+        "uuid": "00000000-0000-4000-9000-000000000002"
+      },
+      {
+        "name": "Moosbär",
+        "manaCost": "{1}{G}",
+        "type": "Creature — Bear",
+        "supertypes": [],
+        "types": [
+          "Creature"
+        ],
+        "subtypes": [
+          "Bear"
+        ],
+        "text": "",
+        "rarity": "common",
+        "artist": "Selbst gezeichnet",
+        "number": "3",
+        "uuid": "00000000-0000-4000-9000-000000000003",
+        "power": "2",
+        "toughness": "2"
+      },
+      {
+        "name": "Glutläufer",
+        "manaCost": "{R}",
+        "type": "Creature — Elemental",
+        "supertypes": [],
+        "types": [
+          "Creature"
+        ],
+        "subtypes": [
+          "Elemental"
+        ],
+        "text": "Eile",
+        "rarity": "common",
+        "artist": "Selbst gezeichnet",
+        "number": "4",
+        "uuid": "00000000-0000-4000-9000-000000000004",
+        "power": "1",
+        "toughness": "1"
+      },
+      {
+        "name": "Funkenregen",
+        "manaCost": "{R}",
+        "type": "Instant",
+        "supertypes": [],
+        "types": [
+          "Instant"
+        ],
+        "subtypes": [],
+        "text": "Funkenregen fügt einem Ziel 2 Schaden zu.",
+        "rarity": "common",
+        "artist": "Selbst gezeichnet",
+        "number": "5",
+        "uuid": "00000000-0000-4000-9000-000000000005"
+      },
+      {
+        "name": "Rindenwall",
+        "manaCost": "{1}{G}",
+        "type": "Creature — Plant Wall",
+        "supertypes": [],
+        "types": [
+          "Creature"
+        ],
+        "subtypes": [
+          "Plant",
+          "Wall"
+        ],
+        "text": "Verteidiger",
+        "rarity": "common",
+        "artist": "Selbst gezeichnet",
+        "number": "6",
+        "uuid": "00000000-0000-4000-9000-000000000006",
+        "power": "0",
+        "toughness": "4"
+      }
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "format": 1,
+  "lauf": "dienstdrift",
+  "commit": "345f7394490a42d5ce828d4e9cc276e948d8b3bc",
+  "inhalt": "sha256:6bf7431ee2a1fa4be37dfcda6e9b14faf229b1d1ba1f640cd811a1ac831d8ae7",
+  "baumSauber": true,
+  "werkzeuge": {
+    "go": "go1.27.3",
+    "plattform": "darwin/arm64",
+    "system": "macOS 27.0.1"
+  },
+  "anfang": "2026-10-21T04:46:24.103287+02:00",
+  "ende": "2026-10-21T04:46:29.858374+02:00",
+  "befehl": [
+    "go",
+    "test",
+    "-json",
+    "-count=1",
+    "-tags",
+    "dienstdrift",
+    "-run",
+    "^(TestDerEchteDienstAntwortet|TestDerEchteDienstSchicktKeineUnbekanntenZustaende|TestDerEchteMTGJSONDienstLiefertDieTagesdatei|TestDieEchteSetdateiWirdGelesen|TestDieZulaessigkeitswoerterAmEchtenDienst|TestDieZuordnungLiestDenEchtenDienst|TestEinBekannterDruckKommtAlsPreisstand|TestGegenDenEchtenDienst|TestHundertDruckeInWenigerAlsFuenfSekunden)$",
+    "-timeout",
+    "30m0s",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/mtgapi",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/mtgjson",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/mtgjsonpreise",
+    "github.com/DavidTHeider/MagicSetEditor4Mac/internal/scryfall"
+  ],
+  "rueckgabe": 0,
+  "status": "PASS",
+  "eingaben": [],
+  "erwartet": 9,
+  "gemessen": 9,
+  "faelle": [
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/mtgapi",
+      "test": "TestDerEchteDienstAntwortet",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.36
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/mtgapi",
+      "test": "TestDerEchteDienstSchicktKeineUnbekanntenZustaende",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.32
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/mtgapi",
+      "test": "TestDieZuordnungLiestDenEchtenDienst",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.58
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/mtgjson",
+      "test": "TestDieEchteSetdateiWirdGelesen",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.31
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/mtgjsonpreise",
+      "test": "TestDerEchteMTGJSONDienstLiefertDieTagesdatei",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.34
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/mtgjsonpreise",
+      "test": "TestEinBekannterDruckKommtAlsPreisstand",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 0.44
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/scryfall",
+      "test": "TestDieZulaessigkeitswoerterAmEchtenDienst",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 1.23
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/scryfall",
+      "test": "TestGegenDenEchtenDienst",
+      "art": "pflicht",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 1.99
+    },
+    {
+      "paket": "github.com/DavidTHeider/MagicSetEditor4Mac/internal/scryfall",
+      "test": "TestHundertDruckeInWenigerAlsFuenfSekunden",
+      "art": "trend",
+      "ausfuehrung": "PASS",
+      "ergebnis": "PASS",
+      "dauer": 1.36
+    }
+  ],
+  "weitere": {
+    "gelaufen": 0,
+    "bestanden": 0,
+    "gescheitert": 0,
+    "uebersprungen": 0
+  },
+  "fehler": [],
+  "uebersprungen": [],
+  "artefakte": [
+    {
+      "name": "Rohprotokoll",
+      "pfad": ".laufbeleg/dienstdrift.jsonl",
+      "hash": "sha256:f898bb08887fe92ecfa1a7730d65030a75b6fa9fcd77967a97d82dcee947eb9a",
+      "dateien": 1,
+      "passend": 1,
+      "bytes": 27785
+    }
+  ],
+  "kennzahlen": {}
+}

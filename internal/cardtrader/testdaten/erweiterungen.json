@@ -1,0 +1,5 @@
+[
+  {"id": 1, "game_id": 1, "code": "gnt", "name": "Game Night"},
+  {"id": 92, "game_id": 1, "code": "ptkdf", "name": "Tarkir Dragonfury"},
+  {"id": 7, "game_id": 4, "code": "lob", "name": "Legend of Blue Eyes"}
+]

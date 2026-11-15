@@ -1,0 +1,21 @@
+{
+  "object": "card",
+  "id": "00000000-0000-4000-8000-000000000009",
+  "name": "Prüfstein der Formate",
+  "lang": "de",
+  "layout": "normal",
+  "mana_cost": "{B}",
+  "type_line": "Verzauberung",
+  "rarity": "rare",
+  "set": "prb",
+  "set_name": "Prüfblock",
+  "collector_number": "9",
+  "artist": "Selbst Gemalt",
+  "legalities": {
+    "standard": "not_legal",
+    "modern": "legal",
+    "vintage": "restricted",
+    "legacy": "banned"
+  },
+  "scryfall_uri": "https://beispiel.invalid/karte/9"
+}

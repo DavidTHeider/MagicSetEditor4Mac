@@ -1,0 +1,48 @@
+# UX-08.AK-04 (#1680) — ein Deck aus einem anderen Profil holen, ohne eine Kennung zu tippen, in WKWebView.
+#
+# Vorher standen unter „Ein Deck aus einem fremden Profil holen" zwei Felder:
+# die Kennung des Profils und die des Decks — und die zweite stand im eigenen
+# Profil nirgends. Jetzt steht Cleos Profil zur Wahl — die Saat legt es an,
+# legt dort das Leihdeck ab und lässt den ersten Nutzer hinein
+# (`scripts/webkitabnahme.sh`) —, und seine Decks nennt der Weg hinter
+# derselben Erlaubnis wie das Holen. Die Kennungen stehen unter „Kennungen
+# selbst nennen", mit dem Satz, wann man sie braucht.
+#
+# **Was dieser Lauf nicht zeigt**: das Holen selbst. Es schriebe ein Deck in
+# den Bestand, den die Drehbücher danach weiter benutzen; den Weg bis zum
+# geholten Deck hält `frontend/src/bausteine/deckuebernahme.test.tsx`, und
+# das Nein ohne Freigabe `internal/service/deckuebernahmewahl_test.go`.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+4
+wartetext Probe-Deck
+# **Seit AP-6 (#2363) stehen die seltenen Wege in »Holen und weitergeben«** —
+# erst den äußeren Kasten aufklappen, dann den inneren.
+klicketext Holen und weitergeben
+wartetext Ein Deck aus einem fremden Profil holen
+klicketext Ein Deck aus einem fremden Profil holen
+pruefe (window.__holen = () => [...document.querySelectorAll('section')].find((s) => s.querySelector('h2') && s.querySelector('h2').textContent === 'Ein Deck aus einem fremden Profil holen'), window.__knopf = () => [...window.__holen().querySelectorAll('button')].find((b) => b.textContent === 'Holen'), true)
+notiz Cleos Profil steht zur Wahl — das eigene nicht, und kein Feld für eine Kennung ist zu sehen
+bis [...window.__holen().querySelectorAll('option')].some((o) => o.textContent.includes('Cleo'))
+pruefe ![...window.__holen().querySelectorAll('label')].some((l) => l.checkVisibility() && /Kennung des/.test(l.textContent))
+zeige [...window.__holen().querySelectorAll('option')].map((o) => o.textContent.trim()).join(' | ')
+pruefe window.__knopf().disabled
+notiz Das Profil wählen — dann stehen seine Decks da
+pruefe (window.__profilwahl = [...window.__holen().querySelectorAll('select')][0], window.__profilwahl.dataset.ziel = 'profil', true)
+pruefe (window.__profilwahl.value = [...window.__profilwahl.options].find((o) => o.textContent.includes('Cleo')).value, window.__profilwahl.dispatchEvent(new Event('change', { bubbles: true })), true)
+bis [...window.__holen().querySelectorAll('option')].some((o) => o.textContent === 'Leihdeck')
+zeige [...window.__holen().querySelectorAll('select')].map((s) => [...s.options].map((o) => o.textContent.trim()).join(', ')).join(' ‖ ')
+notiz Das Deck wählen — dann geht der Knopf
+pruefe (window.__deckwahl = [...window.__holen().querySelectorAll('select')][1], window.__deckwahl.value = [...window.__deckwahl.options].find((o) => o.textContent === 'Leihdeck').value, window.__deckwahl.dispatchEvent(new Event('change', { bubbles: true })), true)
+bis !window.__knopf().disabled
+pruefe (window.__holen().scrollIntoView(), true)
+abzug deckwahl
+notiz Wer die Kennungen kennt, nennt sie selbst — der erste Satz sagt, wann
+klicketext Kennungen selbst nennen
+bis [...window.__holen().querySelectorAll('label')].some((l) => l.checkVisibility() && l.textContent.trim().startsWith('Kennung des Decks'))
+abzug deckwahl-fachleute
+gleich JSON.stringify(window.__probeFehler || []) => []

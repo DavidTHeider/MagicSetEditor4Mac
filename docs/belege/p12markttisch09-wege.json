@@ -1,0 +1,31 @@
+{
+  "bauabdruck": "a61bbe8f32df72641eeba098f38792e7ea9a88820e7fcb57ad7b10422e7dde51",
+  "erhoben": "2026-10-20T16:13:02.809Z",
+  "fenster": "1440 × 900",
+  "wege": [
+    {
+      "weg": "H1",
+      "eingang": "bereich",
+      "art": "maus",
+      "handlungen": 5,
+      "sichtwechsel": 1,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 2999,
+      "wirkung": true,
+      "bedingt": []
+    },
+    {
+      "weg": "H2",
+      "eingang": "tisch",
+      "art": "maus",
+      "handlungen": 1,
+      "sichtwechsel": 0,
+      "tabstellen": 0,
+      "fehlversuche": 0,
+      "maschinenzeitMs": 482,
+      "wirkung": true,
+      "bedingt": []
+    }
+  ]
+}

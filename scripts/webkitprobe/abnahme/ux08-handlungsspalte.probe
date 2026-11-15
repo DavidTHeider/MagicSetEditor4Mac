@@ -1,0 +1,102 @@
+# UX-08 (#1680) — die Spalte neben dem Tisch nach dem Artboard *Tisch*:
+# Knöpfe statt Formularwand, Felder auf Zuruf, und was die Partie als Ganzes
+# angeht unter dem Tisch.
+#
+# Gegen den Servermodus mit einer laufenden Partie („Weiterspielen als Ada").
+# Gemessen vorher, am Stand 6e007dc8 mit derselben Partie und einer gewählten
+# Karte: die Spalte 5.610 Punkte hoch bei 748 sichtbaren, 27 Eingabefelder
+# offen, „Mit dieser Karte" bei 758 — unter der Falz.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+4
+wartetext Partie anfangen
+klicketext Partie anfangen
+wartetext Weiterspielen
+klicketext Weiterspielen
+klicketext Weiterspielen als Ada
+warte canvas
+pause 1500
+notiz Der Beginn ist vorbei — `play-beginn` hat ihn in derselben Partie zu Ende gebracht; vorher nähme der Tisch nur ihn an (CR 103.8, #1851)
+# Alle Drehbücher laufen gegen denselben Bestand, und `play-beginn` läuft vor
+# diesem. Allein gefahren, bräche diese Probe hier ab und nicht erst an einer
+# Handlung, die der Tisch nicht anbietet.
+# **Positiv, nicht verneint** — WK01 (#2102): eine verneinte h3-Abfrage war
+# grün, als die Tafel längst unter h2 stand und der Beginn offen. Der Beginn
+# ist vorbei, wenn der Tisch Ada das Passen anbietet.
+notiz Vorbedingung: der Beginn ist vorbei — »Passen« steht für Ada offen
+bis [...document.querySelectorAll('button')].some((b) => b.checkVisibility() && b.innerText.trim() === 'Passen' && !b.disabled)
+notiz Eine Karte wählen — die oberste von Adas Bibliothek
+pruefe (() => { const b = [...document.querySelectorAll('[role=application] li button')].filter((x) => (x.getAttribute('aria-label') || x.textContent).includes('Bibliothek')); const unten = b.reduce((a, c) => (c.getBoundingClientRect().top > a.getBoundingClientRect().top ? c : a)); unten.dataset.ziel = 'bibliothek'; return true })()
+klicke [data-ziel="bibliothek"]
+wartetext Mit dieser Karte
+pause 500
+notiz Keine Formularwand: kein offenes Feld, „Mit dieser Karte" im Blick
+# Am eigenen Tisch steht der Unterabschnitt unter h3 (Abschnitt h2, #1992); beim Gast wäre es h4.
+zeige (() => { const s = document.querySelector('[aria-label="Der Zug"]').parentElement; const k = [...s.querySelectorAll('h3')].find((h) => h.textContent === 'Mit dieser Karte'); return 'Spalte ' + s.scrollHeight + ' hoch, sichtbar ' + s.clientHeight + ' · Eingabefelder ' + s.querySelectorAll('input,select,textarea').length + ' · „Mit dieser Karte" bei ' + Math.round(k.getBoundingClientRect().top - s.getBoundingClientRect().top) })()
+pruefe document.querySelector('[aria-label="Der Zug"]').parentElement.querySelectorAll('input,select,textarea').length === 0
+pruefe (() => { const s = document.querySelector('[aria-label="Der Zug"]').parentElement; const k = [...s.querySelectorAll('h3')].find((h) => h.textContent === 'Mit dieser Karte'); return k.getBoundingClientRect().bottom <= s.getBoundingClientRect().bottom })()
+notiz Anhalten, Beenden und der Verlauf stehen unter dem Tisch und nicht in der Spalte
+pruefe (() => { const s = document.querySelector('[aria-label="Der Zug"]').parentElement; const knopf = [...document.querySelectorAll('button')].find((b) => b.textContent === 'Anhalten'); return !!knopf && !s.contains(knopf) && !!(document.querySelector('[role=application]').compareDocumentPosition(knopf) & Node.DOCUMENT_POSITION_FOLLOWING) })()
+abzug spalte
+# **Marken trägt nur eine Karte auf dem Schlachtfeld** — an der verdeckten
+# obersten Karte der Bibliothek bietet der Kern sie nicht an. Gewählt wird
+# über das Kartenmenü, »Weitere Handlungen …«: ein Klick auf eine Karte dort
+# tappt sie seit #2372, und einen ⌘-Klick kennt die Probe nicht.
+notiz Eine Karte auf dem Schlachtfeld wählen — über ihr Menü, »Weitere Handlungen …«
+pruefe (() => { const b = [...document.querySelectorAll('[role=application] li button')].find((x) => (x.getAttribute('aria-label') || x.textContent).includes('· Schlachtfeld')); const r = b.getBoundingClientRect(); b.dispatchEvent(new MouseEvent('contextmenu', { bubbles: true, cancelable: true, clientX: r.left + r.width / 2, clientY: r.top + r.height / 2 })); return true })()
+bis [...document.querySelectorAll('[role=menuitem]')].some((e) => e.checkVisibility() && e.innerText.includes('Weitere Handlungen'))
+pruefe ([...document.querySelectorAll('[role=menuitem]')].find((e) => e.checkVisibility() && e.innerText.includes('Weitere Handlungen')).dataset.ziel = 'weitere', true)
+klicke [data-ziel="weitere"]
+bis [...document.querySelectorAll('button')].some((b) => b.checkVisibility() && b.innerText.trim() === 'Marken…')
+notiz „Marken…" klappt seine Felder auf und sagt es
+klicketext Marken…
+bis document.querySelector('[role=group][aria-label="Marken"]') !== null
+gleich [...document.querySelectorAll('button')].find((b) => b.innerText === 'Marken…').getAttribute('aria-expanded') => true
+# Die Felder stehen gleich unter ihrem Knopf und nicht unter dem letzten der
+# Gruppe: im Sandkasten sind es zwanzig Kartenhandlungen, und am Ende der
+# Gruppe lagen die Felder außerhalb der Ansicht (gesehen am 2026-09-24).
+zeige (() => { const k = [...document.querySelectorAll('button')].find((b) => b.innerText === 'Marken…').getBoundingClientRect(); const f = document.querySelector('[role=group][aria-label="Marken"]').getBoundingClientRect(); return 'Knopf ' + Math.round(k.top) + '–' + Math.round(k.bottom) + ', Felder ab ' + Math.round(f.top) })()
+pruefe (() => { const k = [...document.querySelectorAll('button')].find((b) => b.innerText === 'Marken…').getBoundingClientRect(); const f = document.querySelector('[role=group][aria-label="Marken"]').getBoundingClientRect(); return f.top >= k.bottom && f.top - k.bottom < 24 })()
+abzug marken-offen
+notiz Nach dem Stellen klappt es zu, und der Fokus steht wieder auf „Marken…"
+klicketext Stellen
+bis document.querySelector('[role=group][aria-label="Marken"]') === null
+gleich document.activeElement.innerText + ' ' + document.activeElement.getAttribute('aria-expanded') => Marken… false
+# **Im Protokoll, mit dem Sitz vorn** — seit #1992 lautet ein Eintrag
+# »Ada: Marken — …«; bis zum 2026-10-06 erwartete diese Zeile ihn mit der
+# Handlung am Anfang.
+bis [...document.querySelectorAll('[role=log] li')].some((l) => l.textContent.includes('Marken'))
+notiz „Schieben nach…" legt die Karte auf die Hand — gestellt mit der Vorgabe
+klicketext Schieben nach…
+bis document.querySelector('[role=group][aria-label="Schieben nach"]') !== null
+klicketext Stellen
+bis [...document.querySelectorAll('[role=application] li button')].some((b) => (b.getAttribute('aria-label') || b.textContent).includes('· Hand'))
+zeige [...document.querySelectorAll('[role=application] li button')].map((b) => b.getAttribute('aria-label') || b.textContent).filter((t) => t.includes('· Hand')).join(' | ')
+abzug nach-schieben
+notiz „Hineinsehen…" nennt die Karten der Bibliothek beim Namen, der Reihe nach (#1836)
+# Bis zum 2026-09-24 stand das Ergebnis als rohes JSON da, und mit Karten aus
+# einem Set ohne einen einzigen Namen — der Kern legte `Spielobjekt.Name` in
+# das Ergebnis, und der ist bei einer Karte leer.
+klicketext Hineinsehen…
+bis document.querySelector('[role=group][aria-label="Hineinsehen"]') !== null
+klicketext Stellen
+bis document.querySelector('ol[aria-labelledby]') !== null
+zeige (() => { const e = [...document.querySelectorAll('ol[aria-labelledby] li')].map((l) => l.textContent); return e.length + ' Karten: ' + e.slice(0, 3).join(' | ') + ' …' })()
+pruefe (() => { const e = [...document.querySelectorAll('ol[aria-labelledby] li')].map((l) => l.textContent); return e.length > 0 && e.every((t) => t !== '' && !/^p[0-9]+-[0-9]+$/.test(t)) })()
+pruefe ![...document.querySelectorAll('li')].some((l) => l.textContent.includes('"karten"'))
+# Und das Ergebnis steht im Blick: die Liste stand am Ende der Spalte, und
+# wer „Hineinsehen…" stellte, sah dort zuerst nur die neue Mischpflicht.
+pause 800
+zeige (() => { const s = document.querySelector('[aria-label="Der Zug"]').parentElement.getBoundingClientRect(); const e = document.querySelector('ol[aria-labelledby] li').getBoundingClientRect(); const t = document.querySelector('[role=application]').getBoundingClientRect(); return 'Spalte ' + Math.round(s.top) + '–' + Math.round(s.bottom) + ', erste Karte ' + Math.round(e.top) + '–' + Math.round(e.bottom) + ', Tisch ' + Math.round(t.top) + '–' + Math.round(t.bottom) + ', Fenster ' + innerHeight })()
+pruefe (() => { const s = document.querySelector('[aria-label="Der Zug"]').parentElement.getBoundingClientRect(); const e = document.querySelector('ol[aria-labelledby] li').getBoundingClientRect(); return e.top >= s.top - 1 && e.bottom <= s.bottom + 1 && e.bottom <= innerHeight })()
+pruefe (() => { const t = document.querySelector('[role=application]').getBoundingClientRect(); return t.top < innerHeight / 2 && t.bottom > innerHeight / 2 })()
+# Die Nummern stehen vor dem Inhalt; mit zu wenig Einzug schnitt die Spalte
+# ab der zehnten Karte die erste Ziffer ab.
+pruefe (() => { const s = document.querySelector('[aria-label="Der Zug"]').parentElement.getBoundingClientRect(); const e = document.querySelector('ol[aria-labelledby] li').getBoundingClientRect(); return e.left - s.left >= 32 })()
+abzug hineinsehen
+notiz Und die Seite hat keinen Fehler geworfen
+gleich JSON.stringify(window.__probeFehler || []) => []

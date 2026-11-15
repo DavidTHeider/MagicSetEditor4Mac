@@ -1,0 +1,32 @@
+{
+  "object": "list",
+  "total_cards": 42,
+  "has_more": true,
+  "next_page": "https://beispiel.invalid/weiter",
+  "data": [
+    {
+      "object": "card",
+      "id": "00000000-0000-4000-8000-000000000010",
+      "name": "Erster Treffer",
+      "lang": "de",
+      "layout": "normal",
+      "mana_cost": "{1}{G}",
+      "type_line": "Kreatur — Prüfling",
+      "rarity": "common",
+      "set": "prb",
+      "collector_number": "10"
+    },
+    {
+      "object": "card",
+      "id": "00000000-0000-4000-8000-000000000011",
+      "name": "Zweiter Treffer",
+      "lang": "de",
+      "layout": "normal",
+      "mana_cost": "{2}{G}",
+      "type_line": "Kreatur — Prüfling",
+      "rarity": "eine_seltenheit_die_es_2027_gibt",
+      "set": "prb",
+      "collector_number": "11"
+    }
+  ]
+}

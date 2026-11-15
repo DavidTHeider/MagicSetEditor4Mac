@@ -1,0 +1,110 @@
+# golangci-lint v2.12.2 — Konfiguration für MagicSetEditor4Mac.
+# Die Werkzeugversion ist in tools/go.mod gepinnt; die Stufe `lint` ruft das
+# projektlokale Binary aus .go/bin auf (AGENTS.md §1).
+version: "2"
+
+run:
+  timeout: 5m
+  tests: true
+
+linters:
+  default: standard # errcheck, govet, ineffassign, staticcheck, unused
+  enable:
+    - bodyclose # ungeschlossene HTTP-Bodies
+    - copyloopvar # überflüssige Schleifenvariablen-Kopien
+    - errorlint # Fehlervergleiche ohne errors.Is/As
+    - gocritic # breites Spektrum an Stil- und Performancebefunden
+    - gosec # Sicherheitsbefunde
+    - nilerr # return nil obwohl err != nil
+    - noctx # HTTP-Anfragen ohne Kontext
+    - prealloc # vorbelegbare Slices
+    - revive # Stil- und Namenskonventionen
+    - rowserrcheck # nicht geprüfter sql.Rows.Err()
+    - sqlclosecheck # nicht geschlossene sql.Rows/Stmt
+    - unconvert # überflüssige Typkonvertierungen
+    - unparam # ungenutzte Funktionsparameter
+    - wastedassign # überschriebene Zuweisungen
+
+  settings:
+    errcheck:
+      check-type-assertions: true
+      check-blank: true
+      exclude-functions:
+        # Ein zurückgestelltes Rollback nach erfolgreichem Commit meldet
+        # sql.ErrTxDone. Das ist der Normalfall des Musters, kein Befund.
+        - (*database/sql.Tx).Rollback
+        # Close auf einem Aufräumpfad: der eigentliche Fehler ist bereits
+        # unterwegs, ein zweiter überdeckte ihn nur.
+        - (*database/sql.DB).Close
+        # Rows.Close im defer. Der Lesefehler wird über Rows.Err geprüft.
+        - (*database/sql.Rows).Close
+
+    gocritic:
+      enabled-tags:
+        - diagnostic
+        - style
+        - performance
+        - opinionated
+      disabled-checks:
+        - hugeParam # bei Wertsemantik in der Domäne beabsichtigt
+        # rangeValCopy ist derselbe Einwand von der anderen Seite: er zählt die
+        # Bytes, die eine `for … range` über einen Werte-Slice kopiert.
+        #
+        # **Abgeschaltet, seit `domain.Paket` mit #244 auf 144 Bytes wuchs** —
+        # neun Schleifen wurden auf einen Schlag rot, keine davon heiß. Die
+        # längste (`service.Abhaengigkeiten`) geht die installierten Pakete
+        # zweimal durch: über `full-magic-pack` sind das 526 Durchläufe je
+        # Seitenaufruf, zusammen rund 150 KB Kopie. Die Reichweite dieser Zahl
+        # ist dieses eine Pack; die Größenordnung ist die Aussage.
+        #
+        # Neun Schleifen auf Indexzugriff umzustellen machte den Code
+        # schwerer lesbar, um etwas zu sparen, das niemand messen kann.
+        - rangeValCopy
+
+    gosec:
+      excludes:
+        # G115 (Integer-Overflow bei Konvertierung) erzeugt mit database/sql zu
+        # viele Falschbefunde; Konvertierungen sind in internal/storage begrenzt.
+        - G115
+
+    staticcheck:
+      # `all` statt der Voreinstellung: golangci-lint schaltet sonst unter
+      # anderem ST1000 (Paketkommentar) ab. Der ist hier erwünscht — ein Paket
+      # ohne einen Satz darüber, wofür es da ist, ist genau das, was §2 mit
+      # „was tut diese Datei?" meint, eine Ebene höher.
+      checks:
+        - all
+        # ST1005 verlangt kleingeschriebene Fehlertexte. Die Regel ist eine
+        # englische Stilkonvention — dort ist „validation failed" richtig und
+        # „Validation failed" falsch, weil ein umschlossener Fehler mitten im
+        # Satz landet.
+        #
+        # Fehlermeldungen sind hier **deutsch** (AGENTS.md §9), und im Deutschen
+        # ist „Validierung" ein Substantiv. Kleingeschrieben wäre der Satz nicht
+        # stilistisch anders, sondern falsch. Von zwei Regeln, die einander
+        # widersprechen, weicht die, die für eine andere Sprache geschrieben ist.
+        - '-ST1005'
+
+    govet:
+      enable-all: true
+      disable:
+        - fieldalignment # Feldreihenfolge folgt der Lesbarkeit, nicht dem Padding
+
+    revive:
+      rules:
+        - name: exported
+          # Exportierte Bezeichner sind englisch (AGENTS.md §9); ihre Kommentare
+          # sind deutsch. Die Standardregel verlangt „Name ..." als Anfang und
+          # passt darauf nicht.
+          disabled: true
+        - name: unused-parameter
+        - name: unreachable-code
+        - name: redefines-builtin-id
+
+formatters:
+  enable:
+    - gofumpt
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0

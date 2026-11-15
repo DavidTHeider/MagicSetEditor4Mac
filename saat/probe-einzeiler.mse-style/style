@@ -1,0 +1,23 @@
+﻿mse version: 2.0.0
+game: probe
+short name: Einzeiler
+full name: Stil der Saat mit einzeiligem Verweis
+version: 2026-08-15
+
+init script: include file: einstieg
+
+card width: 375
+card height: 523
+
+card style:
+	name:
+		left: { einzeilig() }
+		top: 24
+		width: 327
+		height: 28
+		z index: 1
+		font:
+			name: Helvetica
+			italic name: Helvetica-Oblique
+			size: 20
+			color: black

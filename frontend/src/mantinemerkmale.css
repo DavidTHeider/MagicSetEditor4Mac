@@ -1,0 +1,25 @@
+/* **Mantines Grundmerkmale folgen dem Erscheinungsbild dieser Anwendung** —
+   A03 (#2217).
+
+   Mantine rechnet ohne `defaultColorScheme` immer „light“ und gibt `body`
+   die Textfarbe `#000`. Was es an `body` hängt — jede Überlagerung, die
+   ersten Schritte, die Befehlspalette —, erbte sie, und im dunklen
+   Erscheinungsbild stand dort schwarze Schrift auf dunkler Fläche: gemessen
+   1,27 : 1 an jeder Zeile der Palette (Hüllenprobe `a03`). Der Audit zu
+   0.8.0 sah es zuerst in einem Gast unter macOS 15.2 und vermutete ein
+   älteres WebKit; es war das Erscheinungsbild.
+
+   **Nur die Merkmale mit einer Entsprechung** — Text, Grund, gedämpft,
+   Rand. Mantines Palette von 0 bis 9 bleibt unberührt (0125): welches Grau
+   `--mse-leise` wäre, ist eine Frage ohne Antwort, welche Farbe Text hat,
+   nicht. **Unlayered und nach dem Import**, denn Mantines Regeln stehen
+   ebenfalls außerhalb jeder Schicht; gleiche Spezifität, spätere Stelle. */
+:root[data-mantine-color-scheme] {
+  --mantine-color-text: var(--mse-text);
+  --mantine-color-body: var(--mse-flaeche);
+  --mantine-color-dimmed: var(--mse-leise);
+  --mantine-color-default: var(--mse-flaeche);
+  --mantine-color-default-color: var(--mse-text);
+  --mantine-color-default-border: var(--mse-kante);
+  --mantine-color-placeholder: var(--mse-leise);
+}

@@ -1,0 +1,11 @@
+﻿mse version: 2.0.0
+game: probe
+# ein Kommentar auf der Wurzelebene
+
+game: zweites-spiel
+set info:
+	title: Erstes Titelfeld
+set info:
+	copyright: zweiter Block
+card: skalarer Rest
+	name: Feuerball

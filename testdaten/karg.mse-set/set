@@ -1,0 +1,13 @@
+﻿# Kopfzeile, kein Schluessel
+mse version: 2.0.0
+game: probe
+card:
+card:
+	# ein Kommentar in der Karte
+	name: Einzige
+	farbe: rot
+unverstanden:
+	drin: wert
+
+	# Kommentar im Block
+	noch: einer

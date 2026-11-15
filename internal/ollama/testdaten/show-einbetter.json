@@ -1,0 +1,11 @@
+{
+  "license": "Apache License 2.0",
+  "capabilities": ["embedding"],
+  "details": {"format": "gguf", "family": "bert", "parameter_size": "0.3B"},
+  "model_info": {
+    "general.architecture": "bert",
+    "bert.context_length": 2048,
+    "bert.pooling_type": 1,
+    "tokenizer.ggml.model": "bert"
+  }
+}

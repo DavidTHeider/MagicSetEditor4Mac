@@ -1,0 +1,50 @@
+# UX-07 (#1679) — der Baum als Pilot: der Vorlagenbaum in WKWebView.
+#
+# AK-01 nennt „Baum" unter den Dimensionen der Pflichtpiloten. Dieser Baum
+# ist bewusst **kein** `role="tree"`, sondern eine Liste mit Aufklappknöpfen
+# (`Vorlagenbaum.tsx`, Kopf): eine Tabstelle für den ganzen Baum, ↑ und ↓
+# über alle Knöpfe, Pos1 und Ende an die Enden, Leertaste klappt. Geprüft
+# wird genau das — mit echten Tastendrücken.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+k
+tippe Vorlagen
+pause 400
+# **Mit der Pfeiltaste gewählt, dann Enter** — wie in `ux02-palette`: ohne
+# Wahl führt Enter nichts aus.
+taste down
+taste enter
+# **Der sichtbare Baum und nicht irgendeiner**: stehengebliebene Seiten
+# (UX-03) tragen ebenfalls Knöpfe mit `aria-expanded`.
+pruefe (window.__baum = () => [...document.querySelectorAll('main ul')].find((u) => u.checkVisibility() && u.querySelector('button[aria-expanded]') && u.closest('section, div') && [...u.querySelectorAll('button')].some((k) => k.tabIndex === 0)), true)
+bis window.__baum() !== undefined
+# **Knoten und Kopieaktionen sind zweierlei** — WK02 (#2103): ein Knoten trägt
+# `data-baumknoten` (`griffe` in `seiten/Vorlagenbaum.tsx`), eine Kopieaktion
+# nicht. Bis zum 2026-10-06 zählte diese Probe alle Knöpfe und fand acht
+# Tabstellen: den Baum und sieben Kopieaktionen — und die Pfeile des Baums
+# liefen in die Kopieaktionen hinein und nicht wieder heraus.
+pruefe (window.__knoten = () => [...window.__baum().querySelectorAll('[data-baumknoten]')], window.__knoten().length > 1)
+notiz Eine Tabstelle für alle Knoten — die Kopieaktionen bleiben je für sich erreichbar
+zeige window.__knoten().filter((k) => k.tabIndex === 0).length + ' Knoten mit tabIndex 0 von ' + window.__knoten().length + ', Kopieaktionen: ' + window.__baum().querySelectorAll('button:not([data-baumknoten])').length
+gleich window.__knoten().filter((k) => k.tabIndex === 0).length => 1
+pruefe [...window.__baum().querySelectorAll('button:not([data-baumknoten])')].every((k) => k.tabIndex === 0)
+notiz Alles beginnt aufgeklappt, und die Leertaste klappt
+pruefe (window.__baum().querySelector('button[aria-expanded]').dataset.ziel = 'zweig', true)
+klicke [data-ziel="zweig"]
+gleich document.querySelector('[data-ziel="zweig"]').getAttribute('aria-expanded') => false
+taste space
+gleich document.querySelector('[data-ziel="zweig"]').getAttribute('aria-expanded') => true
+notiz Pfeil ab läuft zum nächsten Knopf, Ende ans Ende, Pos1 an den Anfang
+taste down
+pruefe document.activeElement !== document.querySelector('[data-ziel="zweig"]') && window.__baum().contains(document.activeElement)
+taste end
+pruefe (() => { const k = window.__knoten(); return document.activeElement === k[k.length - 1] })()
+taste home
+pruefe (() => { const k = window.__knoten(); return document.activeElement === k[0] })()
+pruefe getComputedStyle(document.activeElement).outlineStyle !== 'none'
+abzug baum
+gleich JSON.stringify(window.__probeFehler || []) => []

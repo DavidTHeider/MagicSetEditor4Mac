@@ -1,0 +1,4 @@
+/* Die Rückfrage „Lokales Netzwerk" auf Englisch (#1996). Die
+   Entwicklungsregion ist Deutsch; ohne diese Datei sähe ein englisches
+   System den deutschen Satz aus Info.plist. */
+"NSLocalNetworkUsageDescription" = "MagicSetEditor4Mac looks for and connects to other computers on the same network only when you ask it to — for example to trade and play with people you know, or to use an AI model on a computer in your own network.";

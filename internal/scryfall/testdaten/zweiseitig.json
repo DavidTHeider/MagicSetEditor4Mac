@@ -1,0 +1,44 @@
+{
+  "object": "card",
+  "id": "00000000-0000-4000-8000-000000000002",
+  "name": "Vorderseite // Rückseite",
+  "lang": "de",
+  "layout": "transform",
+  "cmc": 2.0,
+  "type_line": "Kreatur — Prüfling // Kreatur — Prüfling",
+  "colors": ["U"],
+  "color_identity": ["U"],
+  "rarity": "uncommon",
+  "set": "prb",
+  "set_name": "Prüfblock",
+  "collector_number": "2",
+  "card_faces": [
+    {
+      "object": "card_face",
+      "name": "Vorderseite",
+      "mana_cost": "{1}{U}",
+      "type_line": "Kreatur — Prüfling",
+      "oracle_text": "Verwandle Vorderseite.",
+      "power": "1",
+      "toughness": "1",
+      "artist": "Selbst Gemalt",
+      "image_uris": {
+        "normal": "https://beispiel.invalid/vorn.jpg",
+        "art_crop": "https://beispiel.invalid/vorn-ausschnitt.jpg"
+      }
+    },
+    {
+      "object": "card_face",
+      "name": "Rückseite",
+      "mana_cost": "",
+      "type_line": "Kreatur — Prüfling",
+      "oracle_text": "Fliegend.",
+      "power": "3",
+      "toughness": "3",
+      "artist": "Selbst Gemalt",
+      "image_uris": {
+        "normal": "https://beispiel.invalid/hinten.jpg"
+      }
+    }
+  ]
+}

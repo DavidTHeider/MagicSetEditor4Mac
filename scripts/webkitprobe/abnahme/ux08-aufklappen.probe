@@ -1,0 +1,62 @@
+# UX-08 S11.NAT-02 und -03 (#1680) — Details auf Nachfrage, ohne dass etwas verloren geht, in WKWebView.
+#
+# S11.NAT-03: ein Aufklappkasten verliert beim Zuklappen nicht, was darin
+# eingegeben war. Bis zum 2026-09-25 hing er seinen Inhalt aus, und der Name
+# eines halb angelegten Decks war nach dem Wiederaufklappen fort.
+#
+# S11.NAT-02: der Pfad eines Laufs gegen den echten Dienst steht unter
+# „Diagnose", zu — nicht zwischen den Schaltern. Der Nachweis für Scryfall
+# stammt von Fassung 0.4.0; für diesen Stand ist er fremd, und damit gibt es
+# etwas zu wiederholen.
+#
+# **Angelegt wird nichts** — die Abnahmen teilen sich einen Bestand.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+pruefe (window.__zur = (seite) => { const b = [...document.querySelectorAll('[role=dialog] button')].find((x) => x.getClientRects().length > 0 && x.innerText.trim() === seite); b.dataset.ziel = 'seite'; return true }, window.__schalter = () => [...document.querySelectorAll('main button[aria-expanded]')].find((b) => b.innerText.trim() === 'Deck anlegen'), window.__feld = () => document.querySelector('section[aria-label="Deck anlegen"] input'), true)
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+pruefe window.__zur('Decks')
+klicke [role=dialog] [data-ziel="seite"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+wartetext Probe-Deck
+notiz Der Kasten ist zu und sagt es — dann auf, und einen Namen tippen
+gleich window.__schalter().getAttribute('aria-expanded') => false
+gleich window.__feld() => null
+pruefe (window.__schalter().dataset.ziel = 'schalter', true)
+klicke [data-ziel="schalter"]
+bis window.__schalter().getAttribute('aria-expanded') === 'true'
+bis window.__feld() !== null && window.__feld().checkVisibility()
+klicke section[aria-label="Deck anlegen"] input
+tippe Halbfertig
+notiz Zu — verborgen, nicht fort
+klicke [data-ziel="schalter"]
+bis window.__schalter().getAttribute('aria-expanded') === 'false'
+pruefe !window.__feld().checkVisibility()
+pruefe !window.__schalter().hasAttribute('aria-controls')
+notiz Wieder auf — der Name steht noch da (S11.NAT-03)
+klicke [data-ziel="schalter"]
+bis window.__feld().checkVisibility()
+gleich window.__feld().value => Halbfertig
+abzug aufklappen-behaelt
+notiz Einstellungen › Fremde Kartendienste — der Pfad des Laufs steht unter „Diagnose" (S11.NAT-02)
+taste cmd+,
+wartetext Verbindungen
+klicke [role=tab][data-lasche="dienste"]
+wartetext Was die Dienste hier können
+# **Die Auskunft steht inzwischen in einer eigenen Falte** — erst aufklappen.
+pruefe ([...document.querySelectorAll('button[aria-expanded]')].find((b) => b.checkVisibility() && b.innerText.trim() === 'Was die Dienste hier können').dataset.ziel = 'katalog', true)
+klicke [data-ziel="katalog"]
+bis document.querySelector('[data-ziel="katalog"]').getAttribute('aria-expanded') === 'true'
+bis document.querySelector('article[aria-label="Scryfall"]') !== null
+pruefe !document.querySelector('main').innerText.includes('netzlauf_test.go')
+pruefe document.querySelector('article[aria-label="Scryfall"]').innerText.includes('nicht mit dieser Fassung.')
+pruefe ([...document.querySelectorAll('article[aria-label="Scryfall"] button[aria-expanded]')].find((b) => b.innerText.trim() === 'Diagnose').dataset.ziel = 'diagnose', true)
+klicke [data-ziel="diagnose"]
+bis document.querySelector('article[aria-label="Scryfall"]').innerText.includes('internal/scryfall/netzlauf_test.go')
+abzug diagnose
+notiz Und die Seite hat keinen Fehler geworfen
+gleich JSON.stringify(window.__probeFehler || []) => []

@@ -1,0 +1,28 @@
+{
+  "object": "list",
+  "has_more": false,
+  "data": [
+    {
+      "object": "bulk_data",
+      "id": "00000000-0000-4000-8000-000000000020",
+      "type": "oracle_cards",
+      "updated_at": "2026-08-23T21:01:56.596+00:00",
+      "uri": "https://beispiel.invalid/bulk-data/oracle",
+      "name": "Oracle Cards",
+      "description": "Je eine Karte für jede Orakel-Kennung.",
+      "jsonl_download_uri": "https://beispiel.invalid/oracle-cards.jsonl.gz",
+      "compressed_size": 24531600
+    },
+    {
+      "object": "bulk_data",
+      "id": "00000000-0000-4000-8000-000000000021",
+      "type": "rulings",
+      "updated_at": "2026-08-23T21:00:33.000+00:00",
+      "uri": "https://beispiel.invalid/bulk-data/rulings",
+      "name": "Rulings",
+      "description": "Alle Regelhinweise.",
+      "jsonl_download_uri": "https://beispiel.invalid/rulings.jsonl.gz",
+      "compressed_size": 5400000
+    }
+  ]
+}

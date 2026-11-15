@@ -1,0 +1,52 @@
+# Der Fensterweg im Testprozess — Beleg zu docs/LEISTUNGSVERGLEICH.md §5 (QA-04, #1735)
+#
+# Befehl (aus dem Arbeitsbaum, nach source scripts/activate.sh):
+#   MSE_FREMDPAKETE=/Users/david/full-magic-pack/data \
+#   MSE_KANON="$HOME/Library/Application Support/MagicSetEditor4Mac/kanonische-sets" \
+#   go test -count=1 -tags fremdpakete -run '^$' -bench 'BenchmarkWeg(Rastern|Vorschaukaltstart|Vorschauzerlegung)$' -benchtime 20x ./internal/app/
+#
+# Maschine: Apple M5, 10 Kerne, 32 GB, macOS 27.0 (26A428), Go 1.27.1.
+# Eingaben: Black.mse-set (erste Karte) und Vanguard.mse-set aus den kanonischen Sets;
+# Pakete aus full-magic-pack/data. Die Schriften des Packs liegen im Zuhause dieses
+# Laufs NICHT im Paketverzeichnis (messanwendung setzt HOME auf ein leeres Verzeichnis).
+#
+Beginn 03:17:03 Last { 1.68 2.17 7.04 } Stand f749bfa4
+goos: darwin
+goarch: arm64
+pkg: github.com/DavidTHeider/MagicSetEditor4Mac/internal/app
+cpu: Apple M5
+BenchmarkWegRastern-10              	      20	  60658962 ns/op
+--- BENCH: BenchmarkWegRastern-10
+    messwege_bench_intern_test.go:301: Black.mse-set mit 3788 Karten
+    messwege_bench_intern_test.go:336: eine Karte rastern: 61ms, Schwelle 120ms
+BenchmarkWegVorschaukaltstart-10    	      20	  36632340 ns/op
+--- BENCH: BenchmarkWegVorschaukaltstart-10
+    vorschaukaltstart_bench_intern_test.go:54: Vanguard.mse-set mit 107 Karten
+    vorschaukaltstart_bench_intern_test.go:112: der Kaltstart eines Stils: 512ms, Schwelle 2.5s
+    vorschaukaltstart_bench_intern_test.go:114: Kartenplan kalt   472ms
+    vorschaukaltstart_bench_intern_test.go:115: Kartenplan warm   15ms
+    vorschaukaltstart_bench_intern_test.go:116: Zeichne           39ms
+    vorschaukaltstart_bench_intern_test.go:117: Vorschau erste    44ms
+    vorschaukaltstart_bench_intern_test.go:118: Vorschau zweite   43ms
+    vorschaukaltstart_bench_intern_test.go:54: Vanguard.mse-set mit 107 Karten
+    vorschaukaltstart_bench_intern_test.go:112: der Kaltstart eines Stils: 442ms, Schwelle 2.5s
+    vorschaukaltstart_bench_intern_test.go:114: Kartenplan kalt   404ms
+	... [output truncated]
+BenchmarkWegVorschauzerlegung/Kartenplan-10         	      20	  13939560 ns/op
+--- BENCH: BenchmarkWegVorschauzerlegung/Kartenplan-10
+    vorschauzerlegung_bench_intern_test.go:142: Kartenplan: 13.94ms je Durchlauf
+BenchmarkWegVorschauzerlegung/Zeichne-10            	      20	  12716929 ns/op
+--- BENCH: BenchmarkWegVorschauzerlegung/Zeichne-10
+    vorschauzerlegung_bench_intern_test.go:142: Zeichne: 12.717ms je Durchlauf
+BenchmarkWegVorschauzerlegung/png.Encode-10         	      20	   5172850 ns/op
+--- BENCH: BenchmarkWegVorschauzerlegung/png.Encode-10
+    vorschauzerlegung_bench_intern_test.go:142: png.Encode: 5.173ms je Durchlauf
+BenchmarkWegVorschauzerlegung/base64-10             	      20	     60667 ns/op
+--- BENCH: BenchmarkWegVorschauzerlegung/base64-10
+    vorschauzerlegung_bench_intern_test.go:142: base64: 61µs je Durchlauf
+BenchmarkWegVorschauzerlegung/Vorschau_ganz-10      	      20	  43063083 ns/op
+--- BENCH: BenchmarkWegVorschauzerlegung/Vorschau_ganz-10
+    vorschauzerlegung_bench_intern_test.go:142: Vorschau ganz: 43.063ms je Durchlauf
+PASS
+ok  	github.com/DavidTHeider/MagicSetEditor4Mac/internal/app	9.237s
+rc=0 Ende 03:17:19 Last { 2.17 2.25 6.99 }

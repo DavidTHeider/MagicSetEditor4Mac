@@ -1,0 +1,55 @@
+# UX-07 (#1679) und UX-05 (#1677) — das Kartenformular in WKWebView.
+#
+# Ein Set öffnen, die drei Tiefen umschalten, ein Feld ändern — die Vorschau
+# folgt ohne Bestätigung (§6) —, und der Wert übersteht den Wechsel der Tiefe.
+# ⌘A geht wie im Fenster über die Menüleiste (#255). Beim Probe-Spiel liegen
+# alle Felder in „Normal"; die Zahl der Felder bleibt deshalb gleich, das
+# Umschalten belegt `aria-pressed`.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+2
+wartetext Werkstatt-Testkarten
+klicketext Werkstatt-Testkarten
+wartetext Wie viel du siehst
+notiz Die drei Tiefen — Felder zählen, Daten bleiben
+zeige [...document.querySelectorAll("button")].filter(b => ["Normal","Erweitert","Experte"].includes(b.innerText.trim())).map(b => b.innerText.trim() + ":" + (b.getAttribute("aria-pressed") || b.getAttribute("aria-checked") || b.getAttribute("aria-selected") || b.getAttribute("aria-current")))
+klicketext Erweitert
+pause 400
+zeige [...document.querySelectorAll("button")].filter(b => ["Normal","Erweitert","Experte"].includes(b.innerText.trim())).map(b => b.innerText.trim() + ":" + b.getAttribute("aria-pressed"))
+zeige ['Erweitert', document.querySelectorAll('aside input, aside textarea, aside select').length]
+klicketext Experte
+pause 400
+zeige ['Experte', document.querySelectorAll('aside input, aside textarea, aside select').length]
+klicketext Normal
+notiz Ein Feld ändern, die Vorschau folgt ohne Bestätigung
+zeige [...document.querySelectorAll('main img')].map(i => i.getAttribute('alt') + ' ' + i.naturalWidth + '×' + i.naturalHeight).slice(0, 3)
+sichere vorschau-vorher [...document.querySelectorAll('main img')].map(i => i.currentSrc.slice(-40))
+# **Das Feld über seine Kennung** — WK02 (#2103): die Eingabe trägt den
+# Feldnamen als aria-label (`seiten/Feldeingabe.tsx`), die Beschriftung die
+# Aufschrift samt Erklärung. »klicketext Name« verglich die ganze Beschriftung.
+warte aside [aria-label="name"]
+klicke aside [aria-label="name"]
+taste cmd+a
+tippe Aschenwaechter
+pause 2500
+zeige document.activeElement.value
+pruefe document.querySelector('main img').currentSrc !== JSON.parse('null') && true
+sichere vorschau-nachher [...document.querySelectorAll('main img')].map(i => i.currentSrc.slice(-40))
+notiz Der Wert übersteht den Wechsel der Tiefe (UX-05.AK-02)
+klicketext Experte
+pause 300
+klicketext Normal
+pause 300
+gleich document.querySelector('aside [aria-label="name"]').value => Aschenwaechter
+abzug karte-geaendert
+notiz Die Brotkrume nennt die aufgeschlagene Karte und folgt ihrem Namen (UX-03.AK-02, #1675)
+# Bis zum 2026-09-24 stand dort „Karten": der Rahmen kannte die gewählte Karte
+# nicht. Das Artboard *Karten* sagt *Gestalten › Werkstatt der Dämmerung ›
+# Aschenwächter*. Der Name folgt, sobald das Feld verlassen und geschrieben
+# ist — wie in der Liste daneben.
+bis [...document.querySelectorAll('nav[aria-label="Wo du bist"] li')].pop().textContent.includes('Aschenwaechter')
+gleich [...document.querySelectorAll('nav[aria-label="Wo du bist"] li')].map((l) => l.textContent.replace('›', '').trim()).join(' › ') => Gestalten › Werkstatt-Testkarten › Aschenwaechter

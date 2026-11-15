@@ -1,0 +1,39 @@
+diff -ruN -U1 a/src/data/format/image.cpp b/src/data/format/image.cpp
+--- a/src/data/format/image.cpp	2026-10-14 17:15:50
++++ b/src/data/format/image.cpp	2026-10-14 17:15:50
+@@ -21,2 +21,3 @@
+ void export_image(const SetP& set, const CardP& card, const String& filename) {
++  if (getenv("MSE_ORAKEL_MASSSTAB")) fprintf(stderr, "KARTE\t%s\n", (const char*)filename.ToUTF8().data());
+   Image img = export_bitmap(set, card).ConvertToImage();
+diff -ruN -U1 a/src/render/text/viewer.cpp b/src/render/text/viewer.cpp
+--- a/src/render/text/viewer.cpp	2026-10-14 17:15:50
++++ b/src/render/text/viewer.cpp	2026-10-14 17:15:50
+@@ -9,2 +9,6 @@
+ #include <util/prec.hpp>
++#include <cstdio>
++#include <cstdlib>
++const char* orakel_feld = "";
++const char* orakel_gang = "";
+ #include <render/text/viewer.hpp>
+@@ -393,3 +397,5 @@
+   vector<CharInfo> chars;
++  double orakel_start = scale;
+   prepareLinesTryScales(dc, text, style, chars);
++  if (getenv("MSE_ORAKEL_MASSSTAB")) fprintf(stderr, "MASSSTAB\t%s\t%s\tstart=%.6f\tende=%.6f\tzeilen=%d\tgroesse=%.4f\tkasten=%.2fx%.2f\n", orakel_gang, orakel_feld, orakel_start, scale, (int)lines.size(), style.font.size(), style.width(), style.height());
+   assert(!lines.empty());
+diff -ruN -U1 a/src/render/value/text.cpp b/src/render/value/text.cpp
+--- a/src/render/value/text.cpp	2026-10-14 17:15:50
++++ b/src/render/value/text.cpp	2026-10-14 17:15:50
+@@ -15,2 +15,4 @@
+ IMPLEMENT_VALUE_VIEWER(Text);
++extern const char* orakel_feld;
++extern const char* orakel_gang;
+ 
+@@ -18,2 +20,3 @@
+   getMask(dc); // ensure alpha/contour mask is loaded
++  std::string orakel_name(getField()->name.ToUTF8().data()); orakel_feld = orakel_name.c_str(); orakel_gang = "erster";
+   return v.prepare(dc, value().value(), style(), getContext());
+@@ -24,2 +27,3 @@
+   if (!v.prepared()) {
++    std::string orakel_name(getField()->name.ToUTF8().data()); orakel_feld = orakel_name.c_str(); orakel_gang = "zweiter";
+     v.prepare(dc, value().value(), style(), getContext());

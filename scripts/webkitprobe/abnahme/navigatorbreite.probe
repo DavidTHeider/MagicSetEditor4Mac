@@ -1,0 +1,18 @@
+# UX-14 (#1686) — kein Feld ragt aus seinem Navigator, in WebKit gemessen.
+#
+# Gefunden am 2026-09-24 mit der WebKit-Probe: das Suchfeld der Sammlung trug
+# `size={28}`, WebKit bemisst das mit der mittleren Zeichenbreite der
+# Anwendungsschrift, und das Feld lag über der Wahlspalte der Liste daneben.
+# jsdom hat kein Layout und sah es nie.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+3
+wartetext Sammlung
+warte aside
+zeige [...document.querySelectorAll('aside input, aside select, aside textarea')].map(e => { const a = e.closest('aside').getBoundingClientRect(); const r = e.getBoundingClientRect(); return (e.placeholder || e.name || e.tagName) + ': ' + Math.round(r.right) + ' / ' + Math.round(a.right) })
+pruefe [...document.querySelectorAll('aside input, aside select, aside textarea')].every(e => e.getBoundingClientRect().right <= e.closest('aside').getBoundingClientRect().right + 0.5)
+abzug sammlung-navigator

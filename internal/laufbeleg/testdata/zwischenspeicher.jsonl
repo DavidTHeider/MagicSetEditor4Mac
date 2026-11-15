@@ -1,0 +1,17 @@
+{"Time":"2026-09-22T22:19:40.954402+02:00","Action":"start","Package":"probe.test/gut"}
+{"Time":"2026-09-22T22:19:40.954528+02:00","Action":"run","Package":"probe.test/gut","Test":"TestGut"}
+{"Time":"2026-09-22T22:19:40.954536+02:00","Action":"output","Package":"probe.test/gut","Test":"TestGut","Output":"=== RUN   TestGut\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:40.954552+02:00","Action":"output","Package":"probe.test/gut","Test":"TestGut","Output":"    gut_test.go:5: kennzahl gut.zahl=7\n"}
+{"Time":"2026-09-22T22:19:40.954558+02:00","Action":"output","Package":"probe.test/gut","Test":"TestGut","Output":"--- PASS: TestGut (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:40.954563+02:00","Action":"pass","Package":"probe.test/gut","Test":"TestGut","Elapsed":0}
+{"Time":"2026-09-22T22:19:40.95457+02:00","Action":"run","Package":"probe.test/gut","Test":"TestMitUnterfall"}
+{"Time":"2026-09-22T22:19:40.954573+02:00","Action":"output","Package":"probe.test/gut","Test":"TestMitUnterfall","Output":"=== RUN   TestMitUnterfall\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:40.954577+02:00","Action":"run","Package":"probe.test/gut","Test":"TestMitUnterfall/eins"}
+{"Time":"2026-09-22T22:19:40.954581+02:00","Action":"output","Package":"probe.test/gut","Test":"TestMitUnterfall/eins","Output":"=== RUN   TestMitUnterfall/eins\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:40.954589+02:00","Action":"output","Package":"probe.test/gut","Test":"TestMitUnterfall/eins","Output":"--- PASS: TestMitUnterfall/eins (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:40.954595+02:00","Action":"pass","Package":"probe.test/gut","Test":"TestMitUnterfall/eins","Elapsed":0}
+{"Time":"2026-09-22T22:19:40.954599+02:00","Action":"output","Package":"probe.test/gut","Test":"TestMitUnterfall","Output":"--- PASS: TestMitUnterfall (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:40.954602+02:00","Action":"pass","Package":"probe.test/gut","Test":"TestMitUnterfall","Elapsed":0}
+{"Time":"2026-09-22T22:19:40.954605+02:00","Action":"output","Package":"probe.test/gut","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-09-22T22:19:40.954608+02:00","Action":"output","Package":"probe.test/gut","Output":"ok  \tprobe.test/gut\t(cached)\n"}
+{"Time":"2026-09-22T22:19:40.954612+02:00","Action":"pass","Package":"probe.test/gut","Elapsed":0}

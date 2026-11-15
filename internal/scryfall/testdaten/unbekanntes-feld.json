@@ -1,0 +1,16 @@
+{
+  "object": "card",
+  "id": "00000000-0000-4000-8000-000000000003",
+  "name": "Neuling",
+  "lang": "de",
+  "layout": "normal",
+  "mana_cost": "{R}",
+  "cmc": 1.0,
+  "type_line": "Spontanzauber",
+  "rarity": "common",
+  "set": "prb",
+  "set_name": "Prüfblock",
+  "collector_number": "3",
+  "ein_feld_das_es_2027_gibt": {"tief": ["verschachtelt", 42]},
+  "noch_eines": "einfach"
+}

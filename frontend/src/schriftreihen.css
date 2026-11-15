@@ -1,0 +1,50 @@
+/* **Welche Han-Schrift zuerst kommt** — G18 aus dem Zweitblick über Phase
+   6.3 (#1664, Phase 6.10). Eine eigene Datei, weil `stil.css` an der
+   Zeilengrenze steht; die Begründung steht am Block. */
+@layer base {
+  /* **In chinesischer Umgebung chinesische Zeichenformen** — G18 aus dem
+     Zweitblick über Phase 6.3 (#1664, Phase 6.10). Die Ketten stehen
+     japanisch vorn (UX-09.AK-02); steht davor eine Schrift ohne
+     Han-Zeichen, bekäme ein chinesischer Name japanische Formen.
+     `setzeAnzeigeschrift` schreibt je Kette drei Reihen ans Wurzelelement,
+     und hier wählt die Sprache des Elements — der Oberfläche oder eines
+     Elements, das eine eigene trägt. **Nicht am Wurzelelement selbst**: dort
+     steht die japanische Reihe im `style` und gewinnt; jedes Element darunter
+     wählt neu. Die Vorgaben gelten, bis die Einstellungen geladen sind, und
+     `cjkreihe.test.ts` hält sie gleich. */
+  :root {
+    --font-anzeige-hans:
+      'Hoefler Text', 'Iowan Old Style', Charter, Georgia, 'Songti SC',
+      'Songti TC', 'Hiragino Mincho ProN', serif;
+    --font-anzeige-hant:
+      'Hoefler Text', 'Iowan Old Style', Charter, Georgia, 'Songti TC',
+      'Songti SC', 'Hiragino Mincho ProN', serif;
+    --font-text-hans:
+      -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui,
+      'Helvetica Neue', Arial, 'PingFang SC', 'PingFang TC', 'Hiragino Sans',
+      sans-serif;
+    --font-text-hant:
+      -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui,
+      'Helvetica Neue', Arial, 'PingFang TC', 'PingFang SC', 'Hiragino Sans',
+      sans-serif;
+  }
+
+  /* **Mantine liest beide über eigene Variablen**, die am Wurzelelement
+     schon aufgelöst sind — deshalb wählen die Regeln auch sie neu. */
+  :lang(zh) {
+    --font-anzeige: var(--font-anzeige-hans);
+    --font-text: var(--font-text-hans);
+    --mantine-font-family: var(--font-text-hans);
+    --mantine-font-family-headings: var(--font-anzeige-hans);
+  }
+
+  :lang(zh-Hant),
+  :lang(zh-TW),
+  :lang(zh-HK),
+  :lang(zh-MO) {
+    --font-anzeige: var(--font-anzeige-hant);
+    --font-text: var(--font-text-hant);
+    --mantine-font-family: var(--font-text-hant);
+    --mantine-font-family-headings: var(--font-anzeige-hant);
+  }
+}

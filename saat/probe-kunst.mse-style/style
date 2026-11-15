@@ -1,0 +1,42 @@
+mse version: 2.0.0
+game: probe
+short name: Mit Kunstfenster
+full name: Stil der Saat mit dem Bild der Karte
+version: 2026-08-17
+depends on:
+	package: probe.mse-game
+	version: 2026-08-15
+
+card width: 375
+card height: 523
+card dpi: 150
+
+############ Der Kartenstil
+card style:
+	kunst:
+		left: 30
+		top: 60
+		width: 315
+		height: 230
+		z index: 0
+		render style: image
+	name:
+		left: 30
+		top: 300
+		width: 315
+		height: 28
+		z index: 1
+		font:
+			name: Helvetica
+			size: 20
+			color: black
+	text:
+		left: 30
+		top: 340
+		width: 315
+		height: 140
+		z index: 2
+		font:
+			name: Helvetica
+			size: 13
+			color: black

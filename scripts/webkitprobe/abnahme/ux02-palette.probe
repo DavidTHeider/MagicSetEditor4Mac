@@ -1,0 +1,90 @@
+# UX-02 (#1674) — die Befehlspalette tut und findet, in WKWebView.
+#
+# Gemessen vorher, am 2026-09-21: die Palette fand Seiten und Fachbefehle,
+# aber kein Set, kein Deck und keine Karte über ihren Namen. Jetzt: Tun und
+# Finden nach dem Artboard *Befehle*, die Pfeile wandern, und jede Zeile
+# führt über den Weg, den es schon gibt.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+notiz Ohne offenes Set bietet Tun das Set an, das Deck und die Sicherung
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+bis [...document.querySelectorAll('[role=dialog] ul[aria-label="Tun"] button')].length >= 3
+zeige [...document.querySelectorAll('[role=dialog] ul[aria-label="Tun"] button')].map((b) => b.innerText.replace(/\s+/g, ' ')).join(' | ')
+gleich [...document.querySelectorAll('[role=dialog] ul[aria-label="Tun"] button')][0].innerText.split('\n')[0] => Ein Set anlegen oder öffnen
+abzug tun
+notiz Finden: eine Karte beim Namen, mit der Pfeiltaste gewählt und mit Enter geöffnet
+tippe langt
+bis [...document.querySelectorAll('[role=dialog] ul[aria-label="Finden"] button')].some((b) => b.innerText.includes('Langtext'))
+zeige [...document.querySelectorAll('[role=dialog] ul[aria-label="Finden"] button')].map((b) => b.innerText.replace(/\s+/g, ' ')).join(' | ')
+abzug finden
+taste down
+gleich document.activeElement.innerText.split('\n')[0] => Langtext
+taste enter
+bis !document.querySelector('input[aria-label="Wohin?"]')
+bis [...document.querySelectorAll('nav[aria-label="Wo du bist"] li')].some((l) => l.textContent.includes('Langtext'))
+zeige [...document.querySelectorAll('nav[aria-label="Wo du bist"] li')].map((l) => l.textContent.replace('›', '').trim()).join(' › ')
+abzug karte-offen
+notiz Karte erstellen im offenen Set
+# Die Zahl steht seit dem Umbau der Setseite als Kachel und in »1 von 5« — nicht mehr als »5 Karten«.
+bis /\bvon 5\b/.test(document.querySelector('main').innerText)
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+tippe karte erst
+bis [...document.querySelectorAll('[role=dialog] ul[aria-label="Tun"] button')].some((b) => b.innerText.startsWith('Karte erstellen'))
+zeige [...document.querySelectorAll('[role=dialog] ul[aria-label="Tun"] button')].map((b) => b.innerText.replace(/\s+/g, ' ')).join(' | ')
+pruefe ([...document.querySelectorAll('[role=dialog] ul[aria-label="Tun"] button')].find((b) => b.innerText.startsWith('Karte erstellen')).dataset.ziel = 'tun', true)
+klicke [role=dialog] [data-ziel="tun"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+bis /\bvon 6\b/.test(document.querySelector('main').innerText)
+abzug karte-erstellt
+notiz Und die neue Karte wieder weg — über das Menü der Karte, denn die Abnahmen teilen sich einen Bestand
+klicketext Diese Karte
+# Der Eintrag trägt sein Tastenkürzel rechts in der Zeile — er endet nicht mehr auf seinem Namen.
+bis [...document.querySelectorAll('[role=menuitem]')].some((e) => e.innerText.includes('Karte löschen'))
+pruefe ([...document.querySelectorAll('[role=menuitem]')].find((e) => e.innerText.includes('Karte löschen')).dataset.ziel = 'loeschen', true)
+klicke [data-ziel="loeschen"]
+bis [...document.querySelectorAll('button')].some((b) => b.innerText.replace(/\s+/g, ' ').trim().endsWith(' Löschen'))
+klicketext Löschen
+bis /\bvon 5\b/.test(document.querySelector('main').innerText)
+notiz Sicherung erstellen öffnet Daten und Sicherung
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+tippe sicherung
+bis [...document.querySelectorAll('[role=dialog] ul[aria-label="Tun"] button')].some((b) => b.innerText.startsWith('Sicherung erstellen'))
+pruefe ([...document.querySelectorAll('[role=dialog] ul[aria-label="Tun"] button')].find((b) => b.innerText.startsWith('Sicherung erstellen')).dataset.ziel = 'sicherung', true)
+klicke [role=dialog] [data-ziel="sicherung"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+bis [...document.querySelectorAll('[role=tabpanel] h2')].some((h) => h.textContent.startsWith('Daten und Sicherung'))
+abzug sicherung
+notiz Ein Deck beim Namen gefunden steht aufgeschlagen da
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+tippe probe-d
+bis [...document.querySelectorAll('[role=dialog] ul[aria-label="Finden"] button')].some((b) => b.innerText.startsWith('Probe-Deck'))
+pruefe ([...document.querySelectorAll('[role=dialog] ul[aria-label="Finden"] button')].find((b) => b.innerText.startsWith('Probe-Deck')).dataset.ziel = 'deck', true)
+klicke [role=dialog] [data-ziel="deck"]
+bis !document.querySelector('input[aria-label="Wohin?"]')
+wartetext Probe-Deck
+bis !document.querySelector('main').innerText.includes('Kein Deck aufgeschlagen')
+abzug deck-offen
+notiz Schnell spielen steht in der Palette, mit dem Namen des Decks
+# **Seit #2374 heißt der Befehl „Schnell spielen mit …“ und legt die Partie
+# gleich an** — aus der Palette wie aus dem Menü des Decks. Die Abnahmen
+# teilen sich einen Bestand, und eine zweite Partie änderte die Wege der
+# Drehbücher danach; ausgeführt wird er deshalb hier nicht. Den Weg bis an
+# den Tisch hält die Hüllenprobe `partiestart09`.
+taste cmd+k
+warte [role=dialog] input[aria-label="Wohin?"]
+tippe schnell spielen
+bis [...document.querySelectorAll('[role=dialog] ul[aria-label="Tun"] button')].some((b) => b.innerText.startsWith('Schnell spielen mit Probe-Deck'))
+zeige [...document.querySelectorAll('[role=dialog] ul[aria-label="Tun"] button')].map((b) => b.innerText.replace(/\s+/g, ' ')).join(' | ')
+abzug schnell-spielen
+taste escape
+bis !document.querySelector('input[aria-label="Wohin?"]')
+notiz Und die Seite hat keinen Fehler geworfen
+gleich JSON.stringify(window.__probeFehler || []) => []

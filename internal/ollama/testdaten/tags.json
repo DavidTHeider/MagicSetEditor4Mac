@@ -1,0 +1,42 @@
+{
+  "models": [
+    {
+      "name": "gemma4:8b",
+      "model": "gemma4:8b",
+      "modified_at": "2026-09-10T23:34:03.409490317-07:00",
+      "size": 9608350245,
+      "digest": "c6eb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf982eb",
+      "details": {
+        "format": "gguf",
+        "family": "gemma4",
+        "families": ["gemma4"],
+        "parameter_size": "8.0B",
+        "quantization_level": "Q4_K_M"
+      }
+    },
+    {
+      "name": "einbetter:300m",
+      "model": "einbetter:300m",
+      "modified_at": "2026-09-09T10:00:00.000000000-07:00",
+      "size": 300000000,
+      "digest": "aaaa396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf98aaaa",
+      "details": {"format": "gguf", "family": "bert", "parameter_size": "0.3B"}
+    },
+    {
+      "name": "gpt-oss:120b-cloud",
+      "model": "gpt-oss:120b-cloud",
+      "modified_at": "2026-09-08T10:00:00.000000000-07:00",
+      "size": 0,
+      "digest": "bbbb396dbd5992bbe3f5cdb947e8bbc0ee413d7c17e2beaae69f5d569cf98bbbb",
+      "details": {"format": "gguf", "family": "gptoss"}
+    },
+    {
+      "name": "ohne-digest:1b",
+      "model": "ohne-digest:1b",
+      "modified_at": "2026-09-07T10:00:00.000000000-07:00",
+      "size": 1000,
+      "digest": "",
+      "details": {"format": "gguf", "family": "irgendwas"}
+    }
+  ]
+}

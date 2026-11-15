@@ -1,0 +1,3 @@
+﻿randbreite := { 24 }
+feldbreite := { 375 - 2*randbreite() }
+lautstark := { to_upper(input) }

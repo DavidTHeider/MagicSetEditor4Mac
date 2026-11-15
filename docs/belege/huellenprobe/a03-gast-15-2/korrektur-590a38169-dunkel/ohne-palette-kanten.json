@@ -1,0 +1,3 @@
+{"jsonrpc":"2.0","id":1,"result":{"content":[{"text":"[{\"name\":\"Kante div top\",\"art\":\"rand\",\"grenze\":3,\"verhaeltnis\":4.48},{\"name\":\"Kante div right\",\"art\":\"rand\",\"grenze\":3,\"verhaeltnis\":4.48},{\"name\":\"Kante div bottom\",\"art\":\"rand\",\"grenze\":3,\"verhaeltnis\":4.48},{\"name\":\"Kante div left\",\"art\":\"rand\",\"grenze\":3,\"verhaeltnis\":4.48},{\"name\":\"Kante input »Where to?« bottom\",\"art\":\"rand\",\"grenze\":3,\"verhaeltnis\":4.77},{\"name\":\"Kante p top\",\"art\":\"rand\",\"grenze\":3,\"verhaeltnis\":4.77}]","type":"text"}],"isError":false}}
+
+HTTP 200

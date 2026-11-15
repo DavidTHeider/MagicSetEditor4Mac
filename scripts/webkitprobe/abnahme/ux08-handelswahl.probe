@@ -1,0 +1,68 @@
+# UX-08.AK-04 (#1680) — einen Handel eröffnen und wählen, ohne eine Kennung zu tippen, in WKWebView.
+#
+# Vorher standen im Handelsraum vier Felder „Welcher Handel", und in jedes
+# gehörte dieselbe Kennung von Hand — wer einen Handel empfing, erfuhr sie
+# nirgends. Jetzt: ein neuer Handel ist vorgewählt, die Leitung vergibt seine
+# Kennung beim Eröffnen, und danach steht er in der Wahl. Die Zusagen bieten
+# die eigenen Exemplare des Drucks an, statt Kennung und Fassung zu verlangen.
+#
+# Die Saat legt `scryfall:aaa-1` dreimal in die Sammlung und Bo als Gegenüber
+# (`scripts/webkitabnahme.sh`). **Dieser Lauf legt einen Handel an** — er
+# steht nach den übrigen Handelsläufen und berührt keinen Bestand.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+taste cmd+5
+wartetext Mit wem
+notiz Seit UXR-15 (#1923) steht die Wahl des Gegenübers in der Schublade hinter „Neuer Tausch …"
+klicketext Neuer Tausch …
+wartetext Bo
+pruefe ([...document.querySelectorAll('button')].find((b) => (b.getAttribute('aria-label') || '').includes('Bo')).dataset.ziel = 'bo', true)
+klicke [data-ziel="bo"]
+notiz Seit TRADE-02 (#1716) steht die Wahl in „Mit wem"; ein neuer Handel öffnet in „Was tauscht ihr"
+klicke [data-handelsassistent] nav li:nth-child(1) button
+wartetext Welcher Handel
+pruefe (window.__wahl = () => [...document.querySelectorAll('fieldset')].find((f) => f.querySelector('legend') && f.querySelector('legend').textContent === 'Welcher Handel'), window.__vorgang = () => [...document.querySelectorAll('section')].find((s) => s.querySelector('h3') && s.querySelector('h3').textContent === 'Ein Handel von der Eröffnung bis zur Übergabe'), true)
+notiz Ein neuer Handel ist vorgewählt — mit Bo gibt es noch keinen, und nirgends steht ein Feld für eine Kennung
+bis document.body.innerText.includes('Mit diesem Gegenüber gibt es noch keinen Handel.')
+pruefe window.__wahl().querySelector('input[type=radio]:checked').value === ''
+pruefe ![...document.querySelectorAll('main label')].some((l) => l.checkVisibility() && /Welcher Handel|Kennung des Handels/.test(l.textContent))
+notiz Eine Zeile von dir, dann eröffnen
+klicke [data-handelsassistent] nav li:nth-child(2) button
+# **Zwei Spalten statt einer Seitenwahl** — »Von dir« und »Vom Gegenüber«,
+# jede mit eigenem »+ Zeile« (`bausteine/Handelspositionen.tsx`). Bis zum
+# 2026-10-06 suchte diese Probe die alte Wahl der Seite (WK03, #2104).
+bis !!document.querySelector('button[aria-label="Zeile hinzufügen: Von dir"]')
+klicke button[aria-label="Zeile hinzufügen: Von dir"]
+# **Seit #2378 steht der Druck im Kasten »Kennung von Hand«** — eine Zeile
+# entsteht über den Namen der Karte; wer den Druck tippt, klappt ihn auf.
+bis [...window.__vorgang().querySelectorAll('button[aria-expanded]')].some((b) => b.checkVisibility() && b.innerText.trim() === 'Kennung von Hand')
+pruefe ([...window.__vorgang().querySelectorAll('button[aria-expanded]')].find((b) => b.checkVisibility() && b.innerText.trim() === 'Kennung von Hand').dataset.ziel = 'kennungskasten', true)
+klicke [data-ziel="kennungskasten"]
+bis document.querySelector('[data-ziel="kennungskasten"]').getAttribute('aria-expanded') === 'true'
+bis [...window.__vorgang().querySelectorAll('label')].some((l) => l.checkVisibility() && l.textContent.trim().startsWith('Druck'))
+pruefe ([...window.__vorgang().querySelectorAll('label')].find((l) => l.checkVisibility() && l.textContent.trim().startsWith('Druck')).control.dataset.ziel = 'druck', true)
+klicke [data-ziel="druck"]
+tippe scryfall:aaa-1
+klicketext Zeile hinzufügen
+notiz Die Zeile steht in der eigenen Spalte und nicht in der des Gegenübers
+pruefe (window.__spalte = (titel) => [...document.querySelectorAll('section[aria-labelledby]')].find((s) => document.getElementById(s.getAttribute('aria-labelledby'))?.textContent === titel), window.__spalte('Von dir').innerText.includes('1 × scryfall:aaa-1') && !window.__spalte('Vom Gegenüber').innerText.includes('scryfall:aaa-1'))
+klicketext Eröffnen
+notiz Der neue Handel steht in der Wahl und ist gewählt — seine Kennung hat die Leitung vergeben
+bis window.__wahl().querySelectorAll('input[type=radio]').length === 2
+pruefe window.__wahl().querySelector('input[type=radio]:checked').value.startsWith('h-')
+zeige [...window.__wahl().querySelectorAll('label')].map((l) => l.innerText.replace(/\s+/g, ' ').trim()).join(' | ')
+notiz Die Zusagen bieten die eigenen Exemplare dieses Drucks an
+klicke [data-handelsassistent] nav li:nth-child(3) button
+bis [...document.querySelectorAll('fieldset legend')].some((l) => /^1 × \S/.test(l.textContent))
+zeige [...document.querySelectorAll('fieldset')].filter((f) => f.querySelector('legend') && /^1 × \S/.test(f.querySelector('legend').textContent)).map((f) => f.innerText.replace(/\s+/g, ' ').trim()).join(' | ')
+abzug handelswahl
+notiz Für Fachleute steht die Kennung mit einer Erklärung da
+klicke [data-handelsassistent] nav li:nth-child(1) button
+klicketext Einen Handel über seine Kennung öffnen
+bis document.body.innerText.includes('Gewählt ist der Handel h-')
+abzug handelswahl-fachleute
+gleich JSON.stringify(window.__probeFehler || []) => []

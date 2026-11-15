@@ -1,0 +1,261 @@
+{
+  "datum": "2026-10-04 09:09",
+  "commit": "880b04a78",
+  "rechner": "Apple M5",
+  "speicher": 32,
+  "system": "27.0.1",
+  "ollama": "0.35.1",
+  "modelle": [
+    {
+      "name": "qwen3:0.6b",
+      "zweck": "Text",
+      "pinnung": {
+        "digest": "7df6b6e09427a769808717c0a93cadc4ae99ed4eb8bf5ca557c90846becea435",
+        "bytes": 522653767,
+        "format": "gguf",
+        "familie": "qwen3",
+        "parameter": 751632384,
+        "quantisierung": "Q4_K_M",
+        "lizenz": "Apache License",
+        "faehigkeiten": [
+          "completion",
+          "tools",
+          "thinking"
+        ],
+        "kontext": 40960,
+        "stellen": 1024,
+        "vorgaben": [
+          "temperature 0.6",
+          "top_k 20",
+          "top_p 0.95",
+          "repeat_penalty 1",
+          "stop \"<|im_start|>\"",
+          "stop \"<|im_end|>\""
+        ]
+      },
+      "kaltstarts": [
+        {
+          "laufzeit": 0.780599958,
+          "wand": 0.8157625829999999
+        },
+        {
+          "laufzeit": 0.773541041,
+          "wand": 0.8090113330000002
+        },
+        {
+          "laufzeit": 0.771474542,
+          "wand": 0.8056325410000001
+        }
+      ],
+      "arbeit": {
+        "laeufe": 10,
+        "gleich": true,
+        "tokenProSekunde": 215.5636990730761
+      },
+      "gehalten": {
+        "bytes": 4528883630,
+        "gpu": 4528883630,
+        "fenster": 32768
+      },
+      "speicher": {
+        "eigen": 3865470566.4,
+        "gemappt": 542113792
+      },
+      "denken": {
+        "ohne think": {
+          "angekommen": 31,
+          "von": 32,
+          "median": 1.8307740839999969,
+          "langsamste": 30.002579084000004,
+          "token": 267
+        },
+        "think: false": {
+          "angekommen": 32,
+          "von": 32,
+          "median": 0.16349720800000067,
+          "langsamste": 0.4888897500000021,
+          "token": 14
+        }
+      },
+      "speicherNachDenken": {
+        "eigen": 5690831667.2,
+        "gemappt": 542323507.2
+      }
+    },
+    {
+      "name": "gemma3:1b",
+      "zweck": "Text",
+      "pinnung": {
+        "digest": "8648f39daa8fbf5b18c7b4e6a8fb4990c692751d49917417b8842ca5758e7ffc",
+        "bytes": 815319791,
+        "format": "gguf",
+        "familie": "gemma3",
+        "parameter": 999885952,
+        "quantisierung": "Q4_K_M",
+        "lizenz": "Gemma Terms of Use",
+        "faehigkeiten": [
+          "completion"
+        ],
+        "kontext": 32768,
+        "stellen": 1152,
+        "vorgaben": [
+          "stop \"<end_of_turn>\"",
+          "temperature 1",
+          "top_k 64",
+          "top_p 0.95"
+        ]
+      },
+      "kaltstarts": [
+        {
+          "laufzeit": 0.791897042,
+          "wand": 0.8370181250000023
+        },
+        {
+          "laufzeit": 0.540216667,
+          "wand": 0.5749378330000036
+        },
+        {
+          "laufzeit": 0.537513458,
+          "wand": 0.5710689170000114
+        }
+      ],
+      "arbeit": {
+        "laeufe": 10,
+        "gleich": true,
+        "tokenProSekunde": 111.21349814114582
+      },
+      "gehalten": {
+        "bytes": 998800097,
+        "gpu": 998800097,
+        "fenster": 32768
+      },
+      "speicher": {
+        "eigen": 333237452.8,
+        "gemappt": 825229312
+      }
+    },
+    {
+      "name": "all-minilm:22m",
+      "zweck": "Einbettung",
+      "pinnung": {
+        "digest": "1b226e2802dbb772b5fc32a58f103ca1804ef7501331012de126ab22f67475ef",
+        "bytes": 45960996,
+        "format": "gguf",
+        "familie": "bert",
+        "parameter": 22565376,
+        "quantisierung": "F16",
+        "lizenz": "Apache License",
+        "faehigkeiten": [
+          "embedding"
+        ],
+        "kontext": 512,
+        "stellen": 384,
+        "vorgaben": [
+          "num_ctx 256"
+        ]
+      },
+      "kaltstarts": [
+        {
+          "laufzeit": 0.258379625,
+          "wand": 0.2666279590000049
+        },
+        {
+          "laufzeit": 0.258933875,
+          "wand": 0.26585129099999905
+        },
+        {
+          "laufzeit": 0.258545,
+          "wand": 0.26613349999999625
+        }
+      ],
+      "arbeit": {
+        "texte": 120,
+        "sekunden": 0.5178330000000133,
+        "stellen": 384
+      },
+      "gehalten": {
+        "bytes": 25847398,
+        "gpu": 25847398,
+        "fenster": 256
+      },
+      "speicher": {
+        "eigen": 92798976,
+        "gemappt": 70778880
+      }
+    },
+    {
+      "name": "embeddinggemma:300m",
+      "zweck": "Einbettung",
+      "pinnung": {
+        "digest": "85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1",
+        "bytes": 621875917,
+        "format": "gguf",
+        "familie": "gemma3",
+        "parameter": 307581696,
+        "quantisierung": "BF16",
+        "lizenz": "Gemma Terms of Use",
+        "faehigkeiten": [
+          "embedding"
+        ],
+        "kontext": 2048,
+        "stellen": 768,
+        "vorgaben": [
+          "num_batch 2048",
+          "num_ctx 2048"
+        ]
+      },
+      "kaltstarts": [
+        {
+          "laufzeit": 0.518477459,
+          "wand": 0.5329449170000007
+        },
+        {
+          "laufzeit": 0.519891292,
+          "wand": 0.5365714589999989
+        },
+        {
+          "laufzeit": 0.519597792,
+          "wand": 0.5382225420000032
+        }
+      ],
+      "arbeit": {
+        "texte": 120,
+        "sekunden": 1.4641476660000043,
+        "stellen": 768
+      },
+      "gehalten": {
+        "bytes": 679319961,
+        "gpu": 679319961,
+        "fenster": 2048
+      },
+      "speicher": {
+        "eigen": 188533964.8,
+        "gemappt": 641204224
+      }
+    },
+    {
+      "name": "x/flux2-klein:4b",
+      "zweck": "Bild",
+      "pinnung": {
+        "digest": "50a0c0ab15ac55078483105dc0aa5d0e3ba6a5103309f511adb85f3e3ab186e3",
+        "bytes": 5726794301,
+        "format": "safetensors",
+        "parameter": "",
+        "lizenz": "Apache License",
+        "faehigkeiten": [
+          "image"
+        ],
+        "vorgaben": [],
+        "verlangt": "0.14.0"
+      },
+      "bild": {
+        "erzeugt": false,
+        "wege": {
+          "/api/images": "404 404 page not found",
+          "/v1/images/generations": "404 404 page not found",
+          "/api/generate": "400 {\"error\":\"image generation models are not currently supported\"}"
+        }
+      }
+    }
+  ]
+}

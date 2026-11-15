@@ -1,0 +1,370 @@
+{
+  "bauabdruck": "226ed156284bf53d95dae4b36b63f8f1c4a309a401458a2562142917d3b64d92",
+  "erhoben": "2026-10-16T18:14:49.856Z",
+  "bilder": {
+    "hell": {
+      "schrift": {
+        "wurzelgroesse": 16,
+        "mittel-klein": {
+          "schnitt": "500",
+          "groesse": 14
+        },
+        "halbfett": {
+          "schnitt": "600",
+          "groesse": 16
+        },
+        "feld": {
+          "schnitt": "500",
+          "groesse": 14
+        },
+        "weiter": "500"
+      },
+      "gestalt": {
+        "suche": {
+          "mantine-Popover-dropdown": {
+            "grund": "rgb(253, 249, 240)",
+            "rand": "rgb(120, 98, 72) 2px solid",
+            "rundung": "6px",
+            "innen": "0px 0px 0px 0px",
+            "breite": 336,
+            "schatten": "none",
+            "lage": "absolute",
+            "schrift": "400 16px",
+            "hoehe": 196
+          },
+          "mantine-Combobox-options": {
+            "grund": "rgba(0, 0, 0, 0)",
+            "rand": "rgb(36, 28, 20) 0px solid",
+            "rundung": "0px",
+            "innen": "4px 0px 4px 0px",
+            "breite": 332,
+            "schatten": "none",
+            "lage": "static",
+            "schrift": "400 16px",
+            "hoehe": 192
+          },
+          "mantine-Combobox-option": {
+            "grund": "rgb(232, 220, 194)",
+            "rand": "rgb(36, 28, 20) 0px solid",
+            "rundung": "0px",
+            "innen": "6px 12px 6px 12px",
+            "breite": 332,
+            "schatten": "none",
+            "lage": "static",
+            "schrift": "600 16px",
+            "hoehe": 37
+          }
+        },
+        "palette": {
+          "mantine-Modal-root": {
+            "grund": "rgba(0, 0, 0, 0)",
+            "rand": "rgb(36, 28, 20) 0px solid",
+            "rundung": "0px",
+            "innen": "0px 0px 0px 0px",
+            "breite": 1441,
+            "schatten": "none",
+            "lage": "static",
+            "schrift": "400 16px",
+            "hoehe": 0
+          },
+          "mantine-Modal-overlay": {
+            "grund": "color(srgb 0.141176 0.109804 0.078431 / 0.4)",
+            "rand": "rgb(36, 28, 20) 0px solid",
+            "rundung": "0px",
+            "innen": "0px 0px 0px 0px",
+            "breite": 1441,
+            "schatten": "none",
+            "lage": "fixed",
+            "schrift": "400 16px",
+            "hoehe": 810
+          },
+          "mantine-Modal-inner": {
+            "grund": "rgba(0, 0, 0, 0)",
+            "rand": "rgb(36, 28, 20) 0px solid",
+            "rundung": "0px",
+            "innen": "64px 72.050003px 64px 72.050003px",
+            "breite": 1441,
+            "schatten": "none",
+            "lage": "fixed",
+            "schrift": "400 16px",
+            "hoehe": 810
+          },
+          "mantine-Modal-content": {
+            "grund": "rgba(0, 0, 0, 0)",
+            "rand": "rgb(36, 28, 20) 0px solid",
+            "rundung": "8px",
+            "innen": "0px 0px 0px 0px",
+            "breite": 1297,
+            "schatten": "none",
+            "lage": "static",
+            "schrift": "400 16px",
+            "hoehe": 471
+          }
+        },
+        "schublade": {
+          "mantine-Drawer-root": {
+            "grund": "rgba(0, 0, 0, 0)",
+            "rand": "rgb(36, 28, 20) 0px solid",
+            "rundung": "0px",
+            "innen": "0px 0px 0px 0px",
+            "breite": 1441,
+            "schatten": "none",
+            "lage": "static",
+            "schrift": "400 16px",
+            "hoehe": 0
+          },
+          "mantine-Drawer-overlay": {
+            "grund": "color(srgb 0.141176 0.109804 0.078431 / 0.4)",
+            "rand": "rgb(36, 28, 20) 0px solid",
+            "rundung": "0px",
+            "innen": "0px 0px 0px 0px",
+            "breite": 1441,
+            "schatten": "none",
+            "lage": "fixed",
+            "schrift": "400 16px",
+            "hoehe": 810
+          },
+          "mantine-Drawer-inner": {
+            "grund": "rgba(0, 0, 0, 0)",
+            "rand": "rgb(36, 28, 20) 0px solid",
+            "rundung": "0px",
+            "innen": "0px 0px 0px 0px",
+            "breite": 1441,
+            "schatten": "none",
+            "lage": "fixed",
+            "schrift": "400 16px",
+            "hoehe": 810
+          },
+          "mantine-Drawer-content": {
+            "grund": "rgb(253, 249, 240)",
+            "rand": "rgb(36, 28, 20) 0px solid",
+            "rundung": "0px",
+            "innen": "0px 0px 0px 0px",
+            "breite": 460,
+            "schatten": "none",
+            "lage": "static",
+            "schrift": "400 16px",
+            "hoehe": 810
+          },
+          "mantine-Drawer-header": {
+            "grund": "rgb(253, 249, 240)",
+            "rand": "rgb(36, 28, 20) 0px solid",
+            "rundung": "0px",
+            "innen": "12px 16px 12px 16px",
+            "breite": 459,
+            "schatten": "none",
+            "lage": "sticky",
+            "schrift": "400 16px",
+            "hoehe": 60
+          },
+          "mantine-Drawer-title": {
+            "grund": "rgba(0, 0, 0, 0)",
+            "rand": "rgb(36, 28, 20) 0px solid",
+            "rundung": "0px",
+            "innen": "0px 0px 0px 0px",
+            "breite": 199,
+            "schatten": "none",
+            "lage": "static",
+            "schrift": "600 18px",
+            "hoehe": 23
+          }
+        },
+        "popover": {
+          "mantine-Popover-dropdown": {
+            "grund": "rgb(253, 249, 240)",
+            "rand": "rgb(120, 98, 72) 2px solid",
+            "rundung": "6px",
+            "innen": "12px 12px 12px 12px",
+            "breite": 303,
+            "schatten": "none",
+            "lage": "absolute",
+            "schrift": "400 16px",
+            "hoehe": 190
+          }
+        }
+      }
+    },
+    "dunkel": {
+      "schrift": {
+        "wurzelgroesse": 16,
+        "mittel-klein": {
+          "schnitt": "500",
+          "groesse": 14
+        },
+        "halbfett": {
+          "schnitt": "600",
+          "groesse": 16
+        },
+        "feld": {
+          "schnitt": "500",
+          "groesse": 14
+        },
+        "weiter": "500"
+      },
+      "gestalt": {
+        "suche": {
+          "mantine-Popover-dropdown": {
+            "grund": "rgb(35, 30, 23)",
+            "rand": "rgb(155, 135, 104) 2px solid",
+            "rundung": "6px",
+            "innen": "0px 0px 0px 0px",
+            "breite": 336,
+            "schatten": "none",
+            "lage": "absolute",
+            "schrift": "400 16px",
+            "hoehe": 196
+          },
+          "mantine-Combobox-options": {
+            "grund": "rgba(0, 0, 0, 0)",
+            "rand": "rgb(240, 230, 210) 0px solid",
+            "rundung": "0px",
+            "innen": "4px 0px 4px 0px",
+            "breite": 332,
+            "schatten": "none",
+            "lage": "static",
+            "schrift": "400 16px",
+            "hoehe": 192
+          },
+          "mantine-Combobox-option": {
+            "grund": "rgb(46, 40, 32)",
+            "rand": "rgb(240, 230, 210) 0px solid",
+            "rundung": "0px",
+            "innen": "6px 12px 6px 12px",
+            "breite": 332,
+            "schatten": "none",
+            "lage": "static",
+            "schrift": "600 16px",
+            "hoehe": 37
+          }
+        },
+        "palette": {
+          "mantine-Modal-root": {
+            "grund": "rgba(0, 0, 0, 0)",
+            "rand": "rgb(240, 230, 210) 0px solid",
+            "rundung": "0px",
+            "innen": "0px 0px 0px 0px",
+            "breite": 1441,
+            "schatten": "none",
+            "lage": "static",
+            "schrift": "400 16px",
+            "hoehe": 0
+          },
+          "mantine-Modal-overlay": {
+            "grund": "color(srgb 0.941176 0.901961 0.823529 / 0.4)",
+            "rand": "rgb(240, 230, 210) 0px solid",
+            "rundung": "0px",
+            "innen": "0px 0px 0px 0px",
+            "breite": 1441,
+            "schatten": "none",
+            "lage": "fixed",
+            "schrift": "400 16px",
+            "hoehe": 810
+          },
+          "mantine-Modal-inner": {
+            "grund": "rgba(0, 0, 0, 0)",
+            "rand": "rgb(240, 230, 210) 0px solid",
+            "rundung": "0px",
+            "innen": "64px 72.050003px 64px 72.050003px",
+            "breite": 1441,
+            "schatten": "none",
+            "lage": "fixed",
+            "schrift": "400 16px",
+            "hoehe": 810
+          },
+          "mantine-Modal-content": {
+            "grund": "rgba(0, 0, 0, 0)",
+            "rand": "rgb(240, 230, 210) 0px solid",
+            "rundung": "8px",
+            "innen": "0px 0px 0px 0px",
+            "breite": 1297,
+            "schatten": "none",
+            "lage": "static",
+            "schrift": "400 16px",
+            "hoehe": 471
+          }
+        },
+        "schublade": {
+          "mantine-Drawer-root": {
+            "grund": "rgba(0, 0, 0, 0)",
+            "rand": "rgb(240, 230, 210) 0px solid",
+            "rundung": "0px",
+            "innen": "0px 0px 0px 0px",
+            "breite": 1441,
+            "schatten": "none",
+            "lage": "static",
+            "schrift": "400 16px",
+            "hoehe": 0
+          },
+          "mantine-Drawer-overlay": {
+            "grund": "color(srgb 0.941176 0.901961 0.823529 / 0.4)",
+            "rand": "rgb(240, 230, 210) 0px solid",
+            "rundung": "0px",
+            "innen": "0px 0px 0px 0px",
+            "breite": 1441,
+            "schatten": "none",
+            "lage": "fixed",
+            "schrift": "400 16px",
+            "hoehe": 810
+          },
+          "mantine-Drawer-inner": {
+            "grund": "rgba(0, 0, 0, 0)",
+            "rand": "rgb(240, 230, 210) 0px solid",
+            "rundung": "0px",
+            "innen": "0px 0px 0px 0px",
+            "breite": 1441,
+            "schatten": "none",
+            "lage": "fixed",
+            "schrift": "400 16px",
+            "hoehe": 810
+          },
+          "mantine-Drawer-content": {
+            "grund": "rgb(35, 30, 23)",
+            "rand": "rgb(240, 230, 210) 0px solid",
+            "rundung": "0px",
+            "innen": "0px 0px 0px 0px",
+            "breite": 460,
+            "schatten": "none",
+            "lage": "static",
+            "schrift": "400 16px",
+            "hoehe": 810
+          },
+          "mantine-Drawer-header": {
+            "grund": "rgb(35, 30, 23)",
+            "rand": "rgb(240, 230, 210) 0px solid",
+            "rundung": "0px",
+            "innen": "12px 16px 12px 16px",
+            "breite": 459,
+            "schatten": "none",
+            "lage": "sticky",
+            "schrift": "400 16px",
+            "hoehe": 60
+          },
+          "mantine-Drawer-title": {
+            "grund": "rgba(0, 0, 0, 0)",
+            "rand": "rgb(240, 230, 210) 0px solid",
+            "rundung": "0px",
+            "innen": "0px 0px 0px 0px",
+            "breite": 199,
+            "schatten": "none",
+            "lage": "static",
+            "schrift": "600 18px",
+            "hoehe": 23
+          }
+        },
+        "popover": {
+          "mantine-Popover-dropdown": {
+            "grund": "rgb(35, 30, 23)",
+            "rand": "rgb(155, 135, 104) 2px solid",
+            "rundung": "6px",
+            "innen": "12px 12px 12px 12px",
+            "breite": 303,
+            "schatten": "none",
+            "lage": "absolute",
+            "schrift": "400 16px",
+            "hoehe": 190
+          }
+        }
+      }
+    }
+  }
+}

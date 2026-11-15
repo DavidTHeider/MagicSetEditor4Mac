@@ -1,0 +1,418 @@
+{
+  "modell": {
+    "Modell": "all-minilm:22m",
+    "Modellrevision": "1b226e2802dbb772b5fc32a58f103ca1804ef7501331012de126ab22f67475ef",
+    "Artefakthash": "1b226e2802dbb772b5fc32a58f103ca1804ef7501331012de126ab22f67475ef",
+    "Laufzeit": "ollama 0.35.1",
+    "Abstandsmass": "cosinus",
+    "Vertrag": {
+      "Dimension": 384,
+      "Pooling": "mittel",
+      "Normalisiert": true,
+      "Zerteiler": "bert",
+      "Frageanweisung": "",
+      "Dokumentanweisung": ""
+    }
+  },
+  "korpus": "probe-1",
+  "frageset": "frageset-1",
+  "dokumente": 120,
+  "maschine": "darwin/arm64, 10 Kerne",
+  "messpunkte": 78,
+  "bauzeit": 710987833,
+  "indexbytes": 184320,
+  "werte": [
+    {
+      "art": "hybrid",
+      "klasse": "aehnlichkeit",
+      "richtung": "de-en",
+      "fragen": 6,
+      "recall": 0.5,
+      "mrr": 0.375,
+      "ndcg": 0.38524518650992223
+    },
+    {
+      "art": "lexikalisch",
+      "klasse": "aehnlichkeit",
+      "richtung": "de-en",
+      "fragen": 6,
+      "recall": 0,
+      "mrr": 0,
+      "ndcg": 0
+    },
+    {
+      "art": "semantisch",
+      "klasse": "aehnlichkeit",
+      "richtung": "de-en",
+      "fragen": 6,
+      "recall": 0.5,
+      "mrr": 0.375,
+      "ndcg": 0.38524518650992223
+    },
+    {
+      "art": "hybrid",
+      "klasse": "aehnlichkeit",
+      "richtung": "en-en",
+      "fragen": 6,
+      "recall": 0.9166666666666666,
+      "mrr": 0.9166666666666666,
+      "ndcg": 0.8173468868562456
+    },
+    {
+      "art": "lexikalisch",
+      "klasse": "aehnlichkeit",
+      "richtung": "en-en",
+      "fragen": 6,
+      "recall": 0,
+      "mrr": 0,
+      "ndcg": 0
+    },
+    {
+      "art": "semantisch",
+      "klasse": "aehnlichkeit",
+      "richtung": "en-en",
+      "fragen": 6,
+      "recall": 0.9166666666666666,
+      "mrr": 0.9166666666666666,
+      "ndcg": 0.8173468868562456
+    },
+    {
+      "art": "hybrid",
+      "klasse": "mechanik",
+      "richtung": "de-en",
+      "fragen": 6,
+      "recall": 0.27777777777777773,
+      "mrr": 0.20833333333333334,
+      "ndcg": 0.20889626607923165
+    },
+    {
+      "art": "lexikalisch",
+      "klasse": "mechanik",
+      "richtung": "de-en",
+      "fragen": 6,
+      "recall": 0,
+      "mrr": 0,
+      "ndcg": 0
+    },
+    {
+      "art": "semantisch",
+      "klasse": "mechanik",
+      "richtung": "de-en",
+      "fragen": 6,
+      "recall": 0.27777777777777773,
+      "mrr": 0.20833333333333334,
+      "ndcg": 0.20889626607923165
+    },
+    {
+      "art": "hybrid",
+      "klasse": "mechanik",
+      "richtung": "en-en",
+      "fragen": 6,
+      "recall": 1,
+      "mrr": 0.75,
+      "ndcg": 0.8314656492029754
+    },
+    {
+      "art": "lexikalisch",
+      "klasse": "mechanik",
+      "richtung": "en-en",
+      "fragen": 6,
+      "recall": 0.5,
+      "mrr": 0.4166666666666667,
+      "ndcg": 0.4514993272789005
+    },
+    {
+      "art": "semantisch",
+      "klasse": "mechanik",
+      "richtung": "en-en",
+      "fragen": 6,
+      "recall": 1,
+      "mrr": 0.75,
+      "ndcg": 0.7998878590415845
+    },
+    {
+      "art": "hybrid",
+      "klasse": "mehrkriterium",
+      "richtung": "de-en",
+      "fragen": 6,
+      "recall": 0.16666666666666666,
+      "mrr": 0.08333333333333333,
+      "ndcg": 0.10515495892857624
+    },
+    {
+      "art": "lexikalisch",
+      "klasse": "mehrkriterium",
+      "richtung": "de-en",
+      "fragen": 6,
+      "recall": 0,
+      "mrr": 0,
+      "ndcg": 0
+    },
+    {
+      "art": "semantisch",
+      "klasse": "mehrkriterium",
+      "richtung": "de-en",
+      "fragen": 6,
+      "recall": 0.16666666666666666,
+      "mrr": 0.08333333333333333,
+      "ndcg": 0.10515495892857624
+    },
+    {
+      "art": "hybrid",
+      "klasse": "mehrkriterium",
+      "richtung": "en-en",
+      "fragen": 6,
+      "recall": 1,
+      "mrr": 0.4781746031746032,
+      "ndcg": 0.6121291144306165
+    },
+    {
+      "art": "lexikalisch",
+      "klasse": "mehrkriterium",
+      "richtung": "en-en",
+      "fragen": 6,
+      "recall": 0,
+      "mrr": 0,
+      "ndcg": 0
+    },
+    {
+      "art": "semantisch",
+      "klasse": "mehrkriterium",
+      "richtung": "en-en",
+      "fragen": 6,
+      "recall": 1,
+      "mrr": 0.4781746031746032,
+      "ndcg": 0.6121291144306165
+    },
+    {
+      "art": "hybrid",
+      "klasse": "negativ",
+      "richtung": "de-en",
+      "fragen": 3,
+      "recall": 1,
+      "mrr": 0,
+      "ndcg": 1
+    },
+    {
+      "art": "lexikalisch",
+      "klasse": "negativ",
+      "richtung": "de-en",
+      "fragen": 3,
+      "recall": 1,
+      "mrr": 0,
+      "ndcg": 1
+    },
+    {
+      "art": "semantisch",
+      "klasse": "negativ",
+      "richtung": "de-en",
+      "fragen": 3,
+      "recall": 1,
+      "mrr": 0,
+      "ndcg": 1
+    },
+    {
+      "art": "hybrid",
+      "klasse": "negativ",
+      "richtung": "en-en",
+      "fragen": 3,
+      "recall": 1,
+      "mrr": 0,
+      "ndcg": 1
+    },
+    {
+      "art": "lexikalisch",
+      "klasse": "negativ",
+      "richtung": "en-en",
+      "fragen": 3,
+      "recall": 1,
+      "mrr": 0,
+      "ndcg": 1
+    },
+    {
+      "art": "semantisch",
+      "klasse": "negativ",
+      "richtung": "en-en",
+      "fragen": 3,
+      "recall": 1,
+      "mrr": 0,
+      "ndcg": 1
+    },
+    {
+      "art": "hybrid",
+      "klasse": "regeln",
+      "richtung": "de-en",
+      "fragen": 6,
+      "recall": 0.6666666666666666,
+      "mrr": 0.1851851851851852,
+      "ndcg": 0.29802782272391015
+    },
+    {
+      "art": "lexikalisch",
+      "klasse": "regeln",
+      "richtung": "de-en",
+      "fragen": 6,
+      "recall": 0,
+      "mrr": 0,
+      "ndcg": 0
+    },
+    {
+      "art": "semantisch",
+      "klasse": "regeln",
+      "richtung": "de-en",
+      "fragen": 6,
+      "recall": 0.6666666666666666,
+      "mrr": 0.1851851851851852,
+      "ndcg": 0.29802782272391015
+    },
+    {
+      "art": "hybrid",
+      "klasse": "regeln",
+      "richtung": "en-en",
+      "fragen": 6,
+      "recall": 1,
+      "mrr": 1,
+      "ndcg": 1
+    },
+    {
+      "art": "lexikalisch",
+      "klasse": "regeln",
+      "richtung": "en-en",
+      "fragen": 6,
+      "recall": 0,
+      "mrr": 0,
+      "ndcg": 0
+    },
+    {
+      "art": "semantisch",
+      "klasse": "regeln",
+      "richtung": "en-en",
+      "fragen": 6,
+      "recall": 1,
+      "mrr": 1,
+      "ndcg": 1
+    },
+    {
+      "art": "hybrid",
+      "klasse": "synonym",
+      "richtung": "de-en",
+      "fragen": 6,
+      "recall": 0.27777777777777773,
+      "mrr": 0.25,
+      "ndcg": 0.25576098155590443
+    },
+    {
+      "art": "lexikalisch",
+      "klasse": "synonym",
+      "richtung": "de-en",
+      "fragen": 6,
+      "recall": 0,
+      "mrr": 0,
+      "ndcg": 0
+    },
+    {
+      "art": "semantisch",
+      "klasse": "synonym",
+      "richtung": "de-en",
+      "fragen": 6,
+      "recall": 0.27777777777777773,
+      "mrr": 0.25,
+      "ndcg": 0.25576098155590443
+    },
+    {
+      "art": "hybrid",
+      "klasse": "synonym",
+      "richtung": "en-en",
+      "fragen": 6,
+      "recall": 0.8333333333333334,
+      "mrr": 0.5833333333333334,
+      "ndcg": 0.5548775808639298
+    },
+    {
+      "art": "lexikalisch",
+      "klasse": "synonym",
+      "richtung": "en-en",
+      "fragen": 6,
+      "recall": 0,
+      "mrr": 0,
+      "ndcg": 0
+    },
+    {
+      "art": "semantisch",
+      "klasse": "synonym",
+      "richtung": "en-en",
+      "fragen": 6,
+      "recall": 0.8333333333333334,
+      "mrr": 0.5833333333333334,
+      "ndcg": 0.5548775808639298
+    },
+    {
+      "art": "hybrid",
+      "klasse": "templating",
+      "richtung": "de-en",
+      "fragen": 6,
+      "recall": 0.25,
+      "mrr": 0.1851851851851852,
+      "ndcg": 0.1974292827965947
+    },
+    {
+      "art": "lexikalisch",
+      "klasse": "templating",
+      "richtung": "de-en",
+      "fragen": 6,
+      "recall": 0,
+      "mrr": 0,
+      "ndcg": 0
+    },
+    {
+      "art": "semantisch",
+      "klasse": "templating",
+      "richtung": "de-en",
+      "fragen": 6,
+      "recall": 0.25,
+      "mrr": 0.1851851851851852,
+      "ndcg": 0.1974292827965947
+    },
+    {
+      "art": "hybrid",
+      "klasse": "templating",
+      "richtung": "en-en",
+      "fragen": 6,
+      "recall": 0.6666666666666666,
+      "mrr": 0.6666666666666666,
+      "ndcg": 0.6666666666666666
+    },
+    {
+      "art": "lexikalisch",
+      "klasse": "templating",
+      "richtung": "en-en",
+      "fragen": 6,
+      "recall": 0.5833333333333334,
+      "mrr": 0.6666666666666666,
+      "ndcg": 0.6021911987942431
+    },
+    {
+      "art": "semantisch",
+      "klasse": "templating",
+      "richtung": "en-en",
+      "fragen": 6,
+      "recall": 0.6666666666666666,
+      "mrr": 0.6666666666666666,
+      "ndcg": 0.6666666666666666
+    }
+  ],
+  "dauer": {
+    "hybrid": {
+      "p50": 8646708,
+      "p95": 10397292
+    },
+    "lexikalisch": {
+      "p50": 188500,
+      "p95": 313333
+    },
+    "semantisch": {
+      "p50": 8248833,
+      "p95": 9802041
+    }
+  }
+}

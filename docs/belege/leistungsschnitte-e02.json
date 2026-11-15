@@ -1,0 +1,466 @@
+{
+  "stand": {
+    "commit": "37f8a70b4f995fd3dde1756b538a0edcb279807f",
+    "sauber": true,
+    "go": "go version go1.27.2 darwin/arm64",
+    "zeit": "2026-10-11T17:36:16.254Z",
+    "rechner": "Apple M5",
+    "kerne": 10,
+    "speicherGB": 32,
+    "system": "27.0.1 (26A434)",
+    "wiederholungen": 5,
+    "dauer": "2s",
+    "grenzen": {
+      "last": 5,
+      "fremd": 250
+    },
+    "pauseS": 120,
+    "rufe": 100
+  },
+  "eingaenge": {
+    "pack": {
+      "dateien": 34683,
+      "abdruck": "dec39bd84969fd1c02762d1ff4e7487490102f2f1af2dd20bb76da343e087f5f"
+    },
+    "archenemy": "812f3aa3da96a0caa7af37de21e5706e1dec74f214b2bc746760aee040c75abd"
+  },
+  "programme": {
+    "msescript": "899e3c9df6a9e72161392639bbfff3ada1e7c780ff277c6dd536920e642ace36",
+    "render": "81659f3b3b1d1e934fe6cf8a6d22cb97f7afad96726ad0f84cf7e06c48cd94e6",
+    "app": "b873e3b181d03283ae7fddab184585642b07222bb2610a3b2b54d2dfcb22c148",
+    "mse": "d9ab8905c043c05137e79052a123dddd6ebda7fc0d32f009e3bd6519e7926033",
+    "mse-mcp": "dd51a5c1b3a0451e3c576f8f9df4cfc7f4503950091f006d486133573460a670"
+  },
+  "schnitte": [
+    {
+      "name": "naht-karte",
+      "was": "öffentliche Naht: eine Karte je Ruf",
+      "bench": "^BenchmarkWegKopflos$/^Karte_je_Ruf$",
+      "vorher": {
+        "last": [
+          2.66,
+          2.94,
+          5.04
+        ],
+        "fremd": {
+          "summe": 224.5,
+          "groesste": [
+            {
+              "pid": 556,
+              "ppid": 1,
+              "cpu": 113.1,
+              "name": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd"
+            },
+            {
+              "pid": 68315,
+              "ppid": 84826,
+              "cpu": 58.5,
+              "name": "/opt/homebrew/bin/git"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 16.2,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 1298,
+              "ppid": 1,
+              "cpu": 13.4,
+              "name": "/System/Library/CoreServices/Finder.app/Contents/MacOS/Finder"
+            },
+            {
+              "pid": 581,
+              "ppid": 1,
+              "cpu": 6.5,
+              "name": "/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds"
+            }
+          ]
+        },
+        "gewartetS": 0
+      },
+      "ok": true,
+      "fehler": null,
+      "werte": [
+        {
+          "name": "BenchmarkWegKopflos/Karte_je_Ruf",
+          "ns": {
+            "n": 5,
+            "min": 53397833,
+            "median": 54580142,
+            "p95": 59494867,
+            "p99": 59494867,
+            "max": 59494867,
+            "mittel": 56125466.8
+          },
+          "bytes": {
+            "n": 5,
+            "min": 29144553,
+            "median": 29192555,
+            "p95": 30474118,
+            "p99": 30474118,
+            "max": 30474118,
+            "mittel": 29684014
+          },
+          "zuteilungen": {
+            "n": 5,
+            "min": 75081,
+            "median": 75104,
+            "p95": 84714,
+            "p99": 84714,
+            "max": 84714,
+            "mittel": 78935.2
+          },
+          "durchlaeufe": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ]
+        }
+      ],
+      "prozess": {
+        "wandMs": 3464,
+        "cpuS": 3.03,
+        "rssByte": 157335552,
+        "spitzeByte": 122569664
+      },
+      "status": "gemessen",
+      "nachher": {
+        "last": [
+          2.61,
+          2.93,
+          5.02
+        ],
+        "fremd": {
+          "summe": 124.6,
+          "groesste": [
+            {
+              "pid": 68345,
+              "ppid": 84826,
+              "cpu": 82.1,
+              "name": "/opt/homebrew/bin/git"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 24,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 40739,
+              "ppid": 40621,
+              "cpu": 6.5,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            },
+            {
+              "pid": 40625,
+              "ppid": 40621,
+              "cpu": 2.6,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            },
+            {
+              "pid": 85383,
+              "ppid": 84826,
+              "cpu": 2,
+              "name": "/Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/155.0.8059.27/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)"
+            }
+          ]
+        }
+      },
+      "waehrend": {
+        "proben": 1,
+        "fehlgeschlagen": 0,
+        "fremdHoechstens": 124.6
+      }
+    },
+    {
+      "name": "werk-gehalten",
+      "was": "ganze Rechnung: das Werk gehalten, der Weg des Fensters",
+      "bench": "^BenchmarkWegKopflos$/^Karte,_Werk_gehalten$",
+      "vorher": {
+        "last": [
+          2.61,
+          2.93,
+          5.02
+        ],
+        "fremd": {
+          "summe": 139.7,
+          "groesste": [
+            {
+              "pid": 68345,
+              "ppid": 84826,
+              "cpu": 88.8,
+              "name": "/opt/homebrew/bin/git"
+            },
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 24,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 40739,
+              "ppid": 40621,
+              "cpu": 7.2,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            },
+            {
+              "pid": 40625,
+              "ppid": 40621,
+              "cpu": 2.8,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            },
+            {
+              "pid": 750,
+              "ppid": 1,
+              "cpu": 2,
+              "name": "/usr/libexec/searchpartyd"
+            }
+          ]
+        },
+        "gewartetS": 0
+      },
+      "ok": true,
+      "fehler": null,
+      "werte": [
+        {
+          "name": "BenchmarkWegKopflos/Karte,_Werk_gehalten",
+          "ns": {
+            "n": 5,
+            "min": 53516642,
+            "median": 53889600,
+            "p95": 60824217,
+            "p99": 60824217,
+            "max": 60824217,
+            "mittel": 55190976.8
+          },
+          "bytes": {
+            "n": 5,
+            "min": 29153296,
+            "median": 29161292,
+            "p95": 30448756,
+            "p99": 30448756,
+            "max": 30448756,
+            "mittel": 29417362
+          },
+          "zuteilungen": {
+            "n": 5,
+            "min": 75011,
+            "median": 75016,
+            "p95": 84623,
+            "p99": 84623,
+            "max": 84623,
+            "mittel": 76936.8
+          },
+          "durchlaeufe": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ]
+        }
+      ],
+      "prozess": {
+        "wandMs": 5713,
+        "cpuS": 6.71,
+        "rssByte": 114475008,
+        "spitzeByte": 78676928
+      },
+      "status": "gemessen",
+      "nachher": {
+        "last": [
+          2.48,
+          2.89,
+          4.99
+        ],
+        "fremd": {
+          "summe": 53.6,
+          "groesste": [
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 30.1,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 40739,
+              "ppid": 40621,
+              "cpu": 5.5,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            },
+            {
+              "pid": 40625,
+              "ppid": 40621,
+              "cpu": 2.6,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            },
+            {
+              "pid": 84826,
+              "ppid": 1,
+              "cpu": 2.6,
+              "name": "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT"
+            },
+            {
+              "pid": 85383,
+              "ppid": 84826,
+              "cpu": 2.5,
+              "name": "/Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/155.0.8059.27/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)"
+            }
+          ]
+        }
+      },
+      "waehrend": {
+        "proben": 2,
+        "fehlgeschlagen": 0,
+        "fremdHoechstens": 57.7
+      }
+    },
+    {
+      "name": "rastern",
+      "was": "Rasterung einer Karte im Fensterweg",
+      "bench": "^BenchmarkWegRastern$",
+      "vorher": {
+        "last": [
+          2.48,
+          2.89,
+          4.99
+        ],
+        "fremd": {
+          "summe": 59.5,
+          "groesste": [
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 30.3,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 40739,
+              "ppid": 40621,
+              "cpu": 6.3,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            },
+            {
+              "pid": 68394,
+              "ppid": 84826,
+              "cpu": 4.5,
+              "name": "/usr/bin/ssh"
+            },
+            {
+              "pid": 84826,
+              "ppid": 1,
+              "cpu": 4.2,
+              "name": "/Applications/ChatGPT.app/Contents/MacOS/ChatGPT"
+            },
+            {
+              "pid": 40625,
+              "ppid": 40621,
+              "cpu": 2.8,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            }
+          ]
+        },
+        "gewartetS": 0
+      },
+      "ok": true,
+      "fehler": null,
+      "werte": [
+        {
+          "name": "BenchmarkWegRastern",
+          "ns": {
+            "n": 5,
+            "min": 57618300,
+            "median": 57779983,
+            "p95": 58509408,
+            "p99": 58509408,
+            "max": 58509408,
+            "mittel": 57886079.8
+          },
+          "bytes": {
+            "n": 5,
+            "min": 57235707,
+            "median": 57238779,
+            "p95": 57253800,
+            "p99": 57253800,
+            "max": 57253800,
+            "mittel": 57242195.6
+          },
+          "zuteilungen": {
+            "n": 5,
+            "min": 439494,
+            "median": 439502,
+            "p95": 439514,
+            "p99": 439514,
+            "max": 439514,
+            "mittel": 439502.4
+          },
+          "durchlaeufe": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ]
+        }
+      ],
+      "prozess": {
+        "wandMs": 14319,
+        "cpuS": 15.58,
+        "rssByte": 181501952,
+        "spitzeByte": 143016896
+      },
+      "status": "gemessen",
+      "nachher": {
+        "last": [
+          2.53,
+          2.88,
+          4.95
+        ],
+        "fremd": {
+          "summe": 55.9,
+          "groesste": [
+            {
+              "pid": 623,
+              "ppid": 1,
+              "cpu": 35.9,
+              "name": "/System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer"
+            },
+            {
+              "pid": 40739,
+              "ppid": 40621,
+              "cpu": 6.2,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper (Renderer).app/Contents/MacOS/Claude Helper (Renderer)"
+            },
+            {
+              "pid": 1296,
+              "ppid": 1,
+              "cpu": 3.4,
+              "name": "/System/Library/CoreServices/Dock.app/Contents/MacOS/Dock"
+            },
+            {
+              "pid": 40625,
+              "ppid": 40621,
+              "cpu": 2.8,
+              "name": "/Applications/Claude.app/Contents/Frameworks/Claude Helper.app/Contents/MacOS/Claude Helper"
+            },
+            {
+              "pid": 85383,
+              "ppid": 84826,
+              "cpu": 1.9,
+              "name": "/Applications/ChatGPT.app/Contents/Frameworks/Codex Framework.framework/Versions/155.0.8059.27/Helpers/Codex (Renderer).app/Contents/MacOS/Codex (Renderer)"
+            }
+          ]
+        }
+      },
+      "waehrend": {
+        "proben": 3,
+        "fehlgeschlagen": 0,
+        "fremdHoechstens": 55.9
+      }
+    }
+  ],
+  "vollstaendig": true
+}

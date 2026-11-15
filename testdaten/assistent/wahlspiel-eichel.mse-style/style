@@ -1,0 +1,32 @@
+﻿mse version: 2.0.0
+game: wahlspiel
+short name: Herbstrand
+full name: Herbstrand
+version: 2026-10-06
+position hint: 2
+depends on:
+	package: wahlspiel.mse-game
+	version: 2026-10-06
+
+card width: 375
+card height: 523
+card dpi: 150
+card style:
+	name:
+		left: 30
+		top: 30
+		width: 315
+		height: 24
+		font:
+			name: Helvetica
+			size: 16
+			color: black
+	text:
+		left: 30
+		top: 300
+		width: 315
+		height: 180
+		font:
+			name: Helvetica
+			size: 12
+			color: black

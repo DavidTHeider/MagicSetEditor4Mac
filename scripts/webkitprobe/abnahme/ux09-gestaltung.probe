@@ -1,0 +1,201 @@
+# UX-09 (#1681) — Farbwelten, Fensterbild, Schrift über die ganze Oberfläche und eigene Farben, gesetzt über die Einstellungen und gemessen in WKWebView.
+#
+# **Gesetzt wie ein Mensch es setzt, gemessen am Element**:
+#
+# - **AK-01 Farbwelten** — Klar, Schiefer und Moos, je hell und dunkel: jeder
+#   sichtbare Text gegen seinen wirksamen Grund, auf zwei Seiten; keiner
+#   unter 4,5 : 1.
+# - **AK-01 Fensterbild** — das Bild aus dem Prüfbestand (`webkitabnahme.sh`
+#   legt es ab, weil ein Dateidialog hier nicht aufgeht): Vorschau, die drei
+#   Skalierungen am berechneten Stil, „Aus" und „Bild entfernen".
+# - **AK-02 Schrift** — die ganze Oberfläche in einer Textschrift, eine
+#   Schmuckschrift bleibt an den Überschriften, und japanische wie chinesische
+#   Zeichen fallen auf Hiragino beziehungsweise PingFang/Songti, nicht auf
+#   eine beliebige Systemschrift; die Kartenvorschau behält ihre Adresse.
+# - **AK-03/04 Eigene Farben** — eine Zeile, die die Form verfehlt, wird an
+#   ihrer Stelle genannt; eine unlesbare Farbe wird nicht angewandt; eine
+#   lesbare gilt.
+#
+# **Was es nicht zeigt**: die Menüleiste (Darstellung zurücksetzen gehört
+# dem Wails-Prozess, `docs/HANDPRUEFUNGEN.md`) und den Bildpunkt unter dem
+# Schleier — dessen Kontrast rechnet `themen.test.ts` für jede Farbwelt.
+# **Und ob eine Schrift geladen ist**: `FontFaceSet.check` sagt das für
+# eine Systemschrift immer zu (G2 aus dem Zweitblick über Phase 6.3) — der
+# Schritt, der danach fragt, kann nicht scheitern. Was am Element gilt,
+# misst die berechnete `font-family`.
+# **Am Ende wird zurückgesetzt**: die Drehbücher danach laufen auf demselben
+# Bestand.
+motor wk2
+lade /
+frist 20000
+warte nav
+wartetext Erste Schritte
+taste escape
+pruefe (window.__kontraste = () => { const rgb = (s) => { const m = s.match(/rgba?\(([^)]+)\)/); if (!m) return null; const t = m[1].split(/[ ,\/]+/).filter(Boolean).map(Number); return [t[0], t[1], t[2], t.length > 3 ? t[3] : 1] }; const lin = (c) => { c /= 255; return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4) }; const L = (c) => 0.2126 * lin(c[0]) + 0.7152 * lin(c[1]) + 0.0722 * lin(c[2]); const grund = (e) => { for (let x = e; x; x = x.parentElement) { const b = rgb(getComputedStyle(x).backgroundColor); if (b && b[3] > 0.5) return b } return [255, 255, 255, 1] }; const raus = []; for (const e of document.querySelectorAll('body *')) { if (!e.checkVisibility()) continue; if (![...e.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim().length > 1)) continue; const f = rgb(getComputedStyle(e).color); if (!f) continue; const g = grund(e); const v = f[3] < 1 ? [0, 1, 2].map((i) => f[i] * f[3] + g[i] * (1 - f[3])) : f; const a = L(v), b = L(g); raus.push([Math.round((Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05) * 100) / 100, e.textContent.trim().slice(0, 30)]) } return raus.sort((x, y) => x[0] - y[0]) }, window.__unter45 = () => window.__kontraste().filter((z) => z[0] < 4.5).map((z) => z[1]).slice(0, 5), window.__waehle = (text, wert) => { const s = [...document.querySelectorAll('select')].find((w) => w.checkVisibility() && w.labels && w.labels[0] && w.labels[0].textContent.includes(text)); if (s) { if (s.value !== wert) { s.value = wert; s.dispatchEvent(new Event('change', { bubbles: true })) } return true } const g = [...document.querySelectorAll('[role=radiogroup]')].find((r) => r.checkVisibility() && document.getElementById(r.getAttribute('aria-labelledby')).textContent.includes(text)); const f = g && [...g.querySelectorAll('input[type=radio]')].find((i) => i.value === wert); if (f && !f.checked) f.click(); return !!f }, window.__gebiet = () => { const b = [...document.querySelectorAll('main button')].find((k) => k.checkVisibility() && k.textContent.startsWith('Erscheinungsbild')); if (b) b.dataset.ziel = 'eb'; return true }, window.__grundbild = () => { const e = [...document.querySelectorAll('.bg-grund')].find((x) => x.checkVisibility()); return e ? getComputedStyle(e) : null }, true)
+
+notiz Die Kartenvorschau, bevor irgendetwas an der Schrift geschieht — ihre Adresse folgt aus dem Inhalt
+taste cmd+2
+wartetext Jedes offene Set liegt im Bestand
+pruefe ([...document.querySelectorAll('main button')].find((b) => b.checkVisibility() && b.textContent.includes('Werkstatt-Testkarten')).dataset.ziel = 'set', true)
+klicke [data-ziel="set"]
+bis [...document.querySelectorAll('main img')].some((b) => b.checkVisibility() && b.src.includes('/vorschau/'))
+pruefe (window.__karte = [...document.querySelectorAll('main img')].find((b) => b.checkVisibility() && b.src.includes('/vorschau/')).src, true)
+zeige 'Kartenvorschau: ' + window.__karte
+
+notiz AK-01 — die Farbwelten, über die Einstellungen
+taste cmd+,
+wartetext Erscheinungsbild
+pruefe window.__gebiet()
+klicke [data-ziel="eb"]
+bis [...document.querySelectorAll('select, [role=radiogroup]')].some((w) => w.checkVisibility() && (w.labels?.[0] ?? document.getElementById(w.getAttribute('aria-labelledby')))?.textContent.includes('Farbwelt'))
+bis (window.__waehle('Farbwelt', 'klar'), document.documentElement.dataset.farbwelt === 'klar')
+pause 300
+zeige 'klar, hell — kleinstes: ' + JSON.stringify(window.__kontraste()[0])
+gleich JSON.stringify(window.__unter45()) => []
+abzug farbwelt-klar-hell
+erscheinung dunkel
+pause 500
+zeige 'klar, dunkel — kleinstes: ' + JSON.stringify(window.__kontraste()[0])
+gleich JSON.stringify(window.__unter45()) => []
+abzug farbwelt-klar-dunkel
+erscheinung hell
+bis (window.__waehle('Farbwelt', 'schiefer'), document.documentElement.dataset.farbwelt === 'schiefer')
+pause 300
+zeige 'schiefer, hell — kleinstes: ' + JSON.stringify(window.__kontraste()[0])
+gleich JSON.stringify(window.__unter45()) => []
+abzug farbwelt-schiefer-hell
+erscheinung dunkel
+pause 500
+zeige 'schiefer, dunkel — kleinstes: ' + JSON.stringify(window.__kontraste()[0])
+gleich JSON.stringify(window.__unter45()) => []
+erscheinung hell
+bis (window.__waehle('Farbwelt', 'moos'), document.documentElement.dataset.farbwelt === 'moos')
+pause 300
+zeige 'moos, hell — kleinstes: ' + JSON.stringify(window.__kontraste()[0])
+gleich JSON.stringify(window.__unter45()) => []
+abzug farbwelt-moos-hell
+erscheinung dunkel
+pause 500
+zeige 'moos, dunkel — kleinstes: ' + JSON.stringify(window.__kontraste()[0])
+gleich JSON.stringify(window.__unter45()) => []
+abzug farbwelt-moos-dunkel
+notiz — und auf einer zweiten Seite, dunkel
+taste cmd+4
+wartetext Probe-Deck
+pause 500
+zeige 'moos, dunkel, Decks — kleinstes: ' + JSON.stringify(window.__kontraste()[0])
+gleich JSON.stringify(window.__unter45()) => []
+erscheinung hell
+pause 300
+zeige 'moos, hell, Decks — kleinstes: ' + JSON.stringify(window.__kontraste()[0])
+gleich JSON.stringify(window.__unter45()) => []
+
+notiz AK-01 — das Fensterbild: Vorschau, Skalierung, Aus
+taste cmd+,
+wartetext Erscheinungsbild
+pruefe window.__gebiet()
+klicke [data-ziel="eb"]
+bis document.querySelector('[data-vorschau="fensterbild"]') !== null
+pruefe getComputedStyle(document.querySelector('[data-vorschau="fensterbild"]')).backgroundImage.includes('/fensterbild/')
+zeige 'vorher: ' + (document.documentElement.dataset.hintergrund || 'kein Fensterbild')
+pruefe document.documentElement.dataset.hintergrund === undefined
+bis (window.__waehle('Fensterbild', 'fuellen'), document.documentElement.dataset.hintergrund === 'fuellen')
+pause 500
+zeige 'füllen: ' + window.__grundbild().backgroundSize + ' | ' + window.__grundbild().backgroundRepeat
+pruefe window.__grundbild().backgroundImage.includes('/fensterbild/') && window.__grundbild().backgroundSize.includes('cover')
+zeige 'Schleier: ' + window.__grundbild().backgroundImage.slice(0, 90)
+gleich JSON.stringify(window.__unter45()) => []
+abzug fensterbild-fuellen
+bis (window.__waehle('Fensterbild', 'kacheln'), document.documentElement.dataset.hintergrund === 'kacheln')
+pause 300
+zeige 'kacheln: ' + window.__grundbild().backgroundSize + ' | ' + window.__grundbild().backgroundRepeat
+pruefe window.__grundbild().backgroundRepeat.includes('repeat')
+bis (window.__waehle('Fensterbild', 'einpassen'), document.documentElement.dataset.hintergrund === 'einpassen')
+pause 300
+pruefe window.__grundbild().backgroundSize.includes('contain')
+abzug fensterbild-einpassen
+bis (window.__waehle('Fensterbild', 'aus'), document.documentElement.dataset.hintergrund === undefined)
+pruefe !window.__grundbild().backgroundImage.includes('/fensterbild/')
+
+notiz AK-02 — die ganze Oberfläche in einer Textschrift
+bis [...document.querySelectorAll('select, [role=radiogroup]')].some((w) => w.checkVisibility() && (w.labels?.[0] ?? document.getElementById(w.getAttribute('aria-labelledby')))?.textContent.includes('Anzeigeschrift gilt'))
+bis (window.__waehle('Anzeigeschrift', 'buch'), getComputedStyle(document.documentElement).getPropertyValue('--font-anzeige').includes('ui-serif'))
+bis (window.__waehle('Anzeigeschrift gilt', 'ganz'), getComputedStyle(document.body).fontFamily.includes('ui-serif'))
+zeige 'Fließtext: ' + getComputedStyle(document.body).fontFamily.slice(0, 60)
+abzug schrift-ganz-buch
+notiz — eine Schmuckschrift bleibt an den Überschriften, und die Seite sagt es
+bis (window.__waehle('Anzeigeschrift', 'kalligrafie'), !getComputedStyle(document.body).fontFamily.includes('ui-serif'))
+pruefe !getComputedStyle(document.body).fontFamily.includes('Trattatello')
+wartetext bleibt an den Überschriften
+notiz — japanische und chinesische Zeichen fallen auf Hiragino und PingFang/Songti
+bis (window.__waehle('Anzeigeschrift', 'buch'), getComputedStyle(document.body).fontFamily.includes('ui-serif'))
+# **Ohne Leerzeichen**: es käme aus der ersten Schrift der Kette, die eines hat (New York), und
+# nicht aus Hiragino — am 2026-09-26 gemessen 1,45 Punkte breiter, und der Vergleich unten
+# maß das Leerzeichen statt der Zeichen, um die es geht.
+pruefe (window.__cjk = (familie) => { const h = document.createElement('h2'); h.textContent = '日本語の見出し中文标题'; h.style.position = 'absolute'; h.style.whiteSpace = 'nowrap'; document.body.appendChild(h); const s = document.createElement('h2'); s.textContent = h.textContent; s.style.cssText = 'position:absolute;white-space:nowrap;font-family:' + familie; document.body.appendChild(s); const w = [h.getBoundingClientRect().width, s.getBoundingClientRect().width]; h.remove(); s.remove(); return w }, true)
+zeige 'Überschrift gegen Hiragino Mincho: ' + JSON.stringify(window.__cjk("'Hiragino Mincho ProN', 'Songti SC'"))
+pruefe Math.abs(window.__cjk("'Hiragino Mincho ProN', 'Songti SC'")[0] - window.__cjk("'Hiragino Mincho ProN', 'Songti SC'")[1]) < 1
+pruefe document.fonts.check("16px 'Hiragino Mincho ProN'", '日本') && document.fonts.check("16px 'PingFang SC'", '中文')
+bis (window.__waehle('Anzeigeschrift gilt', 'ueberschriften'), !getComputedStyle(document.body).fontFamily.includes('ui-serif'))
+notiz — und die Karte bleibt, wie sie war: dieselbe Adresse, also derselbe Inhalt
+taste cmd+2
+wartetext Jedes offene Set liegt im Bestand
+pruefe ([...document.querySelectorAll('main button')].find((b) => b.checkVisibility() && b.textContent.includes('Werkstatt-Testkarten')).dataset.ziel = 'set', true)
+klicke [data-ziel="set"]
+bis [...document.querySelectorAll('main img')].some((b) => b.checkVisibility() && b.src.includes('/vorschau/'))
+gleich [...document.querySelectorAll('main img')].find((b) => b.checkVisibility() && b.src.includes('/vorschau/')).src === window.__karte => true
+taste cmd+,
+wartetext Erscheinungsbild
+pruefe window.__gebiet()
+klicke [data-ziel="eb"]
+bis [...document.querySelectorAll('select, [role=radiogroup]')].some((w) => w.checkVisibility() && (w.labels?.[0] ?? document.getElementById(w.getAttribute('aria-labelledby')))?.textContent.includes('Anzeigeschrift gilt'))
+bis (window.__waehle('Anzeigeschrift', 'erben'), getComputedStyle(document.documentElement).getPropertyValue('--font-anzeige').includes('Hoefler'))
+
+notiz AK-03/04 — eigene Farben: die Form an ihrer Zeile, unlesbar gilt nicht, lesbar gilt
+# **Seit #2465 stehen die eigenen Farben eingeklappt** — erst die Falte öffnen.
+bis [...document.querySelectorAll('[role=tabpanel] button[aria-expanded]')].some((b) => b.checkVisibility() && b.innerText.trim() === 'Eigene Farben')
+pruefe ([...document.querySelectorAll('[role=tabpanel] button[aria-expanded]')].find((b) => b.checkVisibility() && b.innerText.trim() === 'Eigene Farben').dataset.ziel = 'farbfalte', true)
+klicke [data-ziel="farbfalte"]
+bis document.querySelector('[data-ziel="farbfalte"]').getAttribute('aria-expanded') === 'true'
+warte textarea[data-einstellung="gestaltung"]
+# **Vor jedem Klick neu markiert**: nach einem geglückten Schreiben baut die Seite das Feld
+# neu auf (`key` am gespeicherten Wert, §7 Regel 1), und die alte Marke hängt an einem Knoten,
+# den es nicht mehr gibt.
+klicke textarea[data-einstellung="gestaltung"]
+tippe --mse-grund: #111111;
+taste enter
+tippe --mse-grund: url(x);
+pruefe (document.querySelector('textarea[data-einstellung="gestaltung"]').closest('section').querySelector('button').dataset.ziel = 'uebernehmen', true)
+klicke [data-ziel="uebernehmen"]
+wartetext Zeile 2:
+gleich document.querySelector('textarea[data-einstellung="gestaltung"]').getAttribute('aria-invalid') => true
+klicke textarea[data-einstellung="gestaltung"]
+taste cmd+a
+taste backspace
+tippe --mse-text: #efe5d0;
+pruefe (document.querySelector('textarea[data-einstellung="gestaltung"]').closest('section').querySelector('button').dataset.ziel = 'uebernehmen', true)
+klicke [data-ziel="uebernehmen"]
+wartetext Nicht angewandt
+pruefe document.documentElement.style.getPropertyValue('--mse-text') === ''
+zeige [...document.querySelectorAll('[role=status]')].map((e) => e.textContent.trim()).filter((t) => t.includes(': ')).join(' | ').slice(0, 200)
+abzug eigene-farben-unlesbar
+klicke textarea[data-einstellung="gestaltung"]
+taste cmd+a
+taste backspace
+tippe --mse-marke: #4e2f16;
+pruefe (document.querySelector('textarea[data-einstellung="gestaltung"]').closest('section').querySelector('button').dataset.ziel = 'uebernehmen', true)
+klicke [data-ziel="uebernehmen"]
+wartetext Angewandt.
+gleich document.documentElement.style.getPropertyValue('--mse-marke') => #4e2f16
+klicke textarea[data-einstellung="gestaltung"]
+taste cmd+a
+taste backspace
+pruefe (document.querySelector('textarea[data-einstellung="gestaltung"]').closest('section').querySelector('button').dataset.ziel = 'uebernehmen', true)
+klicke [data-ziel="uebernehmen"]
+bis document.documentElement.style.getPropertyValue('--mse-marke') === ''
+
+notiz AK-01 — das Bild wieder weg, und die Farbwelt zurück
+klicketext Bild entfernen
+wartetext Noch kein eigenes Bild
+bis (window.__waehle('Farbwelt', 'pergament'), document.documentElement.dataset.farbwelt === undefined)
+gleich JSON.stringify(window.__probeFehler || []) => []
