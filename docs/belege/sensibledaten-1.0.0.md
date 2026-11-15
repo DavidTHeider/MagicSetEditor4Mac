@@ -52,9 +52,24 @@ Heimnetzes (Rechnernamen, Seriennummern, Hardware-UUIDs, MAC-Adressen,
 - **Bildmetadaten**: in 132 Abzügen nur Pixelmaße und der Kommentar
   „Screenshot", kein Autor, kein Ort, keine Gerätekennung.
 
-**Unsicher und dem Auftraggeber vorgelegt**: der Name des Gegenübers
-„Turfer" im Handelsbild, in der Befehlspalette, in Vermerk 0153 und in Tests.
-Er sieht erfunden aus; ob er es ist, weiß nur der Auftraggeber.
+**Dem Auftraggeber vorgelegt und von ihm beantwortet**: der Name des
+Gegenübers „Turfer" im Handelsbild, in der Befehlspalette, in Vermerk 0153 und
+in Tests ist **erfunden** (Auskunft vom 2026-11-15).
+
+## Und die gebauten Artefakte
+
+Am Abbild `MagicSetEditor4Mac-1.0.0.dmg` (`e530d575…`), schreibgeschützt
+eingehängt, und am Quelltextpaket, nach dem Bau am Stand `11e52bd20`:
+
+- **Die vier Programme** (`MagicSetEditor4Mac`, `mse`, `mse-mcp`, `mse-rest`)
+  enthalten keinen der Funde oben; der einzige Nutzerpfad ist der Platzhalter
+  `/Users/ich`. In jedem steckt der neue Freigabeschlüssel und der frühere
+  nicht.
+- **Im übrigen Bündel** stehen E-Mail-Adressen nur in den Copyright-Vermerken
+  mitgelieferter Schriften Dritter — sie gehören zu deren Lizenz und bleiben,
+  wie sie sind.
+- **Das Quelltextpaket** (30.098 Dateien) enthält keines der ausgenommenen
+  Dokumente und keinen der Funde oben.
 
 ## Die Muster des Skripts und ihre Zählung am Stand `1f87cb900`
 
